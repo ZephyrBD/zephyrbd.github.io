@@ -520,13 +520,13 @@ Optifine选择成功后如图所示，然后点击安装
         <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/howtousetheinternationalversionofminecrafttogoonline/</guid>
-        <description>&lt;h2 id=&#34;为什么要端口映射&#34;&gt;为什么要端口映射？
+        <description>&lt;img src="https://zephyrbd.github.io/images/htgoon/img1.png" alt="Featured image of post 如何使用国际版我的世界进行联机" /&gt;&lt;h2 id=&#34;为什么要端口映射&#34;&gt;为什么要端口映射？
 &lt;/h2&gt;&lt;p&gt;现在大部分人的宽带IP地址都是运营商分配给我们的，但一般情况下只会给我们内网IP地址，举个例子：10个人要上网，但10个公网IP太多了，那么就让10个人共用一个“网关”，再由“网关”联网，这样10个人就只用掉一个IP，但我的世界联机的时候，别人和你不在一个“网关”之下，那他就只可以找到你的“网关”，而不知道10个人中那个是你，这个时候就需要一个“中间人”来告诉他你到底是谁，然后你们就可以一起愉快玩耍了，这个“中间人”就是第三方服务器映射的IP&lt;/p&gt;
 &lt;h2 id=&#34;如何进行端口映射&#34;&gt;如何进行端口映射
 &lt;/h2&gt;&lt;h2 id=&#34;1注册sakura-frp账号&#34;&gt;1.注册SAKURA FRP账号
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.natfrp.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;SAKURA FRP&lt;/a&gt;是一个免费的端口映射网站，可以帮我们进行映射，打开网站后界面如图所示。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/02a776c5358c4022f2a956b07952bd6e.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img1.png&#34;
 	
 	
 	
@@ -537,7 +537,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 点击注册账号进行注册（注意：使用 中国大陆节点 必须完成实名认证）进入后如图所示。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/10c2d6d5968886f8b58857a1f5844e0b.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img2.png&#34;
 	
 	
 	
@@ -549,7 +549,8 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;2下载sakura-frp客户端&#34;&gt;2.下载SAKURA FRP客户端
 &lt;/h2&gt;&lt;p&gt;点击上图所示的左侧边栏上的软件下载，打开后按图示点击，或者&lt;a class=&#34;link&#34; href=&#34;https://getfrp.sh/l/SakuraLauncher.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;点我&lt;/a&gt;下载客户端&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/b035afe3f7b1f515559f1b9813f0c84e.png&#34;
+    &gt;点我&lt;/a&gt;下载客户端
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img3.png&#34;
 	
 	
 	
@@ -560,7 +561,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;3安装sakura-frp启动器并打开&#34;&gt;3.安装SAKURA FRP启动器并打开
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/fcc85892b6e08c8691bc1a157d16146e.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img4.png&#34;
 	
 	
 	
@@ -571,7 +572,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 回到官网，在管理面板上复制访问密钥
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/37b5148947f9f30571faf327e9862472.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img5.png&#34;
 	
 	
 	
@@ -582,7 +583,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 回到启动器粘贴并登陆
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/645e2d47140d381b463d24dfcd0b8c7c.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img6.png&#34;
 	
 	
 	
@@ -594,7 +595,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;4转发端口&#34;&gt;4.转发端口
 &lt;/h2&gt;&lt;p&gt;打开需要联机的世界，选择对局域网开放
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/f82881d65904a260e869aa7e2f351b56.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img7.png&#34;
 	
 	
 	
@@ -605,7 +606,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 添加一个隧道（找到java那个，没有的话刷新一下，然后选择一个合适的转发服务器，点击创建）
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/4c29454a3aec9712acedcfdf570f9d93.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img8.png&#34;
 	
 	
 	
@@ -616,7 +617,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 打开隧道就可以了（弹出的提示框中的IP就是你朋友用的）
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/e356569bae6451c86ed28ebd12153324.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img9.png&#34;
 	
 	
 	
