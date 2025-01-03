@@ -13,13 +13,13 @@
         <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/thefuturebooks/</guid>
-        <description>&lt;h1 id=&#34;为什么突然写这个&#34;&gt;&lt;strong&gt;为什么突然写这个&lt;/strong&gt;
+        <description>&lt;img src="https://zephyrbd.github.io/images/fubook/img1.png" alt="Featured image of post 我对未来书本的一个设想" /&gt;&lt;h1 id=&#34;为什么突然写这个&#34;&gt;&lt;strong&gt;为什么突然写这个&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;当下OLED屏幕弯折角度越来越大，再者之前看到了一个回形针做的一个关于曲面屏的视频，我不由得产生了一个想法——那就是用柔性屏做一个符合但又不局限于传统书本概念的书，所以接下来我就好好的说一下这个想法（本文仅仅阐述我这个概念性的想法，喷子勿看）&lt;/p&gt;
 &lt;h1 id=&#34;怎样做才像一本书&#34;&gt;&lt;strong&gt;怎样做才像一本书&lt;/strong&gt;
 &lt;/h1&gt;&lt;h2 id=&#34;书写&#34;&gt;&lt;strong&gt;①书写&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;一本传统概念的书，首先要做的就是书写，这大多数电子产品都可以，但书写的体验我敢说绝对不如在真正的纸上书写，所以，我要探索的不仅仅是普通的书本书写，更要舒适的书写，现在能做到在OLED屏幕上写字就像在真纸上的，我只知道两个口碑不错的产品：&lt;/p&gt;
 &lt;h3 id=&#34;苹果的apple-pencil&#34;&gt;&lt;strong&gt;苹果的Apple Pencil&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/fe7c4bb14a34d7de63b32b6669b391bd.png#pic_center&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img1.png&#34;
 	
 	
 	
@@ -29,7 +29,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;华为的m-pencil华为m-pencil的介绍httpsi-blogcsdnimgcnblog_migrateff7aaa32c6fda1be661fbb76b1b9d85dpngpic_center&#34;&gt;&lt;strong&gt;华为的M-Pencil&lt;/strong&gt;&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/ff7aaa32c6fda1be661fbb76b1b9d85d.png#pic_center&#34;
+&lt;h3 id=&#34;华为的m-pencil华为m-pencil的介绍httpszephyrbdgithubioimagesfubookimg2png&#34;&gt;&lt;strong&gt;华为的M-Pencil&lt;/strong&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img2.png&#34;
 	
 	
 	
@@ -39,11 +39,29 @@
 	
 	
 &gt;
-&lt;/h3&gt;&lt;p&gt;在这方面，苹果要做的比华为早，书写的体验也是目前业界的佼佼者，假设这本书拥有Apple Pencil的技术，再加上几十块钱的书写膜，那写得舒服的这个问题就解决了，体验也能像这个视频一样。&lt;/p&gt;
-&lt;iframe src=&#34;//player.bilibili.com/player.html?aid=21315394&amp;bvid=BV1FW411u7Gu&amp;cid=35035665&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;
+&lt;/h3&gt;&lt;p&gt;在这方面，苹果要做的比华为早，书写的体验也是目前业界的佼佼者，假设这本书拥有Apple Pencil的技术，再加上几十块钱的书写膜，那写得舒服的这个问题就解决了，体验也能像这个视频一样。
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV1FW411u7Gu&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;弯折&#34;&gt;&lt;strong&gt;②弯折&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;一本传统的概念书籍来说，能做的第二件事就是正常的弯折，所以上面我提到了这样的OLED屏幕。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/735955d61060c10a982092275138629b.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img3.png&#34;
 	
 	
 	
@@ -54,7 +72,7 @@
 	
 &gt;
 虽然这样可以弯折了，但仅仅只能翻折一次，所以要使用Galaxy Fold制作的方法来制造，但这也会使它像Galaxy Fold那样留下无法抹去的折痕，以及这个巨大的弯折半径。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/922d051110321ff420e8d82ab7bad7c5.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img4.png&#34;
 	
 	
 	
@@ -64,7 +82,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/a25fee7bfff8fea3db2ea54f59bdd00a.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img5.png&#34;
 	
 	
 	
@@ -75,7 +93,7 @@
 	
 &gt;
 看到这些照片后，相信你也会意识到这些问题都是无法忍受的，但是有一项新技术——ULP-NSSP，可以很好地解决这个问题，就像柔宇科技这个屏幕。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/42b093b15d7372f10453fbc4aed91e75.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img6.png&#34;
 	
 	
 	
@@ -90,7 +108,7 @@
 &lt;/h1&gt;&lt;p&gt;目前已实现了传统图书的功能，现在谈谈未来图书的功能。&lt;/p&gt;
 &lt;h2 id=&#34;增强现实ar和激光雷达扫描仪&#34;&gt;①增强现实（AR）和激光雷达扫描仪
 &lt;/h2&gt;&lt;p&gt;借助于性能强劲的 CPU，比如高通骁龙处理器，再加上4800万像素以上的摄像头，实现了如下图所示的增强现实。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/fa7d88024974d4f5ec1b1b2a86f2b7c7.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img7.png&#34;
 	
 	
 	
@@ -101,7 +119,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;甚至像下面这样通过局域网连接来实现多台设备同时使用一个增强现实场景，这对教育方面将会有巨大的影响，试想老师通过AR技术讲解生物，物理，化学等科目所需演示的实验和模型，那是一件多么不可思议的事情啊！
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/4628a387b9116d0792c69ab91d3b5e57.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img8.png&#34;
 	
 	
 	
@@ -114,7 +132,7 @@
 以及激光雷达扫描仪
 激光雷达 (LiDAR 光探测和测距) 这项先进技术，是通过测量光触及物体并反射回来所需的时间，来确定距离。特制的激光雷达扫描仪利用直接飞行时间 (dToF)，测量室内或室外环境中从最远五米处反射回来的光。它可从光子层面进行探测，并能以纳秒速度运行，为增强现实及更广泛的领域开启无尽可能。&lt;/p&gt;
 &lt;h2 id=&#34;文档的转换和在电子文档上书写&#34;&gt;②文档的转换和在电子文档上书写
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/568a87f60b09fb0c9ee842be2f38080e.png#pic_center&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img9.png&#34;
 	
 	
 	
@@ -125,7 +143,7 @@
 	
 &gt;
 未来的书，当然不能仅仅是一本书，它应该是像上面那样，可以从网上购买各种书籍的版权，而不必支付印刷费用，这将对地球的环境保护做出巨大贡献，而且借助前文提到的强大的书写系统，就可以像阅读真书一般。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/26ac9cb2e4a7bc180d8af4c15ef788ba.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img10.png&#34;
 	
 	
 	
@@ -138,7 +156,7 @@
 甚至当做笔记本来使用，当你正处在课堂上时，第一个工作区可以查看课本，而第二个工作区用来充当笔记本（工作区后文会介绍），将教科书中的一段话截屏放进笔记本中，再做上注释，这很好地解决了学生记笔记的痛苦，也可以把第二个工作区设置为练习册和参考书等辅助资料，从此学生的桌面上不再有成堆书本，取而代之的是一本这样的书。&lt;/p&gt;
 &lt;h2 id=&#34;多个可拆卸的屏幕和防盗技术&#34;&gt;③多个可拆卸的屏幕和防盗技术
 &lt;/h2&gt;&lt;p&gt;这本书应该有两个屏幕，其中一块是和处理器之类固定在书上的屏幕，另一块则可随意拆卸，为了方便解释，我用纸质笔记本来简单描述一下。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/43955231039045a03a529a757d3c735e.jpeg#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img11.jpg&#34;
 	
 	
 	
@@ -149,7 +167,7 @@
 	
 &gt;
 与此同时它还具有下图中的防盗功能，就像现在的手机一般，对丢失的设备进行远程定位、锁定、备份和删除，在保证个人资料安全的同时，也一定程度上解决了书本找不到的问题。
-&lt;img src=&#34;https://i-blog.csdnimg.cn/blog_migrate/b9b0208361692bda1254189cc69253e9.png#pic_center&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img12.png&#34;
 	
 	
 	
