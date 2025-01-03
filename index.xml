@@ -291,7 +291,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/howtoupdatejava/</guid>
-        <description>&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
+        <description>&lt;img src="https://zephyrbd.github.io/p/howtoupdatejava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
 &lt;/h1&gt;&lt;p&gt;MC自从1.8就开始使用Java 8，到现在已经用了8个大版本了。mojang也决定从MC 1.17开始使用最近才发布的Java 16（官方给出的解释是有更好的优化，但我觉得应该是mojang用了Java 16的新语法），总的来说，这一举动是好的。&lt;/p&gt;
 &lt;h1 id=&#34;对玩家有什么影响&#34;&gt;对玩家有什么影响
 &lt;/h1&gt;&lt;p&gt;显然，过去我们使用Java 8来打开MC，现在Java 8是不可能打开1.17了，那是不是把旧的Java删除就可以了？当然不行，旧版的Java可以帮助我们打开旧的MC版本，删除后就只可以玩1.17了，下面就讲述如何使Java 8和16共存。&lt;/p&gt;
