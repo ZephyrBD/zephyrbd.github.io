@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on ZephyrBD&#39;s Blog</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://zephyrbd.github.io/categories/</link>
         <description>Recent content in Categories on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>MC ZBD Studio</copyright>
-        <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MC Mod Dev</title>
-        <link>http://localhost:1313/categories/mc-mod-dev/</link>
+        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/mc-mod-dev/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
+        <guid>https://zephyrbd.github.io/categories/mc-mod-dev/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
         </item>
         <item>
         <title>Minecraft</title>
-        <link>http://localhost:1313/categories/minecraft/</link>
+        <link>https://zephyrbd.github.io/categories/minecraft/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/minecraft/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
+        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
         </item>
         <item>
         <title>Technology</title>
-        <link>http://localhost:1313/categories/technology/</link>
+        <link>https://zephyrbd.github.io/categories/technology/</link>
         <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/technology/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/technology/TechnologyICON.jpg" alt="Featured image of post Technology" /&gt;</description>
+        <guid>https://zephyrbd.github.io/categories/technology/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/technology/TechnologyICON.jpg" alt="Featured image of post Technology" /&gt;</description>
         </item>
         
     </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MC Mod Dev on ZephyrBD&#39;s Blog</title>
-        <link>http://localhost:1313/categories/mc-mod-dev/</link>
+        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
         <description>Recent content in MC Mod Dev on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>MC ZBD Studio</copyright>
-        <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/mc-mod-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/mc-mod-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0</title>
-        <link>http://localhost:1313/p/firstfabricmoddevlog_2/</link>
+        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/firstfabricmoddevlog_2/</guid>
+        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</guid>
         <description>&lt;p&gt;参考视频：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV19S411A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Besson】数据生成 | Minecraft 1.21.X Fabric模组&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;相同与区别&#34;&gt;相同与区别
@@ -136,10 +136,10 @@
         </item>
         <item>
         <title>在MC1.21.4中创建Item时候遇到的问题</title>
-        <link>http://localhost:1313/p/firstfabricmoddevlog_1/</link>
+        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/firstfabricmoddevlog_1/</guid>
+        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</guid>
         <description>&lt;p&gt;参考视频：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1v1421r7g7&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Besson】第一个物品 | Minecraft 1.21.X Fabric模组开发指北&lt;/a&gt;&lt;br&gt;
 这里补充一下我在1.21.4中遇到的问题&lt;/p&gt;
@@ -180,10 +180,10 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         </item>
         <item>
         <title>在MC1.21.4中创建食物的相同与区别</title>
-        <link>http://localhost:1313/p/firstfabricmoddevlog_3/</link>
+        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/firstfabricmoddevlog_3/</guid>
+        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</guid>
         <description>&lt;p&gt;参考视频：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1WJ4m1M7CT&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Besson】食物 | Minecraft 1.21.X Fabric模组开发&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;相同与区别&#34;&gt;相同与区别
