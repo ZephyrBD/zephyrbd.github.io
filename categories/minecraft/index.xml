@@ -635,7 +635,7 @@ Optifine选择成功后如图所示，然后点击安装
         <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/howtoinstallminecraft/</guid>
-        <description>&lt;h1 id=&#34;安装java必须游戏依赖&#34;&gt;安装Java（必须，游戏依赖）
+        <description>&lt;img src="https://zephyrbd.github.io/images/htIsMC/img1.png" alt="Featured image of post 如何安装我的世界国际版" /&gt;&lt;h1 id=&#34;安装java必须游戏依赖&#34;&gt;安装Java（必须，游戏依赖）
 &lt;/h1&gt;&lt;h2 id=&#34;1查看电脑系统位数&#34;&gt;1.查看电脑系统位数
 &lt;/h2&gt;&lt;p&gt;右键此电脑（或者叫计算机或这台电脑），选择属性，如图所示（图片仅供参考）
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img1.png&#34;
@@ -661,9 +661,9 @@ Optifine选择成功后如图所示，然后点击安装
 记住系统位数，一会用得上&lt;/p&gt;
 &lt;h2 id=&#34;2打开下载java的链接&#34;&gt;2.打开下载Java的链接
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://dl.softmgr.qq.com/original/Development/jre-8u261-windows-i586.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;32位系统版本点我&lt;/a&gt;
+    &gt;32位系统版本点我&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://dl.softmgr.qq.com/original/Development/jre-8u261-windows_x64.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;64位系统版本点我&lt;/a&gt;
+    &gt;64位系统版本点我&lt;/a&gt;&lt;br&gt;
 下载完成后打开，一直下一步安装完成就可以了（安装成功截图如下）
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img3.png&#34;
 	
@@ -689,8 +689,9 @@ Optifine选择成功后如图所示，然后点击安装
 	
 	
 &gt;
-为了方便，这里我把网盘链接拿过来了，不过还是建议去原贴下载。&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1Bec_peXZNOqa1Ngs_ryRiw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;百度网盘下载地址 提取码: g4hd&lt;/a&gt;
+为了方便，这里我把网盘链接拿过来了，不过还是建议去原贴下载。&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1Bec_peXZNOqa1Ngs_ryRiw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;百度网盘下载地址 提取码: g4hd&lt;/a&gt;&lt;br&gt;
 然后按如图所示的点击：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
