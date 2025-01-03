@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CPP Dev on ZephyrBD&#39;s Blog</title>
+        <link>https://zephyrbd.github.io/categories/cpp-dev/</link>
+        <description>Recent content in CPP Dev on ZephyrBD&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>MC ZBD Studio</copyright>
+        <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/cpp-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>智记清单（MCZS To Do）Alpha 1.0 发布</title>
+        <link>https://zephyrbd.github.io/p/cuitappdesignrace/</link>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/p/cuitappdesignrace/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/images/cuitDRace/img1.png" alt="Featured image of post 智记清单（MCZS To Do）Alpha 1.0 发布" /&gt;&lt;h1 id=&#34;智记清单mczs-to-do项目说明&#34;&gt;智记清单（MCZS To Do）项目说明
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;智记清单&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一项目概述&#34;&gt;一、项目概述
+&lt;/h2&gt;&lt;p&gt;智记清单是一款专为大学生和打工人设计的待办清单程序。它具备提醒功能，能有效帮助用户合理安排事务，其界面直观简洁，易于操作。在设计上充分考虑了用户的时间管理需求及使用体验，还通过随时间变化的背景为程序增添了趣味性。&lt;/p&gt;
+&lt;h2 id=&#34;二设计思路&#34;&gt;二、设计思路
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;背景与痛点：初入大学或职场，事务繁杂易遗忘重要事项，且多数人在事务安排上缺乏经验。&lt;/li&gt;
+&lt;li&gt;功能需求分析：
+&lt;ul&gt;
+&lt;li&gt;提醒功能：满足学习、社团等活动的提醒需求。&lt;/li&gt;
+&lt;li&gt;今日待办：让用户清晰知晓当天任务。&lt;/li&gt;
+&lt;li&gt;易上手：方便新建和管理待办事项。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;程序规划：
+&lt;ul&gt;
+&lt;li&gt;数据存储模块：运用 json 文件、对象和数组保存用户提醒任务详情，确保数据持久化与高效读写。&lt;/li&gt;
+&lt;li&gt;数据交互模块：作为模块间数据桥梁，保障程序流畅运行与协同工作。&lt;/li&gt;
+&lt;li&gt;界面模块：呈现可视化界面，方便用户交互操作。&lt;/li&gt;
+&lt;li&gt;提醒功能模块：实现提醒逻辑，包括时间设定、触发机制与多种提醒方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;三关键技术&#34;&gt;三、关键技术
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;json 和结构体应用：通过 todoINFO 结构体数组存放待办事项内容，利用 todoToJson 函数在关闭程序时将结构体转化为 json 对象存盘，借助 jsonArray 管理多个 json 对象，程序打开时用 jsonToTodo 函数转回结构体并添加到 Qlist 容器便于操作。&lt;/li&gt;
+&lt;li&gt;Qt 框架开发：
+&lt;ul&gt;
+&lt;li&gt;信号与槽机制：实现高效对象间事件通信，如设置待办事项点击确认按钮时新建结构体变量，逻辑清晰且代码耦合度低。&lt;/li&gt;
+&lt;li&gt;布局管理：多种布局管理器确保界面在不同电脑上视觉与操作良好。&lt;/li&gt;
+&lt;li&gt;类库资源：丰富类库用于创建各类可视化组件，如 QPushButton 类创建按钮。&lt;/li&gt;
+&lt;li&gt;用户体验支持：如实现背景切换动画，增强趣味性与体验感。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;四作品特色&#34;&gt;四、作品特色
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;提醒功能：借助 Windows 系统通知，在 Qtimer 定时器检测下，以醒目的系统通知弹出提醒事项内容与地点。
+&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;提醒功能&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;背景切换：利用 QDateTime 变量、Qtimer 定时器和 Switch-case 结构实现一天内背景随时间切换壁纸，且有多组可选。
+&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img3.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;背景切换&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;图形化界面：基于 Qt 框架打造，布局合理、按钮一目了然，易于上手操作。
+&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图形化界面&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;五项目信息&#34;&gt;五、项目信息
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;团队Logo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;团队成员：
+&lt;ul&gt;
+&lt;li&gt;项目主导及核心代码：ZephyrBD&lt;/li&gt;
+&lt;li&gt;JSON 转换方法：puuuuh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;指导老师：CUIT计算机学院老师&lt;/li&gt;
+&lt;li&gt;版权与开源：
+&lt;ul&gt;
+&lt;li&gt;提交给学校的 Alpha 1.0 版本用于特定比赛，请勿外泄。（Github的Releases中的Alpha 1.0版本为公共版）&lt;/li&gt;
+&lt;li&gt;除背景图片组版权属于美国苹果公司外，其余内容遵循大赛共享协议，现在以 GPL - 2.0 协议开源到该 Github 仓库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;项目文件：包含 MCZS_TO_DO.pro、头文件（如 aboutus.h 等）、源文件（如 aboutus.cpp 等）、界面文件（如 aboutus.ui 等）、资源文件 res.qrc 及其他文件 version.rc。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
