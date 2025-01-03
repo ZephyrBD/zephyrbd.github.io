@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on ZephyrBD&#39;s Blog</title>
+        <link>http://localhost:1313/page/</link>
+        <description>Recent content in Pages on ZephyrBD&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>MC ZBD Studio</copyright>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>归档</title>
+        <link>http://localhost:1313/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;h2 id=&#34;hi-friends&#34;&gt;Hi, Friends.
+&lt;/h2&gt;&lt;p&gt;欢迎来到ZephyrBD的个人博客&lt;br&gt;
+这里记录了我探索计算机的心路历程，&lt;br&gt;
+包括了我写的一些原创性的文章，&lt;br&gt;
+可能有些文章是通过转载的形式呈现给大家，&lt;br&gt;
+这中间夹杂着很多我的心得体会以及写作的思维模式。&lt;br&gt;
+我最早的博客创建于2020-9-20，不过随着GiteePage的停用终结了， &lt;br&gt;
+现在上了大学之后又重新搞了一个，&lt;br&gt;
+这里大部分时候分享一些教程和我的经验吧！&lt;br&gt;
+如果你有兴趣，可以看看我的Blog。&lt;/p&gt;
+&lt;h2 id=&#34;about-mc-zbd-studio&#34;&gt;About MC ZBD Studio
+&lt;/h2&gt;&lt;p&gt;2018年夏，ZBD出于和FayYu玩MC的需要，开始架设MC服务器。秋，创立了MC ZBD Studio，负责服务器的维护工作。&lt;/p&gt;
+&lt;p&gt;但是在2021到2024年期间，出于学业压力，团队不得不暂时停摆。直到2024年秋，重启团队。这次重启不仅延续了团队的使命，更让团队站在了新的起点上。我们开始以MC ZBD Studio的名义参加比赛，不断提升自己。&lt;/p&gt;
+&lt;p&gt;现在，我们将继续秉持着对编程的热爱，继续在我们的道路上努力着。我们相信，凭借热爱，MCZS一定能够有光明的未来。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>友情链接</title>
+        <link>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
