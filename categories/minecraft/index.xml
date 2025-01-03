@@ -291,14 +291,14 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/howtoupdatejava/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/p/howtoupdatejava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
+        <description>&lt;img src="https://zephyrbd.github.io/images/htjava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
 &lt;/h1&gt;&lt;p&gt;MC自从1.8就开始使用Java 8，到现在已经用了8个大版本了。mojang也决定从MC 1.17开始使用最近才发布的Java 16（官方给出的解释是有更好的优化，但我觉得应该是mojang用了Java 16的新语法），总的来说，这一举动是好的。&lt;/p&gt;
 &lt;h1 id=&#34;对玩家有什么影响&#34;&gt;对玩家有什么影响
 &lt;/h1&gt;&lt;p&gt;显然，过去我们使用Java 8来打开MC，现在Java 8是不可能打开1.17了，那是不是把旧的Java删除就可以了？当然不行，旧版的Java可以帮助我们打开旧的MC版本，删除后就只可以玩1.17了，下面就讲述如何使Java 8和16共存。&lt;/p&gt;
 &lt;h2 id=&#34;更新步骤一更新启动器&#34;&gt;更新步骤一：更新启动器
 &lt;/h2&gt;&lt;p&gt;在我的教程《如何安装Minecraft国际版》已经介绍了HMCL启动器的安装，现在就以HMCL启动器为例，讲述启动器的更新。
 &lt;strong&gt;1&lt;/strong&gt;.打开启动器，注意右上角的提示
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img1.png&#34;
 	
 	
 	
@@ -309,7 +309,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 &lt;strong&gt;2&lt;/strong&gt;.点击它，看到下图所示界面
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img2.png&#34;
 	
 	
 	
@@ -320,7 +320,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 可以看到自从HMCL 3.3.184开始就支持Java 16了，不过考虑到兼容性，还是推荐更新到最新版（会有更新提示），现在点击右下角的更新出现下图所示界面。
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img3.png&#34;
 	
 	
 	
@@ -331,7 +331,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 表明开始更新，更新完成后会自动重启，然后就可以看到HMCL版本和刚才更新日志的版本一致了。
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img4.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img4.png&#34;
 	
 	
 	
@@ -342,8 +342,26 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;视频讲解&#34;&gt;视频讲解
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;视频中是个简单方法，成功了就可以不看后面了（但启动器必须更新）&lt;/strong&gt;&lt;/p&gt;
-&lt;iframe src=&#34;//player.bilibili.com/player.html?aid=503553157&amp;bvid=BV1yg411G7xr&amp;cid=351155359&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;视频中是个简单方法，成功了就可以不看后面了（但启动器必须更新）&lt;/strong&gt;
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV1yg411G7xr&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;更新步骤二java-16和mc-117的安装&#34;&gt;更新步骤二：Java 16和MC 1.17的安装
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt;.检测电脑位数&lt;br&gt;
 这个我在如何安装Minecraft国际版已经讲了，不知道的可以去看看。
@@ -353,7 +371,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 &lt;a class=&#34;link&#34; href=&#34;https://download.bell-sw.com/java/16.0.1&amp;#43;9/bellsoft-jdk16.0.1&amp;#43;9-windows-i586.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;32位点我&lt;/a&gt;
 &lt;strong&gt;3&lt;/strong&gt;.解压下载的文件并且拷贝到MC文件夹
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img5.png&#34;
 	
 	
 	
@@ -363,7 +381,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 	
 &gt;
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img6.png&#34;
 	
 	
 	
@@ -374,7 +392,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 &lt;strong&gt;4&lt;/strong&gt;.选择版本列表，然后点安装新游戏版本
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img7.png&#34;
 	
 	
 	
@@ -385,7 +403,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择1.17
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img8.png&#34;
 	
 	
 	
@@ -396,7 +414,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择Optifine
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img9.png&#34;
 	
 	
 	
@@ -407,7 +425,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择最新版本
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img10.png&#34;
 	
 	
 	
@@ -418,7 +436,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 Optifine选择成功后如图所示，然后点击安装
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img11.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img11.png&#34;
 	
 	
 	
@@ -430,7 +448,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;更新步骤三mc-117启动前设置&#34;&gt;更新步骤三：MC 1.17启动前设置
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt;.安装成功后如图所示，点击设置
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img12.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img12.png&#34;
 	
 	
 	
@@ -441,7 +459,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 &lt;strong&gt;2&lt;/strong&gt;.勾选启用游戏特定设置
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img13.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img13.png&#34;
 	
 	
 	
@@ -452,7 +470,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 &lt;strong&gt;3&lt;/strong&gt;.选择Java 16的路径（按照图示界面点击）
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img14.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img14.png&#34;
 	
 	
 	
@@ -464,7 +482,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;
 有关其它的设置可以参考《如何安装Minecraft国际版》里面的讲解。
 &lt;strong&gt;4&lt;/strong&gt;.返回并启动游戏
-&lt;img src=&#34;https://zephyrbd.github.io/p/howtoupdatejava/img15.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img15.png&#34;
 	
 	
 	
@@ -474,8 +492,27 @@ Optifine选择成功后如图所示，然后点击安装
 	
 	
 &gt;
-&lt;strong&gt;以上自己安装Java 16的教程可以参考下面这个视频&lt;/strong&gt;&lt;/p&gt;
-&lt;iframe src=&#34;//player.bilibili.com/player.html?aid=461238128&amp;bvid=BV1P5411T7iR&amp;cid=354267730&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;</description>
+&lt;strong&gt;以上自己安装Java 16的教程可以参考下面这个视频&lt;/strong&gt;
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV1P5411T7iR&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>如何使用国际版我的世界进行联机</title>
