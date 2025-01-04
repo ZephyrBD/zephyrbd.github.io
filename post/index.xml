@@ -16,7 +16,26 @@
         <description>&lt;img src="https://zephyrbd.github.io/images/HtbuBlog/img1.png" alt="Featured image of post 【Hugo】Hugo &#43; Github 免费部署自己的博客" /&gt;&lt;p&gt;&lt;strong&gt;此文章系转载文章，不适用于该文章底部的版权声明&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;作者：莱特雷-letere&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;莱特雷-letere&amp;rsquo;s Blog&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+    &gt;莱特雷-letere&amp;rsquo;s Blog&lt;/a&gt;&lt;/strong&gt;
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV1bovfeaEtQ&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h1 id=&#34;1-环境准备&#34;&gt;1 环境准备
 &lt;/h1&gt;&lt;h2 id=&#34;11-git下载&#34;&gt;1.1 Git下载
 &lt;/h2&gt;&lt;ul&gt;
