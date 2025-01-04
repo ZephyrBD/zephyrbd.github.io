@@ -251,7 +251,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 &lt;li&gt;在register该食物Item时可以用&lt;code&gt;useRemainder(BOWL)&lt;/code&gt;来实现归还碗的效果&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;文件结构如图：&lt;br&gt;
-&lt;img src=&#34;https://i0.hdslb.com/bfs/note/2a1f819f3bba5c3a97f2efdba37e046e33339f3c.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/p/images/MCFDev/FilesTree.png&#34;
 	
 	
 	
