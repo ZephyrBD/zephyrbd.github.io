@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 3">
-<title>在MC1.21.4中创建食物的相同与区别</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客">
+<title>【Hugo】Hugo &#43; Github 免费部署自己的博客</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_3/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/howtobuildablog/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="在MC1.21.4中创建食物的相同与区别">
-<meta property='og:description' content="FirstFabricModDev 3">
-<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_3/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="【Hugo】Hugo + Github 免费部署自己的博客">
+<meta property='og:description' content="使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客">
+<meta property='og:url' content='https://zephyrbd.github.io/p/howtobuildablog/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img3.png' />
-<meta name="twitter:title" content="在MC1.21.4中创建食物的相同与区别">
-<meta name="twitter:description" content="FirstFabricModDev 3"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img3.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-04T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/HtbuBlog/img1.png' />
+<meta name="twitter:title" content="【Hugo】Hugo + Github 免费部署自己的博客">
+<meta name="twitter:description" content="使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/HtbuBlog/img1.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -262,11 +262,22 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#参考视频">参考视频：</a></li>
-    <li><a href="#相同与区别">相同与区别</a></li>
-    <li><a href="#moditems">ModItems:</a></li>
-    <li><a href="#modfoodcomponents">ModFoodComponents：</a></li>
-    <li><a href="#modfoodconsumablecomponents">ModFoodConsumableComponents:</a></li>
+    <li><a href="#11-git下载">1.1 Git下载</a></li>
+    <li><a href="#12-hugo下载">1.2 Hugo下载</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-创建博客">2.1 创建博客</a></li>
+    <li><a href="#22-配置主题">2.2 配置主题</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-常规部署">3.1 常规部署</a></li>
+    <li><a href="#32-github-action自动部署">3.2 Github Action自动部署</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#第一次使用git的教程">第一次使用git的教程</a></li>
   </ol>
 </nav>
         </div>
@@ -281,9 +292,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/firstfabricmoddevlog_3/">
+            <a href="/p/howtobuildablog/">
                 
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img3.png" loading="lazy" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" />
+                    <img src="https://zephyrbd.github.io/images/HtbuBlog/img1.png" loading="lazy" alt="Featured image of post 【Hugo】Hugo &#43; Github 免费部署自己的博客" />
                 
             </a>
         </div>
@@ -292,10 +303,6 @@
     <div class="article-details">
     
     <header class="article-category">
-        
-            <a href="/categories/mc-mod-dev/" style="background-color: #269EB6; color: #fff;">
-                MC Mod Dev
-            </a>
         
             <a href="/categories/minecraft/" style="background-color: #27B72C; color: #fff;">
                 Minecraft
@@ -306,12 +313,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/firstfabricmoddevlog_3/">在MC1.21.4中创建食物的相同与区别</a>
+            <a href="/p/howtobuildablog/">【Hugo】Hugo &#43; Github 免费部署自己的博客</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            FirstFabricModDev 3
+            使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客
         </h3>
         
     </div>
@@ -332,12 +339,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-01-02</time>
+                <time class="article-time--published">2025-01-04</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    636 字
+                    1857 字
                 </time>
             </div>
         
@@ -353,7 +360,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -368,50 +375,270 @@
     <section class="article-content">
     
     
-    <h2 id="参考视频">参考视频：
-</h2>
-
-
-
-
-
-    
-
-
-<div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1WJ4m1M7CT"
-            scrolling="no"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-    >
-    </iframe>
-</div>
-
-<h2 id="相同与区别">相同与区别
-</h2><p>(PS：Bugjump是真能改)</p>
-<ol>
-<li>仍然要创建一个<code>FoodComponent</code>类</li>
-<li>FoodComponent类弃用了<code>snack()、statusEffect()、createStew()</code>等方法</li>
-<li>药水效果需要通过<code>ConsumableComponents</code>类来实现</li>
-<li>由于2,3，需要创建一个<code>ModFoodConsumableComponents</code>的新类</li>
-<li>由于4，在register该食物Item时可能会需要传一个<code>ModFoodConsumableComponents.XXX</code>的参数</li>
-<li>在register该食物Item时可以用<code>useRemainder(BOWL)</code>来实现归还碗的效果</li>
-</ol>
-<p>文件结构如图：<br>
-<img src="/images/MCFDev/FilesTree.png"
+    <p><strong>此文章系转载文章，不适用于该文章底部的版权声明</strong><br>
+<strong>作者：莱特雷-letere</strong><br>
+<strong>来自：<a class="link" href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/"  target="_blank" rel="noopener"
+    >莱特雷-letere&rsquo;s Blog</a></strong></p>
+<h1 id="1-环境准备">1 环境准备
+</h1><h2 id="11-git下载">1.1 Git下载
+</h2><ul>
+<li>前往<a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
+    >【Git官网】</a>，下载安装程序</li>
+<li>一直点下一步，默认安装即可<br>
+<img src="/images/HtbuBlog/img2.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="File Tree"
+		alt="img2"
+	
+	
+></li>
+</ul>
+<h2 id="12-hugo下载">1.2 Hugo下载
+</h2><ul>
+<li>前往<a class="link" href="https://github.com/gohugoio/hugo/tags"  target="_blank" rel="noopener"
+    >【Hugo Github Tags】</a>，选择对应版本下载，下载后解压即可</li>
+<li>Windows下载版本：hugo_extended_xxxxx_windows_amd64.zip<br>
+<img src="/images/HtbuBlog/img3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img3"
+	
+	
+></li>
+</ul>
+<h1 id="2-搭建博客">2 搭建博客
+</h1><h2 id="21-创建博客">2.1 创建博客
+</h2><ul>
+<li>（1）在hugo.exe所在文件夹的地址栏敲打cmd，然后Enter唤起命令行<br>
+<img src="/images/HtbuBlog/img4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img4"
+	
+	
+></li>
+<li>（2）敲打命令<code>hugo new site xxxx</code>创建hugo文件<br>
+<img src="/images/HtbuBlog/img5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img5"
+	
+	
+></li>
+<li>（3）敲打命名cd xxxx切换目录，并把hugo.exe复制到刚生成的文件夹中<br>
+<img src="/images/HtbuBlog/img6.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img6"
+	
+	
+></li>
+<li>（4）敲打命令hugo server -D启动服务，访问<a class="link" href="http://localhost:1313"  target="_blank" rel="noopener"
+    >http://localhost:1313</a>，<code>Ctrl</code>+<code>C</code>停止服务 （hugo默认是没有主题的，需要进行主题配置）<br>
+<img src="/images/HtbuBlog/img7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img7"
+	
+	
+></li>
+</ul>
+<h2 id="22-配置主题">2.2 配置主题
+</h2><ul>
+<li>（1）前往【Hugo Themes】，查找自己喜欢的主题，进行下载<br>
+<img src="/images/HtbuBlog/img8.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img8"
+	
+	
+></li>
+<li>（2）这边以【Stack主题】为例，将下载好的主题解压，放到/themes文件夹中<br>
+<img src="/images/HtbuBlog/img9.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img9"
+	
+	
+></li>
+<li>（3）将exampleSite样例数据中的 Content 和 hugo.yaml 复制到主文件夹中，并删掉hugo.toml和content/post/rich-content<br>
+<img src="/images/HtbuBlog/img10.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img10"
 	
 	
 ><br>
-这里以EXAMPLE_SOUP为例子</p>
-<h2 id="moditems">ModItems:
-</h2><div class="highlight"><div class="chroma">
+<img src="/images/HtbuBlog/img11.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img11"
+	
+	
+></li>
+<li>（4）修改 hugo.yaml 中的 theme，将他修改为跟主题文件夹同名<br>
+<img src="/images/HtbuBlog/img12.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img12"
+	
+	
+></li>
+<li>（5）再次启动hugo服务，查看主题，具体主题配置修改 hugo.yaml，这里不细说，感兴趣可自行查找相关文章<br>
+<img src="/images/HtbuBlog/img13.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img13"
+	
+	
+></li>
+</ul>
+<h1 id="3-github部署">3 Github部署
+</h1><h2 id="31-常规部署">3.1 常规部署
+</h2><ul>
+<li>（1）前往<a class="link" href="https://github.com/"  target="_blank" rel="noopener"
+    >【Github官网】</a>，创建仓库 {github用户名}.github.io<br>
+<img src="/images/HtbuBlog/img14.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img14"
+	
+	
+></li>
+<li>（2）前往<code>Setting -&gt; Pages -&gt; Branch</code>选择main分支，然后保存，会自动开启 https://{github用户名}.github.io 的地址，这地址也是以后访问博客的地址<br>
+<img src="/images/HtbuBlog/img15.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img15"
+	
+	
+></li>
+<li>（3）回到hugo文件中，执行命令hugo -D，会生成 public 静态资源文件夹
+<img src="/images/HtbuBlog/img16.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img16"
+	
+	
+></li>
+<li>（4）在 public 执行以下命令上传到github仓库上，第一次上传可能需要输入账号密码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;first commit&#34;
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git remote add origin {你的github仓库地址}
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>（5）上传成功后访问 https://{github用户名}.github.io，成功搭建属于自己的Hugo博客</li>
+</ul>
+<h2 id="32-github-action自动部署">3.2 Github Action自动部署
+</h2><ul>
+<li>（1）Github创建一个新的仓库，用于存放Hugo的主文件</li>
+<li>（2）前往<code>Setttings -&gt; Developer Settings -&gt; Personal access tokens</code>，创建一个token(classic)<br>
+<img src="/images/HtbuBlog/img17.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img17"
+	
+	
+></li>
+<li>（3）token选择永不过期，并勾选 repo 和 workflow 选项<br>
+<img src="/images/HtbuBlog/img18.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img18"
+	
+	
+></li>
+<li>（4）为保证安全，将生成的token，保存的仓库的变量中，前往Settings -&gt; Secrets and variables -&gt; Actions中设置<br>
+<img src="/images/HtbuBlog/img19.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img19"
+	
+	
+><br>
+<img src="/images/HtbuBlog/img20.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img20"
+	
+	
+></li>
+<li>（5）在hugo主文件创建一个.github/workflows/xxxx.yaml文件，将以下内容复制进去，想具体了解更多，可查看<a class="link" href="https://docs.github.com/zh/actions"  target="_blank" rel="noopener"
+    >【Github Action文档】</a></li>
+</ul>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -424,23 +651,92 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModItems {
-</span></span><span class="line"><span class="cl">	public static final Item EXAMPLE_SOUP = 
-</span></span><span class="line"><span class="cl">		register(&#34;example_soup&#34;, Item::new, new Item.Settings()
-</span></span><span class="line"><span class="cl">		.maxCount(1)
-</span></span><span class="line"><span class="cl">		.food(ModFoodComponents.EXAMPLE_SOUP,ModFoodConsumableComponents.EXAMPLE_SOUP)
-</span></span><span class="line"><span class="cl">		//food两个参数，ModFoodComponents.XXX是食物的普通数值和属性
-</span></span><span class="line"><span class="cl">		//ModFoodConsumableComponents.XXX是食物给予的药水效果等属性
-</span></span><span class="line"><span class="cl">		//这里的XXX要与后面两个类中名称一致
-</span></span><span class="line"><span class="cl">		.useRemainder(BOWL));//归还玩家一个碗
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: deploy
+</span></span><span class="line"><span class="cl"># 代码提交到main分支时触发github action
+</span></span><span class="line"><span class="cl">on:
+</span></span><span class="line"><span class="cl">  push:
+</span></span><span class="line"><span class="cl">    branches:
+</span></span><span class="line"><span class="cl">      - main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">jobs:
+</span></span><span class="line"><span class="cl">  deploy:
+</span></span><span class="line"><span class="cl">    runs-on: ubuntu-latest
+</span></span><span class="line"><span class="cl">    steps:
+</span></span><span class="line"><span class="cl">        - name: Checkout
+</span></span><span class="line"><span class="cl">          uses: actions/checkout@v4
+</span></span><span class="line"><span class="cl">          with:
+</span></span><span class="line"><span class="cl">              fetch-depth: 0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        - name: Setup Hugo
+</span></span><span class="line"><span class="cl">          uses: peaceiris/actions-hugo@v3
+</span></span><span class="line"><span class="cl">          with:
+</span></span><span class="line"><span class="cl">              hugo-version: &#34;latest&#34;
+</span></span><span class="line"><span class="cl">              extended: true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        - name: Build Web
+</span></span><span class="line"><span class="cl">          run: hugo -D
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        - name: Deploy Web
+</span></span><span class="line"><span class="cl">          uses: peaceiris/actions-gh-pages@v4
+</span></span><span class="line"><span class="cl">          with:
+</span></span><span class="line"><span class="cl">              PERSONAL_TOKEN: ${{ secrets.你的token变量名 }}
+</span></span><span class="line"><span class="cl">              EXTERNAL_REPOSITORY: 你的github名/你的仓库名
+</span></span><span class="line"><span class="cl">              PUBLISH_BRANCH: main
+</span></span><span class="line"><span class="cl">              PUBLISH_DIR: ./public
+</span></span><span class="line"><span class="cl">              commit_message: auto deploy
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="modfoodcomponents">ModFoodComponents：
-</h2><div class="highlight"><div class="chroma">
+</div><ul>
+<li>（6）在hugo主文件创建.gitignore文件，来避免提交不必要的文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 自动生成的文件
+</span></span><span class="line"><span class="cl">public
+</span></span><span class="line"><span class="cl">resources
+</span></span><span class="line"><span class="cl">.hugo_build.lock
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># hugo命令
+</span></span><span class="line"><span class="cl">hugo.exe
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>（7）将hugo的主文件上传到仓库，上传成功后会触发Github Action，来自动部署你的静态页面</li>
+</ul>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -450,42 +746,145 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModFoodComponents {
-</span></span><span class="line"><span class="cl">  	//使用alwaysEdible()将使得食物始终可以食用
-</span></span><span class="line"><span class="cl">  	public static final FoodComponent EXAMPLE_SOUP = new FoodComponent.Builder().nutrition(2).saturationModifier(0.3F).alwaysEdible().build();
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;first commit&#34;
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git remote add origin {你的github仓库地址}
+</span></span><span class="line"><span class="cl">git push -u origin main
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="modfoodconsumablecomponents">ModFoodConsumableComponents:
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModFoodConsumableComponents {
-</span></span><span class="line"><span class="cl">	//药水效果需要放到一个StatusEffectInstance类型的List中,但我这没开单独的容器
-</span></span><span class="line"><span class="cl">	public static final ConsumableComponent EXAMPLE_SOUP = 
-</span></span><span class="line"><span class="cl">			food().consumeEffect(new ApplyEffectsConsumeEffect(List.of(
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.REGENERATION, 100, 1),
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.ABSORPTION, 2400, 0),
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 2400, 0))))
-</span></span><span class="line"><span class="cl">		.build();
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div><p><img src="/images/HtbuBlog/img21.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img21"
+	
+	
+></p>
+<h1 id="4-zephyrbd个人补充部分">4 ZephyrBD个人补充部分
+</h1><h2 id="第一次使用git的教程">第一次使用git的教程
+</h2><ul>
+<li>（1）生成（配置）SSH，打开Git Bush，输入<br>
+<code>git config --global user.name &quot;注册名&quot;</code>
+<img src="/images/HtbuBlog/img22.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img22"
+	
+	
+><br>
+或者<br>
+<code>git config --global user.email &quot;注册邮箱&quot;</code><br>
+<img src="/images/HtbuBlog/img23.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img23"
+	
+	
+></li>
+<li>（2）生成SSH<br>
+<code>ssh-keygen -t rsa -C &quot;自己的邮箱&quot;</code><br>
+生成成功，如下图所示：<br>
+<img src="/images/HtbuBlog/img24.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img24"
+	
+	
+><br>
+SSH文件存放在<code>C:/User/用户/.ssh</code>下，id_rsa为私钥，id_rsa.pub为公钥。<br>
+<img src="/images/HtbuBlog/img25.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img25"
+	
+	
+></li>
+<li>（3）github配置SSH<br>
+打开id_rsa.pub文件，全选，复制全文，转到<code>github-&gt;账户-&gt;setting</code><br>
+<img src="/images/HtbuBlog/img26.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img26"
+	
+	
+>
+<img src="/images/HtbuBlog/img27.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img27"
+	
+	
+></li>
+<li>（4）选择SSH and GPGkeys，New SSH key
+<img src="/images/HtbuBlog/img28.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img28"
+	
+	
+></li>
+<li>（5）自定义一个title，然后粘贴从公钥文件中拷贝的key
+<img src="/images/HtbuBlog/img29.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img27"
+	
+	
+></li>
+<li>（6）测试SSH连接<br>
+<code>ssh -T git@github.com</code>
+<img src="/images/HtbuBlog/img30.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img28"
+	
+	
+><br>
+<img src="/images/HtbuBlog/img31.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img29"
+	
+	
+><br>
+按照提示输入yes，回车，提示successfully之类的就说明SSH连接正常，github上的钥匙也会变成绿色<br>
+至此，本地git客户端和远程github建立了联系。</li>
+</ul>
+
 </section>
 
 
@@ -583,18 +982,18 @@
             
                 
 <article class="has-image">
-    <a href="/p/howtobuildablog/">
+    <a href="/p/firstfabricmoddevlog_3/">
         
         
             <div class="article-image">
                 
-                    <img src="https://zephyrbd.github.io/images/HtbuBlog/img1.png" loading="lazy" data-key="howtobuildablog" data-hash="https://zephyrbd.github.io/images/HtbuBlog/img1.png"/>
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img3.png" loading="lazy" data-key="FirstFabricModDevLog_3" data-hash="https://zephyrbd.github.io/images/MCFDev/img3.png"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【Hugo】Hugo &#43; Github 免费部署自己的博客</h2>
+            <h2 class="article-title">在MC1.21.4中创建食物的相同与区别</h2>
         </div>
     </a>
 </article>
