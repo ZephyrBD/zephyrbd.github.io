@@ -457,7 +457,7 @@ FabircAPI在<br>
 2. 然后在ModItemTagsProvider使用copy函数复制到自己的ItemTag(<code>GLASS_TAG</code>)中<br>
 <code>this.copy(ModBlockTags.GLASS_LIST, ModItemTags.GLASS_TAG);</code><br>
 3. 以上结果在使用recipeProvider生成时没遇到问题，但是游戏运行后结果如下<br>
-<code>[Render thread/ERROR] (Minecraft) Couldn't load tag firstfabricmod:glass_tag as it is missing following references: &lt;#789950127774105602&gt;:impermeable (from firstfabricmod)</code>
+<code>[Render thread/ERROR] (Minecraft) Couldn't load tag firstfabricmod:glass_tag as it is missing following references: &lt;#789950127774105602&gt;:impermeable (from firstfabricmod)</code><br>
 所以配方也是无效的</p>
 <h2 id="阶段四尝试直接copy-blocktagsimpermeable">阶段四，尝试直接copy <code>BlockTags.IMPERMEABLE</code>
 </h2><p>代码如下：<br>
