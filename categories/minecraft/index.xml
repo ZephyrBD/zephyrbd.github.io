@@ -19,7 +19,7 @@
 不知道重生想干什么，也不知道玩家多了对游戏能有什么坏处，
 但这种B事就是发生了，
 我不得不告别Apex，这里给上&lt;code&gt;@Leamonheadtv&lt;/code&gt;的一段话。&lt;br&gt;
-&lt;code&gt;English: lt&#39;s embarrassing and a middle finger to actual gamers.&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;English: Respawn figures out that they don&#39;t deserve to haveApex Legends under their development team.lt&#39;s embarrassing and a middle finger to actual gamers.&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;Chinese: 重生对我们的热爱，和对身法的极致追求，竖了一个中指，并叫我们滚蛋&lt;/code&gt;&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img4.2.png&#34;
 	
@@ -53,7 +53,7 @@
 &lt;br&gt;
 &lt;strong&gt;如果你只是想添加玻璃方块的Tags到配方中，请先看这&lt;/strong&gt;&lt;br&gt;
 FabircAPI在&lt;br&gt;
-&lt;code&gt;net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags&lt;/code&gt;     &lt;br&gt;
 中提供了&lt;code&gt;GLASS_BLOCKS&lt;/code&gt;的标签，直接用就完事。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;后面是我的研究过程&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;阶段一moditemtagsprovider中构造函数的新写法&#34;&gt;阶段一：&lt;code&gt;ModItemTagsProvider&lt;/code&gt;中构造函数的新写法
