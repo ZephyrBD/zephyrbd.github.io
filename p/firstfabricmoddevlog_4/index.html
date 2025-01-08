@@ -341,7 +341,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1047 字
+                    986 字
                 </time>
             </div>
         
@@ -357,7 +357,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -412,7 +412,8 @@
 <br>
 <strong>如果你只是想添加玻璃方块的Tags到配方中，请先看这</strong><br>
 FabircAPI在<br>
-<code>net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags</code>中提供了<code>GLASS_BLOCKS</code>的标签，直接用就完事。</p>
+<code>net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags</code><br>
+中提供了<code>GLASS_BLOCKS</code>的标签，直接用就完事。</p>
 <p><strong>后面是我的研究过程</strong></p>
 <h2 id="阶段一moditemtagsprovider中构造函数的新写法">阶段一：<code>ModItemTagsProvider</code>中构造函数的新写法
 </h2><div class="highlight"><div class="chroma">
@@ -464,7 +465,7 @@ FabircAPI在<br>
 <h2 id="阶段四尝试直接copy-blocktagsimpermeable">阶段四，尝试直接copy <code>BlockTags.IMPERMEABLE</code>
 </h2><p>代码如下：<br>
 <code>this.copy(BlockTags.IMPERMEABLE, ModItemTags.GLASS_TAG);</code><br>
-<code>GLASS_TAG</code>的json文件生成了，但是values是空的
+<code>GLASS_TAG</code>的json文件生成了，但是values是空的<br>
 JSON文件内容如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
