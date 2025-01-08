@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MC Mod Dev</title>
+        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
+        <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/mc-mod-dev/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
+        </item>
+        <item>
+        <title>Minecraft</title>
+        <link>https://zephyrbd.github.io/categories/minecraft/</link>
+        <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
+        </item>
+        <item>
         <title>Hugo</title>
         <link>https://zephyrbd.github.io/categories/hugo/</link>
         <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
@@ -22,22 +38,6 @@
         
         <guid>https://zephyrbd.github.io/categories/cpp-dev/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/categories/cpp-dev/CPPICON.jpg" alt="Featured image of post CPP Dev" /&gt;</description>
-        </item>
-        <item>
-        <title>MC Mod Dev</title>
-        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/categories/mc-mod-dev/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
-        </item>
-        <item>
-        <title>Minecraft</title>
-        <link>https://zephyrbd.github.io/categories/minecraft/</link>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
         </item>
         <item>
         <title>Technology</title>
