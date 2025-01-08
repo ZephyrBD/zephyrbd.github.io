@@ -240,7 +240,46 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#先说说今天的心情">先说说今天的心情</a></li>
+    <li><a href="#参考视频">参考视频：</a></li>
+    <li><a href="#阶段一moditemtagsprovider中构造函数的新写法">阶段一：<code>ModItemTagsProvider</code>中构造函数的新写法</a></li>
+    <li><a href="#阶段二在datagenerator中重新新建实例">阶段二：在<code>DataGenerator</code>中重新新建实例</a></li>
+    <li><a href="#阶段三尝试把blocktagsimpermeable复制到glass_tag中">阶段三：尝试把<code>BlockTags.IMPERMEABLE</code>复制到<code>GLASS_TAG</code>中</a></li>
+    <li><a href="#阶段四尝试直接copy-blocktagsimpermeable">阶段四，尝试直接copy <code>BlockTags.IMPERMEABLE</code></a></li>
+    <li><a href="#总结">总结：</a></li>
+    <li><a href="#特别感谢以下两位fabric频道中的高手给予的帮助">特别感谢以下两位Fabric频道中的高手给予的帮助</a></li>
+    <li><a href="#参考代码">参考代码：</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -333,8 +372,8 @@
     <section class="article-content">
     
     
-    <h1 id="先说说今天的心情">先说说今天的心情
-</h1><p>看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，我的心情也是极度的难过，
+    <h2 id="先说说今天的心情">先说说今天的心情
+</h2><p>看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，我的心情也是极度的难过，
 不知道重生想干什么，也不知道玩家多了对游戏能有什么坏处，但这就是发生，
 我不得不告别Apex，这里给上<code>@Leamonheadtv</code>的一段话。<br>
 <code>English: lt's embarrassing and a middle finger to actual gamers.</code><br>
@@ -349,8 +388,8 @@
 	
 	
 ></p>
-<h1 id="参考视频">参考视频：
-</h1><p>
+<h2 id="参考视频">参考视频：
+</h2><p>
 
 
 
@@ -368,13 +407,13 @@
     >
     </iframe>
 </div>
-
+<br>
 <strong>如果你只是想添加玻璃方块的Tags到配方中，请先看这</strong><br>
 FabircAPI在<br>
 <code>net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags</code>中提供了<code>GLASS_BLOCKS</code>的标签，直接用就完事。</p>
 <p><strong>后面是我的研究过程</strong></p>
-<h1 id="阶段一moditemtagsprovider中构造函数的新写法">阶段一：<code>ModItemTagsProvider</code>中构造函数的新写法
-</h1><div class="highlight"><div class="chroma">
+<h2 id="阶段一moditemtagsprovider中构造函数的新写法">阶段一：<code>ModItemTagsProvider</code>中构造函数的新写法
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -387,8 +426,8 @@ FabircAPI在<br>
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样写使得在后面的<code>configure</code>方法中能引入copy函数。</p>
-<h1 id="阶段二在datagenerator中重新新建实例">阶段二：在<code>DataGenerator</code>中重新新建实例
-</h1><div class="highlight"><div class="chroma">
+<h2 id="阶段二在datagenerator中重新新建实例">阶段二：在<code>DataGenerator</code>中重新新建实例
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -412,16 +451,16 @@ FabircAPI在<br>
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//ModBlockTagsProvider在这里重新定义ModItemTagsProvider被定义了，所以无需单独再定义ModBlockTagsProvider</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="阶段三尝试把blocktagsimpermeable复制到glass_tag中">阶段三：尝试把<code>BlockTags.IMPERMEABLE</code>复制到<code>GLASS_TAG</code>中
-</h1><p>1.尝试新建一个自己的BlockTag(<code>GLASS_LIST</code>)来复制BlockTags.IMPERMEABLE； <br>
+</div><h2 id="阶段三尝试把blocktagsimpermeable复制到glass_tag中">阶段三：尝试把<code>BlockTags.IMPERMEABLE</code>复制到<code>GLASS_TAG</code>中
+</h2><p>1.尝试新建一个自己的BlockTag(<code>GLASS_LIST</code>)来复制BlockTags.IMPERMEABLE； <br>
 <code>getOrCreateTagBuilder(ModBlockTags.GLASS_LIST).forceAddTag(BlockTags.IMPERMEABLE);</code><br>
 2. 然后在ModItemTagsProvider使用copy函数复制到自己的ItemTag(<code>GLASS_TAG</code>)中<br>
 <code>this.copy(ModBlockTags.GLASS_LIST, ModItemTags.GLASS_TAG);</code>
 3. 以上结果在使用recipeProvider生成时没遇到问题，但是游戏运行后结果如下<br>
 <code>[Render thread/ERROR] (Minecraft) Couldn't load tag firstfabricmod:glass_tag as it is missing following references: &lt;#789950127774105602&gt;:impermeable (from firstfabricmod)</code>
 所以配方也是无效的</p>
-<h1 id="阶段四尝试直接copy-blocktagsimpermeable">阶段四，尝试直接copy <code>BlockTags.IMPERMEABLE</code>
-</h1><p>代码如下：<br>
+<h2 id="阶段四尝试直接copy-blocktagsimpermeable">阶段四，尝试直接copy <code>BlockTags.IMPERMEABLE</code>
+</h2><p>代码如下：<br>
 <code>this.copy(BlockTags.IMPERMEABLE, ModItemTags.GLASS_TAG);</code><br>
 <code>GLASS_TAG</code>的json文件生成了，但是values是空的
 JSON文件内容如下：</p>
@@ -437,11 +476,11 @@ JSON文件内容如下：</p>
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="总结">总结：
-</h1><p><code>BlockTags.IMPERMEABLE</code>貌似是一个特殊的<code>BlockTag</code>标签，即使被<code>copy</code>到<code>ItemTag</code>中也无法正确被游戏使用（至少我们在<a class="link" href="https://discord.com/invite/v6v4pMv"  target="_blank" rel="noopener"
+</div><h2 id="总结">总结：
+</h2><p><code>BlockTags.IMPERMEABLE</code>貌似是一个特殊的<code>BlockTag</code>标签，即使被<code>copy</code>到<code>ItemTag</code>中也无法正确被游戏使用（至少我们在<a class="link" href="https://discord.com/invite/v6v4pMv"  target="_blank" rel="noopener"
     >Discord Fabric</a>的频道中讨论结果是这样的），最后直接使用<code>FabricAPI</code>提供的Tags就好。</p>
-<h1 id="特别感谢以下两位fabric频道中的高手给予的帮助">特别感谢以下两位Fabric频道中的高手给予的帮助
-</h1><p><img src="/images/MCFDev/img4.1.png"
+<h2 id="特别感谢以下两位fabric频道中的高手给予的帮助">特别感谢以下两位Fabric频道中的高手给予的帮助
+</h2><p><img src="/images/MCFDev/img4.1.png"
 	
 	
 	
@@ -453,8 +492,8 @@ JSON文件内容如下：</p>
 ><br>
 <strong>@marea<br>
 @𓆩⟡ 𝑵𝐨𝐯𝐚 ⟡𓆪</strong></p>
-<h1 id="参考代码">参考代码：
-</h1><p><a class="link" href="https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/main/src/main/java/appeng/datagen/providers/tags/ConventionTags.java"  target="_blank" rel="noopener"
+<h2 id="参考代码">参考代码：
+</h2><p><a class="link" href="https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/main/src/main/java/appeng/datagen/providers/tags/ConventionTags.java"  target="_blank" rel="noopener"
     >Github - AppliedEnergistics 2</a></p>
 
 </section>
