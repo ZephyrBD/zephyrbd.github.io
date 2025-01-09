@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zephyrbd.github.io/p/howtobuildablog/'>
 
-<link rel="stylesheet" href="/scss/style.min.517175f44ee60462fc1debd534d0eb41162f1aa3433a8bff99fec7bb4f5fed84.css"><meta property='og:title' content="【Hugo】Hugo + Github 免费部署自己的博客">
+<link rel="stylesheet" href="/scss/style.min.49ef3d246340628c20a2046d4d8ad0afeb74b810c3a10c2b48a6816363542438.css"><meta property='og:title' content="【Hugo】Hugo + Github 免费部署自己的博客">
 <meta property='og:description' content="使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客">
 <meta property='og:url' content='https://zephyrbd.github.io/p/howtobuildablog/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
@@ -15,7 +15,7 @@
 <meta name="twitter:description" content="使用hugo工具生成静态页面，然后在github上部署静态页面，来免费搭建自己的博客"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://zephyrbd.github.io/images/HtbuBlog/img1.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
     </head>
     <body class="
     article-page
@@ -262,22 +262,29 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-git下载">1.1 Git下载</a></li>
-    <li><a href="#12-hugo下载">1.2 Hugo下载</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-创建博客">2.1 创建博客</a></li>
-    <li><a href="#22-配置主题">2.2 配置主题</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-常规部署">3.1 常规部署</a></li>
-    <li><a href="#32-github-action自动部署">3.2 Github Action自动部署</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#第一次使用git的教程">第一次使用git的教程</a></li>
+    <li><a href="#1-环境准备">1 环境准备</a>
+      <ol>
+        <li><a href="#git下载">Git下载</a></li>
+        <li><a href="#hugo下载">Hugo下载</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-搭建博客">2 搭建博客</a>
+      <ol>
+        <li><a href="#创建博客">创建博客</a></li>
+        <li><a href="#配置主题">配置主题</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-github部署">3 Github部署</a>
+      <ol>
+        <li><a href="#常规部署">常规部署</a></li>
+        <li><a href="#github-action自动部署">Github Action自动部署</a></li>
+      </ol>
+    </li>
+    <li><a href="#4-zephyrbd个人补充部分">4 ZephyrBD个人补充部分</a>
+      <ol>
+        <li><a href="#第一次使用git的教程">第一次使用git的教程</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -344,7 +351,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1857 字
+                    1836 字
                 </time>
             </div>
         
@@ -375,10 +382,10 @@
     <section class="article-content">
     
     
-    <p><strong>此文章系转载文章，不适用于该文章底部的版权声明</strong><br>
+    <p><strong>此文章系转载文章</strong><br>
 <strong>作者：莱特雷-letere</strong><br>
 <strong>来自：<a class="link" href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/"  target="_blank" rel="noopener"
-    >莱特雷-letere&rsquo;s Blog</a></strong>
+    >莱特雷-letere&rsquo;s Blog</a></strong><br>
 
 
 
@@ -398,9 +405,9 @@
     </iframe>
 </div>
 </p>
-<h1 id="1-环境准备">1 环境准备
-</h1><h2 id="11-git下载">1.1 Git下载
-</h2><ul>
+<h2 id="1-环境准备">1 环境准备
+</h2><h3 id="git下载">Git下载
+</h3><ul>
 <li>前往<a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
     >【Git官网】</a>，下载安装程序</li>
 <li>一直点下一步，默认安装即可<br>
@@ -415,8 +422,8 @@
 	
 ></li>
 </ul>
-<h2 id="12-hugo下载">1.2 Hugo下载
-</h2><ul>
+<h3 id="hugo下载">Hugo下载
+</h3><ul>
 <li>前往<a class="link" href="https://github.com/gohugoio/hugo/tags"  target="_blank" rel="noopener"
     >【Hugo Github Tags】</a>，选择对应版本下载，下载后解压即可</li>
 <li>Windows下载版本：hugo_extended_xxxxx_windows_amd64.zip<br>
@@ -431,9 +438,9 @@
 	
 ></li>
 </ul>
-<h1 id="2-搭建博客">2 搭建博客
-</h1><h2 id="21-创建博客">2.1 创建博客
-</h2><ul>
+<h2 id="2-搭建博客">2 搭建博客
+</h2><h3 id="创建博客">创建博客
+</h3><ul>
 <li>（1）在hugo.exe所在文件夹的地址栏敲打cmd，然后Enter唤起命令行<br>
 <img src="/images/HtbuBlog/img4.png"
 	
@@ -490,8 +497,8 @@
 	
 ></li>
 </ul>
-<h2 id="22-配置主题">2.2 配置主题
-</h2><ul>
+<h3 id="配置主题">配置主题
+</h3><ul>
 <li>（1）前往【Hugo Themes】，查找自己喜欢的主题，进行下载<br>
 <img src="/images/HtbuBlog/img9.png"
 	
@@ -558,9 +565,9 @@
 	
 ></li>
 </ul>
-<h1 id="3-github部署">3 Github部署
-</h1><h2 id="31-常规部署">3.1 常规部署
-</h2><ul>
+<h2 id="3-github部署">3 Github部署
+</h2><h3 id="常规部署">常规部署
+</h3><ul>
 <li>（1）前往<a class="link" href="https://github.com/"  target="_blank" rel="noopener"
     >【Github官网】</a>，创建仓库 {github用户名}.github.io<br>
 <img src="/images/HtbuBlog/img15.png"
@@ -618,8 +625,8 @@
 </div><ul>
 <li>（5）上传成功后访问 https://{github用户名}.github.io，成功搭建属于自己的Hugo博客</li>
 </ul>
-<h2 id="32-github-action自动部署">3.2 Github Action自动部署
-</h2><ul>
+<h3 id="github-action自动部署">Github Action自动部署
+</h3><ul>
 <li>（1）Github创建一个新的仓库，用于存放Hugo的主文件</li>
 <li>（2）前往<code>Setttings -&gt; Developer Settings -&gt; Personal access tokens</code>，创建一个token(classic)<br>
 <img src="/images/HtbuBlog/img18.png"
@@ -793,9 +800,9 @@
 	
 	
 ></p>
-<h1 id="4-zephyrbd个人补充部分">4 ZephyrBD个人补充部分
-</h1><h2 id="第一次使用git的教程">第一次使用git的教程
-</h2><ul>
+<h2 id="4-zephyrbd个人补充部分">4 ZephyrBD个人补充部分
+</h2><h3 id="第一次使用git的教程">第一次使用git的教程
+</h3><ul>
 <li>（1）生成（配置）SSH，打开Git Bush，输入<br>
 <code>git config --global user.name &quot;注册名&quot;</code>
 <img src="/images/HtbuBlog/img22.png"
@@ -1088,11 +1095,64 @@ SSH文件存放在<code>C:/User/用户/.ssh</code>下，id_rsa为私钥，id_rsa
 			
 			
 		
-		<div>
-			<time class="post-word-count">
-			   全站总字数: 3019
-			</time>
-         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+		
+		<section class="totalcount">
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			发表了10篇文章 · 
+			总计9.72k字
+		</section>
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script language="javascript"> 
+			var now = new Date();
+			function createtime(){
+				now.setTime(now.getTime()+250); 
+				var grt= new Date("2020/9/20 15:00:00"); 
+				days = (now - grt ) / 1000 / 60 / 60 / 24;
+				dnum = Math.floor(days);
+				hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+				hnum = Math.floor(hours);
+				if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+				minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+				mnum = Math.floor(minutes);
+				if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+				seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				snum = Math.round(seconds);
+				if(String(snum).length ==1 ){snum = "0" + snum;}
+
+				document.getElementById("timeDate").innerHTML = "本站已稳定运行"+dnum+" 天 ";
+				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
+			}
+			setInterval("createtime()",250); 
+		</script><br>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>

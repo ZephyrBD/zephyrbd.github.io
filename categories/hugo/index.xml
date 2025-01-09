@@ -13,10 +13,10 @@
         <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/howtobuildablog/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/HtbuBlog/img1.png" alt="Featured image of post 【Hugo】Hugo &#43; Github 免费部署自己的博客" /&gt;&lt;p&gt;&lt;strong&gt;此文章系转载文章，不适用于该文章底部的版权声明&lt;/strong&gt;&lt;br&gt;
+        <description>&lt;img src="https://zephyrbd.github.io/images/HtbuBlog/img1.png" alt="Featured image of post 【Hugo】Hugo &#43; Github 免费部署自己的博客" /&gt;&lt;p&gt;&lt;strong&gt;此文章系转载文章&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;作者：莱特雷-letere&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;来自：&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;莱特雷-letere&amp;rsquo;s Blog&lt;/a&gt;&lt;/strong&gt;
+    &gt;莱特雷-letere&amp;rsquo;s Blog&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 
 
 
@@ -36,9 +36,9 @@
     &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/p&gt;
-&lt;h1 id=&#34;1-环境准备&#34;&gt;1 环境准备
-&lt;/h1&gt;&lt;h2 id=&#34;11-git下载&#34;&gt;1.1 Git下载
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;1-环境准备&#34;&gt;1 环境准备
+&lt;/h2&gt;&lt;h3 id=&#34;git下载&#34;&gt;Git下载
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;前往&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Git官网】&lt;/a&gt;，下载安装程序&lt;/li&gt;
 &lt;li&gt;一直点下一步，默认安装即可&lt;br&gt;
@@ -53,8 +53,8 @@
 	
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;12-hugo下载&#34;&gt;1.2 Hugo下载
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;hugo下载&#34;&gt;Hugo下载
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;前往&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/tags&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Hugo Github Tags】&lt;/a&gt;，选择对应版本下载，下载后解压即可&lt;/li&gt;
 &lt;li&gt;Windows下载版本：hugo_extended_xxxxx_windows_amd64.zip&lt;br&gt;
@@ -69,9 +69,9 @@
 	
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2-搭建博客&#34;&gt;2 搭建博客
-&lt;/h1&gt;&lt;h2 id=&#34;21-创建博客&#34;&gt;2.1 创建博客
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;2-搭建博客&#34;&gt;2 搭建博客
+&lt;/h2&gt;&lt;h3 id=&#34;创建博客&#34;&gt;创建博客
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;（1）在hugo.exe所在文件夹的地址栏敲打cmd，然后Enter唤起命令行&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img4.png&#34;
 	
@@ -128,8 +128,8 @@
 	
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;22-配置主题&#34;&gt;2.2 配置主题
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;配置主题&#34;&gt;配置主题
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;（1）前往【Hugo Themes】，查找自己喜欢的主题，进行下载&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img9.png&#34;
 	
@@ -196,9 +196,9 @@
 	
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;3-github部署&#34;&gt;3 Github部署
-&lt;/h1&gt;&lt;h2 id=&#34;31-常规部署&#34;&gt;3.1 常规部署
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;3-github部署&#34;&gt;3 Github部署
+&lt;/h2&gt;&lt;h3 id=&#34;常规部署&#34;&gt;常规部署
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;（1）前往&lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Github官网】&lt;/a&gt;，创建仓库 {github用户名}.github.io&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img15.png&#34;
@@ -256,8 +256,8 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;（5）上传成功后访问 https://{github用户名}.github.io，成功搭建属于自己的Hugo博客&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;32-github-action自动部署&#34;&gt;3.2 Github Action自动部署
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;github-action自动部署&#34;&gt;Github Action自动部署
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;（1）Github创建一个新的仓库，用于存放Hugo的主文件&lt;/li&gt;
 &lt;li&gt;（2）前往&lt;code&gt;Setttings -&amp;gt; Developer Settings -&amp;gt; Personal access tokens&lt;/code&gt;，创建一个token(classic)&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img18.png&#34;
@@ -431,9 +431,9 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h1 id=&#34;4-zephyrbd个人补充部分&#34;&gt;4 ZephyrBD个人补充部分
-&lt;/h1&gt;&lt;h2 id=&#34;第一次使用git的教程&#34;&gt;第一次使用git的教程
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;4-zephyrbd个人补充部分&#34;&gt;4 ZephyrBD个人补充部分
+&lt;/h2&gt;&lt;h3 id=&#34;第一次使用git的教程&#34;&gt;第一次使用git的教程
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;（1）生成（配置）SSH，打开Git Bush，输入&lt;br&gt;
 &lt;code&gt;git config --global user.name &amp;quot;注册名&amp;quot;&lt;/code&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img22.png&#34;

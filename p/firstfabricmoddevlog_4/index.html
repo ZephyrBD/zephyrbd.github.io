@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_4/'>
 
-<link rel="stylesheet" href="/scss/style.min.517175f44ee60462fc1debd534d0eb41162f1aa3433a8bff99fec7bb4f5fed84.css"><meta property='og:title' content="个人在给探矿器添加配方时遇到的问题">
+<link rel="stylesheet" href="/scss/style.min.49ef3d246340628c20a2046d4d8ad0afeb74b810c3a10c2b48a6816363542438.css"><meta property='og:title' content="个人在给探矿器添加配方时遇到的问题">
 <meta property='og:description' content="FirstFabricModDev 4">
 <meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_4/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
@@ -15,7 +15,7 @@
 <meta name="twitter:description" content="FirstFabricModDev 4"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img4.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
     </head>
     <body class="
     article-page
@@ -777,11 +777,64 @@ JSON文件内容如下：</p>
 			
 			
 		
-		<div>
-			<time class="post-word-count">
-			   全站总字数: 3019
-			</time>
-         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+		
+		<section class="totalcount">
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			发表了10篇文章 · 
+			总计9.72k字
+		</section>
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script language="javascript"> 
+			var now = new Date();
+			function createtime(){
+				now.setTime(now.getTime()+250); 
+				var grt= new Date("2020/9/20 15:00:00"); 
+				days = (now - grt ) / 1000 / 60 / 60 / 24;
+				dnum = Math.floor(days);
+				hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+				hnum = Math.floor(hours);
+				if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+				minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+				mnum = Math.floor(minutes);
+				if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+				seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				snum = Math.round(seconds);
+				if(String(snum).length ==1 ){snum = "0" + snum;}
+
+				document.getElementById("timeDate").innerHTML = "本站已稳定运行"+dnum+" 天 ";
+				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
+			}
+			setInterval("createtime()",250); 
+		</script><br>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
