@@ -207,7 +207,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;你会发现&lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\items\plate.json&lt;/code&gt;中的&lt;code&gt;when&lt;/code&gt;已经被Mojang写死在这了，所以要实现像视频中那样只在&lt;code&gt;GUI&lt;/code&gt;中渲染为2D的话，你需要重写这个方法。
 不过还有个简单的形式是你直接去修改生成的JSON文件中的&lt;code&gt;when&lt;/code&gt;的值&lt;br&gt;
-（Tip：数据生成在下次运行的时候不会修改你手动改过的文件）
+（Tip：数据生成在下次运行的时候不会修改你手动改过的文件）&lt;br&gt;
 这样你在1.21.4中就实现了如下效果&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img5.1.png&#34;
 	
