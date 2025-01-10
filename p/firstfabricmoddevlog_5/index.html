@@ -340,7 +340,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1181 字
+                    1182 字
                 </time>
             </div>
         
@@ -394,7 +394,7 @@
 <h2 id="mojang为item重写了model加载方法">Mojang为item重写了Model加载方法
 </h2><p>我在<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_1/"  target="_blank" rel="noopener"
     >在MC1.21.4中创建Item时候遇到的问题</a>中提到的Mojang在
-1.21.4版本中要求新建一个这个路径的文件夹，而这就是引发这件事的根源<br>
+1.21.4版本中要求新建一个这个路径的文件夹，而这就是引发这件事的根源。<br>
 <code>assets/&lt;namespace&gt;/items</code><br>
 这里也是以原版的望远镜为例子，它在该路径下的json文件如下：</p>
 <div class="highlight"><div class="chroma">
@@ -469,7 +469,7 @@
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>我们又知道
+</div><p>我们又知道<br>
 <strong><code>ModModelsProvider</code>继承于<code>FabricModelProvider</code>继承于<code>ItemModelGenerator</code></strong><br>
 所以我们在<code>ModModelsProvider</code>的<code>generateItemModels</code>方法中直接就可以使用<code>registerWithInHandModel</code>方法<br>
 具体如下：</p>
@@ -497,8 +497,8 @@
 <ol>
 <li><code>assets\&lt;yourModID&gt;\items\plate.json</code></li>
 <li><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
-这看起来和使用<code>register</code>方法没有区别，但实际上再&lt;1&gt;路径下的文件结构和上面“原版的望远镜”一样了，为了便于区别，
-这里给一个普通物品的该JSON：</li>
+这看起来和使用<code>register</code>方法没有区别，但实际上再&lt;1&gt;路径下的文件结构和上面“原版的望远镜”一样了。<br>
+为了便于区别，这里给一个普通物品的该JSON：</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -539,7 +539,8 @@
 </div>
 </div><p>可以看到有一个<code>&quot;_in_hand&quot;</code>的字符串，这意味着我们在<code>resources</code>文件夹下的<br>
 <code>assets\&lt;yourModID&gt;\models\item</code><br>
-添加物品的3D信息JSON的时候，需要把文件名改为<code>item名+_in_hand</code>的形式，如<code>plate_in_hand.json</code></p>
+添加物品的3D信息JSON的时候，需要把文件名改为<code>item名+_in_hand</code>的形式。<br>
+如<code>plate_in_hand.json</code></p>
 <h3 id="继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法
 </h3><p>还是先给出函数实现：</p>
 <div class="highlight"><div class="chroma">

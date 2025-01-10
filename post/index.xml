@@ -36,7 +36,7 @@
 &lt;h2 id=&#34;mojang为item重写了model加载方法&#34;&gt;Mojang为item重写了Model加载方法
 &lt;/h2&gt;&lt;p&gt;我在&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;在MC1.21.4中创建Item时候遇到的问题&lt;/a&gt;中提到的Mojang在
-1.21.4版本中要求新建一个这个路径的文件夹，而这就是引发这件事的根源&lt;br&gt;
+1.21.4版本中要求新建一个这个路径的文件夹，而这就是引发这件事的根源。&lt;br&gt;
 &lt;code&gt;assets/&amp;lt;namespace&amp;gt;/items&lt;/code&gt;&lt;br&gt;
 这里也是以原版的望远镜为例子，它在该路径下的json文件如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -111,7 +111,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;我们又知道
+&lt;/div&gt;&lt;p&gt;我们又知道&lt;br&gt;
 &lt;strong&gt;&lt;code&gt;ModModelsProvider&lt;/code&gt;继承于&lt;code&gt;FabricModelProvider&lt;/code&gt;继承于&lt;code&gt;ItemModelGenerator&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
 所以我们在&lt;code&gt;ModModelsProvider&lt;/code&gt;的&lt;code&gt;generateItemModels&lt;/code&gt;方法中直接就可以使用&lt;code&gt;registerWithInHandModel&lt;/code&gt;方法&lt;br&gt;
 具体如下：&lt;/p&gt;
@@ -139,8 +139,8 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\items\plate.json&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\models\item\plate.json&lt;/code&gt;
-这看起来和使用&lt;code&gt;register&lt;/code&gt;方法没有区别，但实际上再&amp;lt;1&amp;gt;路径下的文件结构和上面“原版的望远镜”一样了，为了便于区别，
-这里给一个普通物品的该JSON：&lt;/li&gt;
+这看起来和使用&lt;code&gt;register&lt;/code&gt;方法没有区别，但实际上再&amp;lt;1&amp;gt;路径下的文件结构和上面“原版的望远镜”一样了。&lt;br&gt;
+为了便于区别，这里给一个普通物品的该JSON：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -181,7 +181,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以看到有一个&lt;code&gt;&amp;quot;_in_hand&amp;quot;&lt;/code&gt;的字符串，这意味着我们在&lt;code&gt;resources&lt;/code&gt;文件夹下的&lt;br&gt;
 &lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\models\item&lt;/code&gt;&lt;br&gt;
-添加物品的3D信息JSON的时候，需要把文件名改为&lt;code&gt;item名+_in_hand&lt;/code&gt;的形式，如&lt;code&gt;plate_in_hand.json&lt;/code&gt;&lt;/p&gt;
+添加物品的3D信息JSON的时候，需要把文件名改为&lt;code&gt;item名+_in_hand&lt;/code&gt;的形式。&lt;br&gt;
+如&lt;code&gt;plate_in_hand.json&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;继续深入看createmodelwithinhandvariant方法&#34;&gt;继续深入看createModelWithInHandVariant方法
 &lt;/h3&gt;&lt;p&gt;还是先给出函数实现：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
