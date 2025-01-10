@@ -563,7 +563,7 @@
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>你会发现<code>assets\&lt;yourModID&gt;\items\plate.json</code>中的<code>when</code>已经被Mojang写死在这了，所以要实现像视频中那样只在<code>GUI</code>中渲染为2D的话，你需要重新这个方法。
+</div><p>你会发现<code>assets\&lt;yourModID&gt;\items\plate.json</code>中的<code>when</code>已经被Mojang写死在这了，所以要实现像视频中那样只在<code>GUI</code>中渲染为2D的话，你需要重写这个方法。
 不过还有个简单的形式是你直接去修改生成的JSON文件中的<code>when</code>的值<br>
 （Tip：数据生成在下次运行的时候不会修改你手动改过的文件）
 这样你在1.21.4中就实现了如下效果<br>
