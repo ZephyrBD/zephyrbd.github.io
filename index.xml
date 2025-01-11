@@ -157,11 +157,11 @@
 NeoForged，只有几个例外：LexManos（Lex，Forge领导人），KingLemming（热力团队负责人），mezz（JEI 作者），
 Kristiāns Micītis（原 FTB 领导者、KubeJS 团队人员）。分支的主要原因是团队成员之一的 Lex 从创建了 Forge 项目开始（大约 13 年前）
 就一直在社区中表现出严重的负面行为，且 Forge 的大量核心资产由 Lex 的公司 Forge LLC 授权管理。他多次辱骂要求新功能的模组作者，
-甚至因为有人询问代码混淆问题而封禁对方。此外，他还涉及性骚扰和恐跨行为。
+甚至因为有人询问代码混淆（Mixin）问题而封禁对方。此外，他还涉及性骚扰和恐跨行为。
 NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推进项目发展，并能保护社区。&lt;/em&gt;
 ——引用自MC百科&lt;a class=&#34;link&#34; href=&#34;https://www.mcmod.cn/class/11433.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&amp;quot;[Neo]NeoForge&amp;quot;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;出于以上原因和NeoForge对Forge的继承关系，在1.20.1后大量Forge Mod开始转变为的逐渐开始转变为NeoForge Mod，Forge的衰落成了必然。而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，MC Mod的社区和未来的Mod开发的有了新的希望。&lt;/p&gt;
+&lt;p&gt;出于以上原因和NeoForge对Forge的继承关系，在1.20.1后大量Forge Mod逐渐开始转变为NeoForge Mod，Forge的衰落成了必然。而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，MC Mod的社区和未来的Mod开发的有了新的希望。&lt;/p&gt;
 &lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出入口的教程图&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
