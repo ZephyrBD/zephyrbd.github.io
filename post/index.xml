@@ -149,7 +149,7 @@
 而这些新的Mod加载器因为映射和接口不一样，加上原来Forge开发的主导者的不配合，导致Forge和Fabric几乎不兼容（即使用了互联mod也是bug不断）。
 而Fabric由于其轻量化和高效的Mod加载形式，对Mod开发者的友好，导致大量Mod转移到了Fabric，这加剧了Forge的衰落。&lt;/p&gt;
 &lt;h3 id=&#34;optifine&#34;&gt;Optifine：
-&lt;/h3&gt;&lt;p&gt;由于MC渲染机制的重写导致其新版的优化效果下降加之与Fabric的不兼容（PS：Optifine一直与Forge兼容），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合，Optifine也由于历史因素导致其很多代码与高版本的大量MOD存在严重冲突（导致游戏崩溃），所以不建议继续在高版本使用
+&lt;/h3&gt;&lt;p&gt;由于MC渲染机制的重写导致其新版的优化效果下降加之与Fabric的不兼容（PS：Optifine一直与Forge兼容），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合，Optifine也由于历史因素导致其很多代码与高版本的大量Mod存在严重冲突（导致游戏崩溃），所以不建议继续在高版本使用
 （除非你只用Optifine来优化画质）。&lt;/p&gt;
 &lt;h3 id=&#34;neoforge的诞生&#34;&gt;NeoForge的诞生：
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;NeoForge 的项目开展历程跟 Forge 有关。此前一天，原名为 Forgecord（因 Forge 项目建立） 的 Discord 社区被当时的社区拥有者 cpw 重命名为 NeoForge。
