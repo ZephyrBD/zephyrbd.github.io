@@ -144,10 +144,10 @@
 返回后就可以启动游戏了。&lt;/p&gt;
 &lt;h2 id=&#34;补充1关于mod加载器的演化&#34;&gt;补充1：关于MOD加载器的演化
 &lt;/h2&gt;&lt;h3 id=&#34;forge和fabric的拉扯&#34;&gt;Forge和Fabric的拉扯：
-&lt;/h3&gt;&lt;p&gt;Minecraft在1.13以后因为大量重写了代码和渲染机制，导致MCP（一种修改MC代码的映射）几乎停更，这使得自MC1.0版本时代诞生的老牌Mod加载器Forge迟迟未适配新版本，甚至LiteLoader（另一个老牌轻量化Mod加载器，与Forge兼容）直接停更，
-为了在新版本中更好的编写Mod，社区诞生了如Rift这种轻量加载器（后面逐渐被Fabric取代），
+&lt;/h3&gt;&lt;p&gt;Minecraft在1.13以后因为重写了大量代码和渲染机制，导致MCP（一种修改MC代码的映射）几乎停摆，这使得自MC1.0版本时代诞生的老牌Mod加载器Forge迟迟未适配新版本，甚至LiteLoader（另一个老牌轻量化Mod加载器，与Forge兼容）直接停更，
+为了在新版本中更好的编写Mod，社区诞生了如Rift这种轻量加载器（Fabric前身），
 而这些新的Mod加载器因为映射和接口不一样，加上原来Forge开发的领导者Lex的不配合，导致Forge和Fabric几乎不兼容（即使用了互联mod也是bug不断）。
-而Fabric由于其轻量化、高效的Mod加载形式以及其对Mod开发者的友好，导致大量Mod开始转移到Fabric，但复杂的Mod仍然离不开接口更多的Forge,但Forge确实开始衰落。二者的力量转换也导致了MC Mod开发的撕裂这一及其不利好社区的现象出现（表现为一些Mod不提供另一加载器的版本，导致Mod与Mod之间的组合受到限制）。&lt;/p&gt;
+而Fabric由于其轻量化、高效的Mod加载形式以及其对Mod开发者的友好，导致大量Mod开始转移到Fabric，但复杂的Mod仍然离不开接口更多的Forge。Forge开始衰落。二者的竞争也导致了MC Mod开发的逐渐撕裂这一及其不利好的现象出现（表现为一些Mod不提供另一加载器的版本，导致Mod与Mod之间的组合受到限制）。&lt;/p&gt;
 &lt;h3 id=&#34;optifine&#34;&gt;Optifine：
 &lt;/h3&gt;&lt;p&gt;由于MC 1.13渲染机制的重写导致其新版的优化效果下降，加之长期不与Fabric兼容但其却一直与Forge兼容（尽管可以使用其它Mod来强行兼容Fabric，但同样效果不好），而Fabric端的玩家为了优化和开光影，开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合。Optifine即使在Forge端，也由于代码闭源使得Mod开发者无法找出与其冲突的原因以及本身的历史遗留问题，导致其在高版本与大量Mod存在严重冲突（导致游戏崩溃），所以不建议在高版本继续使用它
 （除非你只用Optifine来优化画质）。&lt;/p&gt;
