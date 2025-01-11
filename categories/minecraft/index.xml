@@ -7,7 +7,200 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/minecraft/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/minecraft/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何安装我的世界国际版（新）</title>
+        <link>https://zephyrbd.github.io/p/howtoinstallminecraft/</link>
+        <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/p/howtoinstallminecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/images/htIsMCN/img3.png" alt="Featured image of post 如何安装我的世界国际版（新）" /&gt;&lt;h2 id=&#34;使用plain-craft-launcher-2启动器&#34;&gt;使用Plain Craft Launcher 2启动器
+&lt;/h2&gt;&lt;h3 id=&#34;下载和解压plain-craft-launcher-2&#34;&gt;下载和解压Plain Craft Launcher 2
+&lt;/h3&gt;&lt;p&gt;首先，打开&lt;a class=&#34;link&#34; href=&#34;https://www.gy328.com/app/pcl2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PCL2&lt;/a&gt;（注：Plain Craft Launcher 2以下均简称PCL2或PCL）的官方指定下载网站&lt;br&gt;
+&lt;strong&gt;PCL2作者龙腾猫跃的爱发电&lt;a class=&#34;link&#34; href=&#34;https://afdian.com/a/LTCat?tab=feed&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;主页&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;有一定实力的朋友可以去给爱发电看看投喂规则以解锁更多PCL2的功能&lt;/strong&gt;&lt;br&gt;
+然后按如图所示的点击：
+进入网盘下载PCL2&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PCL下载&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;选择pcl-正式版-xxxx&#34;&gt;选择&lt;code&gt;PCL 正式版 x.x.xx&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下载&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;按图所示解压过程不一定一样取决于你的解压软件&#34;&gt;按图所示解压（过程不一定一样，取决于你的解压软件）
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;解压&#34;
+	
+	
+&gt;&lt;br&gt;
+（PS：这里偷懒没更新图片，压缩包名字不是HMCL了）&lt;/p&gt;
+&lt;h2 id=&#34;安装minecraft&#34;&gt;安装Minecraft
+&lt;/h2&gt;&lt;h3 id=&#34;将hmcl启动器复制到自己喜欢的路径必做mc的安装位置默认取决于这步然后双击打开&#34;&gt;将HMCL启动器复制到自己喜欢的路径（必做，MC的安装位置默认取决于这步），然后双击打开
+&lt;/h3&gt;&lt;p&gt;如果没有正版账号就输入个名字（英文）&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;起名字&#34;
+	
+	
+&gt;&lt;br&gt;
+有正版账号就选择正版登录，然后根据启动器的提示进行（有可能需要你在浏览器打开然后粘贴启动器的程序码）&lt;/p&gt;
+&lt;h3 id=&#34;点击下载游戏&#34;&gt;点击下载游戏
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下载&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;选择自己需要的版本这里以1214做演示&#34;&gt;选择自己需要的版本（这里以1.21.4做演示）
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;选择版本&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;然后选择需要的插件和插件版本不建议在高版本安装optifine这会和大部分mod冲突可以去了解一下钠及其附属mod的优化&#34;&gt;然后选择需要的插件和插件版本（不建议在高版本安装OptiFine，这会和大部分Mod冲突，可以去了解一下&lt;code&gt;钠及其附属Mod&lt;/code&gt;的优化）
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mod加载器&#34;
+	
+	
+&gt;&lt;br&gt;
+（关于MOD加载器可以去看文末的描述）&lt;/p&gt;
+&lt;h3 id=&#34;点击安装这里选装fabric&#34;&gt;点击安装（这里选装Fabric）
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;安装&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;版本隔离说明&#34;&gt;版本隔离说明
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;版本隔离&#34;
+	
+	
+&gt;
+这里不建议开启版本隔离（除非你清楚开启了后MC目录结构的变化），如果你有玩多个整合包（MC版本）的需要，建议每个版本都按如上流程开一个新文件夹。&lt;br&gt;
+安装完成提示如下：
+&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;安装完成&#34;
+	
+	
+&gt;
+返回后就可以启动游戏了&lt;/p&gt;
+&lt;h2 id=&#34;补充1关于mod加载器的演化&#34;&gt;补充1：关于MOD加载器的演化
+&lt;/h2&gt;&lt;h3 id=&#34;forge和fabric的拉扯&#34;&gt;Forge和Fabric的拉扯：
+&lt;/h3&gt;&lt;p&gt;Minecraft在1.13以后因为大量重写了代码和渲染机制，导致MCP（一种修改MC代码的映射）几乎停更，这使得老牌Mod加载器Forge迟迟未适配新版本，甚至LiteLoder（另一个老牌轻量化Mod加载器，与Forge兼容）直接停更，
+从而诞生了如Rift这种轻量加载器（后面逐渐被Fabric取代），
+而这些新的MOD加载器因为映射和接口不一样，加上原来Forge开发的主导者的不配合，导致Forge和Fabric几乎不兼容（即使用了互联mod也是bug不断）。
+而Fabric由于其轻量化和高效的Mod加载形式，对Mod开发者的友好，导致大量Mod转移到了Fabric，这更加剧了Forge的衰落。&lt;/p&gt;
+&lt;h3 id=&#34;optifine&#34;&gt;Optifine：
+&lt;/h3&gt;&lt;p&gt;由于MC渲染机制的重新导致其新版的优化效果下降加之与Fabric的不兼容（PS：Optifine一直与Forge兼容），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合，Optifine也由于历史因素导致其很多代码与高版本的大量MOD存在严重冲突（导致游戏崩溃），所以不建议继续在高版本使用
+（除非你只用Optifine来优化画质）。&lt;/p&gt;
+&lt;h3 id=&#34;neoforge的诞生&#34;&gt;NeoForge的诞生：
+&lt;/h3&gt;&lt;p&gt;&lt;em&gt;NeoForge 的项目开展历程跟 Forge 有关。此前一天，原名为 Forgecord（因 Forge 项目建立） 的 Discord 社区被当时的社区拥有者 cpw 重命名为 NeoForge。
+并且因一些原因从而导致原 Forge 开发团队的几乎所有成员都加入了新的团队：
+NeoForged，只有几个例外：LexManos（Lex，Forge领导人），KingLemming（热力团队负责人），mezz（JEI 作者），
+Kristiāns Micītis（原 FTB 领导者、KubeJS 团队人员）。分支的主要原因是团队成员之一的 Lex 从创建了 Forge 项目开始（大约 13 年前）
+就一直在社区中表现出严重的负面行为，且 Forge 的大量核心资产由 Lex 的公司 Forge LLC 授权管理。他多次辱骂要求新功能的模组作者，
+甚至因为有人询问代码混淆问题而封禁对方。此外，他还涉及性骚扰和恐跨行为。
+NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推进项目发展，并能保护社区。&lt;/em&gt;
+——引用自MC百科&lt;a class=&#34;link&#34; href=&#34;https://www.mcmod.cn/class/11433.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&amp;quot;[Neo]NeoForge&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;出于以上原因和NeoForge对Forge的继承关系，在1.20.1后大量Forge Mod开始转变为的逐渐开始转变为NeoForge Mod，Forge的衰落成了必然。而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，MC Mod的社区和未来的Mod开发的有了新的希望。&lt;/p&gt;
+&lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出入口的教程图&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;管理游戏内存&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;内存&#34;&gt;内存
+&lt;/h3&gt;&lt;p&gt;首先要知道电脑的物理内存（和前面查看系统位数的方法一致）
+计算机显示的是 GB，而 HMCL启动器显示的是 MB，因此在修改前要了解进率
+&lt;strong&gt;1024MB=1GB&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置内存的一些建议&#34;&gt;设置内存的一些建议
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;游戏的内存至少有1024MB（1GB）（32位Java的只支持最高1024MB（1GB））（如果电脑连2048MB（2GB）物理内存都没有，你还是别玩了）&lt;/li&gt;
+&lt;li&gt;游戏的建议内存最好有4096MB（4GB）（如果自己加了70+的模组，一般建议直接上8192MB（8GB），前提是物理内存比8192MB（8GB）至少大2048MB（2GB））&lt;/li&gt;
+&lt;li&gt;注意你的物理内存大小，分配给Minecraft的内存至少比物理内存少2048MB，如果内存不够就不要玩大型模组整合包了&lt;/li&gt;
+&lt;li&gt;在运行大型模组整合包时，如果需要同时使用OBS或其他录制软件录制视频，物理内存最好为12288 MB (12 GB)或更多，然后为系统保留4096 MB（4GB）的内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;其它设置建议&#34;&gt;其它设置建议
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;建议把分辨率设置为 1280*720 （主要因为是16:9的分辨率，方便截图和视频录制）&lt;/li&gt;
+&lt;li&gt;把启动器设置为 保持启动器可见 （这样方便防止低配电脑退出时卡死，也方便大型模组整合包调试）&lt;/li&gt;
+&lt;li&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;附minecraft目录详解图仅供参考&#34;&gt;附：.minecraft目录详解图（仅供参考）
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img16.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;目录详解图&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>1.21.4将2D物品转换为3D的新方法（无需Mixin）</title>
         <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</link>
         <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
@@ -1286,199 +1479,6 @@ Optifine选择成功后如图所示，然后点击安装
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;在这里插入图片描述&#34;
-	
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>如何安装我的世界国际版</title>
-        <link>https://zephyrbd.github.io/p/howtoinstallminecraft/</link>
-        <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/p/howtoinstallminecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/htIsMCN/img3.png" alt="Featured image of post 如何安装我的世界国际版" /&gt;&lt;h2 id=&#34;使用plain-craft-launcher-2启动器&#34;&gt;使用Plain Craft Launcher 2启动器
-&lt;/h2&gt;&lt;h3 id=&#34;下载和解压plain-craft-launcher-2&#34;&gt;下载和解压Plain Craft Launcher 2
-&lt;/h3&gt;&lt;p&gt;首先，打开&lt;a class=&#34;link&#34; href=&#34;https://www.gy328.com/app/pcl2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;PCL2&lt;/a&gt;（注：Plain Craft Launcher 2以下均简称PCL2或PCL）的官方指定下载网站&lt;br&gt;
-&lt;strong&gt;PCL2作者龙腾猫跃的爱发电&lt;a class=&#34;link&#34; href=&#34;https://afdian.com/a/LTCat?tab=feed&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;主页&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;有一定实力的朋友可以去给爱发电看看投喂规则以解锁更多PCL2的功能&lt;/strong&gt;&lt;br&gt;
-然后按如图所示的点击：
-进入网盘下载PCL2&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PCL下载&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;选择pcl-正式版-xxxx&#34;&gt;选择&lt;code&gt;PCL 正式版 x.x.xx&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img2.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;下载&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;按图所示解压过程不一定一样取决于你的解压软件&#34;&gt;按图所示解压（过程不一定一样，取决于你的解压软件）
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;解压&#34;
-	
-	
-&gt;&lt;br&gt;
-（PS：这里偷懒没更新图片，压缩包名字不是HMCL了）&lt;/p&gt;
-&lt;h2 id=&#34;安装minecraft&#34;&gt;安装Minecraft
-&lt;/h2&gt;&lt;h3 id=&#34;将hmcl启动器复制到自己喜欢的路径必做mc的安装位置默认取决于这步然后双击打开&#34;&gt;将HMCL启动器复制到自己喜欢的路径（必做，MC的安装位置默认取决于这步），然后双击打开
-&lt;/h3&gt;&lt;p&gt;如果没有正版账号就输入个名字（英文）&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img3.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;起名字&#34;
-	
-	
-&gt;&lt;br&gt;
-有正版账号就选择正版登录，然后根据启动器的提示进行（有可能需要你在浏览器打开然后粘贴启动器的程序码）&lt;/p&gt;
-&lt;h3 id=&#34;点击下载游戏&#34;&gt;点击下载游戏
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img4.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;下载&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;选择自己需要的版本这里以1214做演示&#34;&gt;选择自己需要的版本（这里以1.21.4做演示）
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img5.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;选择版本&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;然后选择需要的插件和插件版本不建议在高版本安装optifine这会和大部分mod冲突可以去了解一下钠及其附属mod的优化&#34;&gt;然后选择需要的插件和插件版本（不建议在高版本安装OptiFine，这会和大部分Mod冲突，可以去了解一下&lt;code&gt;钠及其附属Mod&lt;/code&gt;的优化）
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img6.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Mod加载器&#34;
-	
-	
-&gt;&lt;br&gt;
-（关于MOD加载器可以去看文末的描述）&lt;/p&gt;
-&lt;h3 id=&#34;点击安装这里选装fabric&#34;&gt;点击安装（这里选装Fabric）
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img7.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;安装&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;版本隔离说明&#34;&gt;版本隔离说明
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;版本隔离&#34;
-	
-	
-&gt;
-这里不建议开启版本隔离（除非你清楚开启了后MC目录结构的变化），如果你有玩多个整合包（MC版本）的需要，建议每个版本都按如上流程开一个新文件夹。&lt;br&gt;
-安装完成提示如下：
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img9.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;安装完成&#34;
-	
-	
-&gt;
-返回后就可以启动游戏了&lt;/p&gt;
-&lt;h2 id=&#34;补充1关于mod加载器的演化&#34;&gt;补充1：关于MOD加载器的演化
-&lt;/h2&gt;&lt;h3 id=&#34;forge和fabric的拉扯&#34;&gt;Forge和Fabric的拉扯：
-&lt;/h3&gt;&lt;p&gt;Minecraft在1.13以后因为大量重写了代码和渲染机制，导致MCP（一种修改MC代码的映射）几乎停更，这使得老牌Mod加载器Forge迟迟未适配新版本，甚至LiteLoder（另一个老牌轻量化Mod加载器，与Forge兼容）直接停更，
-从而诞生了如Rift这种轻量加载器（后面逐渐被Fabric取代），
-而这些新的MOD加载器因为映射和接口不一样，加上原来Forge开发的主导者的不配合，导致Forge和Fabric几乎不兼容（即使用了互联mod也是bug不断）。
-而Fabric由于其轻量化和高效的Mod加载形式，对Mod开发者的友好，导致大量Mod转移到了Fabric，这更加剧了Forge的衰落。&lt;/p&gt;
-&lt;h3 id=&#34;optifine&#34;&gt;Optifine：
-&lt;/h3&gt;&lt;p&gt;由于MC渲染机制的重新导致其新版的优化效果下降加之与Fabric的不兼容（PS：Optifine一直与Forge兼容），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合，Optifine也由于历史因素导致其很多代码与高版本的大量MOD存在严重冲突（导致游戏崩溃），所以不建议继续在高版本使用
-（除非你只用Optifine来优化画质）。&lt;/p&gt;
-&lt;h3 id=&#34;neoforge的诞生&#34;&gt;NeoForge的诞生：
-&lt;/h3&gt;&lt;p&gt;&lt;em&gt;NeoForge 的项目开展历程跟 Forge 有关。此前一天，原名为 Forgecord（因 Forge 项目建立） 的 Discord 社区被当时的社区拥有者 cpw 重命名为 NeoForge。
-并且因一些原因从而导致原 Forge 开发团队的几乎所有成员都加入了新的团队：
-NeoForged，只有几个例外：LexManos（Lex，Forge领导人），KingLemming（热力团队负责人），mezz（JEI 作者），
-Kristiāns Micītis（原 FTB 领导者、KubeJS 团队人员）。分支的主要原因是团队成员之一的 Lex 从创建了 Forge 项目开始（大约 13 年前）
-就一直在社区中表现出严重的负面行为，且 Forge 的大量核心资产由 Lex 的公司 Forge LLC 授权管理。他多次辱骂要求新功能的模组作者，
-甚至因为有人询问代码混淆问题而封禁对方。此外，他还涉及性骚扰和恐跨行为。
-NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推进项目发展，并能保护社区。&lt;/em&gt;
-——引用自MC百科&lt;a class=&#34;link&#34; href=&#34;https://www.mcmod.cn/class/11433.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&amp;quot;[Neo]NeoForge&amp;quot;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;出于以上原因和NeoForge对Forge的继承关系，在1.20.1后大量Forge Mod开始转变为的逐渐开始转变为NeoForge Mod，Forge的衰落成了必然。而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，MC Mod的社区和未来的Mod开发的有了新的希望。&lt;/p&gt;
-&lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出入口的教程图&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;管理游戏内存&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;内存&#34;&gt;内存
-&lt;/h3&gt;&lt;p&gt;首先要知道电脑的物理内存（和前面查看系统位数的方法一致）
-计算机显示的是 GB，而 HMCL启动器显示的是 MB，因此在修改前要了解进率
-&lt;strong&gt;1024MB=1GB&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;设置内存的一些建议&#34;&gt;设置内存的一些建议
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;游戏的内存至少有1024MB（1GB）（32位Java的只支持最高1024MB（1GB））（如果电脑连2048MB（2GB）物理内存都没有，你还是别玩了）&lt;/li&gt;
-&lt;li&gt;游戏的建议内存最好有4096MB（4GB）（如果自己加了70+的模组，一般建议直接上8192MB（8GB），前提是物理内存比8192MB（8GB）至少大2048MB（2GB））&lt;/li&gt;
-&lt;li&gt;注意你的物理内存大小，分配给Minecraft的内存至少比物理内存少2048MB，如果内存不够就不要玩大型模组整合包了&lt;/li&gt;
-&lt;li&gt;在运行大型模组整合包时，如果需要同时使用OBS或其他录制软件录制视频，物理内存最好为12288 MB (12 GB)或更多，然后为系统保留4096 MB（4GB）的内存&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;其它设置建议&#34;&gt;其它设置建议
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;建议把分辨率设置为 1280*720 （主要因为是16:9的分辨率，方便截图和视频录制）&lt;/li&gt;
-&lt;li&gt;把启动器设置为 保持启动器可见 （这样方便防止低配电脑退出时卡死，也方便大型模组整合包调试）&lt;/li&gt;
-&lt;li&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;附minecraft目录详解图仅供参考&#34;&gt;附：.minecraft目录详解图（仅供参考）
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img16.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;目录详解图&#34;
 	
 	
 &gt;&lt;/p&gt;

@@ -3,21 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zephyrbd.github.io/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zephyrbd.github.io/categories/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zephyrbd.github.io/categories/minecraft/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zephyrbd.github.io/post/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zephyrbd.github.io/p/howtoinstallminecraft/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zephyrbd.github.io/categories/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zephyrbd.github.io/categories/mc-mod-dev/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zephyrbd.github.io/categories/minecraft/</loc>
-    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zephyrbd.github.io/post/</loc>
     <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zephyrbd.github.io/p/firstfabricmoddevlog_4/</loc>
@@ -57,9 +60,6 @@
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zephyrbd.github.io/p/howtoinstallminecraft_old/</loc>
-    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zephyrbd.github.io/p/howtoinstallminecraft/</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zephyrbd.github.io/page/</loc>
