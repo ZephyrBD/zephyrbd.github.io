@@ -340,7 +340,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1182 字
+                    1180 字
                 </time>
             </div>
         
@@ -392,9 +392,9 @@
 </div>
 
 <h2 id="mojang为item重写了model加载方法">Mojang为item重写了Model加载方法
-</h2><p>我在<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_1/"  target="_blank" rel="noopener"
-    >在MC1.21.4中创建Item时候遇到的问题</a>中提到的Mojang在
-1.21.4版本中要求新建一个这个路径的文件夹，而这就是引发这件事的根源。<br>
+</h2><p>我的<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_1/"  target="_blank" rel="noopener"
+    >在MC1.21.4中创建Item时候遇到的问题</a>这篇博客中提到了Mojang在
+1.21.4版本中要求新建一个这个路径的文件夹，而这就是可以采用新写法的原因。<br>
 <code>assets/&lt;namespace&gt;/items</code><br>
 这里也是以原版的望远镜为例子，它在该路径下的json文件如下：</p>
 <div class="highlight"><div class="chroma">
@@ -424,32 +424,32 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;model&#34;: {
-</span></span><span class="line"><span class="cl">    &#34;type&#34;: &#34;minecraft:select&#34;,
-</span></span><span class="line"><span class="cl">    &#34;cases&#34;: [
-</span></span><span class="line"><span class="cl">      {
-</span></span><span class="line"><span class="cl">        &#34;model&#34;: {
-</span></span><span class="line"><span class="cl">          &#34;type&#34;: &#34;minecraft:model&#34;,
-</span></span><span class="line"><span class="cl">          &#34;model&#34;: &#34;minecraft:item/spyglass&#34;
-</span></span><span class="line"><span class="cl">        },
-</span></span><span class="line"><span class="cl">        &#34;when&#34;: [
-</span></span><span class="line"><span class="cl">          &#34;gui&#34;,
-</span></span><span class="line"><span class="cl">          &#34;ground&#34;,
-</span></span><span class="line"><span class="cl">          &#34;fixed&#34;
-</span></span><span class="line"><span class="cl">        ]
-</span></span><span class="line"><span class="cl">      }
-</span></span><span class="line"><span class="cl">    ],
-</span></span><span class="line"><span class="cl">    &#34;fallback&#34;: {
-</span></span><span class="line"><span class="cl">      &#34;type&#34;: &#34;minecraft:model&#34;,
-</span></span><span class="line"><span class="cl">      &#34;model&#34;: &#34;minecraft:item/spyglass_in_hand&#34;
-</span></span><span class="line"><span class="cl">    },
-</span></span><span class="line"><span class="cl">    &#34;property&#34;: &#34;minecraft:display_context&#34;
-</span></span><span class="line"><span class="cl">  }
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:select&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cases&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;gui&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;ground&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;fixed&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fallback&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass_in_hand&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;property&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:display_context&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>不难看出，视频中要求的模型加载和在什么时候渲染的问题被转移到了这个json文件中表达，
+</div><p>不难看出，视频中要求的模型加载和在渲染场景选择的问题被转移到了这个json文件中表达，
 这意味着我们可以直接使用<code>ModModelsProvider</code>来进行数据生成，而无需<code>mixin</code></p>
 <h2 id="modmodelsprovider直接生成json">ModModelsProvider直接生成JSON
 </h2><p>在查阅原版代码的时候，发现了在<code>ItemModelGenerator</code>类中注册望远镜模型的办法如下</p>
@@ -462,12 +462,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public void register() {
-</span></span><span class="line"><span class="cl">    ···
-</span></span><span class="line"><span class="cl">    this.registerWithInHandModel(Items.SPYGLASS);
-</span></span><span class="line"><span class="cl">    ···
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">SPYGLASS</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们又知道<br>
 <strong><code>ModModelsProvider</code>继承于<code>FabricModelProvider</code>继承于<code>ItemModelGenerator</code></strong><br>
@@ -484,20 +484,20 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">ModModelsProvider</span> <span class="k">extends</span> <span class="n">FabricModelProvider</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="err">···</span>
-</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="n">Override</span>
-</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="n">void</span> <span class="n">generateItemModels</span><span class="p">(</span><span class="n">ItemModelGenerator</span> <span class="n">itemModelGenerator</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">itemModelGenerator</span><span class="o">.</span><span class="n">registerWithInHandModel</span><span class="p">(</span><span class="n">ModItems</span><span class="o">.</span><span class="n">PLATE</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModModelsProvider</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FabricModelProvider</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">generateItemModels</span><span class="p">(</span><span class="n">ItemModelGenerator</span><span class="w"> </span><span class="n">itemModelGenerator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">itemModelGenerator</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">PLATE</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用这个函数进行数据生成会在<code>generated</code>文件夹下生成以下内容</p>
 <ol>
 <li><code>assets\&lt;yourModID&gt;\items\plate.json</code></li>
 <li><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
-这看起来和使用<code>register</code>方法没有区别，但实际上再&lt;1&gt;路径下的文件结构和上面“原版的望远镜”一样了。<br>
+这看起来和使用<code>register</code>方法没有区别，但实际上再<code>1</code>路径下的文件结构和上面原版的“望远镜”一样了。<br>
 为了便于区别，这里给一个普通物品的该JSON：</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -510,12 +510,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;model&#34;: {
-</span></span><span class="line"><span class="cl">    &#34;type&#34;: &#34;minecraft:model&#34;,
-</span></span><span class="line"><span class="cl">    &#34;model&#34;: &#34;minecraft:item/apple&#34;
-</span></span><span class="line"><span class="cl">  }
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/apple&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>发现多的<code>&quot;when&quot;</code>正好与视频中的<code>if</code>的条件对应，也就是说只需要修改when中的值，就可以达到与视频中一样控制3D化场景的时候了</p>
@@ -530,12 +530,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">public</span> <span class="n">final</span> <span class="n">void</span> <span class="n">registerWithInHandModel</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ItemModel</span><span class="o">.</span><span class="n">Unbaked</span> <span class="n">unbaked</span> <span class="o">=</span> <span class="n">ItemModels</span><span class="o">.</span><span class="n">basic</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Models</span><span class="o">.</span><span class="n">GENERATED</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ItemModel</span><span class="o">.</span><span class="n">Unbaked</span> <span class="n">unbaked2</span> <span class="o">=</span> <span class="n">ItemModels</span><span class="o">.</span><span class="n">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="o">.</span><span class="n">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&#34;_in_hand&#34;</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">this</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span> <span class="n">unbaked2</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerWithInHandModel</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Models</span><span class="p">.</span><span class="na">GENERATED</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="p">.</span><span class="na">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;_in_hand&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span><span class="w"> </span><span class="n">unbaked2</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看到有一个<code>&quot;_in_hand&quot;</code>的字符串，这意味着我们在<code>resources</code>文件夹下的<br>
 <code>assets\&lt;yourModID&gt;\models\item</code><br>
@@ -554,14 +554,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public static ItemModel.Unbaked createModelWithInHandVariant(ItemModel.Unbaked model, ItemModel.Unbaked inHandModel) {
-</span></span><span class="line"><span class="cl">    return ItemModels.select(
-</span></span><span class="line"><span class="cl">        new DisplayContextProperty(),
-</span></span><span class="line"><span class="cl">        inHandModel,
-</span></span><span class="line"><span class="cl">        ItemModels.switchCase(List.of(ModelTransformationMode.GUI, ModelTransformationMode.GROUND, ModelTransformationMode.FIXED), model)
-</span></span><span class="line"><span class="cl">    );
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="nf">createModelWithInHandVariant</span><span class="p">(</span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">inHandModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">DisplayContextProperty</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">inHandModel</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">switchCase</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GUI</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GROUND</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">FIXED</span><span class="p">),</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>你会发现<code>assets\&lt;yourModID&gt;\items\plate.json</code>中的<code>when</code>已经被Mojang写死在这了，所以要实现像视频中那样只在<code>GUI</code>中渲染为2D的话，你需要重写这个方法。
 不过还有个简单的形式是你直接去修改生成的JSON文件中的<code>when</code>的值<br>

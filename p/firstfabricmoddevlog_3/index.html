@@ -426,18 +426,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModItems {
-</span></span><span class="line"><span class="cl">	public static final Item EXAMPLE_SOUP = 
-</span></span><span class="line"><span class="cl">		register(&#34;example_soup&#34;, Item::new, new Item.Settings()
-</span></span><span class="line"><span class="cl">		.maxCount(1)
-</span></span><span class="line"><span class="cl">		.food(ModFoodComponents.EXAMPLE_SOUP,ModFoodConsumableComponents.EXAMPLE_SOUP)
-</span></span><span class="line"><span class="cl">		//food两个参数，ModFoodComponents.XXX是食物的普通数值和属性
-</span></span><span class="line"><span class="cl">		//ModFoodConsumableComponents.XXX是食物给予的药水效果等属性
-</span></span><span class="line"><span class="cl">		//这里的XXX要与后面两个类中名称一致
-</span></span><span class="line"><span class="cl">		.useRemainder(BOWL));//归还玩家一个碗
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">register</span><span class="p">(</span><span class="s">&#34;example_soup&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">::</span><span class="k">new</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">maxCount</span><span class="p">(</span><span class="n">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">food</span><span class="p">(</span><span class="n">ModFoodComponents</span><span class="p">.</span><span class="na">EXAMPLE_SOUP</span><span class="p">,</span><span class="n">ModFoodConsumableComponents</span><span class="p">.</span><span class="na">EXAMPLE_SOUP</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//food两个参数，ModFoodComponents.XXX是食物的普通数值和属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//ModFoodConsumableComponents.XXX是食物给予的药水效果等属性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//这里的XXX要与后面两个类中名称一致</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">useRemainder</span><span class="p">(</span><span class="n">BOWL</span><span class="p">));</span><span class="c1">//归还玩家一个碗</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="modfoodcomponents">ModFoodComponents：
 </h2><div class="highlight"><div class="chroma">
@@ -450,13 +450,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModFoodComponents {
-</span></span><span class="line"><span class="cl">  	//使用alwaysEdible()将使得食物始终可以食用
-</span></span><span class="line"><span class="cl">  	public static final FoodComponent EXAMPLE_SOUP = new FoodComponent.Builder().nutrition(2).saturationModifier(0.3F).alwaysEdible().build();
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModFoodComponents</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="c1">//使用alwaysEdible()将使得食物始终可以食用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FoodComponent</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FoodComponent</span><span class="p">.</span><span class="na">Builder</span><span class="p">().</span><span class="na">nutrition</span><span class="p">(</span><span class="n">2</span><span class="p">).</span><span class="na">saturationModifier</span><span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="na">3F</span><span class="p">).</span><span class="na">alwaysEdible</span><span class="p">().</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="modfoodconsumablecomponents">ModFoodConsumableComponents:
 </h2><div class="highlight"><div class="chroma">
@@ -473,17 +473,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class ModFoodConsumableComponents {
-</span></span><span class="line"><span class="cl">	//药水效果需要放到一个StatusEffectInstance类型的List中,但我这没开单独的容器
-</span></span><span class="line"><span class="cl">	public static final ConsumableComponent EXAMPLE_SOUP = 
-</span></span><span class="line"><span class="cl">			food().consumeEffect(new ApplyEffectsConsumeEffect(List.of(
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.REGENERATION, 100, 1),
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.ABSORPTION, 2400, 0),
-</span></span><span class="line"><span class="cl">			new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 2400, 0))))
-</span></span><span class="line"><span class="cl">		.build();
-</span></span><span class="line"><span class="cl">  ...
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModFoodConsumableComponents</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">//药水效果需要放到一个StatusEffectInstance类型的List中,但我这没开单独的容器</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ConsumableComponent</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">food</span><span class="p">().</span><span class="na">consumeEffect</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ApplyEffectsConsumeEffect</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">REGENERATION</span><span class="p">,</span><span class="w"> </span><span class="n">100</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">ABSORPTION</span><span class="p">,</span><span class="w"> </span><span class="n">2400</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">FIRE_RESISTANCE</span><span class="p">,</span><span class="w"> </span><span class="n">2400</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">))))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>
