@@ -145,11 +145,11 @@
 &lt;h2 id=&#34;补充1关于mod加载器的演化&#34;&gt;补充1：关于MOD加载器的演化
 &lt;/h2&gt;&lt;h3 id=&#34;forge和fabric的拉扯&#34;&gt;Forge和Fabric的拉扯：
 &lt;/h3&gt;&lt;p&gt;Minecraft在1.13以后因为大量重写了代码和渲染机制，导致MCP（一种修改MC代码的映射）几乎停更，这使得自MC1.0版本时代诞生的老牌Mod加载器Forge迟迟未适配新版本，甚至LiteLoader（另一个老牌轻量化Mod加载器，与Forge兼容）直接停更，
-从而诞生了如Rift这种轻量加载器（后面逐渐被Fabric取代），
+为了在新版本中更好的编写Mod，社区诞生了如Rift这种轻量加载器（后面逐渐被Fabric取代），
 而这些新的Mod加载器因为映射和接口不一样，加上原来Forge开发的领导者Lex的不配合，导致Forge和Fabric几乎不兼容（即使用了互联mod也是bug不断）。
-而Fabric由于其轻量化和高效的Mod加载形式，对Mod开发者的友好，导致大量Mod转移到了Fabric，这加剧了Forge的衰落。&lt;/p&gt;
+而Fabric由于其轻量化、高效的Mod加载形式以及其对Mod开发者的友好，导致大量Mod开始转移到Fabric，但复杂的Mod仍然离不开接口更多的Forge,但Forge确实开始衰落。二者的力量转换也导致了MC Mod开发的撕裂这一及其不利好社区的现象出现（表现为一些Mod不提供另一加载器的版本，导致Mod与Mod之间的组合受到限制）。&lt;/p&gt;
 &lt;h3 id=&#34;optifine&#34;&gt;Optifine：
-&lt;/h3&gt;&lt;p&gt;由于MC 1.13渲染机制的重写导致其新版的优化效果下降，加之长期不与Fabric兼容（Optifine一直与Forge兼容，尽管可以使使用其它mod来强行兼容，但同样效果不好），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合，Optifine也由于历史因素导致其很多代码与高版本的大量Mod存在严重冲突（导致游戏崩溃），所以不建议继续在高版本使用
+&lt;/h3&gt;&lt;p&gt;由于MC 1.13渲染机制的重写导致其新版的优化效果下降，加之长期不与Fabric兼容（Optifine一直与Forge兼容，尽管可以使用其它mod来强行兼容，但同样效果不好），Fabric端的玩家为了优化和开光影开发出了效果更好的&lt;code&gt;钠&lt;/code&gt;+&lt;code&gt;Iris Shaders&lt;/code&gt;Mod组合。即使是在Forge端，Optifine也由于代码闭源使得Mod开发者无法找出冲突原因以及历史遗留问题，导致其在高版本与大量Mod存在严重冲突（导致游戏崩溃），所以不建议在高版本继续使用
 （除非你只用Optifine来优化画质）。&lt;/p&gt;
 &lt;h3 id=&#34;neoforge的诞生&#34;&gt;NeoForge的诞生：
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;NeoForge 的项目开展历程跟 Forge 有关。此前一天，原名为 Forgecord（因 Forge 项目建立） 的 Discord 社区被当时的社区拥有者 cpw 重命名为 NeoForge。
@@ -161,8 +161,10 @@ Kristiāns Micītis（原 FTB 领导者、KubeJS 团队人员）。分支的主�
 NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推进项目发展，并能保护社区。&lt;/em&gt;
 ——引用自MC百科&lt;a class=&#34;link&#34; href=&#34;https://www.mcmod.cn/class/11433.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&amp;quot;[Neo]NeoForge&amp;quot;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;出于以上以及NeoForge继承于Forge的原因，在1.20.1后大量Forge Mod逐渐开始转变为NeoForge Mod，而Forge的衰落也几乎成为了必然。
+&lt;p&gt;出于以上及NeoForge继承于Forge的原因，在1.20.1后大量Forge Mod逐渐也开始转写为NeoForge Mod，而Forge的衰落也几乎成为了必然。
 而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，这让MC Mod的社区和未来的Mod开发有了新的希望。&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结
+&lt;/h3&gt;&lt;p&gt;Forge和Optifine在MC 1.12.2以前的版本为玩家们带来了众多的Mod，它陪伴MC走过了一段辉煌的岁月，也铸就了一个以Forge为主导的Mod时代（说这话是因为那个时代一切的东西几乎都能兼容Forge）。但任何在原地踏步的事物都将被时代淘汰，Forge和Optifine在MC 1.13以后不寻求更高效的Mod加载和修改方法，一味抹杀不同于己见者，迫使玩家社区写出Fabric这样新的替代品，可以说，Fabric的诞生几乎是Forge推动的，高傲的Lex终会为他自己的行为付出代价。最后，如果你是一个Mod开发者，为了MC Mod社区的未来，请你使用Fabric或NeoForge来编写你的代码。&lt;/p&gt;
 &lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出管理内存入口如何进入的教程图&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
