@@ -340,7 +340,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\items\plate.json&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;assets\&amp;lt;yourModID&amp;gt;\models\item\plate.json&lt;/code&gt;
-这看起来和使用&lt;code&gt;register&lt;/code&gt;方法没有区别，但实际上再&lt;code&gt;1&lt;/code&gt;路径下的文件结构和上面原版的“望远镜”一样了。&lt;br&gt;
+这看起来和使用&lt;code&gt;register&lt;/code&gt;方法没有区别，但实际上在 &lt;code&gt;1&lt;/code&gt; 路径下的文件结构和上面原版的“望远镜”一样了。&lt;br&gt;
 为了便于区别，这里给一个普通物品的该JSON：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
