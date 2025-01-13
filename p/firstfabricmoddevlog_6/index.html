@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 5">
-<title>1.21.4将2D物品转换为3D的新方法（无需Mixin）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 6">
+<title>MC 1.21.4 中工具物品注册方法及相关类变更详解</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_5/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_6/'>
 
-<link rel="stylesheet" href="/scss/style.min.f62723c8daa1cd9dab2391edbd3067c8d578c37e26885951819953eb0ebea991.css"><meta property='og:title' content="1.21.4将2D物品转换为3D的新方法（无需Mixin）">
-<meta property='og:description' content="FirstFabricModDev 5">
-<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_5/'>
+<link rel="stylesheet" href="/scss/style.min.f62723c8daa1cd9dab2391edbd3067c8d578c37e26885951819953eb0ebea991.css"><meta property='og:title' content="MC 1.21.4 中工具物品注册方法及相关类变更详解">
+<meta property='og:description' content="FirstFabricModDev 6">
+<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_6/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img5.png' />
-<meta name="twitter:title" content="1.21.4将2D物品转换为3D的新方法（无需Mixin）">
-<meta name="twitter:description" content="FirstFabricModDev 5"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img5.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-13T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img6.png' />
+<meta name="twitter:title" content="MC 1.21.4 中工具物品注册方法及相关类变更详解">
+<meta name="twitter:description" content="FirstFabricModDev 6"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img6.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
     </head>
@@ -263,13 +263,9 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#参考视频">参考视频：</a></li>
-    <li><a href="#mojang为item重写了model加载方法">Mojang为item重写了Model加载方法</a></li>
-    <li><a href="#modmodelsprovider直接生成json">ModModelsProvider直接生成JSON</a></li>
-    <li><a href="#深入剖析registerwithinhandmodel方法">深入剖析registerWithInHandModel方法</a>
-      <ol>
-        <li><a href="#继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法</a></li>
-      </ol>
-    </li>
+    <li><a href="#工具物品注册时的新写法">工具物品注册时的新写法</a></li>
+    <li><a href="#toolmaterials类的移除">ToolMaterials类的移除</a></li>
+    <li><a href="#新建modtoolmaterial类">新建ModToolMaterial类</a></li>
   </ol>
 </nav>
         </div>
@@ -284,9 +280,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/firstfabricmoddevlog_5/">
+            <a href="/p/firstfabricmoddevlog_6/">
                 
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img5.png" loading="lazy" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" />
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img6.png" loading="lazy" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" />
                 
             </a>
         </div>
@@ -309,12 +305,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/firstfabricmoddevlog_5/">1.21.4将2D物品转换为3D的新方法（无需Mixin）</a>
+            <a href="/p/firstfabricmoddevlog_6/">MC 1.21.4 中工具物品注册方法及相关类变更详解</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            FirstFabricModDev 5
+            FirstFabricModDev 6
         </h3>
         
     </div>
@@ -335,12 +331,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-01-10</time>
+                <time class="article-time--published">2025-01-13</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1180 字
+                    1038 字
                 </time>
             </div>
         
@@ -382,7 +378,7 @@
 
 
 <div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1hb421n75b"
+    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1tT421Y7tV"
             scrolling="no"
             frameborder="no"
             framespacing="0"
@@ -391,12 +387,84 @@
     </iframe>
 </div>
 
-<h2 id="mojang为item重写了model加载方法">Mojang为item重写了Model加载方法
+<h2 id="工具物品注册时的新写法">工具物品注册时的新写法
 </h2><p>我的<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_1/"  target="_blank" rel="noopener"
     >在MC1.21.4中创建Item时候遇到的问题</a>这篇博客中提到了Mojang在
-1.21.4版本中要求新建一个这个路径的文件夹，而这就是可以采用新写法的原因。<br>
-<code>assets/&lt;namespace&gt;/items</code><br>
-这里也是以原版的望远镜为例子，它在该路径下的json文件如下：</p>
+1.21.4版本中要求一个新的Register方法的写法，而工具的注册在原版代码的写法及其<code>register</code>方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Items</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">WOODEN_SWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;wooden_sword&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SwordItem</span><span class="p">(</span><span class="n">ToolMaterial</span><span class="p">.</span><span class="na">WOOD</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">2</span><span class="p">.</span><span class="na">4F</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="n">keyOf</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>而一般物品的注册写法和<code>register</code>方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Items</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">APPLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;apple&#34;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">().</span><span class="na">food</span><span class="p">(</span><span class="n">FoodComponents</span><span class="p">.</span><span class="na">APPLE</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="w"> </span><span class="n">settings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="n">keyOf</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">Item</span><span class="p">::</span><span class="k">new</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到两个<code>register</code>方法的形参列表不一样，所以我们需要在<code>ModItems</code>中仿制一个<code>register</code>方法。<br>
+我写的如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryKey</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registryKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RegistryKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">RegistryKeys</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="n">Identifier</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="o">&lt;</span><span class="n">YOURMODID</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">registryKey</span><span class="p">,</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>于是我们注册工具的写法如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -409,174 +477,54 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:select&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cases&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;gui&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;ground&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;fixed&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fallback&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass_in_hand&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;property&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:display_context&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>不难看出，视频中要求的模型加载和在渲染场景选择的问题被转移到了这个json文件中表达，
-这意味着我们可以直接使用<code>ModModelsProvider</code>来进行数据生成，而无需<code>mixin</code></p>
-<h2 id="modmodelsprovider直接生成json">ModModelsProvider直接生成JSON
-</h2><p>在查阅原版代码的时候，发现了在<code>ItemModelGenerator</code>类中注册望远镜模型的办法如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">SPYGLASS</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">//这里的SWORD展示了防火（下界合金）写法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">GA_SWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;ga_sword&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SwordItem</span><span class="p">(</span><span class="n">ModToolMaterial</span><span class="p">.</span><span class="na">GALLIUM</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">2</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">().</span><span class="na">fireproof</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">registryKey</span><span class="p">(</span><span class="n">RegistryKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">RegistryKeys</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="n">Identifier</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">FirstFabricMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;ga_sword&#34;</span><span class="p">)))));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">//需要多传递一个.registryKey参数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">//PICKAXE是普通写法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">GA_PICKAXE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;ga_pickaxe&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PickaxeItem</span><span class="p">(</span><span class="n">ModToolMaterial</span><span class="p">.</span><span class="na">GALLIUM</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">.</span><span class="na">5F</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">2</span><span class="p">.</span><span class="na">8F</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>我们又知道<br>
-<strong><code>ModModelsProvider</code>继承于<code>FabricModelProvider</code>继承于<code>ItemModelGenerator</code></strong><br>
-所以我们在<code>ModModelsProvider</code>的<code>generateItemModels</code>方法中直接就可以使用<code>registerWithInHandModel</code>方法<br>
-具体如下：</p>
+</div><h2 id="toolmaterials类的移除">ToolMaterials类的移除
+</h2><p>视频中提到我们需要新建一个自己的<code>ToolMaterials</code>变量来决定工具物品的等级、耐久等，但在1.21.4中，<code>ToolMaterials</code>内被Mojang移除了，但好在<code>ToolMaterials</code>继承自<code>ToolMaterial</code>类，且<code>ToolMaterial</code>是一个<code>record</code>类，具体描述如下：<br>
+<em>&ldquo;Java 14 引入了 record 这一概念，提供了一种简洁的方式来定义包含数据的类。Record 是一种特殊的类，主要用于携带数据，其成员变量是默认 final 的。虽然 record 提高了代码的可读性和简洁性，但有一个重要的特性是，record 不能被继承。这一限制使得 record 在对象模型设计中的角色与传统类有所不同。&rdquo;</em>  ——摘自<a class="link" href="https://blog.51cto.com/u_16175443/11634977"  target="_blank" rel="noopener"
+    >“java record不能被继承”</a><br>
+所以用子类继承的想法被淘汰了，而ToolMaterial实际上成为了一个可以被定义和初始化的量。</p>
+<h2 id="新建modtoolmaterial类">新建ModToolMaterial类
+</h2><p>综上所述，我们只需要新建一个ModToolMaterial的类，然后把这些量定义到这即可。写法如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModModelsProvider</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FabricModelProvider</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">generateItemModels</span><span class="p">(</span><span class="n">ItemModelGenerator</span><span class="w"> </span><span class="n">itemModelGenerator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">itemModelGenerator</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">PLATE</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>使用这个函数进行数据生成会在<code>generated</code>文件夹下生成以下内容</p>
-<ol>
-<li><code>assets\&lt;yourModID&gt;\items\plate.json</code></li>
-<li><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
-这看起来和使用<code>register</code>方法没有区别，但实际上在 <code>1</code> 路径下的文件结构和上面原版的“望远镜”一样了。<br>
-为了便于区别，这里给一个普通物品的该JSON：</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/apple&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>发现多的<code>&quot;when&quot;</code>正好与视频中的<code>if</code>的条件对应，也就是说只需要修改when中的值，就可以达到与视频中一样控制3D化场景的时候了</p>
-<h2 id="深入剖析registerwithinhandmodel方法">深入剖析registerWithInHandModel方法
-</h2><p>这里先贴出原版的函数实现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerWithInHandModel</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Models</span><span class="p">.</span><span class="na">GENERATED</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="p">.</span><span class="na">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;_in_hand&#34;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span><span class="w"> </span><span class="n">unbaked2</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到有一个<code>&quot;_in_hand&quot;</code>的字符串，这意味着我们在<code>resources</code>文件夹下的<br>
-<code>assets\&lt;yourModID&gt;\models\item</code><br>
-添加物品的3D信息JSON的时候，需要把文件名改为<code>item名+_in_hand</code>的形式。<br>
-如<code>plate_in_hand.json</code></p>
-<h3 id="继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法
-</h3><p>还是先给出函数实现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="nf">createModelWithInHandVariant</span><span class="p">(</span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">inHandModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">DisplayContextProperty</span><span class="p">(),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">inHandModel</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">switchCase</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GUI</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GROUND</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">FIXED</span><span class="p">),</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModToolMaterial</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">ToolMaterial</span><span class="w"> </span><span class="n">GALLIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ToolMaterial</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">BlockTags</span><span class="p">.</span><span class="na">INCORRECT_FOR_IRON_TOOL</span><span class="p">,</span><span class="c1">//TagKey&lt;Block&gt; incorrectBlocksForDrops,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">1000</span><span class="p">,</span><span class="c1">//int durability,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">7</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="c1">//float speed,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">2</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="c1">//float attackDamageBonus,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">14</span><span class="p">,</span><span class="c1">//int enchantmentValue,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ModItemTags</span><span class="p">.</span><span class="na">GALLIUM_TAG</span><span class="c1">//TagKey&lt;Item&gt; repairItems</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>你会发现<code>assets\&lt;yourModID&gt;\items\plate.json</code>中的<code>when</code>已经被Mojang写死在这了，所以要实现像视频中那样只在<code>GUI</code>中渲染为2D的话，你需要重写这个方法。
-不过还有个简单的形式是你直接去修改生成的JSON文件中的<code>when</code>的值<br>
-（Tip：数据生成在下次运行的时候不会修改你手动改过的文件）<br>
-这样你在1.21.4中就实现了如下效果<br>
-<img src="/images/MCFDev/img5.1.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="效果"
-	
-	
-></p>
+</div><p>这里因为反编译的代码和文档提供的不一致，为了方便阅读，每个量给了注释。另外，修复用的物品要求一个ItemTag，所以自己去定义一个Tag（实际上大部分时候你会觉得建一个Tag是Mojang找事的写法）。</p>
 
 </section>
 
@@ -588,7 +536,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/firstfabricmoddevlog_5/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/firstfabricmoddevlog_6/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -652,18 +600,18 @@
             
                 
 <article class="has-image">
-    <a href="/p/firstfabricmoddevlog_6/">
+    <a href="/p/firstfabricmoddevlog_5/">
         
         
             <div class="article-image">
                 
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img6.png" loading="lazy" data-key="FirstFabricModDevLog_6" data-hash="https://zephyrbd.github.io/images/MCFDev/img6.png"/>
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img5.png" loading="lazy" data-key="FirstFabricModDevLog_5" data-hash="https://zephyrbd.github.io/images/MCFDev/img5.png"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">MC 1.21.4 中工具物品注册方法及相关类变更详解</h2>
+            <h2 class="article-title">1.21.4将2D物品转换为3D的新方法（无需Mixin）</h2>
         </div>
     </a>
 </article>
