@@ -335,7 +335,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    294 字
+                    333 字
                 </time>
             </div>
         
@@ -388,32 +388,36 @@
 
 <strong>这里补充一下我在1.21.4中遇到的问题</strong></p>
 <h2 id="register方法新形式">register方法新形式
-</h2><p>1.21.2以后的的<code>itemregister</code>方法要写成下面这种新的形式</p>
+</h2><p>1.21.2以后的item的<code>register</code>方法要写成下面这种新的形式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">CUSTOM_ITEM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;custom_item&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">::</span><span class="k">new</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="w"> </span><span class="n">settings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryKey</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registryKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RegistryKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">RegistryKeys</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="n">Identifier</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&#34;tutorial&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">registryKey</span><span class="p">,</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">CUSTOM_ITEM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;custom_item&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">::</span><span class="k">new</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="w"> </span><span class="n">settings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryKey</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registryKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RegistryKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">RegistryKeys</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="n">Identifier</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&#34;tutorial&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">registryKey</span><span class="p">,</span><span class="w"> </span><span class="n">factory</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>并且除了添加lang、models.item和textures.item文件夹及其对应json以外，要使得材质正常显示还需添加这样一个文件夹和对应的json<br>
+</div><p>PS：进阶写法参见《<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_6/"  target="_blank" rel="noopener"
+    >MC 1.21.4 中工具物品注册方法及相关类变更详解</a>》<br>
+并且除了添加lang、models.item和textures.item文件夹及其对应json以外，要使得材质正常显示还需添加这样一个文件夹和对应的json。<br>
 <code>assets/&lt;namespace&gt;/items</code></p>
 <h2 id="参考">参考：
 </h2><p>关于1.21.4的fabric中创建item的更改内容(即新的json需要的写法)具体见：<a class="link" href="https://fabricmc.net/2024/12/02/1214.html"  target="_blank" rel="noopener"
@@ -750,7 +754,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：<a cla
 				
 			
 			发表了13篇文章 · 
-			总计14.68k字
+			总计15.06k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
