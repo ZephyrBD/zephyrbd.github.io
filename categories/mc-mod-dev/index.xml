@@ -139,7 +139,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;但对于&lt;code&gt;GA_SWORD&lt;/code&gt;这种有特殊属性的工具，这样写显得代码很难看。我又发现，不管是普通Item还是工具Item，都定义了一个&lt;code&gt;RegistryKey.of&lt;/code&gt;的量，于是我把两个&lt;code&gt;register&lt;/code&gt;方法和这里的&lt;code&gt;RegistryKey.of&lt;/code&gt;量提出来改写为函数，最后全部重写后的方法如下：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;但对于&lt;code&gt;GA_SWORD&lt;/code&gt;这种有特殊属性的工具，这样写显得代码很难看。但我又发现，不管是普通Item还是工具Item，都定义了一个&lt;code&gt;RegistryKey.of&lt;/code&gt;的量，于是我把两个&lt;code&gt;register&lt;/code&gt;方法和这里的&lt;code&gt;RegistryKey.of&lt;/code&gt;量提出来改写为函数，最后全部重写后如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
