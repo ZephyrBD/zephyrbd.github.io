@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 3">
-<title>在MC1.21.4中创建食物的相同与区别</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 7">
+<title>MC 1.21.4 盔甲物品注册及相关类详解</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_3/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_7/'>
 
-<link rel="stylesheet" href="/scss/style.min.f62723c8daa1cd9dab2391edbd3067c8d578c37e26885951819953eb0ebea991.css"><meta property='og:title' content="在MC1.21.4中创建食物的相同与区别">
-<meta property='og:description' content="FirstFabricModDev 3">
-<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_3/'>
+<link rel="stylesheet" href="/scss/style.min.f62723c8daa1cd9dab2391edbd3067c8d578c37e26885951819953eb0ebea991.css"><meta property='og:title' content="MC 1.21.4 盔甲物品注册及相关类详解">
+<meta property='og:description' content="FirstFabricModDev 7">
+<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_7/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img3.png' />
-<meta name="twitter:title" content="在MC1.21.4中创建食物的相同与区别">
-<meta name="twitter:description" content="FirstFabricModDev 3"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img3.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-14T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img7.png' />
+<meta name="twitter:title" content="MC 1.21.4 盔甲物品注册及相关类详解">
+<meta name="twitter:description" content="FirstFabricModDev 7"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img7.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
     </head>
@@ -263,10 +263,11 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#参考视频">参考视频：</a></li>
-    <li><a href="#相同与区别">相同与区别</a></li>
-    <li><a href="#moditems">ModItems:</a></li>
-    <li><a href="#modfoodcomponents">ModFoodComponents：</a></li>
-    <li><a href="#modfoodconsumablecomponents">ModFoodConsumableComponents:</a></li>
+    <li><a href="#盔甲注册的新方法">盔甲注册的新方法</a></li>
+    <li><a href="#modarmormaterials类的变化">ModArmorMaterials类的变化</a></li>
+    <li><a href="#modequipmentassetkeys类">ModEquipmentAssetKeys类</a></li>
+    <li><a href="#盔甲材质文件目录的变更">盔甲材质文件目录的变更</a></li>
+    <li><a href="#参考文档">参考文档</a></li>
   </ol>
 </nav>
         </div>
@@ -281,9 +282,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/firstfabricmoddevlog_3/">
+            <a href="/p/firstfabricmoddevlog_7/">
                 
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img3.png" loading="lazy" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" />
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img7.png" loading="lazy" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" />
                 
             </a>
         </div>
@@ -306,12 +307,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/firstfabricmoddevlog_3/">在MC1.21.4中创建食物的相同与区别</a>
+            <a href="/p/firstfabricmoddevlog_7/">MC 1.21.4 盔甲物品注册及相关类详解</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            FirstFabricModDev 3
+            FirstFabricModDev 7
         </h3>
         
     </div>
@@ -332,12 +333,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-01-02</time>
+                <time class="article-time--published">2025-01-14</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    636 字
+                    868 字
                 </time>
             </div>
         
@@ -379,7 +380,7 @@
 
 
 <div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1WJ4m1M7CT"
+    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1gH4y1c7Mf"
             scrolling="no"
             frameborder="no"
             framespacing="0"
@@ -388,30 +389,25 @@
     </iframe>
 </div>
 
-<h2 id="相同与区别">相同与区别
-</h2><p>(PS：Bugjump是真能改)</p>
-<ol>
-<li>仍然要创建一个<code>FoodComponent</code>类</li>
-<li>FoodComponent类弃用了<code>snack()、statusEffect()、createStew()</code>等方法</li>
-<li>药水效果需要通过<code>ConsumableComponents</code>类来实现</li>
-<li>由于2,3，需要创建一个<code>ModFoodConsumableComponents</code>的新类</li>
-<li>由于4，在register该食物Item时可能会需要传一个<code>ModFoodConsumableComponents.XXX</code>的参数</li>
-<li>在register该食物Item时可以用<code>useRemainder(BOWL)</code>来实现归还碗的效果</li>
-</ol>
-<p>文件结构如图：<br>
-<img src="/images/MCFDev/FilesTree.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="File Tree"
-	
-	
-><br>
-这里以EXAMPLE_SOUP为例子</p>
-<h2 id="moditems">ModItems:
-</h2><div class="highlight"><div class="chroma">
+<h2 id="盔甲注册的新方法">盔甲注册的新方法
+</h2><p>同&quot;<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_6/"  target="_blank" rel="noopener"
+    >《MC 1.21.4 中工具物品注册方法及相关类变更详解》</a>&ldquo;这篇博客中所写的<code>register</code>方法大致一样，这里给个例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">GA_HELMET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;ga_helmet&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmorItem</span><span class="p">(</span><span class="n">ModArmorMaterials</span><span class="p">.</span><span class="na">GALLIUM_ARMOR</span><span class="p">,</span><span class="w"> </span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">HELMET</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="modarmormaterials类的变化">ModArmorMaterials类的变化
+</h2><p><strong>好消息：你Mojang又把这<code>ModArmorMaterials</code>改回<code>interface</code>（接口）了（真是活母操作）！</strong><br>
+于是你只需要新建一个接口类然后定义变量就好了。具体例子如下：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -424,23 +420,26 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">register</span><span class="p">(</span><span class="s">&#34;example_soup&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="p">::</span><span class="k">new</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Settings</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">maxCount</span><span class="p">(</span><span class="n">1</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">food</span><span class="p">(</span><span class="n">ModFoodComponents</span><span class="p">.</span><span class="na">EXAMPLE_SOUP</span><span class="p">,</span><span class="n">ModFoodConsumableComponents</span><span class="p">.</span><span class="na">EXAMPLE_SOUP</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//food两个参数，ModFoodComponents.XXX是食物的普通数值和属性</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//ModFoodConsumableComponents.XXX是食物给予的药水效果等属性</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">//这里的XXX要与后面两个类中名称一致</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">useRemainder</span><span class="p">(</span><span class="n">BOWL</span><span class="p">));</span><span class="c1">//归还玩家一个碗</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ModArmorMaterials</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ArmorMaterial</span><span class="w"> </span><span class="n">GALLIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmorMaterial</span><span class="p">(</span><span class="n">20</span><span class="p">,</span><span class="w"> </span><span class="n">Util</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EnumMap</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">class</span><span class="p">),</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">BOOTS</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">LEGGINGS</span><span class="p">,</span><span class="w"> </span><span class="n">6</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">CHESTPLATE</span><span class="p">,</span><span class="w"> </span><span class="n">8</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">HELMET</span><span class="p">,</span><span class="w"> </span><span class="n">3</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">EquipmentType</span><span class="p">.</span><span class="na">BODY</span><span class="p">,</span><span class="w"> </span><span class="n">11</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}),</span><span class="w"> </span><span class="n">10</span><span class="p">,</span><span class="w"> </span><span class="n">SoundEvents</span><span class="p">.</span><span class="na">ITEM_ARMOR_EQUIP_IRON</span><span class="p">,</span><span class="w"> </span><span class="n">2</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">.</span><span class="na">0F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItemTags</span><span class="p">.</span><span class="na">GALLIUM_TAG</span><span class="p">,</span><span class="w"> </span><span class="n">ModEquipmentAssetKeys</span><span class="p">.</span><span class="na">GALLIUM</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//SoundEvents.ITEM_ARMOR_EQUIP_IRON表示穿戴音效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//ModItemTags.GALLIUM_TAG表示修复材料</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//ModEquipmentAssetKeys.GALLIUM表示装备穿戴的时候渲染相关的量（我不确定）</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="modfoodcomponents">ModFoodComponents：
-</h2><div class="highlight"><div class="chroma">
+</div><h2 id="modequipmentassetkeys类">ModEquipmentAssetKeys类
+</h2><p>这个是表示装备穿戴的时候渲染相关的量（我不确定），总之也是个接口类，写上如下变量：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -450,16 +449,26 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModFoodComponents</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="c1">//使用alwaysEdible()将使得食物始终可以食用</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FoodComponent</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FoodComponent</span><span class="p">.</span><span class="na">Builder</span><span class="p">().</span><span class="na">nutrition</span><span class="p">(</span><span class="n">2</span><span class="p">).</span><span class="na">saturationModifier</span><span class="p">(</span><span class="n">0</span><span class="p">.</span><span class="na">3F</span><span class="p">).</span><span class="na">alwaysEdible</span><span class="p">().</span><span class="na">build</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ModEquipmentAssetKeys</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">RegistryKey</span><span class="o">&lt;</span><span class="n">EquipmentAsset</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GALLIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="s">&#34;gallium&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">RegistryKey</span><span class="o">&lt;</span><span class="n">EquipmentAsset</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RegistryKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">REGISTRY_KEY</span><span class="p">,</span><span class="w"> </span><span class="n">Identifier</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="o">&lt;</span><span class="n">YOURMODID</span><span class="o">&gt;</span><span class="p">,</span><span class="n">name</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="modfoodconsumablecomponents">ModFoodConsumableComponents:
-</h2><div class="highlight"><div class="chroma">
+</div><p>PS：注意MOD_ID（这玩意卡了我半天，甚至还去DIscord问了，结果是直接用了原版的方法发现原版写的是<code>Identifier.ofVanilla(name)</code>，淦！）。</p>
+<h2 id="盔甲材质文件目录的变更">盔甲材质文件目录的变更
+</h2><p>这里先给出老版本目录第三人称盔甲材质的目录结构：<br>
+<code>/main/resources/assets/&lt;YOURMODID&gt;/textures/models/armor/</code><br>
+然后新版本改到了<br>
+<code>/main/resources/assets/&lt;YOURMODID&gt;/textures/entity/equipment/humanoid</code>  和<br>
+<code>/main/resources/assets/&lt;YOURMODID&gt;/textures/entity/equipment/humanoid_leggings</code>下<br>
+此外你还需要在
+<code>/main/resources/assets/&lt;YOURMODID&gt;/equipment</code>下新建一个json，<br>
+名字格式为<code>注册的RegistryKey&lt;EquipmentAsset&gt;变量名</code>
+内容如下：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -471,21 +480,33 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModFoodConsumableComponents</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">//药水效果需要放到一个StatusEffectInstance类型的List中,但我这没开单独的容器</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ConsumableComponent</span><span class="w"> </span><span class="n">EXAMPLE_SOUP</span><span class="w"> </span><span class="o">=</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">food</span><span class="p">().</span><span class="na">consumeEffect</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ApplyEffectsConsumeEffect</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">REGENERATION</span><span class="p">,</span><span class="w"> </span><span class="n">100</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">ABSORPTION</span><span class="p">,</span><span class="w"> </span><span class="n">2400</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">new</span><span class="w"> </span><span class="n">StatusEffectInstance</span><span class="p">(</span><span class="n">StatusEffects</span><span class="p">.</span><span class="na">FIRE_RESISTANCE</span><span class="p">,</span><span class="w"> </span><span class="n">2400</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">))))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;layers&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;humanoid&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;texture&#34;</span><span class="p">:</span> <span class="s2">&#34;firstfabricmod:gallium&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;humanoid_leggings&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;texture&#34;</span><span class="p">:</span> <span class="s2">&#34;firstfabricmod:gallium&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><p>注：这里省了马铠的声明，具体见原版的json。</p>
+<h2 id="参考文档">参考文档
+</h2><p><a class="link" href="https://docs.fabricmc.net/zh_cn/develop/items/custom-armor"  target="_blank" rel="noopener"
+    >Fabric文档：自定义盔甲</a></p>
+
 </section>
 
 
@@ -496,7 +517,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/firstfabricmoddevlog_3/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/firstfabricmoddevlog_7/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -557,25 +578,6 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_7/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img7.png" loading="lazy" data-key="FirstFabricModDevLog_7" data-hash="https://zephyrbd.github.io/images/MCFDev/img7.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">MC 1.21.4 盔甲物品注册及相关类详解</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="has-image">
@@ -648,6 +650,25 @@
 
         <div class="article-details">
             <h2 class="article-title">在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/firstfabricmoddevlog_1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img1.png" loading="lazy" data-key="FirstFabricModDevLog_1" data-hash="https://zephyrbd.github.io/images/MCFDev/img1.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在MC1.21.4中创建Item时候遇到的问题</h2>
         </div>
     </a>
 </article>
