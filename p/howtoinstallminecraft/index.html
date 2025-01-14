@@ -370,6 +370,13 @@
                     2742 字
                 </time>
             </div>
+			    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>
+                <time class="post-word-count">
+                    浏览量：<span id="vercount_value_page_pv">Loading</span>
+                </time>
+			<div>
+			
+			</div>
         
 
         
@@ -951,8 +958,10 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
 			}
 			setInterval("createtime()",250); 
-		</script><br>
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计<a> 由ZephyrBD修改</a>
+		</script><a>总浏览量<span id="vercount_value_site_pv">Loading</span></a>
+		<a>访客总数<span id="vercount_value_site_uv">Loading</span></a>
+		<br>
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计<a><br>由ZephyrBD修改</a>
 		<br>
 		<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="采用 CC BY-NC-SA 4.0 协议"><img src="https://zephyrbd.github.io/images/ccbyncsa.svg" alt=""></a>
 		<a target="_blank" href="https://gohugo.io/"><img src="https://zephyrbd.github.io/images/hugo.svg" alt=""></a>
@@ -1057,6 +1066,6 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
         document.head.appendChild(customFont);
     }());
 </script>
-
+<script defer src="https://cn.vercount.one/js"></script>
     </body>
 </html>
