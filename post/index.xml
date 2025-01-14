@@ -105,12 +105,12 @@
 &lt;h2 id=&#34;盔甲材质文件目录的变更&#34;&gt;盔甲材质文件目录的变更
 &lt;/h2&gt;&lt;p&gt;这里先给出老版本目录第三人称盔甲材质的目录结构：&lt;br&gt;
 &lt;code&gt;/main/resources/assets/&amp;lt;YOURMODID&amp;gt;/textures/models/armor/&lt;/code&gt;&lt;br&gt;
-然后新版本改到了&lt;br&gt;
+然后新版本改到了：&lt;br&gt;
 &lt;code&gt;/main/resources/assets/&amp;lt;YOURMODID&amp;gt;/textures/entity/equipment/humanoid&lt;/code&gt;  和&lt;br&gt;
 &lt;code&gt;/main/resources/assets/&amp;lt;YOURMODID&amp;gt;/textures/entity/equipment/humanoid_leggings&lt;/code&gt;下&lt;br&gt;
-此外你还需要在
+此外你还需要在：
 &lt;code&gt;/main/resources/assets/&amp;lt;YOURMODID&amp;gt;/equipment&lt;/code&gt;下新建一个json，&lt;br&gt;
-名字格式为&lt;code&gt;注册的RegistryKey&amp;lt;EquipmentAsset&amp;gt;变量名&lt;/code&gt;
+名字格式为&lt;code&gt;RegistryKey&amp;lt;EquipmentAsset&amp;gt;变量名&lt;/code&gt;&lt;br&gt;
 内容如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
