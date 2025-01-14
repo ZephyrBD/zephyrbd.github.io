@@ -101,7 +101,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;PS：注意MOD_ID（这玩意卡了我半天，甚至还去DIscord问了，结果是直接用了原版的方法发现原版写的是&lt;code&gt;Identifier.ofVanilla(name)&lt;/code&gt;，淦！）。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;PS：注意MOD_ID（这玩意卡了我半天，甚至还去Discord问了，结果是直接用了原版的方法发现原版写的是&lt;code&gt;Identifier.ofVanilla(name)&lt;/code&gt;，淦！）。&lt;/p&gt;
 &lt;h2 id=&#34;盔甲材质文件目录的变更&#34;&gt;盔甲材质文件目录的变更
 &lt;/h2&gt;&lt;p&gt;这里先给出老版本目录第三人称盔甲材质的目录结构：&lt;br&gt;
 &lt;code&gt;/main/resources/assets/&amp;lt;YOURMODID&amp;gt;/textures/models/armor/&lt;/code&gt;&lt;br&gt;
