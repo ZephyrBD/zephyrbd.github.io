@@ -267,6 +267,7 @@
     <li><a href="#modarmormaterials类的变化">ModArmorMaterials类的变化</a></li>
     <li><a href="#modequipmentassetkeys类">ModEquipmentAssetKeys类</a></li>
     <li><a href="#盔甲材质文件目录的变更">盔甲材质文件目录的变更</a></li>
+    <li><a href="#getmaterial方法的移除">getMaterial()方法的移除</a></li>
     <li><a href="#参考文档">参考文档</a></li>
   </ol>
 </nav>
@@ -338,7 +339,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    867 字
+                    1078 字
                 </time>
             </div>
         
@@ -354,7 +355,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -503,7 +504,43 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>注：这里省了马铠的声明，具体见原版的json。</p>
-<h2 id="参考文档">参考文档
+<h2 id="getmaterial方法的移除">getMaterial()方法的移除
+</h2><p>Mojang移除了Item类中的<code>getMaterial()</code>方法，这导致在后面实现穿戴盔甲时给予玩家药水效果时不能用<code>ExampleHelmet.getMaterial() = YourMaterial</code>这样的句子，于是我直接改用了如下判断：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModArmorItem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ArmorItem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasCorrectArmorSet</span><span class="p">(</span><span class="n">PlayerEntity</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Item</span><span class="w"> </span><span class="n">helmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">getInventory</span><span class="p">().</span><span class="na">getArmorStack</span><span class="p">(</span><span class="n">3</span><span class="p">).</span><span class="na">getItem</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Item</span><span class="w"> </span><span class="n">chestplate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">getInventory</span><span class="p">().</span><span class="na">getArmorStack</span><span class="p">(</span><span class="n">2</span><span class="p">).</span><span class="na">getItem</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Item</span><span class="w"> </span><span class="n">legging</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">getInventory</span><span class="p">().</span><span class="na">getArmorStack</span><span class="p">(</span><span class="n">1</span><span class="p">).</span><span class="na">getItem</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Item</span><span class="w"> </span><span class="n">boots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">getInventory</span><span class="p">().</span><span class="na">getArmorStack</span><span class="p">(</span><span class="n">0</span><span class="p">).</span><span class="na">getItem</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">helmet</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">GALLIUM_HELMET</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">chestplate</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">GALLIUM_CHESTPLATE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">legging</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">GALLIUM_LEGGINGS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">boots</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">GALLIUM_BOOTS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">//这里直接判断物品相等</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">···</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="参考文档">参考文档
 </h2><p><a class="link" href="https://docs.fabricmc.net/zh_cn/develop/items/custom-armor"  target="_blank" rel="noopener"
     >Fabric文档：自定义盔甲</a></p>
 
@@ -846,7 +883,7 @@
 				
 			
 			发表了14篇文章 · 
-			总计15.93k字
+			总计16.14k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
