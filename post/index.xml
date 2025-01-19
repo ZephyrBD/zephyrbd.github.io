@@ -70,12 +70,13 @@ PS:&lt;/p&gt;
 &lt;h3 id=&#34;变量的命名规则&#34;&gt;变量的命名规则
 &lt;/h3&gt;&lt;p&gt;在编程中，变量的命名规则非常重要，遵守这些规则可以避免语法错误，并提高代码的可读性和可维护性。以下是 Python 变量命名时必须遵守的规则：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;变量名由字母、数字和下划线组成&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;变量名由字母、数字和下划线组成
 &lt;ul&gt;
 &lt;li&gt;变量名只能包含 字母（a-z, A-Z）、数字（0-9） 和 下划线（_）。&lt;/li&gt;
 &lt;li&gt;Python 区分大小写，因此 name 和 Name 是两个不同的变量。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -90,11 +91,12 @@ PS:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;变量名不能以数字开头&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;变量名不能以数字开头
 &lt;ul&gt;
 &lt;li&gt;变量名必须以字母或下划线开头，不能以数字开头。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -107,11 +109,12 @@ PS:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;变量名不能是 Python 的关键字&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;变量名不能是 Python 的关键字
 &lt;ul&gt;
 &lt;li&gt;Python 的关键字是保留用于特殊用途的单词，不能用作变量名&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -158,8 +161,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Python 关键字列表解析
-以下是一些常用关键字及其基本功能：&lt;/li&gt;
-&lt;/ol&gt;
+以下是一些常用关键字及其基本功能：
 &lt;ul&gt;
 &lt;li&gt;控制流关键字：
 &lt;ul&gt;
@@ -192,7 +194,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
+&lt;/li&gt;
 &lt;li&gt;注意事项&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -296,7 +298,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;避免使用保留字和内置函数名&lt;br&gt;
-不要使用 Python 的保留字或内置函数名作为变量名，以免引起错误或困惑。
+不要使用 Python 的保留字或内置函数名作为变量名，以免引起错误或困惑。&lt;br&gt;
 保留字：&lt;code&gt;if&lt;/code&gt;, &lt;code&gt;else&lt;/code&gt;, &lt;code&gt;while&lt;/code&gt;, &lt;code&gt;for&lt;/code&gt;, &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;try&lt;/code&gt;, &lt;code&gt;except&lt;/code&gt;, &lt;code&gt;import&lt;/code&gt;, &lt;code&gt;from&lt;/code&gt; 等。
 内置函数名：&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;str&lt;/code&gt;, &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;sum&lt;/code&gt;, &lt;code&gt;print&lt;/code&gt;, &lt;code&gt;len&lt;/code&gt; 等。&lt;/li&gt;
 &lt;/ol&gt;
