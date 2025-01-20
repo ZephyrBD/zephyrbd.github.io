@@ -132,7 +132,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;hydro题目&#34;&gt;Hydro题目：
 &lt;/h2&gt;&lt;h3 id=&#34;题目背景&#34;&gt;题目背景
-&lt;/h3&gt;&lt;p&gt;本题除【数据范围与约定】外与 P1090 完 全 一 致。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;本题除【数据范围与约定】外与 P1090 &lt;strong&gt;完 全 一 致&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;题目描述&#34;&gt;题目描述
 &lt;/h3&gt;&lt;p&gt;在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。&lt;br&gt;
 每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过(n−1)次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。&lt;br&gt;
@@ -831,6 +831,339 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;li&gt;字符串中有单引号时（外面得双引号包裹）&lt;/li&gt;
 &lt;li&gt;字符串中有双引号时（外面得单引号包裹）&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Python开发环境的搭建</title>
+        <link>https://zephyrbd.github.io/p/pythondev_1/</link>
+        <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/p/pythondev_1/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev1/img0.png" alt="Featured image of post Python开发环境的搭建" /&gt;&lt;h2 id=&#34;python下载和安装&#34;&gt;Python下载和安装
+&lt;/h2&gt;&lt;h3 id=&#34;下载-python&#34;&gt;下载 Python
+&lt;/h3&gt;&lt;p&gt;打开&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;，点击下载(选择自己的电脑系统)&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img1&#34;
+	
+	
+&gt;
+选择安装版本，点击下载（左侧为长期稳定的版本）&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img2&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img3&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装python&#34;&gt;安装Python
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;运行安装程序&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img4&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;选择指定路径安装&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img5&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;点击下一步，指定安装路径&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img6&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;点击安装，等待安装成功&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img7&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;安装成功的提示页面&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img8&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;python-的交互环境&#34;&gt;Python 的交互环境
+&lt;/h3&gt;&lt;p&gt;python 安装好之后如何使用呢？&lt;br&gt;
+打开 cmd 命令行，输入：&lt;code&gt;python&lt;/code&gt;，即可运行python解释器(程序)，进入到 python 的交互环境中&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img9&#34;
+	
+	
+&gt;&lt;br&gt;
+交互环境在进行程序开发的时候，很少会使用到，&lt;br&gt;
+输入 Python 能看到版本信息，说明已经安装成功了就可以啦。&lt;/p&gt;
+&lt;h2 id=&#34;pycharm的下载和安装&#34;&gt;Pycharm的下载和安装
+&lt;/h2&gt;&lt;h3 id=&#34;下载安装包&#34;&gt;下载安装包
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PyCharm专业版是收费软件，&lt;/strong&gt; 安装之后需要使用激活码激活才可以用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PyCharm专业版对在校大学生免费授权(最推荐)，&lt;/strong&gt; 可以去官网了解。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PyCharm社区版是免费的(推荐)，&lt;/strong&gt; 对于初学者可以先使用社区版进行学习，社区版编写 python 代码功能完整足够，没必要在学习初期给自己增加学习的摩擦力，等到后面基础语法熟练了，pycharm 的基本使用熟悉了，要进行项目开发的时候，再去使用专业版。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com.cn/pycharm/download/?section=windows&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PyCharm下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击下载专业版&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img10.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img10&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;点击下载社区版&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img11.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img11&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;下载的安装包&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img12.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img12&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;安装-pycharm&#34;&gt;安装 PyCharm
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;双击运行安装程序&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img13.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img13&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;指定安装路径&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img14.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img14&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;勾选下面的选项，点击下一步&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img15.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img15&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;点击安装&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img16.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img16&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;安装过程中，等待安装完成即可&lt;br&gt;
+&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img17.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img17&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;pycharm-基本使用教程&#34;&gt;PyCharm 基本使用教程
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;PyCharm&lt;/strong&gt; 是一个集成开发环境 (IDE)，专门用于 Python 编程。对于初学者来说，PyCharm 社区版已经足够用于学习和开发基础项目。本节将带你一步步熟悉 PyCharm 的基本使用，包括项目创建、解释器配置、文件与文件夹的创建、代码运行，以及项目的退出和切换。&lt;/p&gt;
+&lt;h3 id=&#34;项目创建&#34;&gt;项目创建
+&lt;/h3&gt;&lt;p&gt;在 PyCharm 中，项目是一个文件夹，包含你所有的代码文件、资源文件和配置文件。每个项目都可以有自己的设置和虚拟环境。
+&lt;strong&gt;步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 PyCharm，选择 New Project。&lt;/li&gt;
+&lt;li&gt;在弹出的窗口中，选择项目的保存位置。&lt;/li&gt;
+&lt;li&gt;为项目指定一个名称，并选择 Python 解释器（如未设置，可在后面配置）。&lt;/li&gt;
+&lt;li&gt;点击 Create，项目就会被创建。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS：建议将项目保存在一个易于管理的位置，方便后续查找和管理。&lt;/p&gt;
+&lt;h3 id=&#34;解释器的配置&#34;&gt;解释器的配置
+&lt;/h3&gt;&lt;p&gt;Python 解释器是运行 Python 代码的核心组件。在 PyCharm 中，每个项目可以使用不同的解释器（如系统 Python 或虚拟环境中的 Python）。&lt;br&gt;
+&lt;strong&gt;配置步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在创建项目时，如果未选择解释器，可以通过 File -&amp;gt; Settings -&amp;gt; Project: [Your Project Name] -&amp;gt; Python Interpreter 进行配置。&lt;/li&gt;
+&lt;li&gt;在解释器列表中，选择合适的解释器。如果没有合适的解释器，可以通过 Add Interpreter 添加一个新的 Python 解释器。&lt;/li&gt;
+&lt;li&gt;选择解释器后，点击 OK 保存设置。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS：建议初学者使用系统自带的 Python 解释器，或者为每个项目创建一个虚拟环境，以确保依赖包的独立性。&lt;/p&gt;
+&lt;h3 id=&#34;文件和文件夹的创建&#34;&gt;文件和文件夹的创建
+&lt;/h3&gt;&lt;p&gt;在 PyCharm 中，你可以轻松地创建文件和文件夹，以组织你的代码和资源。&lt;br&gt;
+&lt;strong&gt;创建步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在项目视图的侧栏中，右键点击项目名称或一个文件夹。&lt;/li&gt;
+&lt;li&gt;选择 New，然后选择 Python File 创建一个新的 Python 文件，或选择 Directory 创建一个新的文件夹。&lt;/li&gt;
+&lt;li&gt;为新文件或文件夹命名后，点击 Enter。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS：文件命名应遵循 Python 命名规则（如使用下划线连接单词，尽量不要用中文）。&lt;/p&gt;
+&lt;h3 id=&#34;代码的运行&#34;&gt;代码的运行
+&lt;/h3&gt;&lt;p&gt;在 PyCharm 中运行代码非常简单。你可以运行单个文件或整个项目中的多个文件。&lt;br&gt;
+&lt;strong&gt;运行步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;确保你已经在项目中创建了一个 Python 文件，并且文件中有可运行的代码。&lt;/li&gt;
+&lt;li&gt;打开你要运行的文件，然后右键点击编辑器中的代码区域，选择 Run &amp;lsquo;文件名&amp;rsquo;。&lt;/li&gt;
+&lt;li&gt;PyCharm 将在下方的 Run 窗口中显示运行结果和输出信息。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS：你可以使用快捷键 Shift + F10 快速运行代码。&lt;/p&gt;
+&lt;h3 id=&#34;项目的退出和切换&#34;&gt;项目的退出和切换
+&lt;/h3&gt;&lt;p&gt;当你完成一个项目的工作或想要切换到另一个项目时，你可以轻松地在 PyCharm 中退出当前项目或切换到另一个项目。&lt;br&gt;
+&lt;strong&gt;退出项目：&lt;/strong&gt;&lt;br&gt;
+关闭 PyCharm 窗口即可退出当前项目。&lt;br&gt;
+下次打开 PyCharm 时，会自动加载上次关闭时的项目。&lt;br&gt;
+&lt;strong&gt;切换项目：&lt;/strong&gt;&lt;br&gt;
+在 PyCharm 中，点击 File -&amp;gt; Open，然后选择另一个项目的目录。&lt;br&gt;
+你可以选择在当前窗口打开新项目，或在新窗口中打开。&lt;/p&gt;
+&lt;p&gt;PS：建议每次只在一个项目中工作，避免多个项目同时打开造成的资源占用和混乱。&lt;/p&gt;
+&lt;h3 id=&#34;中文翻译插件安装&#34;&gt;中文翻译插件安装
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开 PyCharm：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;启动 PyCharm，打开你的项目。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入插件市场：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在顶部菜单栏中，点击 File，然后选择 Settings（在 macOS 上是 PyCharm -&amp;gt; Preferences）。&lt;/li&gt;
+&lt;li&gt;在设置窗口的左侧菜单中，选择 Plugins。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搜索插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在右上角的搜索框中输入 Translation 或 中文翻译 关键词。&lt;/li&gt;
+&lt;li&gt;常用的翻译插件有 Translation 或 Chinese Localization Plugin。你可以选择 Translation 插件，它支持多种语言的翻译，包括英文到中文。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在搜索结果中找到合适的插件（例如 Translation），然后点击 Install 按钮进行安装。&lt;/li&gt;
+&lt;li&gt;安装完成后，可能需要重启 PyCharm 以激活插件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;安装汉化插件&#34;&gt;安装汉化插件
+&lt;/h3&gt;&lt;p&gt;在 PyCharm 中安装汉化插件（中文语言包）可以使 IDE 的界面变成中文。以下是安装汉化插件的步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开 PyCharm：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;启动你的 PyCharm IDE。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入插件市场：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击顶部菜单栏的 File，然后选择 Settings（在 Mac 上为 Preferences）。&lt;/li&gt;
+&lt;li&gt;在左侧导航栏中，选择 Plugins。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搜索汉化插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在插件窗口中，点击右上角的搜索框，输入 Chinese 或 中文。&lt;/li&gt;
+&lt;li&gt;你应该能够找到一个名为 &amp;ldquo;Chinese (Simplified) Language Pack / 中文语言包&amp;rdquo; 的插件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;找到插件后，点击 Install 按钮进行安装。&lt;/li&gt;
+&lt;li&gt;安装完成后，点击 Restart IDE 以重启 PyCharm 使插件生效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换语言：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重启后，PyCharm 的界面将自动切换为中文。如果没有自动切换，可以在 File -&amp;gt; Settings -&amp;gt; Appearance &amp;amp; Behavior -&amp;gt; Appearance 中检查语言设置，确保语言包已应用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         </item>
         <item>
