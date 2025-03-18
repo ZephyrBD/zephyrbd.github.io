@@ -15,7 +15,7 @@
         <guid>https://zephyrbd.github.io/p/treelikearr/</guid>
         <description>&lt;h1 id=&#34;树状数组含rotated-inversions题解&#34;&gt;树状数组（含Rotated Inversions题解）
 &lt;/h1&gt;&lt;h2 id=&#34;本文背景&#34;&gt;本文背景
-&lt;/h2&gt;&lt;p&gt;3.13在解决 &amp;ldquo;F - Rotated Inversions&amp;rdquo; （逆序对问题）时遇到了TLE，尝试了归并排序，拼尽全力无法战胜（实际上是我这&lt;strong&gt;蒟蒻&lt;/strong&gt;写错了归并排序的位置导致的），鉴于这道题折磨了我小半周，故写个Blog记录一下。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;3.13 在解决 “F - Rotated Inversions”（逆序对问题）时，偶遇TLE强如怪物，拼尽归并排序无法战胜（实际上是我这&lt;strong&gt;蒟蒻&lt;/strong&gt;写错了归并排序的位置导致的）。这道题折磨了我小半周，好在有传奇学长 Yffffff 热心相助。为铭记传奇学长，故写个Blog记录一下。&lt;/p&gt;
 &lt;h2 id=&#34;树状数组的概念及其构建&#34;&gt;树状数组的概念及其构建
 &lt;/h2&gt;&lt;h3 id=&#34;概念&#34;&gt;概念
 &lt;/h3&gt;&lt;p&gt;树状数组是一种用于高效处理数组前缀和相关问题的数据结构。它能在对数时间内实现单点更新和区间查询操作，相比普通数组遍历求和，大大提高了效率，常用于解决数据统计、动态区间求和等问题。&lt;/p&gt;
