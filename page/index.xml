@@ -21,12 +21,12 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;h2 id=&#34;hi-friends&#34;&gt;Hi, Friends.
-&lt;/h2&gt;&lt;p&gt;欢迎来到ZephyrBD的个人博客&lt;br&gt;
-这里记录了我探索计算机的心路历程，&lt;br&gt;
-包括了我写的一些原创性的文章，&lt;br&gt;
-可能有些文章是通过转载的形式呈现给大家，&lt;br&gt;
-这中间夹杂着很多我的心得体会以及写作的思维模式。&lt;br&gt;
+        <description>&lt;h2 id=&#34;hi-friends&#34;&gt;Hi, Friends!
+&lt;/h2&gt;&lt;p&gt;欢迎来到ZephyrBD的个人博客。 &lt;br&gt;
+作为一个CUIT DSAer，这里记录了我在计算机领域的研究的日志，&lt;br&gt;
+主要是我写的对各种计算机相关结构的个人理解和思路，&lt;br&gt;
+或是一些教程，&lt;br&gt;
+可能有些文章是通过转载的形式呈现给大家。&lt;br&gt;
 我最早的博客创建于2020-9-20，不过随着GiteePage的停用终结了， &lt;br&gt;
 现在上了大学之后又重新搞了一个，&lt;br&gt;
 这里大部分时候分享一些教程和我的经验吧！&lt;br&gt;
@@ -42,9 +42,25 @@
 	
 	
 &gt;&lt;br&gt;
-2018年夏，ZBD出于和FayYu玩MC的需要，开始架设MC服务器。秋，创立了MC ZBD Studio，负责服务器的维护工作。&lt;/p&gt;
-&lt;p&gt;但是在2021到2024年期间，出于学业压力，团队不得不暂时停摆。直到2024年秋，重启团队。这次重启不仅延续了团队的使命，更让团队站在了新的起点上。我们开始以MC ZBD Studio的名义参加比赛，不断提升自己。&lt;/p&gt;
-&lt;p&gt;现在，我们将继续秉持着对编程的热爱，继续在我们的道路上努力着。我们相信，凭借热爱，MCZS一定能够有光明的未来。&lt;/p&gt;
+2018年夏，ZBD出于和FayYu玩MC的需要，开始架设MC服务器。秋，创立了MC ZBD Studio，负责服务器的维护工作。&lt;br&gt;
+上大学后，我沿用了这一名称作为由我主导的队伍名称。
+我相信，立足当下，放眼未来，MCZS一定会是我人生一个重要的名称。&lt;/p&gt;
+&lt;h2 id=&#34;about-cuit-data-structures-and-algorithms-laboratory&#34;&gt;About CUIT Data Structures and Algorithms Laboratory
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/categories/DSA/DSAICON.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;DSA&#34;
+	
+	
+&gt;&lt;br&gt;
+成都信息工程大学数据结构与算法（DSA）实验室隶属于计算机学院，是一个以创新为导向的前沿平台，致力于培养学生的算法思维、编程能力和竞争性问题解决技能。
+实验室聚焦算法设计、优化及竞赛编程技术（如动态规划、图论、代码优化等)，通过高强度训练和参与 ACM-ICPC、CCPC 等国际知名赛事，将理论知识与实践应用深度结合。
+多年来，实验室成绩斐然，在国内外竞赛中屡获殊荣，包括 2024 年 CCPC 全国邀请赛金奖。
+其分层课程、模拟竞赛和资深教师指导相结合的结构化培养体系，为学生进入阿里巴巴、腾讯等科技企业或赴清华大学、浙江大学深造奠定了坚实基础。
+依托先进设施和行业合作，实验室倡导协作、创新与卓越，巩固了其在成都信息工程大学计算教育领域的核心地位。&lt;/p&gt;
 </description>
         </item>
         <item>
