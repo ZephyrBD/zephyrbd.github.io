@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="The input and output of Python">
-<title>Python的输出和输入</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="倍增算法详解">
+<title>倍增算法（含L3-1 银白之森题解）</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/pythondev_3/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/multiply/'>
 
-<link rel="stylesheet" href="/scss/style.min.62459f686e9336c5a7649f93183adba0fc8d28db4a862ba3e94b10a7cbaa62ce.css"><meta property='og:title' content="Python的输出和输入">
-<meta property='og:description' content="The input and output of Python">
-<meta property='og:url' content='https://zephyrbd.github.io/p/pythondev_3/'>
+<link rel="stylesheet" href="/scss/style.min.62459f686e9336c5a7649f93183adba0fc8d28db4a862ba3e94b10a7cbaa62ce.css"><meta property='og:title' content="倍增算法（含L3-1 银白之森题解）">
+<meta property='og:description' content="倍增算法详解">
+<meta property='og:url' content='https://zephyrbd.github.io/p/multiply/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-13T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/Pydev/dev3/img0.png' />
-<meta name="twitter:title" content="Python的输出和输入">
-<meta name="twitter:description" content="The input and output of Python"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/Pydev/dev3/img0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-28T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="倍增算法（含L3-1 银白之森题解）">
+<meta name="twitter:description" content="倍增算法详解">
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
     </head>
@@ -262,8 +261,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#输入函数input">输入函数：<code>input</code></a></li>
-    <li><a href="#输出函数print">输出函数：<code>print</code></a></li>
+    <li><a href="#本文背景">本文背景</a></li>
+    <li><a href="#朴素倍增">朴素倍增</a></li>
+    <li><a href="#egl3-1-银白之森-作者chocola">Eg：<strong>L3-1 银白之森</strong> 作者：Chocola</a>
+      <ol>
+        <li><a href="#题目描述-">题目描述 ：</a></li>
+        <li><a href="#输入格式-">输入格式 ：</a></li>
+        <li><a href="#输出格式-">输出格式 ：</a></li>
+        <li><a href="#分析">分析</a></li>
+        <li><a href="#代码实现">代码实现：</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -275,23 +283,15 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/pythondev_3/">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev3/img0.png" loading="lazy" alt="Featured image of post Python的输出和输入" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/python/" style="background-color: #FFDE59; color: #fff;">
-                Python
+            <a href="/categories/cpp-dev/" style="background-color: #639AD2; color: #fff;">
+                CPP Dev
             </a>
         
     </header>
@@ -299,12 +299,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/pythondev_3/">Python的输出和输入</a>
+            <a href="/p/multiply/">倍增算法（含L3-1 银白之森题解）</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            The input and output of Python
+            倍增算法详解
         </h3>
         
     </div>
@@ -325,12 +325,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-02-13</time>
+                <time class="article-time--published">2025-03-28</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    613 字
+                    1473 字
                 </time>
             </div>
         
@@ -346,7 +346,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -361,66 +361,187 @@
     <section class="article-content">
     
     
-    <h2 id="输入函数input">输入函数：<code>input</code>
-</h2><p><code>input()</code>函数用于从标准输入（通常是键盘输入）读取一行字符串，并在用户按下回车键后返回该字符串。这个函数常用于获取用户的输入信息。</p>
-<p><strong>基本用法</strong></p>
+    <h1 id="倍增算法含l3-1-银白之森题解">倍增算法（含L3-1 银白之森题解）
+</h1><h2 id="本文背景">本文背景
+</h2><p>天梯赛后被建议来吃吃“银白之森”这坨，吃完了认为确实是一坨，故写本文来介绍一下这个题所涉及到的倍增算法。</p>
+<h2 id="朴素倍增">朴素倍增
+</h2><p>对于这样一个问题：</p>
+<p><strong>从0出发，到7格外的位置上，如何快速转移你的位置。</strong></p>
+<p>最简单最暴力的算法就是一格一格走（但是给到 $ 1≤k≤10^{12} $ 你不就炸了吗？）。</p>
+<p>于是看这个数的二进制，发现：</p>
+<p><strong>任何一个数都可以用$ n $个$ 2^k $的和来表示。</strong></p>
+<p>则对于这样一个图：</p>
+<p><img src="/images/cppdev/Multiply/img1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img1"
+	
+	
+></p>
+<p>我们发现从0到7需要跨越 $ 7_{10} (111_2) $格，即 $ 7 = 2^0 + 2^1 + 2^2 $，于是我们建立一个状态表示数组$ f $，使得 $ f[i][j] $ 表示从1出发，跨越$ 2^{j} $ 步所到达的地方。</p>
+<p><strong>以这个图为例：我们依次经过$ f[0][0]=1,f[1][1]=3,f[3][2]=7 $到达了第7格。</strong></p>
+<p>这时有人发现：</p>
+$$ 2^{n} = 2^{n-1}\times2 = 2^{n-1}+2^{n-1} $$$$ f[i][j] = f[f[i][j-1]][j-1] $$<p>所以，如果我们预先处理好一个这样的状态表示数组$ f $，那查询的时候时间复杂度会大大降低，该算法的时间复杂度为$ O(n \log k) $。</p>
+<h2 id="egl3-1-银白之森-作者chocola">Eg：<strong>L3-1 银白之森</strong> 作者：Chocola
+</h2><h3 id="题目描述-">题目描述 ：
+</h3><p>在不知名的银白之森，共有 $n$ 个节点。</p>
+<p>每个节点处，生活着一名魔法师。在每个节点，有一条通向其他节点的单向道路。</p>
+<p>不知道该说运气好还是不好，你被一阵神秘的力量所影响，落在了某个节点上。接下来你可以沿着这些单向道路移动 $k$ 次。每利用单向道路移动到一个节点，这个节点处的魔法师会为你进行一次赐福，获得等于节点编号数量的命定之缘。（例如，当节点编号为 3 时，经过这个节点可以获得 3 个命定之缘）。</p>
+<p>需要注意的是，反复经过同一个节点时，可以重复获得命定之缘。</p>
+<p>非常幸运，你提前掌握了整个银白之森的道路图。但同时非常不幸，你会被神秘的力量丢到某个随机的节点上 $q$ 次。那么，聪明如你，能求出来这 $q$ 次移动分别能获得多少命定之缘吗？</p>
+<h3 id="输入格式-">输入格式 ：
+</h3><p>一行两个正整数 $ n $ 和 $ q $ ，表示银白之森总共有 $ n $ 个节点，编号为 1 到 $ n $ 。总共会有 $ q $ 次神秘力量。 $(1≤n,q≤100,000 )$</p>
+<p>接下来一行 $ n $ 个整数，第 $ i $ 个整数表示节点 $ i $ 处的单向道路通向哪个节点。（保证范围在 $ [1,n] $ 内，单向道路可以指向自己）</p>
+<p>接下来 $ q $ 行，每行两个整数 $ x,k $ ，表示你该次神秘力量影响下落在了点$ x $ 处，你可以沿着单向道路移动 $ k $ 次获得赐福。$(1≤x≤n ，1≤k≤10^{12})$</p>
+<h3 id="输出格式-">输出格式 ：
+</h3><p>共 $ q $ 行，每行表示一次神秘力量影响下，你通过赐福获得的命定之缘的数量。</p>
+<p><strong>输入样例：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>  <span class="c1"># 注意`input`的后面要加上`()`，表示执行函数</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">6 2 
+</span></span><span class="line"><span class="cl">2 3 1 5 6 6 
+</span></span><span class="line"><span class="cl">1 5 
+</span></span><span class="line"><span class="cl">4 5 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>带提示的 <code>input</code> 函数</strong>
-<code>input</code>函数可以接收一个字符串参数，用来在提示用户输入时显示。这个参数通常用于给用户更直观的提示，告诉他们应该输入什么内容。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入您的姓名&gt;&gt;&gt;:&#39;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="输出函数print">输出函数：<code>print</code>
-</h2><p><code>print</code>函数的作用是内置函数<code>print()</code>用于将传入的内容输出到标准输出（通常是控制台）。<code>print</code>函数会将传入的值转换为字符串后输出，并默认在输出后加上一个换行符。</p>
-<p><strong>基本用法</strong></p>
+</div><p><strong>输出样例：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;李四&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">11 
+</span></span><span class="line"><span class="cl">29 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上述代码会在控制台上分别输出“张三”和“李四”，并且每个名字占一行。</p>
-<p><strong>不换行输出</strong>
-<code>print</code>函数可以通过<code>end</code>参数来控制输出后的行为。默认情况下，<code>end</code>的值是<code>\n</code>（换行符），但你可以将其设置为其他值，如空字符串，以避免换行。</p>
-<div class="highlight"><div class="chroma">
+</div><p><strong>样例解释</strong></p>
+<p>第一次移动路径：<code>1 -&gt; 2 -&gt; 3 -&gt; 1 -&gt; 2 -&gt; 3</code></p>
+<p>获得的命定之缘共计<code>2 + 3 + 1 + 2 + 3 = 11</code></p>
+<p>第二次移动路径：<code>4 -&gt; 5 -&gt; 6 -&gt; 6 -&gt; 6 -&gt; 6</code></p>
+<p>获得的命定之缘共计<code>5 + 6 + 6 + 6 + 6 = 29</code></p>
+<h3 id="分析">分析
+</h3><p>由于每个点只有一个固定的出边，所以每个点走 步后获得的命定之缘数量以及走到了哪一个点是可以确定的。</p>
+<p>我们采用倍增的方式去维护每个点走 $ 2^{0},2^{1},2^{2},2^{3},2^{4}&hellip;2^{50} $ 后到达的位置以及获得的命定之缘的数量，每次询问时，将$ k $拆解成二进制数，快速跳转并计算贡献即可。</p>
+<h3 id="代码实现">代码实现：
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;大帅哥&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;bits/stdc++.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define int long long
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//100005
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="mi">65</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">sum</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="mi">65</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">63</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//计算每个点出发走不同的2^j步可能到达的点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sum</span><span class="p">[</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//记录走2^j的步到这的命定之缘的和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">q</span> <span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">long</span> <span class="kt">long</span>  <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">63</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;&gt;</span> <span class="n">i</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">             <span class="c1">//依次从高往低取k的二进制位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">ans</span> <span class="o">+=</span> <span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">				<span class="n">x</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">				<span class="n">k</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1ll</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="c1">//把1的二进制左移，在k上减去此次移动的步数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">_</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//  cin &gt;&gt; _ ;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span><span class="p">(</span><span class="n">_</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">solve</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>以上代码将会在同一行打印“大帅哥张三”。</p>
-<p><strong>打印多个值</strong>
-<code>print</code>函数可以接收多个值，并默认以空格分隔这些值。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;18&#39;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
 </div>
-</div><p>上述代码将输出：“张三 男 18”。</p>
-
 </section>
 
 
@@ -431,7 +552,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/pythondev_3/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/multiply/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -498,19 +619,26 @@
         <div class="flex article-list--tile">
             
                 
-<article class="has-image">
-    <a href="/p/pythondev_6/">
+<article class="">
+    <a href="/p/treelikearr/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev6/img0.png" loading="lazy" data-key="PythonDev_6" data-hash="https://zephyrbd.github.io/images/Pydev/dev6/img0.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">循环结构（while and for）</h2>
+            <h2 class="article-title">树状数组（含Rotated Inversions题解）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/hydro-luogu-p6033/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">P6033. [NOIP2004 提高组] 合并果子 加强版题解</h2>
         </div>
     </a>
 </article>
@@ -518,75 +646,18 @@
             
                 
 <article class="has-image">
-    <a href="/p/pythondev_4/">
+    <a href="/p/cuitappdesignrace/">
         
         
             <div class="article-image">
                 
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev4/img0.png" loading="lazy" data-key="PythonDev_4" data-hash="https://zephyrbd.github.io/images/Pydev/dev4/img0.png"/>
+                    <img src="https://zephyrbd.github.io/images/cuitDRace/img1.png" loading="lazy" data-key="CUITAPPDesignRace" data-hash="https://zephyrbd.github.io/images/cuitDRace/img1.png"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">数值和算术运算</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/pythondev_5/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev5/img0.png" loading="lazy" data-key="PythonDev_5" data-hash="https://zephyrbd.github.io/images/Pydev/dev5/img0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">条件语句（if and match-case）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/pythondev_2/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev2/img0.png" loading="lazy" data-key="PythonDev_2" data-hash="https://zephyrbd.github.io/images/Pydev/dev2/img0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">变量的定义、注释和字符详解</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/pythondev_1/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev1/img0.png" loading="lazy" data-key="PythonDev_1" data-hash="https://zephyrbd.github.io/images/Pydev/dev1/img0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Python开发环境的搭建</h2>
+            <h2 class="article-title">智记清单（MCZS To Do）Alpha 1.0 发布</h2>
         </div>
     </a>
 </article>
