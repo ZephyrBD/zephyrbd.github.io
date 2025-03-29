@@ -6241,25 +6241,27 @@ Optifine选择成功后如图所示，然后点击安装
 这里大部分时候分享一些教程和我的经验吧！&lt;br&gt;
 如果你有兴趣，可以看看我的Blog。&lt;/p&gt;
 &lt;h2 id=&#34;about-cuit-data-structures-and-algorithms-laboratory&#34;&gt;About CUIT Data Structures and Algorithms Laboratory
-&lt;/h2&gt;&lt;div style=&#34;text-align: center;          
-			display: block;
+&lt;/h2&gt;&lt;div style=&#34;text-align: center;&#34;&gt;
+&lt;img style=&#34;display: block;
             margin: 0 auto 20px;
             width: 300px;
-            height: auto;&#34;&gt;&lt;img src=&#34;https://zephyrbd.github.io/categories/dsa/DSAICON_hu_d6e9623f489591c8.jpg&#34; alt=&#34;DSA&#34;&gt;&lt;/div&gt;
-成都信息工程大学数据结构与算法（DSA）实验室隶属于计算机学院，是一个以创新为导向的前沿平台，致力于培养学生的算法思维、编程能力和竞争性问题解决技能。
-实验室聚焦算法设计、优化及竞赛编程技术（如动态规划、图论、代码优化等)，通过高强度训练和参与 ACM-ICPC、CCPC 等国际知名赛事，将理论知识与实践应用深度结合。
-多年来，实验室成绩斐然，在国内外竞赛中屡获殊荣，包括 2024 年 CCPC 全国邀请赛金奖。
-其分层课程、模拟竞赛和资深教师指导相结合的结构化培养体系，为学生进入阿里巴巴、腾讯等科技企业或赴清华大学、浙江大学深造奠定了坚实基础。
-依托先进设施和行业合作，实验室倡导协作、创新与卓越，巩固了其在成都信息工程大学计算教育领域的核心地位。
+            height: auto;&#34;
+     src=&#34;https://zephyrbd.github.io/categories/dsa/DSAICON_hu_d6e9623f489591c8.jpg&#34; 
+     alt=&#34;DSA&#34;&gt;&lt;/div&gt;
+DSA 全称 Data Structure &amp; Algorithm（数据结构与算法），是由成都信息工程大学计算机学院建立，以参加各类程序设计竞赛为主的学生团队。
+&lt;p&gt;自团队成立以来，DSA 实验室组织培训全校学生参与 GPLT 团体程序设计天梯赛、蓝桥杯（软件类）、Robocom CAIP 等多项程序设计竞赛，曾获得过 GPLT 四川省高校冠军，蓝桥杯 C++B 组全国一等奖，ACM-ICPC 亚洲区域赛银奖，EC-Final 铜奖等众多奖项。&lt;/p&gt;
 &lt;h2 id=&#34;about-mc-zbd-studio&#34;&gt;About MC ZBD Studio
-&lt;/h2&gt;&lt;div style=&#34;text-align: center;          
-			display: block;
+&lt;/h2&gt;&lt;div style=&#34;text-align: center;&#34;&gt;       
+&lt;img style=&#34;display: block;
             margin: 0 auto 20px;
             width: 300px;
-            height: auto;&#34;&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cuitDRace/img4.png&#34; alt=&#34;MCZS&#34;&gt;&lt;/div&gt;
-2018年夏，ZBD出于和FayYu玩MC的需要，开始架设MC服务器。秋，创立了MC ZBD Studio，负责服务器的维护工作。
+            height: auto;&#34; 
+     src=&#34;https://zephyrbd.github.io/images/cuitDRace/img4.png&#34; 
+     alt=&#34;MCZS&#34;&gt;&lt;/div&gt;
+&lt;p&gt;2018年夏，ZBD出于和FayYu玩MC的需要，开始架设MC服务器。秋，创立了MC ZBD Studio，通过MCZS中对服务器及配套项目的维护，我第一次系统性的接触到计算机网络和一些代码原理等知识。
 上大学后，我沿用了这一名称作为由我主导的队伍名称。
-我相信，立足当下，放眼未来，MCZS一定会是我人生一个重要的里程碑。</description>
+我相信，立足当下，放眼未来，MCZS将会是我人生一个重要的里程碑。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>搜索</title>
