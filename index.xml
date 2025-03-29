@@ -4844,7 +4844,7 @@ JSON文件内容如下：&lt;/p&gt;
 &lt;h2 id=&#34;4-zephyrbd个人补充部分&#34;&gt;4 ZephyrBD个人补充部分
 &lt;/h2&gt;&lt;h3 id=&#34;第一次使用git的教程&#34;&gt;第一次使用git的教程
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;（1）生成（配置）SSH，打开Git Bush，输入&lt;br&gt;
+&lt;li&gt;（1）生成（配置）SSH，打开Git Bash，输入&lt;br&gt;
 &lt;code&gt;git config --global user.name &amp;quot;注册名&amp;quot;&lt;/code&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/HtbuBlog/img22.png&#34;
 	
