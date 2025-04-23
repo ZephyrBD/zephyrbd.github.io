@@ -253,6 +253,450 @@ $$&lt;p&gt;每个节点存储下各自对应区间的最大值，于是我们得
 </description>
         </item>
         <item>
+        <title>比赛常用软件测试流程</title>
+        <link>https://zephyrbd.github.io/p/idetesting/</link>
+        <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/p/idetesting/</guid>
+        <description>&lt;h1 id=&#34;比赛常用软件测试流程&#34;&gt;比赛常用软件测试流程
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;适用于蓝桥杯，天梯赛，睿抗。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dev-c&#34;&gt;Dev C++
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;打开桌面的Dev C++后按照图片新建源文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418121804964&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;设置编译标准，按照如下两张图片就可以，两个c++11标准选择一个&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:/%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c/DSA/Markdown/%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b/img2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg30.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418132622220&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;完成创建和编译标准设置后执行如下代码，测试C++11标准能否使用。点击图片鼠标处运行，不报错就没问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;sc&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418122329576&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;code-blocks&#34;&gt;Code Blocks
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;打开Code Blocks后按照如下图片创建文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418122832267&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418122913248&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418122947941&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123015362&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;点击下图的 &amp;hellip; 选择创建文件位置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123109262&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123217854&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;创建文件后执行如下代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;4.点击箭头所在处运行代码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg10.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123346507&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;若点击后无反应，按照如下图片更改编译器设置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg11.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123421796&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;MinG64一般都在DevCpp文件夹中，DevCpp文件夹的路径一般都是这个。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg12.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418123634042&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;eclipse&#34;&gt;Eclipse
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;要保证不同版本的eclipse使用workplace路径不一样，其他流程都相同，按照如下图片创建java文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg23.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418131724869&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;关闭welcome&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg24.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418131802893&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg25.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418131830351&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;项目名随便写，点finish&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg26.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418131907948&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;对项目里的src右键&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg27.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418131936858&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;类名随便写&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg28.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418132023833&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;创建类后在自动生成的类定义里面填下面的代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;按图运行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg29.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418132105283&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;idea&#34;&gt;IDEA
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;按图创建项目和java文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg13.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125013856&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg14.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125154514&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;然后会自动生成一个java文件，直接运行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg15.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125237690&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg16.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125309907&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;没报错就可以了。&lt;/p&gt;
+&lt;h2 id=&#34;pycharm&#34;&gt;PyCharm
+&lt;/h2&gt;&lt;p&gt;1.按照图片创建项目和py文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg17.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125459428&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg18.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg19.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125627125&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;文件名随便取&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg20.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125656917&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;3.按图运行代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg21.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418125846339&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;python-310&#34;&gt;Python 3.10
+&lt;/h2&gt;&lt;p&gt;点开后输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg22.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250418130039121&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有结果就可以&lt;/p&gt;
+&lt;h2 id=&#34;oms&#34;&gt;OMS
+&lt;/h2&gt;&lt;p&gt;双击桌面的oms  等待二维码跳出就可以。&lt;/p&gt;
+&lt;h2 id=&#34;收尾&#34;&gt;收尾
+&lt;/h2&gt;&lt;p&gt;测试完之后需要将生成的文件和项目删除，一般在c盘的用户中的各种project文件夹，workplace文件夹，d盘中的workplace文件夹，和桌面上。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>倍增算法（含L3-1 银白之森题解）</title>
         <link>https://zephyrbd.github.io/p/multiply/</link>
         <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Dev CB IDEA PyCharm...">
+<title>比赛常用软件测试流程</title>
+
+<link rel='canonical' href='https://zephyrbd.github.io/p/idetesting/'>
+
+<link rel="stylesheet" href="/scss/style.min.62459f686e9336c5a7649f93183adba0fc8d28db4a862ba3e94b10a7cbaa62ce.css"><meta property='og:title' content="比赛常用软件测试流程">
+<meta property='og:description' content="Dev CB IDEA PyCharm...">
+<meta property='og:url' content='https://zephyrbd.github.io/p/idetesting/'>
+<meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-04-20T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="比赛常用软件测试流程">
+<meta name="twitter:description" content="Dev CB IDEA PyCharm...">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f5657b9bc8ab4b41.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🫠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZephyrBD&#39;s Blog</a></h1>
+            <h2 class="site-description">WE DO THIS, FOR TECHNOLOGY.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/294413012'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZephyrBD'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#dev-c">Dev C++</a></li>
+    <li><a href="#code-blocks">Code Blocks</a></li>
+    <li><a href="#eclipse">Eclipse</a></li>
+    <li><a href="#idea">IDEA</a></li>
+    <li><a href="#pycharm">PyCharm</a></li>
+    <li><a href="#python-310">Python 3.10</a></li>
+    <li><a href="#oms">OMS</a></li>
+    <li><a href="#收尾">收尾</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/dsa/" style="background-color: #F38C8D; color: #fff;">
+                Data Structures &amp; Algorithms
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/idetesting/">比赛常用软件测试流程</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Dev CB IDEA PyCharm...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-04-20</time>
+            </div>
+			<div>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
+                <time class="post-word-count">
+                    616 字
+                </time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="比赛常用软件测试流程">比赛常用软件测试流程
+</h1><p><strong>适用于蓝桥杯，天梯赛，睿抗。</strong></p>
+<h2 id="dev-c">Dev C++
+</h2><ol>
+<li>打开桌面的Dev C++后按照图片新建源文件</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418121804964"
+	
+	
+></p>
+<ol start="2">
+<li>设置编译标准，按照如下两张图片就可以，两个c++11标准选择一个</li>
+</ol>
+<p><img src="D:/%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c/DSA/Markdown/%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b/img2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg30.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418132622220"
+	
+	
+></p>
+<ol start="3">
+<li>完成创建和编译标准设置后执行如下代码，测试C++11标准能否使用。点击图片鼠标处运行，不报错就没问题。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">   <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">it</span><span class="p">:</span><span class="n">a</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">it</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418122329576"
+	
+	
+></p>
+<h2 id="code-blocks">Code Blocks
+</h2><ol>
+<li>打开Code Blocks后按照如下图片创建文件</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418122832267"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418122913248"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg6.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418122947941"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123015362"
+	
+	
+></p>
+<ol start="2">
+<li>点击下图的 &hellip; 选择创建文件位置</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg8.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123109262"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg9.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123217854"
+	
+	
+></p>
+<ol start="3">
+<li>创建文件后执行如下代码</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;123&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4.点击箭头所在处运行代码</p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg10.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123346507"
+	
+	
+></p>
+<p>若点击后无反应，按照如下图片更改编译器设置。</p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg11.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123421796"
+	
+	
+></p>
+<p>MinG64一般都在DevCpp文件夹中，DevCpp文件夹的路径一般都是这个。</p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg12.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418123634042"
+	
+	
+></p>
+<h2 id="eclipse">Eclipse
+</h2><ol>
+<li>要保证不同版本的eclipse使用workplace路径不一样，其他流程都相同，按照如下图片创建java文件</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg23.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418131724869"
+	
+	
+></p>
+<ol start="2">
+<li>关闭welcome</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg24.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418131802893"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg25.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418131830351"
+	
+	
+></p>
+<ol start="4">
+<li>项目名随便写，点finish</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg26.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418131907948"
+	
+	
+></p>
+<ol start="5">
+<li>对项目里的src右键</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg27.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418131936858"
+	
+	
+></p>
+<p>类名随便写</p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg28.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418132023833"
+	
+	
+></p>
+<ol start="6">
+<li>创建类后在自动生成的类定义里面填下面的代码</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;123&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>按图运行</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg29.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418132105283"
+	
+	
+></p>
+<h2 id="idea">IDEA
+</h2><ol>
+<li>按图创建项目和java文件</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg13.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125013856"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg14.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125154514"
+	
+	
+></p>
+<ol start="2">
+<li>然后会自动生成一个java文件，直接运行。</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg15.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125237690"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg16.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125309907"
+	
+	
+></p>
+<p>没报错就可以了。</p>
+<h2 id="pycharm">PyCharm
+</h2><p>1.按照图片创建项目和py文件</p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg17.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125459428"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg18.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg19.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125627125"
+	
+	
+></p>
+<ol start="2">
+<li>文件名随便取</li>
+</ol>
+<p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg20.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125656917"
+	
+	
+></p>
+<p>3.按图运行代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg21.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418125846339"
+	
+	
+></p>
+<h2 id="python-310">Python 3.10
+</h2><p>点开后输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="D:%5c%e5%a4%a7%e5%ad%a6%e5%b7%a5%e4%bd%9c%5cDSA%5cMarkdown%5c%e6%af%94%e8%b5%9b%e5%b8%b8%e7%94%a8%e8%bd%af%e4%bb%b6%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b%5cimg22.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250418130039121"
+	
+	
+></p>
+<p>有结果就可以</p>
+<h2 id="oms">OMS
+</h2><p>双击桌面的oms  等待二维码跳出就可以。</p>
+<h2 id="收尾">收尾
+</h2><p>测试完之后需要将生成的文件和项目删除，一般在c盘的用户中的各种project文件夹，workplace文件夹，d盘中的workplace文件夹，和桌面上。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+	
+	<section class="article-link-copy">
+		<label>分享</label>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/idetesting/" readonly>
+		<button onclick="copyLink()">复制</button>
+		<script>
+			function copyLink() {
+				const linkInput = document.getElementById('article-link');
+				linkInput.select();
+				linkInput.setSelectionRange(0, 99999);
+				document.execCommand('copy');
+				alert('链接已复制');
+			}
+		</script>
+	</section>
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>本作品采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可（CC BY-NC-SA 4.0）</span>
+    </section>
+	<section class="article-viewcount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>
+		<span>文章浏览量：<span id="vercount_value_page_pv">Loading</span></span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/segmenttree/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线段树</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/multiply/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">倍增算法（含L3-1 银白之森题解）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/linkedforwardstar/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图的存储：链式前向星</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/treelikearr/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">树状数组（含Rotated Inversions题解）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/hydro-luogu-p6033/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">P6033. [NOIP2004 提高组] 合并果子 加强版题解</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="ZephyrBD/zephyrbd.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 ZephyrBD
+    </section>
+    
+    <section class="powerby">
+        
+            Powered By MC ZBD Studio <br/>
+        
+		
+		
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+		
+		<section class="totalcount">
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			发表了26篇文章 · 
+			总计36.73k字
+		</section>
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script language="javascript"> 
+			var now = new Date();
+			function createtime(){
+				now.setTime(now.getTime()+250); 
+				var grt= new Date("2020/9/20 15:00:00"); 
+				days = (now - grt ) / 1000 / 60 / 60 / 24;
+				dnum = Math.floor(days);
+				hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+				hnum = Math.floor(hours);
+				if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+				minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+				mnum = Math.floor(minutes);
+				if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+				seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				snum = Math.round(seconds);
+				if(String(snum).length ==1 ){snum = "0" + snum;}
+
+				document.getElementById("timeDate").innerHTML = "本站已稳定运行"+dnum+" 天 ";
+				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
+			}
+			setInterval("createtime()",250); 
+		</script><a><br>总浏览量<span id="vercount_value_site_pv">Loading</span> | 访客总数<span id="vercount_value_site_uv">Loading</span></a>
+		<br>
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计<a><br>由ZephyrBD修改</a>
+		<br>
+		<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="采用 CC BY-NC-SA 4.0 协议"><img src="https://zephyrbd.github.io/images/ccbyncsa.svg" alt=""></a>
+		<a target="_blank" href="https://gohugo.io/"><img src="https://zephyrbd.github.io/images/hugo.svg" alt=""></a>
+		<a target="_blank" href="https://github.com/" title="网站源码托管于 Github"><img src="https://zephyrbd.github.io/images/github.svg" alt=""></a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script>
+    </body>
+</html>
