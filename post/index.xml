@@ -27,10 +27,9 @@
 &lt;p&gt;通过观察，发现我们如果为每个节点补足NULL，它形成了一个完全二叉树，于是我们有以下的规律：&lt;/p&gt;
 $$
 parent_i = \left\lfloor \frac{i}{2} \right\rfloor
-$$&lt;p&gt;$$
-left_i = 2 * i , right_i = 2 * i + 1&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
-&lt;p&gt;每个节点存储下各自对应区间的最大值，于是我们得到：&lt;/p&gt;
+$$$$
+left_i = 2 * i , right_i = 2 * i + 1
+$$&lt;p&gt;每个节点存储下各自对应区间的最大值，于是我们得到：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/SegmentTree/2025-04-23-11-14-37-image.png&#34;
 	
 	
