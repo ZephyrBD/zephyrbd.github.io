@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://zephyrbd.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.62459f686e9336c5a7649f93183adba0fc8d28db4a862ba3e94b10a7cbaa62ce.css"><meta property='og:title' content="ZephyrBD's Blog">
+<link rel="stylesheet" href="/scss/style.min.337c63c5ef25d288e91f47132bf53c5a406e90774b06ef53ba3ea3fb12d82faa.css"><meta property='og:title' content="ZephyrBD's Blog">
 <meta property='og:description' content="WE DO THIS, FOR TECHNOLOGY.">
 <meta property='og:url' content='https://zephyrbd.github.io/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
@@ -16,6 +16,8 @@
 <meta name="twitter:description" content="WE DO THIS, FOR TECHNOLOGY."><link rel="alternate" type="application/rss&#43;xml" href="https://zephyrbd.github.io/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     </head>
     <body class="">
     <script>
@@ -239,6 +241,61 @@
 </aside>
 
     <aside class="sidebar right-sidebar sticky">
+        
+            
+                <section class="widget">
+    <div class="clock">
+        <div class="number"><span>12</span></div>
+        <div class="number" style="--rotation: 30deg"><span>1</span></div>
+        <div class="number" style="--rotation: 60deg"><span>2</span></div>
+        <div class="number" style="--rotation: 90deg"><span>3</span></div>
+        <div class="number" style="--rotation: 120deg"><span>4</span></div>
+        <div class="number" style="--rotation: 150deg"><span>5</span></div>
+        <div class="number" style="--rotation: 180deg"><span>6</span></div>
+        <div class="number" style="--rotation: 210deg"><span>7</span></div>
+        <div class="number" style="--rotation: 240deg"><span>8</span></div>
+        <div class="number" style="--rotation: 270deg"><span>9</span></div>
+        <div class="number" style="--rotation: 300deg"><span>10</span></div>
+        <div class="number" style="--rotation: 330deg"><span>11</span></div>
+        <div class="hand hour" style="width: 10px; height: 30%; background-color: black;"></div>
+        <div class="hand minute" style="width: 6px; height: 40%; background-color: black;"></div>
+        <div class="hand second" style="width: 3px; height: 45%; background-color: red;"></div>
+    </div>
+    <h2 class="widget-title section-title" id="digitalTime" style="text-align: center; margin: 0 auto; margin-top: 5px"></h2>
+    <script>
+        const hourHand = document.querySelector('.hand.hour');
+        const minuteHand = document.querySelector('.hand.minute');
+        const secondHand = document.querySelector('.hand.second');
+        const digitalTimeElement = document.getElementById('digitalTime');
+
+        function setDate() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours();
+
+            
+            const secondsDegrees = (seconds / 60) * 360;
+            secondHand.style.setProperty('--rotation', secondsDegrees);
+
+            
+            const minutesDegrees = ((minutes + seconds / 60) / 60) * 360;
+            minuteHand.style.setProperty('--rotation', minutesDegrees);
+
+            
+            const hoursDegrees = ((hours % 12 + minutes / 60) / 12) * 360;
+            hourHand.style.setProperty('--rotation', hoursDegrees);
+
+            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            digitalTimeElement.textContent = formattedTime;
+        }
+
+        setInterval(setDate, 1000);
+        setDate();
+    </script>
+</section>
+
+            
         
             
                 <form action="/search/" class="search-form widget" >
