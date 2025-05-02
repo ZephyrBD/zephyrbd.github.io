@@ -521,7 +521,7 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="kt">int</span> <span class="n">right</span><span class="p">,</span><span class="kt">int</span> <span class="n">ql</span><span class="p">,</span><span class="kt">int</span> <span class="n">qr</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="kt">int</span> <span class="n">right</span><span class="p">,</span><span class="kt">int</span> <span class="n">ql</span><span class="p">,</span><span class="kt">int</span> <span class="n">qr</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&gt;</span> <span class="n">right</span> <span class="o">||</span> <span class="n">qr</span> <span class="o">&lt;</span> <span class="n">left</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">INT_MIN</span><span class="p">;</span> <span class="c1">// 若区间无交集，返回最小值，表明该区间对结果无贡献
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
@@ -585,7 +585,7 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">updateRange</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ul</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">updateRange</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ul</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">ul</span> <span class="o">&gt;</span> <span class="n">right</span> <span class="o">||</span> <span class="n">ur</span> <span class="o">&lt;</span> <span class="n">left</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">//区间无交集，直接返回
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">ul</span> <span class="o">&lt;=</span> <span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="n">ur</span><span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span> <span class="c1">//更新当前节点的值
@@ -732,12 +732,12 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
             
                 
 <article class="">
-    <a href="/p/idetesting/">
+    <a href="/p/qtwithclion/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">比赛常用软件测试流程</h2>
+            <h2 class="article-title">（板子）Clion中的Qt框架的CMake配置</h2>
         </div>
     </a>
 </article>
@@ -918,6 +918,10 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 			
 			
 		
+			
+			
+			
+		
 		
 		<section class="totalcount">
 			
@@ -982,8 +986,10 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 			
 				
 			
-			发表了26篇文章 · 
-			总计36.73k字
+				
+			
+			发表了27篇文章 · 
+			总计37.11k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
