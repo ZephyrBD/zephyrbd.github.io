@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FirstFabricModDev 5">
-<title>1.21.4将2D物品转换为3D的新方法（无需Mixin）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="图论">
+<title>树的中心点问题（含P1364 医院设置 题解）</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/firstfabricmoddevlog_5/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/thecenterofatree/'>
 
-<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="1.21.4将2D物品转换为3D的新方法（无需Mixin）">
-<meta property='og:description' content="FirstFabricModDev 5">
-<meta property='og:url' content='https://zephyrbd.github.io/p/firstfabricmoddevlog_5/'>
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="树的中心点问题（含P1364 医院设置 题解）">
+<meta property='og:description' content="图论">
+<meta property='og:url' content='https://zephyrbd.github.io/p/thecenterofatree/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/MCFDev/img5.png' />
-<meta name="twitter:title" content="1.21.4将2D物品转换为3D的新方法（无需Mixin）">
-<meta name="twitter:description" content="FirstFabricModDev 5"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/MCFDev/img5.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-06-18T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="树的中心点问题（含P1364 医院设置 题解）">
+<meta name="twitter:description" content="图论">
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
 
@@ -263,14 +262,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#参考视频">参考视频：</a></li>
-    <li><a href="#mojang为item重写了model加载方法">Mojang为item重写了Model加载方法</a></li>
-    <li><a href="#modmodelsprovider直接生成json">ModModelsProvider直接生成JSON</a></li>
-    <li><a href="#深入剖析registerwithinhandmodel方法">深入剖析registerWithInHandModel方法</a>
-      <ol>
-        <li><a href="#继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法</a></li>
-      </ol>
-    </li>
+    <li><a href="#常见套路">常见套路:</a></li>
+    <li><a href="#例题">例题：</a></li>
+    <li><a href="#dp状态转移解释">DP状态转移解释:</a></li>
+    <li><a href="#std">STD:</a></li>
   </ol>
 </nav>
         </div>
@@ -282,27 +277,19 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/firstfabricmoddevlog_5/">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img5.png" loading="lazy" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/mc-mod-dev/" style="background-color: #269EB6; color: #fff;">
-                MC Mod Dev
+            <a href="/categories/dsa/" style="background-color: #F38C8D; color: #fff;">
+                Data Structures &amp; Algorithms
             </a>
         
-            <a href="/categories/minecraft/" style="background-color: #27B72C; color: #fff;">
-                Minecraft
+            <a href="/categories/cpp-dev/" style="background-color: #639AD2; color: #fff;">
+                CPP Dev
             </a>
         
     </header>
@@ -310,12 +297,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/firstfabricmoddevlog_5/">1.21.4将2D物品转换为3D的新方法（无需Mixin）</a>
+            <a href="/p/thecenterofatree/">树的中心点问题（含P1364 医院设置 题解）</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            FirstFabricModDev 5
+            图论
         </h3>
         
     </div>
@@ -336,12 +323,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-01-10</time>
+                <time class="article-time--published">2025-06-18</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1182 字
+                    603 字
                 </time>
             </div>
         
@@ -357,7 +344,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -372,33 +359,25 @@
     <section class="article-content">
     
     
-    <h2 id="参考视频">参考视频：
-</h2>
-
-
-
-
-
-    
-
-
-<div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1hb421n75b"
-            scrolling="no"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-    >
-    </iframe>
-</div>
-
-<h2 id="mojang为item重写了model加载方法">Mojang为item重写了Model加载方法
-</h2><p>我的《<a class="link" href="https://zephyrbd.github.io/p/firstfabricmoddevlog_1/"  target="_blank" rel="noopener"
-    >在MC1.21.4中创建Item时候遇到的问题</a>》这篇博客中提到了Mojang在
-1.21.4版本中要求新建一个这个路径的文件夹，而这就是可以采用新写法的原因。<br>
-<code>assets/&lt;namespace&gt;/items</code><br>
-这里也是以原版的望远镜为例子，它在该路径下的json文件如下：</p>
-<div class="highlight"><div class="chroma">
+    <h1 id="树的中心点问题">树的中心点问题
+</h1><h2 id="常见套路">常见套路:
+</h2><p>N-1条公路连接着N个城市，从每个城市出发都可以通过公路到达其它任意的城市。每个城市里面都有一定数量的居民，但是数量并不一定相等，每条公路的长度也不一定相等。X公司（或者是政府）决定在某一个城市建立一个医院/酒厂/游乐场……，问：将它建在哪里，可以使得所有的居民移动到那里的总耗费最小？这种题目都是本题的“变型”，一般称为“树的中心点问题”。</p>
+<h2 id="例题">例题：
+</h2><p><a class="link" href="https://www.luogu.com.cn/problem/P1364"  target="_blank" rel="noopener"
+    >P1364 医院设置 - 洛谷</a></p>
+<h2 id="dp状态转移解释">DP状态转移解释:
+</h2><ul>
+<li><code>dis[e[i].to]</code>表示子节点作为医院时的距离和</li>
+<li>转移公式：<code>dis[子节点] = dis[父节点] + pre[1] - 2*pre[子节点]</code></li>
+<li>其中<code>pre[1]</code>是整棵树的总入口数，这个公式的含义是：
+<ul>
+<li>当医院从父节点移动到子节点时，子树内的节点到医院的距离减少了，子树外的节点到医院的距离增加了</li>
+<li>距离和的变化量为：子树外的人口数 - 子树内的人口数 = (pre [1]-pre [子节点]) - pre [子节点] = pre [1]-2*pre [子节点]</li>
+</ul>
+</li>
+</ul>
+<h2 id="std">STD:
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -423,162 +402,136 @@
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:select&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cases&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;gui&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;ground&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">          <span class="s2">&#34;fixed&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fallback&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/spyglass_in_hand&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;property&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:display_context&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define endl &#34;\n&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define int long long
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">2e5</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">vals</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dep</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">len</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dis</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">fa</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">fa</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="n">fa</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dfs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">len</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="n">len</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dp</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">fa</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">t</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="n">fa</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dis</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">dis</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+</span><span class="n">len</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">len</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="n">len</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ans</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">dis</span><span class="p">[</span><span class="n">t</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">len</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span> <span class="o">=</span> <span class="n">dis</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//cin &gt;&gt; _;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">_</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">solve</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>不难看出，视频中要求的模型加载和在渲染场景选择的问题被转移到了这个json文件中表达，
-这意味着我们可以直接使用<code>ModModelsProvider</code>来进行数据生成，而无需<code>mixin</code></p>
-<h2 id="modmodelsprovider直接生成json">ModModelsProvider直接生成JSON
-</h2><p>在查阅原版代码的时候，发现了在<code>ItemModelGenerator</code>类中注册望远镜模型的办法如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">SPYGLASS</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>我们又知道<br>
-<strong><code>ModModelsProvider</code>继承于<code>FabricModelProvider</code>继承于<code>ItemModelGenerator</code></strong><br>
-所以我们在<code>ModModelsProvider</code>的<code>generateItemModels</code>方法中直接就可以使用<code>registerWithInHandModel</code>方法<br>
-具体如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModModelsProvider</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FabricModelProvider</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">···</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">generateItemModels</span><span class="p">(</span><span class="n">ItemModelGenerator</span><span class="w"> </span><span class="n">itemModelGenerator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">itemModelGenerator</span><span class="p">.</span><span class="na">registerWithInHandModel</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">PLATE</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>使用这个函数进行数据生成会在<code>generated</code>文件夹下生成以下内容</p>
-<ol>
-<li><code>assets\&lt;yourModID&gt;\items\plate.json</code></li>
-<li><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
-这看起来和使用<code>register</code>方法没有区别，但实际上在 <code>1</code> 路径下的文件结构和上面原版的“望远镜”一样了。<br>
-为了便于区别，这里给一个普通物品的该JSON：</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/apple&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>发现多的<code>&quot;when&quot;</code>正好与视频中的<code>if</code>的条件对应，也就是说只需要修改when中的值，就可以达到与视频中一样控制3D化场景的时候了</p>
-<h2 id="深入剖析registerwithinhandmodel方法">深入剖析registerWithInHandModel方法
-</h2><p>这里先贴出原版的函数实现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerWithInHandModel</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Models</span><span class="p">.</span><span class="na">GENERATED</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="p">.</span><span class="na">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;_in_hand&#34;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span><span class="w"> </span><span class="n">unbaked2</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到有一个<code>&quot;_in_hand&quot;</code>的字符串，这意味着我们在<code>resources</code>文件夹下的<br>
-<code>assets\&lt;yourModID&gt;\models\item</code><br>
-添加物品的3D信息JSON的时候，需要把文件名改为<code>item名+_in_hand</code>的形式。<br>
-如<code>plate_in_hand.json</code></p>
-<h3 id="继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法
-</h3><p>还是先给出函数实现：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="nf">createModelWithInHandVariant</span><span class="p">(</span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">inHandModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">DisplayContextProperty</span><span class="p">(),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">inHandModel</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">switchCase</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GUI</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">GROUND</span><span class="p">,</span><span class="w"> </span><span class="n">ModelTransformationMode</span><span class="p">.</span><span class="na">FIXED</span><span class="p">),</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>你会发现<code>assets\&lt;yourModID&gt;\items\plate.json</code>中的<code>when</code>已经被Mojang写死在这了，所以要实现像视频中那样只在<code>GUI</code>中渲染为2D的话，你需要重写这个方法。
-不过还有个简单的形式是你直接去修改生成的JSON文件中的<code>when</code>的值<br>
-（Tip：数据生成在下次运行的时候不会修改你手动改过的文件）<br>
-这样你在1.21.4中就实现了如下效果<br>
-<img src="/images/MCFDev/img5.1.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="效果"
-	
-	
-></p>
-
 </section>
 
 
@@ -589,7 +542,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/firstfabricmoddevlog_5/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/thecenterofatree/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -656,95 +609,65 @@
         <div class="flex article-list--tile">
             
                 
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_7/">
+<article class="">
+    <a href="/p/bipartitegraph/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img7.png" loading="lazy" data-key="FirstFabricModDevLog_7" data-hash="https://zephyrbd.github.io/images/MCFDev/img7.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">MC 1.21.4 盔甲物品注册及相关类详解</h2>
+            <h2 class="article-title">二分图问题（含P1330 封锁阳光大学 题解）</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_6/">
+<article class="">
+    <a href="/p/layeredgraph/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img6.png" loading="lazy" data-key="FirstFabricModDevLog_6" data-hash="https://zephyrbd.github.io/images/MCFDev/img6.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">MC 1.21.4 中工具物品注册方法及相关类变更详解</h2>
+            <h2 class="article-title">分层图（含P4568 飞行路线题解）</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_4/">
+<article class="">
+    <a href="/p/thepigeonholeprinciple/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img4.png" loading="lazy" data-key="FirstFabricModDevLog_4" data-hash="https://zephyrbd.github.io/images/MCFDev/img4.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">个人在给探矿器添加配方时遇到的问题</h2>
+            <h2 class="article-title">抽屉原理（含Wonderful Gloves题解）</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_2/">
+<article class="">
+    <a href="/p/segmenttree/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img2.png" loading="lazy" data-key="FirstFabricModDevLog_2" data-hash="https://zephyrbd.github.io/images/MCFDev/img2.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0</h2>
+            <h2 class="article-title">线段树</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_1/">
+<article class="">
+    <a href="/p/multiply/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img1.png" loading="lazy" data-key="FirstFabricModDevLog_1" data-hash="https://zephyrbd.github.io/images/MCFDev/img1.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">在MC1.21.4中创建Item时候遇到的问题</h2>
+            <h2 class="article-title">倍增算法（含L3-1 银白之森题解）</h2>
         </div>
     </a>
 </article>
