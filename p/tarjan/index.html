@@ -274,6 +274,7 @@
         <li><a href="#时间戳的引入">时间戳的引入</a></li>
       </ol>
     </li>
+    <li><a href="#代码实现">代码实现</a></li>
   </ol>
 </nav>
         </div>
@@ -336,7 +337,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    779 字
+                    797 字
                 </time>
             </div>
         
@@ -430,7 +431,9 @@
 </ol>
 <h2 id="tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）
 </h2><h3 id="时间戳的引入">时间戳的引入
-</h3><p>我们利用一个<code>lowvis[N]</code>和一个<code>dfn[N]</code>数组来记录DFS的过程，一个全局变量timestramp来表示时间，于是代码实现如下：</p>
+</h3><p>我们利用一个<code>lowvis[N]</code>和一个<code>dfn[N]</code>数组来记录DFS的过程，一个全局变量timestramp来表示时间，以便知道每个节点的先后访问顺序。</p>
+<h2 id="代码实现">代码实现
+</h2><p><strong>找最大连通分量</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -479,31 +482,31 @@
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">timestramp</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">inStack</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">			<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">inStack</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">			<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="k">do</span>
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="n">inStack</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">scc</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">sz</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">timestramp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inStack</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">inStack</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inStack</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">scc</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sz</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -937,7 +940,7 @@
 				
 			
 			发表了34篇文章 · 
-			总计48.08k字
+			总计48.10k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 

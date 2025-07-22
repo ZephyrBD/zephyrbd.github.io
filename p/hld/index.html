@@ -266,12 +266,17 @@
     <li><a href="#核心思想">核心思想</a></li>
     <li><a href="#实现步骤">实现步骤</a>
       <ol>
-        <li><a href="#一相关定义">（一）相关定义</a></li>
-        <li><a href="#二预处理">（二）预处理</a></li>
-        <li><a href="#三具体操作">（三）具体操作</a></li>
+        <li><a href="#相关定义">相关定义</a></li>
+        <li><a href="#预处理">预处理</a></li>
+        <li><a href="#具体操作">具体操作</a></li>
       </ol>
     </li>
-    <li><a href="#视频讲解">视频讲解</a></li>
+    <li><a href="#视频讲解">视频讲解</a>
+      <ol>
+        <li><a href="#lca">LCA</a></li>
+        <li><a href="#轻重链">轻重链</a></li>
+      </ol>
+    </li>
     <li><a href="#应用场景">应用场景</a></li>
     <li><a href="#两次dfs的代码实现">两次DFS的代码实现</a></li>
     <li><a href="#寻找lca的应用">寻找LCA的应用</a>
@@ -343,7 +348,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    2600 字
+                    2595 字
                 </time>
             </div>
         
@@ -380,7 +385,7 @@
 <h2 id="核心思想">核心思想
 </h2><p>树链剖分的核心思想是对树的节点进行重轻分类。对于每个节点，将其孩子中拥有最大子树的那个孩子称为重孩子，其余孩子称为轻孩子。由重孩子组成的链称为重链，轻孩子则作为新的链的起点。通过这样的划分，树上的任意路径都可分解为少数几条链，进而能利用数据结构对这些链进行高效操作。</p>
 <h2 id="实现步骤">实现步骤
-</h2><h3 id="一相关定义">（一）相关定义
+</h2><h3 id="相关定义">相关定义
 </h3><ol>
 <li>
 <p><strong>重儿子</strong>：对于一个节点，其所有子节点中，子树大小最大的子节点（若有多个子树大小相同且最大的情况，任选其一）。</p>
@@ -398,7 +403,7 @@
 <p><strong>重链</strong>：由重边连接而成的链，即从一个节点（非重儿子）开始，通过重边依次连接重儿子所形成的链。</p>
 </li>
 </ol>
-<h3 id="二预处理">（二）预处理
+<h3 id="预处理">预处理
 </h3><ol>
 <li><strong>第一次 DFS</strong></li>
 </ol>
@@ -427,7 +432,7 @@
 <p>记录每个节点所在重链的链头（top）。</p>
 </li>
 </ul>
-<h3 id="三具体操作">（三）具体操作
+<h3 id="具体操作">具体操作
 </h3><ol>
 <li>
 <p><strong>路径查询 / 更新</strong>：对于树上任意两个节点 u 和 v，将路径 u - v 分解为 u 到 LCA（最近公共祖先）和 v 到 LCA 两段。在每一段中，从节点向上移动，若当前节点与链头在同一条重链上，则直接对该段进行操作；否则，操作从当前节点到链头的重链，然后移动到链头的父节点，重复上述过程，直到到达 LCA。</p>
@@ -437,7 +442,8 @@
 </li>
 </ol>
 <h2 id="视频讲解">视频讲解
-</h2>
+</h2><h3 id="lca">LCA
+</h3>
 
 
 
@@ -456,7 +462,8 @@
     </iframe>
 </div>
 
-
+<h3 id="轻重链">轻重链
+</h3>
 
 
 
@@ -583,11 +590,11 @@
 <p>接下来 $  m  $ 行，每行三个整数，第一个数 $  opt  $ 表示操作类型：</p>
 <ul>
 <li>若 $  opt=1  $，则后面两个数 $  x, y  $（$  1 \leq x, y \leq n  $），表示询问路径。</li>
-<li>若 $  opt=2  $，则后面两个数 $  x, z  $（$  1 \leq x \leq n, 1 \leq z \leq 10^4  $），分别表示修改中心以及增加的值。保证所有测试数据中 $  n  $ 之和与 $  m  $ 之和均不超过 $  4 \times 10^5  $。
-输出:</li>
+<li>若 $  opt=2  $，则后面两个数 $  x, z  $（$  1 \leq x \leq n, 1 \leq z \leq 10^4  $），分别表示修改中心以及增加的值。保证所有测试数据中 $  n  $ 之和与 $  m  $ 之和均不超过 $  4 \times 10^5  $。</li>
 </ul>
 </li>
 </ul>
+<p><strong>输出:</strong></p>
 <p>对于每组测试数据：对于每一个 $  opt=1  $ 的操作，输出一行一个数表示答案。</p>
 <p><strong>样例输入:</strong></p>
 <div class="highlight"><div class="chroma">
@@ -814,149 +821,149 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">HLD</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">g</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dep</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">son</span><span class="p">,</span> <span class="n">fa</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">HLD_data</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">HLD</span><span class="p">()</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl">	<span class="n">HLD</span><span class="p">(</span><span class="kt">int</span> <span class="n">_n</span><span class="p">)</span> <span class="p">{</span> <span class="n">init</span><span class="p">(</span><span class="n">_n</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">_n</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">n</span> <span class="o">=</span> <span class="n">_n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">g</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">{});</span>
-</span></span><span class="line"><span class="cl">		<span class="n">dep</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">sz</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">son</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">fa</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">top</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">idx</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">out</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">HLD_data</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">prework</span><span class="p">(</span><span class="kt">int</span> <span class="n">root</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">depdfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 第一次 DFS：计算 sz, dep, son, fa
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">depdfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">father</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">father</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">father</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">sz</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> 
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">father</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">depdfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">			<span class="n">sz</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">sz</span><span class="p">[</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]])</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 第二次 DFS：分链，给 idx、top、out 赋值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">t</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="n">HLD_data</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 先重儿子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="n">dfs</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">t</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 再轻儿子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> 
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">||</span> <span class="n">v</span> <span class="o">==</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 无论是不是叶子，都在此处给 out[u] 赋值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">out</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">query_lca</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">!=</span> <span class="n">top</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> 
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">v</span><span class="p">]])</span> <span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">			<span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]];</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">?</span> <span class="nl">u</span> <span class="p">:</span> <span class="n">v</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">query_klca</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="c1">// 求 x 的第 k 个祖先（0 表示 x 本身）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">fa_dep</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 跳到那条重链的顶，直到该链顶部深度 ≤ fa_dep
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">fa_dep</span><span class="p">)</span> <span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]];</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 链内直接跳：当前节点在序 idx[u]，它的深度是 dep[u]，
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 要到深度 fa_dep 的节点，走 idx 减去 dep[u]-fa_dep
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="n">HLD_data</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="n">fa_dep</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">isAncester</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// [idx[u], out[u]] 包含所有子节点
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">idx</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">idx</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">out</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">dist</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dep</span><span class="p">[</span><span class="n">query_lca</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">rootedParent</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="c1">// 在以 u 为根的树中，查询 v 的父节点（朝向 u 的方向）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>	
-</span></span><span class="line"><span class="cl">		<span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span> <span class="k">return</span> <span class="n">u</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 若 u 不是 v 的祖先，则 u 的父亲就是答案
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isAncester</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span> <span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 否则在 u 的孩子里，找一条链带 v 下去的那位
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">upper_bound</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">end</span><span class="p">(),</span> <span class="n">v</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">idx</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">idx</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">		<span class="p">})</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">rootedSize</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">	<span class="c1">// 在以 u 为根的树中，计算 v 子树的大小
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 如果 v 不是 u 的子孙，则就是普通子树大小
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isAncester</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">))</span> <span class="k">return</span> <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">		<span class="c1">// 如果 v 是 u 的祖先，则去掉通向 u 那条孩子的子树
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">sz</span><span class="p">[</span><span class="n">rootedParent</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">rootedLca</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 三点 LCA：利用性质 LCA(a,b,c)=LCA(a,b)^LCA(a,c)^LCA(b,c)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">^</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="cm">/*配合线段树使用
-</span></span></span><span class="line"><span class="cl"><span class="cm">	int query_path(int u,int v)
-</span></span></span><span class="line"><span class="cl"><span class="cm">	{
-</span></span></span><span class="line"><span class="cl"><span class="cm">		int res = -inf;
-</span></span></span><span class="line"><span class="cl"><span class="cm">		while(top[u]!=top[v])
-</span></span></span><span class="line"><span class="cl"><span class="cm">		{
-</span></span></span><span class="line"><span class="cl"><span class="cm">			if(dep[top[u]]&lt;dep[top[v]]) swap(u,v);
-</span></span></span><span class="line"><span class="cl"><span class="cm">//			if(fa[u]!=0 and son[fa[u]]!=u)
-</span></span></span><span class="line"><span class="cl"><span class="cm">//				res = max(res,query(tree,1,1,n,idx[u],idx[u])+flag[fa[u]]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">//			if(fa[v]!=0 and son[fa[v]]!=v)
-</span></span></span><span class="line"><span class="cl"><span class="cm">//				res = max(res,query(tree,1,1,n,idx[v],idx[v])+flag[fa[v]]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">			res += query(tree,1,1,n,idx[top[u]],idx[u]));
-</span></span></span><span class="line"><span class="cl"><span class="cm">//			if(fa[top[u]]!=0 and son[fa[top[u]]]!=top[u])
-</span></span></span><span class="line"><span class="cl"><span class="cm">//				res = max(res,query(tree,1,1,n,idx[top[u]],idx[top[u]])+flag[fa[top[u]]]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">			u = fa[top[u]];
-</span></span></span><span class="line"><span class="cl"><span class="cm">		}
-</span></span></span><span class="line"><span class="cl"><span class="cm">		if(dep[u]&lt;dep[v]) swap(u,v);
-</span></span></span><span class="line"><span class="cl"><span class="cm">//		if(fa[u]!=0 and son[fa[u]]!=u)
-</span></span></span><span class="line"><span class="cl"><span class="cm">//			res = max(res,query(tree,1,1,n,idx[u],idx[u])+flag[fa[u]]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">//		if(fa[v]!=0 and son[fa[v]]!=v)
-</span></span></span><span class="line"><span class="cl"><span class="cm">//			res = max(res,query(tree,1,1,n,idx[v],idx[v])+flag[fa[v]]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">		res += query(tree,1,1,n,idx[v],idx[u]);
-</span></span></span><span class="line"><span class="cl"><span class="cm">		return res;
-</span></span></span><span class="line"><span class="cl"><span class="cm">	}
-</span></span></span><span class="line"><span class="cl"><span class="cm">	*/</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">g</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dep</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">son</span><span class="p">,</span> <span class="n">fa</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">HLD_data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">HLD</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">HLD</span><span class="p">(</span><span class="kt">int</span> <span class="n">_n</span><span class="p">)</span> <span class="p">{</span> <span class="n">init</span><span class="p">(</span><span class="n">_n</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">_n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">_n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">{});</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dep</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sz</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">son</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fa</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">top</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idx</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HLD_data</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">prework</span><span class="p">(</span><span class="kt">int</span> <span class="n">root</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">depdfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第一次 DFS：计算 sz, dep, son, fa
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">depdfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">father</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">father</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">father</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sz</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">father</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">depdfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sz</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">sz</span><span class="p">[</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]])</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 第二次 DFS：分链，给 idx、top、out 赋值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">t</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HLD_data</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 先重儿子
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="n">dfs</span><span class="p">(</span><span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">t</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 再轻儿子
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">||</span> <span class="n">v</span> <span class="o">==</span> <span class="n">son</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 无论是不是叶子，都在此处给 out[u] 赋值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">out</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">query_lca</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">!=</span> <span class="n">top</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">v</span><span class="p">]])</span> <span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">?</span> <span class="nl">u</span> <span class="p">:</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">query_klca</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 求 x 的第 k 个祖先（0 表示 x 本身）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">fa_dep</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 跳到那条重链的顶，直到该链顶部深度 ≤ fa_dep
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">fa_dep</span><span class="p">)</span> <span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="n">u</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 链内直接跳：当前节点在序 idx[u]，它的深度是 dep[u]，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 要到深度 fa_dep 的节点，走 idx 减去 dep[u]-fa_dep
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="n">HLD_data</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">-</span> <span class="n">fa_dep</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">isAncester</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// [idx[u], out[u]] 包含所有子节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="n">idx</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">idx</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">idx</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">out</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">dist</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dep</span><span class="p">[</span><span class="n">query_lca</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">rootedParent</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 在以 u 为根的树中，查询 v 的父节点（朝向 u 的方向）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>    
+</span></span><span class="line"><span class="cl">        <span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span> <span class="k">return</span> <span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 若 u 不是 v 的祖先，则 u 的父亲就是答案
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isAncester</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span> <span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 否则在 u 的孩子里，找一条链带 v 下去的那位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">upper_bound</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">end</span><span class="p">(),</span> <span class="n">v</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">idx</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">idx</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">rootedSize</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 在以 u 为根的树中，计算 v 子树的大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 如果 v 不是 u 的子孙，则就是普通子树大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isAncester</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">))</span> <span class="k">return</span> <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 如果 v 是 u 的祖先，则去掉通向 u 那条孩子的子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">sz</span><span class="p">[</span><span class="n">rootedParent</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">rootedLca</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 三点 LCA：利用性质 LCA(a,b,c)=LCA(a,b)^LCA(a,c)^LCA(b,c)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">^</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">^</span> <span class="n">query_lca</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*配合线段树使用
+</span></span></span><span class="line"><span class="cl"><span class="cm">    int query_path(int u,int v)
+</span></span></span><span class="line"><span class="cl"><span class="cm">    {
+</span></span></span><span class="line"><span class="cl"><span class="cm">        int res = -inf;
+</span></span></span><span class="line"><span class="cl"><span class="cm">        while(top[u]!=top[v])
+</span></span></span><span class="line"><span class="cl"><span class="cm">        {
+</span></span></span><span class="line"><span class="cl"><span class="cm">            if(dep[top[u]]&lt;dep[top[v]]) swap(u,v);
+</span></span></span><span class="line"><span class="cl"><span class="cm">//            if(fa[u]!=0 and son[fa[u]]!=u)
+</span></span></span><span class="line"><span class="cl"><span class="cm">//                res = max(res,query(tree,1,1,n,idx[u],idx[u])+flag[fa[u]]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">//            if(fa[v]!=0 and son[fa[v]]!=v)
+</span></span></span><span class="line"><span class="cl"><span class="cm">//                res = max(res,query(tree,1,1,n,idx[v],idx[v])+flag[fa[v]]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">            res += query(tree,1,1,n,idx[top[u]],idx[u]));
+</span></span></span><span class="line"><span class="cl"><span class="cm">//            if(fa[top[u]]!=0 and son[fa[top[u]]]!=top[u])
+</span></span></span><span class="line"><span class="cl"><span class="cm">//                res = max(res,query(tree,1,1,n,idx[top[u]],idx[top[u]])+flag[fa[top[u]]]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">            u = fa[top[u]];
+</span></span></span><span class="line"><span class="cl"><span class="cm">        }
+</span></span></span><span class="line"><span class="cl"><span class="cm">        if(dep[u]&lt;dep[v]) swap(u,v);
+</span></span></span><span class="line"><span class="cl"><span class="cm">//        if(fa[u]!=0 and son[fa[u]]!=u)
+</span></span></span><span class="line"><span class="cl"><span class="cm">//            res = max(res,query(tree,1,1,n,idx[u],idx[u])+flag[fa[u]]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">//        if(fa[v]!=0 and son[fa[v]]!=v)
+</span></span></span><span class="line"><span class="cl"><span class="cm">//            res = max(res,query(tree,1,1,n,idx[v],idx[v])+flag[fa[v]]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">        res += query(tree,1,1,n,idx[v],idx[u]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">        return res;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    }
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1390,7 +1397,7 @@
 				
 			
 			发表了34篇文章 · 
-			总计48.08k字
+			总计48.10k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
