@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Dev CB IDEA PyCharm...">
-<title>比赛常用软件测试流程</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tarjan算法详解">
+<title>Tarjan算法</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/idetesting/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/tarjan/'>
 
-<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="比赛常用软件测试流程">
-<meta property='og:description' content="Dev CB IDEA PyCharm...">
-<meta property='og:url' content='https://zephyrbd.github.io/p/idetesting/'>
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="Tarjan算法">
+<meta property='og:description' content="Tarjan算法详解">
+<meta property='og:url' content='https://zephyrbd.github.io/p/tarjan/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-04-20T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="比赛常用软件测试流程">
-<meta name="twitter:description" content="Dev CB IDEA PyCharm...">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-21T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Tarjan算法">
+<meta name="twitter:description" content="Tarjan算法详解">
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
 
@@ -262,14 +262,18 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#dev-c">Dev C++</a></li>
-    <li><a href="#code-blocks">Code Blocks</a></li>
-    <li><a href="#eclipse">Eclipse</a></li>
-    <li><a href="#idea">IDEA</a></li>
-    <li><a href="#pycharm">PyCharm</a></li>
-    <li><a href="#python-310">Python 3.10</a></li>
-    <li><a href="#oms">OMS</a></li>
-    <li><a href="#收尾">收尾</a></li>
+    <li><a href="#强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)</a></li>
+    <li><a href="#强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong></a></li>
+    <li><a href="#强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong></a>
+      <ol>
+        <li><a href="#计算强连通分量的算法"><strong>计算强连通分量的算法</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）</a>
+      <ol>
+        <li><a href="#时间戳的引入">时间戳的引入</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -292,17 +296,21 @@
                 Data Structures &amp; Algorithms
             </a>
         
+            <a href="/categories/cpp-dev/" style="background-color: #639AD2; color: #fff;">
+                CPP Dev
+            </a>
+        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/idetesting/">比赛常用软件测试流程</a>
+            <a href="/p/tarjan/">Tarjan算法</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Dev CB IDEA PyCharm...
+            Tarjan算法详解
         </h3>
         
     </div>
@@ -323,12 +331,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-04-20</time>
+                <time class="article-time--published">2025-07-21</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    616 字
+                    779 字
                 </time>
             </div>
         
@@ -359,443 +367,147 @@
     <section class="article-content">
     
     
-    <h1 id="比赛常用软件测试流程">比赛常用软件测试流程
-</h1><p><strong>适用于蓝桥杯，天梯赛，睿抗。</strong></p>
-<h2 id="dev-c">Dev C++
-</h2><ol>
-<li>打开桌面的Dev C++后按照图片新建源文件</li>
+    <h1 id="环的寻找tarjan算法">环的寻找：Tarjan算法
+</h1><p>在图论中，强连通图和强连通分量是针对<strong>有向图</strong>的重要概念。它们描述了图中节点之间的可达性和结构特性。</p>
+<h2 id="强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)
+</h2><p><strong>定义</strong>：
+如果有向图中<strong>任意两个节点</strong>之间都存在<strong>双向路径</strong>（即从节点A到节点B和从节点B到节点A都有路径），则称该图为强连通图。
+<strong>关键点</strong>：</p>
+<ol>
+<li><strong>双向可达性</strong>：每个节点都能到达其他所有节点。</li>
+<li><strong>整体性质</strong>：强连通性是图的整体性质，而非局部性质。</li>
+<li><strong>示例</strong>：
+<ul>
+<li>一个环图（如节点1→2→3→1）是强连通的。</li>
+<li>城市中的单向道路网络若构成强连通图，则任意两个地点之间可以互相到达。</li>
+</ul>
+</li>
 </ol>
-<p><img src="/images/cppdev/IDETesting/img1.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418121804964"
-	
-	
-></p>
-<ol start="2">
-<li>设置编译标准，按照如下两张图片就可以，两个c++11标准选择一个</li>
+<h2 id="强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong>
+</h2><p><strong>定义</strong>：
+有向图的<strong>极大强连通子图</strong>称为强连通分量（SCC）。</p>
+<ul>
+<li><strong>极大</strong>：若再加入任何其他节点，该子图将不再强连通。
+<strong>关键点</strong>：</li>
+</ul>
+<ol>
+<li><strong>局部结构</strong>：强连通分量是图的局部结构，将图分解为多个“强连通块”。</li>
+<li><strong>分解特性</strong>：每个节点恰好属于一个SCC，不同SCC之间的边是单向的（否则可合并为更大的SCC）。</li>
 </ol>
-<p><img src="/images/cppdev/IDETesting/img2.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img30.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418132622220"
-	
-	
-></p>
-<ol start="3">
-<li>完成创建和编译标准设置后执行如下代码，测试C++11标准能否使用。点击图片鼠标处运行，不报错就没问题。</li>
+<h2 id="强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong>
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th><strong>强连通图</strong></th>
+          <th><strong>强连通分量</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>整个图满足强连通性</td>
+          <td>图的子图满足强连通性</td>
+      </tr>
+      <tr>
+          <td>所有节点互相可达</td>
+          <td>仅分量内的节点互相可达</td>
+      </tr>
+      <tr>
+          <td>图本身是一个整体SCC</td>
+          <td>图可分解为多个SCC</td>
+      </tr>
+      <tr>
+          <td>例如：环图、完全有向图</td>
+          <td>例如：非强连通图中的环结构</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="计算强连通分量的算法"><strong>计算强连通分量的算法</strong>
+</h3><p>常用算法有：</p>
+<ol>
+<li><strong>Kosaraju算法</strong>：两次DFS，第一次处理原图，第二次处理反向图。</li>
+<li><strong>Tarjan算法</strong>：一次DFS，使用栈和时间戳（如用户代码中使用的算法）。</li>
+<li><strong>Gabow算法</strong>：Tarjan算法的变种，优化了栈操作。</li>
 </ol>
+<h2 id="tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）
+</h2><h3 id="时间戳的引入">时间戳的引入
+</h3><p>我们利用一个<code>lowvis[N]</code>和一个<code>dfn[N]</code>数组来记录DFS的过程，一个全局变量timestramp来表示时间，于是代码实现如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">inStack</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">scc</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">sz</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">timestramp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">   <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">it</span><span class="p">:</span><span class="n">a</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">it</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">timestramp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">inStack</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">inStack</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">			<span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">do</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">inStack</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scc</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">sz</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/images/cppdev/IDETesting/img3.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418122329576"
-	
-	
-></p>
-<h2 id="code-blocks">Code Blocks
-</h2><ol>
-<li>打开Code Blocks后按照如下图片创建文件</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img4.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418122832267"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img5.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418122913248"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img6.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418122947941"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img7.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123015362"
-	
-	
-></p>
-<ol start="2">
-<li>点击下图的 &hellip; 选择创建文件位置</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img8.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123109262"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img9.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123217854"
-	
-	
-></p>
-<ol start="3">
-<li>创建文件后执行如下代码</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;123&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
 </div>
-</div><p>4.点击箭头所在处运行代码</p>
-<p><img src="/images/cppdev/IDETesting/img10.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123346507"
-	
-	
-></p>
-<p>若点击后无反应，按照如下图片更改编译器设置。</p>
-<p><img src="/images/cppdev/IDETesting/img11.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123421796"
-	
-	
-></p>
-<p>MinG64一般都在DevCpp文件夹中，DevCpp文件夹的路径一般都是这个。</p>
-<p><img src="/images/cppdev/IDETesting/img12.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418123634042"
-	
-	
-></p>
-<h2 id="eclipse">Eclipse
-</h2><ol>
-<li>要保证不同版本的eclipse使用workplace路径不一样，其他流程都相同，按照如下图片创建java文件</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img23.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418131724869"
-	
-	
-></p>
-<ol start="2">
-<li>关闭welcome</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img24.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418131802893"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img25.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418131830351"
-	
-	
-></p>
-<ol start="4">
-<li>项目名随便写，点finish</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img26.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418131907948"
-	
-	
-></p>
-<ol start="5">
-<li>对项目里的src右键</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img27.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418131936858"
-	
-	
-></p>
-<p>类名随便写</p>
-<p><img src="/images/cppdev/IDETesting/img28.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418132023833"
-	
-	
-></p>
-<ol start="6">
-<li>创建类后在自动生成的类定义里面填下面的代码</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;123&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="7">
-<li>按图运行</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img29.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418132105283"
-	
-	
-></p>
-<h2 id="idea">IDEA
-</h2><ol>
-<li>按图创建项目和java文件</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img13.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125013856"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img14.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125154514"
-	
-	
-></p>
-<ol start="2">
-<li>然后会自动生成一个java文件，直接运行。</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img15.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125237690"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img16.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125309907"
-	
-	
-></p>
-<p>没报错就可以了。</p>
-<h2 id="pycharm">PyCharm
-</h2><p>1.按照图片创建项目和py文件</p>
-<p><img src="/images/cppdev/IDETesting/img17.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125459428"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img18.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-<p><img src="/images/cppdev/IDETesting/img19.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125627125"
-	
-	
-></p>
-<ol start="2">
-<li>文件名随便取</li>
-</ol>
-<p><img src="/images/cppdev/IDETesting/img20.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125656917"
-	
-	
-></p>
-<p>3.按图运行代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="/images/cppdev/IDETesting/img21.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418125846339"
-	
-	
-></p>
-<h2 id="python-310">Python 3.10
-</h2><p>点开后输入</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="/images/cppdev/IDETesting/img22.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20250418130039121"
-	
-	
-></p>
-<p>有结果就可以</p>
-<h2 id="oms">OMS
-</h2><p>双击桌面的oms  等待二维码跳出就可以。</p>
-<h2 id="收尾">收尾
-</h2><p>测试完之后需要将生成的文件和项目删除，一般在c盘的用户中的各种project文件夹，workplace文件夹，d盘中的workplace文件夹，和桌面上。</p>
-
 </section>
 
 
@@ -806,7 +518,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/idetesting/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/tarjan/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -887,19 +599,6 @@
             
                 
 <article class="">
-    <a href="/p/tarjan/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Tarjan算法</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/oeat/">
         
         
@@ -932,6 +631,19 @@
 
         <div class="article-details">
             <h2 class="article-title">分层图（含P4568 飞行路线题解）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/thecenterofatree/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">树的中心点问题（含P1364 医院设置 题解）</h2>
         </div>
     </a>
 </article>

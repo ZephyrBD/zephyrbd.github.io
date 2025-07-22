@@ -272,6 +272,7 @@
       </ol>
     </li>
     <li><a href="#代码实现">代码实现</a></li>
+    <li><a href="#class模板">class模板</a></li>
   </ol>
 </nav>
         </div>
@@ -334,7 +335,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1881 字
+                    2588 字
                 </time>
             </div>
         
@@ -350,7 +351,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -602,7 +603,182 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>最后强调：为了避免越界问题，线段树的大小通常会初始化为原始区间大小的4倍</strong></p>
-
+<h2 id="class模板">class模板
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">data</span><span class="p">,</span> <span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SegTree</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">tree</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">SegTree</span><span class="p">(</span><span class="kt">int</span> <span class="n">_n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="o">:</span> <span class="n">n</span><span class="p">(</span><span class="n">_n</span><span class="p">),</span> <span class="n">root</span><span class="p">(</span><span class="n">_rt</span><span class="p">),</span> <span class="n">L</span><span class="p">(</span><span class="n">_L</span><span class="p">),</span> <span class="n">R</span><span class="p">(</span><span class="n">_R</span><span class="p">),</span> <span class="n">data</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">tree</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="c1">// 对外接口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">build</span><span class="p">()</span> <span class="p">{</span> <span class="n">build</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">update</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">updateRange</span><span class="p">(</span><span class="kt">int</span> <span class="n">ul</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">updateRange</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">ql</span><span class="p">,</span> <span class="kt">int</span> <span class="n">qr</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="n">build</span><span class="p">(</span><span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">left</span> <span class="o">==</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">left</span><span class="p">];</span><span class="c1">//叶子节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">build</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span><span class="c1">//递归构建左子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">build</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span><span class="c1">//递归构建右子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span><span class="p">].</span><span class="n">data</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">data</span><span class="p">);</span><span class="c1">//更新当前节点的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">pushDown</span><span class="p">(</span><span class="kt">int</span> <span class="n">rt</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//更新左子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span><span class="p">].</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//更新右子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">data</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//清空当前节点的懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">rt</span><span class="p">,</span><span class="kt">int</span> <span class="n">left</span><span class="p">,</span><span class="kt">int</span> <span class="n">right</span><span class="p">,</span><span class="kt">int</span> <span class="n">ql</span><span class="p">,</span><span class="kt">int</span> <span class="n">qr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&gt;</span> <span class="n">right</span> <span class="o">||</span> <span class="n">qr</span> <span class="o">&lt;</span> <span class="n">left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">INT_MIN</span><span class="p">;</span> <span class="c1">// 若区间无交集，返回最小值，表明该区间对结果无贡献
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&lt;=</span> <span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="n">qr</span> <span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span><span class="p">;</span> <span class="c1">// 若完全包含，直接返回当前节点的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pushDown</span><span class="p">(</span><span class="n">rt</span><span class="p">);</span> <span class="c1">// 若当前节点有延迟标记，将其下推到子节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">int</span> <span class="n">leftMax</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">);</span> <span class="c1">// 递归查询左子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">int</span> <span class="n">rightMax</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">);</span> <span class="c1">// 递归查询右子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">leftMax</span><span class="p">,</span> <span class="n">rightMax</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">,</span> <span class="kt">int</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">==</span> <span class="n">right</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//找到目标节点，更新值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pushDown</span><span class="p">(</span><span class="n">rt</span><span class="p">);</span><span class="c1">//处理懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span> <span class="n">update</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">update</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="o">*</span><span class="mi">2</span><span class="p">].</span><span class="n">data</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">updateRange</span><span class="p">(</span><span class="kt">int</span> <span class="n">rt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ul</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">ul</span> <span class="o">&gt;</span> <span class="n">right</span> <span class="o">||</span> <span class="n">ur</span> <span class="o">&lt;</span> <span class="n">left</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">//区间无交集，直接返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span><span class="p">(</span><span class="n">ul</span> <span class="o">&lt;=</span> <span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="n">ur</span><span class="o">&gt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span> <span class="c1">//更新当前节点的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span> <span class="c1">//设置懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pushDown</span><span class="p">(</span><span class="n">rt</span><span class="p">);</span> <span class="c1">//处理懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">updateRange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span> <span class="c1">//更新左子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">updateRange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span> <span class="c1">//更新右子树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="o">*</span><span class="mi">2</span><span class="p">].</span><span class="n">data</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">rt</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">data</span><span class="p">);</span> <span class="c1">//更新当前节点的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -681,6 +857,32 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
             
                 
 <article class="">
+    <a href="/p/hld/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">树链剖分（HLD）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/tarjan/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tarjan算法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/oeat/">
         
         
@@ -713,32 +915,6 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 
         <div class="article-details">
             <h2 class="article-title">分层图（含P4568 飞行路线题解）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/thecenterofatree/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">树的中心点问题（含P1364 医院设置 题解）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/thepigeonholeprinciple/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">抽屉原理（含Wonderful Gloves题解）</h2>
         </div>
     </a>
 </article>
@@ -814,6 +990,14 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
         
 		
 		
+		
+			
+			
+			
+		
+			
+			
+			
 		
 			
 			
@@ -1019,8 +1203,12 @@ $$<p>每个节点存储下各自对应区间的最大值，于是我们得到：
 			
 				
 			
-			发表了32篇文章 · 
-			总计44.00k字
+				
+			
+				
+			
+			发表了34篇文章 · 
+			总计48.08k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
