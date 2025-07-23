@@ -13,12 +13,14 @@
         <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/dsacontesttwotutorial/</guid>
-        <description>&lt;h2 id=&#34;比赛链接httpscodeforcescomgym624051&#34;&gt;比赛链接（&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/624051&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://codeforces.com/gym/624051&lt;/a&gt;）
-&lt;/h2&gt;&lt;h2 id=&#34;题目及题解&#34;&gt;题目及题解
-&lt;/h2&gt;&lt;h3 id=&#34;a-题对应原题httpscodeforcescomcontest1674problema&#34;&gt;A 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1674/problem/A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://codeforces.com/contest/1674/problem/A&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析&#34;&gt;问题分析
+        <description>&lt;h2 id=&#34;比赛链接&#34;&gt;比赛链接
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/624051&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://codeforces.com/gym/624051&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;题目及题解&#34;&gt;题目及题解
+&lt;/h2&gt;&lt;h3 id=&#34;a-题对应原题&#34;&gt;A 题（对应原题：
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1674/problem/A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://codeforces.com/contest/1674/problem/A&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;题目要求找到满足特定条件的整数$ a $和$ b $，核心是理解题目中的过程可以重新表述为 “用$ ab $乘以$ x $”。根据数学性质，$ x \cdot ab $必然能被$ x $整除，因此若$ y $不能被$ x $整除，则不存在符合条件的$ a $和$ b $；若$ y $能被$ x $整除，则可以简单地令$ a=1 $且$ b=y/x $。&lt;/p&gt;
 &lt;h4 id=&#34;代码实现&#34;&gt;代码实现
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -91,13 +93,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;b-题对应原题httpscodeforcescomgym105423problemc&#34;&gt;B 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h3 id=&#34;b-题&#34;&gt;B 题
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://codeforces.com/&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;gym/1&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;05423&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;/prob&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105423/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;lem/C&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析-1&#34;&gt;问题分析
+    &gt;lem/C&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析-1&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;本题需要比较乘积的大小，直接计算可能会因数值过大而溢出。可以通过对乘积式子取对数，将乘法运算转化为加法运算来比较大小。也可以使用高精度计算或利用 2024 与 2048 的关系（因为$ (2024/2048)^{50} &amp;gt; 0.5 $）通过 2 的幂次比较。&lt;/p&gt;
 &lt;h4 id=&#34;代码实现-1&#34;&gt;代码实现
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -172,14 +175,15 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;c-题对应原题httpscodeforcescomgym105257problemf&#34;&gt;C 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h3 id=&#34;c-题&#34;&gt;C 题
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://codeforces.co&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;m/gym&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;/1052&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;57/pr&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;oblem&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105257/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;/F&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析-2&#34;&gt;问题分析
+    &gt;/F&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析-2&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;题目中提到代码可以重复提交，要获得最高得分，最优策略显然是每次都提交得分最高的代码，因此只需遍历数组找到最大值并输出即可。&lt;/p&gt;
 &lt;h4 id=&#34;代码实现-2&#34;&gt;代码实现
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -252,14 +256,15 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;d-题对应原题httpscodeforcescomcontest1772problemd&#34;&gt;D 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h3 id=&#34;d-题&#34;&gt;D 题
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://codeforces.co&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;m/con&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;test/&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;1772/&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;probl&lt;/a&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1772/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;em/D&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析-3&#34;&gt;问题分析
+    &gt;em/D&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析-3&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;要使&lt;/p&gt;
 &lt;p&gt;$ |a_1 - x| \le |a_2 - x| \le \cdots \le |a_n - x| $&lt;/p&gt;
 &lt;p&gt;成立，只需考虑相邻两项的约束。&lt;/p&gt;
@@ -379,9 +384,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;e-题对应原题httpscodeforcescomcontest2051probleme&#34;&gt;E 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/2051/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://codeforces.com/contest/2051/problem/E&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析-4&#34;&gt;问题分析
+&lt;/div&gt;&lt;h3 id=&#34;e-题&#34;&gt;E 题
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/2051/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://codeforces.com/contest/2051/problem/E&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析-4&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;本题可设计时间复杂度为$ O(n^2) $的解法，通过检查$ a $和$ b $并集中的整数作为可能价格来优化。采用事件处理（扫描线算法），按升序处理所有可能价格，维护树的购买数量和负面评价数量，更新答案。&lt;/p&gt;
 &lt;h4 id=&#34;代码实现-4&#34;&gt;代码实现
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -458,9 +464,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;f-题对应原题httpscodeforcescomgym105386probleme&#34;&gt;F 题（对应原题：&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105386/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://codeforces.com/gym/105386/problem/E&lt;/a&gt;）
-&lt;/h3&gt;&lt;h4 id=&#34;问题分析-5&#34;&gt;问题分析
+&lt;/div&gt;&lt;h3 id=&#34;f-题&#34;&gt;F 题
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/105386/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://codeforces.com/gym/105386/problem/E&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;问题分析-5&#34;&gt;问题分析
 &lt;/h4&gt;&lt;p&gt;给定正整数序列$ a_1, a_2, \cdots, a_n $与非负整数$ k $，可以执行至多一次操作：选择一个连续子数组，并把所有元素加$ k $。最大化整个序列的最大公因数。$ n \le 3 \times 10^5 $，$ k \le 10^{18} $。&lt;/p&gt;
 &lt;p&gt;假设选择的区间是$ [l, r] $，那么整个序列的最大公因数就是以下四项的最大公因数：&lt;/p&gt;
 &lt;p&gt;$
