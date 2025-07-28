@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tarjan算法详解">
-<title>Tarjan算法</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="SPFA算法（解决负权图的算法）">
+<title>差分约束系统&#43;SPFA最短路</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/tarjan/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/sdc-spfa/'>
 
-<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="Tarjan算法">
-<meta property='og:description' content="Tarjan算法详解">
-<meta property='og:url' content='https://zephyrbd.github.io/p/tarjan/'>
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="差分约束系统+SPFA最短路">
+<meta property='og:description' content="SPFA算法（解决负权图的算法）">
+<meta property='og:url' content='https://zephyrbd.github.io/p/sdc-spfa/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-21T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Tarjan算法">
-<meta name="twitter:description" content="Tarjan算法详解">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-28T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="差分约束系统+SPFA最短路">
+<meta name="twitter:description" content="SPFA算法（解决负权图的算法）">
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
 
@@ -262,19 +262,32 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)</a></li>
-    <li><a href="#强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong></a></li>
-    <li><a href="#强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong></a>
+    <li><a href="#差分约束系统">差分约束系统</a>
       <ol>
-        <li><a href="#计算强连通分量的算法"><strong>计算强连通分量的算法</strong></a></li>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#解的性质">解的性质</a></li>
+        <li><a href="#图的转化">图的转化</a>
+          <ol>
+            <li><a href="#核心思想">核心思想</a></li>
+            <li><a href="#超级源点">超级源点</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）</a>
+    <li><a href="#spfa算法解决负权图的算法">SPFA算法（解决负权图的算法）</a>
       <ol>
-        <li><a href="#时间戳的引入">时间戳的引入</a></li>
+        <li><a href="#作用">作用</a></li>
+        <li><a href="#负环检测">负环检测</a></li>
+        <li><a href="#算法步骤">算法步骤</a></li>
       </ol>
     </li>
-    <li><a href="#代码实现">代码实现</a></li>
+    <li><a href="#例题">例题：</a>
+      <ol>
+        <li><a href="#思路">思路：</a></li>
+        <li><a href="#std">STD:</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ol>
 </nav>
         </div>
@@ -306,12 +319,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/tarjan/">Tarjan算法</a>
+            <a href="/p/sdc-spfa/">差分约束系统&#43;SPFA最短路</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Tarjan算法详解
+            SPFA算法（解决负权图的算法）
         </h3>
         
     </div>
@@ -332,12 +345,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-21</time>
+                <time class="article-time--published">2025-07-28</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    797 字
+                    1314 字
                 </time>
             </div>
         
@@ -353,7 +366,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -368,73 +381,91 @@
     <section class="article-content">
     
     
-    <h1 id="环的寻找tarjan算法">环的寻找：Tarjan算法
-</h1><p>在图论中，强连通图和强连通分量是针对<strong>有向图</strong>的重要概念。它们描述了图中节点之间的可达性和结构特性。</p>
-<h2 id="强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)
-</h2><p><strong>定义</strong>：
-如果有向图中<strong>任意两个节点</strong>之间都存在<strong>双向路径</strong>（即从节点A到节点B和从节点B到节点A都有路径），则称该图为强连通图。
-<strong>关键点</strong>：</p>
-<ol>
-<li><strong>双向可达性</strong>：每个节点都能到达其他所有节点。</li>
-<li><strong>整体性质</strong>：强连通性是图的整体性质，而非局部性质。</li>
-<li><strong>示例</strong>：
-<ul>
-<li>一个环图（如节点1→2→3→1）是强连通的。</li>
-<li>城市中的单向道路网络若构成强连通图，则任意两个地点之间可以互相到达。</li>
+    <h1 id="差分约束系统spfa最短路">差分约束系统+SPFA最短路
+</h1><h2 id="差分约束系统">差分约束系统
+</h2><p>差分约束系统（System of Difference Constraints）是一种特殊的线性规划问题，它包含一系列变量和形如 $x_j - x_i \leq c$ 的不等式约束。求解这类系统可以转化为图论中的最短路问题，通过SPFA（Shortest Path Faster Algorithm）算法高效求解，并能检测是否存在可行解。</p>
+<h3 id="定义">定义
+</h3><p>差分约束系统由 $n$ 个变量 $x_1, x_2, \ldots, x_n$ 和 $m$ 个约束条件组成，每个约束条件具有以下形式：</p>
+$$
+x_j - x_i \leq c_k \quad (1 \leq v, u \leq n, 1 \leq k \leq m)
+$$<p>其中 $c_k$ 是常数，我们需要找到一组变量值满足所有约束条件。</p>
+<h3 id="解的性质">解的性质
+</h3><ul>
+<li>如果存在一组解 $(x_1, x_2, \ldots, x_n)$，则对于任意常数 $d$，$(x_1+d, x_2+d, \ldots, x_n+d)$ 也是系统的解（所有变量同时增减一个常数，差值不变）</li>
+<li>系统可能无解（存在矛盾的约束）</li>
 </ul>
-</li>
-</ol>
-<h2 id="强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong>
-</h2><p><strong>定义</strong>：
-有向图的<strong>极大强连通子图</strong>称为强连通分量（SCC）。</p>
+<h3 id="图的转化">图的转化
+</h3><h4 id="核心思想">核心思想
+</h4><p>差分约束系统的每个不等式 $x_j - x_i \leq c$ 可以转化为图论中的一条有向边：</p>
 <ul>
-<li><strong>极大</strong>：若再加入任何其他节点，该子图将不再强连通。
-<strong>关键点</strong>：</li>
+<li>从节点 $i$ 到节点 $j$ 建立一条有向边</li>
+<li>边的权重为 $c$
+这一转化的依据是最短路的松弛操作：$dist[j] \leq dist[i] + weight(i,j)$，与差分约束形式完全一致。</li>
 </ul>
-<ol>
-<li><strong>局部结构</strong>：强连通分量是图的局部结构，将图分解为多个“强连通块”。</li>
-<li><strong>分解特性</strong>：每个节点恰好属于一个SCC，不同SCC之间的边是单向的（否则可合并为更大的SCC）。</li>
+<h4 id="超级源点">超级源点
+</h4><p>为了确保图的连通性（避免某些节点无法到达），通常添加一个超级源点（如编号 $0$）：</p>
+<ul>
+<li>从超级源点到所有其他节点添加一条权重为 $0$ 的边</li>
+<li>超级源点的距离初始化为 $0$</li>
+</ul>
+<h2 id="spfa算法解决负权图的算法">SPFA算法（解决负权图的算法）
+</h2><h3 id="作用">作用
+</h3><ul>
+<li>求解单源最短路径</li>
+<li>检测图中是否存在负权回路（负环）
+在差分约束系统中，若转化后的图存在负环，则系统无解；否则，最短路径数组 $dist[]$ 即为一组可行解。</li>
+</ul>
+<h3 id="负环检测">负环检测
+</h3><ul>
+<li>记录每个节点的入队次数 $cnt$</li>
+<li>当某个节点的入队次数 $cnt[v] \geq n$（$n$ 为总节点数）时，说明存在负环</li>
+<li>特别的，<strong>当含有超级源点的时候，应该是$cnt[v] \geq n+1$</strong></li>
+</ul>
+<h3 id="算法步骤">算法步骤
+</h3><ol>
+<li>初始化距离数组 $dist[]$ 为无穷大，超级源点 $dist[0] = 0$</li>
+<li>将超级源点加入队列，标记为已入队</li>
+<li>当队列非空时：
+a. 取出队首节点 $u$
+b. 遍历 $u$ 的所有邻接边 $(u, v, w)$
+c. 若 $dist[v] &gt; dist[u] + w$，则更新 $dist[v]$
+d. 更新 $v$ 的入队次数 $cnt[v] = cnt[u] + 1$
+e. 若 $cnt[v] \geq$ 总节点数，说明存在负环，系统无解
+f. 若 $v$ 未在队列中，则将其加入队列</li>
+<li>若未检测到负环，则 $dist[]$ 为可行解</li>
 </ol>
-<h2 id="强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong>
-</h2><div class="table-wrapper"><table>
+<h2 id="例题">例题：
+</h2><p><a class="link" href="https://www.luogu.com.cn/problem/P1993"  target="_blank" rel="noopener"
+    >P1993 小 K 的农场</a></p>
+<h3 id="思路">思路：
+</h3><div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th><strong>强连通图</strong></th>
-          <th><strong>强连通分量</strong></th>
+          <th>原不等式</th>
+          <th>转化为标准形式</th>
+          <th>图中边</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>整个图满足强连通性</td>
-          <td>图的子图满足强连通性</td>
+          <td>$x_a - x_b \geq c$</td>
+          <td>$x_b - x_a \leq -c$</td>
+          <td>$a \rightarrow b$，权值$-c$</td>
       </tr>
       <tr>
-          <td>所有节点互相可达</td>
-          <td>仅分量内的节点互相可达</td>
+          <td>$x_a - x_b \leq c$</td>
+          <td>$x_a - x_b \leq c$</td>
+          <td>$b \rightarrow a$，权值$c$</td>
       </tr>
       <tr>
-          <td>图本身是一个整体SCC</td>
-          <td>图可分解为多个SCC</td>
-      </tr>
-      <tr>
-          <td>例如：环图、完全有向图</td>
-          <td>例如：非强连通图中的环结构</td>
+          <td>$x_a = x_b$</td>
+          <td>$x_a - x_b \leq 0$ 且 $x_b - x_a \leq 0$</td>
+          <td>$a \leftrightarrow b$，权值$0$</td>
       </tr>
   </tbody>
 </table></div>
-<h3 id="计算强连通分量的算法"><strong>计算强连通分量的算法</strong>
-</h3><p>常用算法有：</p>
-<ol>
-<li><strong>Kosaraju算法</strong>：两次DFS，第一次处理原图，第二次处理反向图。</li>
-<li><strong>Tarjan算法</strong>：一次DFS，使用栈和时间戳（如用户代码中使用的算法）。</li>
-<li><strong>Gabow算法</strong>：Tarjan算法的变种，优化了栈操作。</li>
-</ol>
-<h2 id="tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）
-</h2><h3 id="时间戳的引入">时间戳的引入
-</h3><p>我们利用一个<code>lowvis[N]</code>和一个<code>dfn[N]</code>数组来记录DFS的过程，一个全局变量timestramp来表示时间，以便知道每个节点的先后访问顺序。</p>
-<h2 id="代码实现">代码实现
-</h2><p><strong>找最大连通分量</strong></p>
-<div class="highlight"><div class="chroma">
+<h3 id="std">STD:
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -471,46 +502,148 @@
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">inStack</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dfn</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">scc</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">sz</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">timestramp</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">timestramp</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">inStack</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">inStack</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">            <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//#pragma GCC optimize(2)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define endl &#34;\n&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define int long long
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1e6</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">inf</span> <span class="o">=</span> <span class="mf">1e18</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dis</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">cnt</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">vis</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">op</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">op</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">inStack</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">scc</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">sz</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">b</span><span class="p">,</span><span class="o">-</span><span class="n">c</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">b</span><span class="p">,</span><span class="mi">0</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="n">g</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">]</span> <span class="o">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">dis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">w</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cnt</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;No&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Yes&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//cin &gt;&gt; _;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">_</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">solve</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="总结">总结
+</h2><ol>
+<li><strong>核心转化</strong>：差分约束 $x_j - x_i \leq c$ → 图中边 $i \rightarrow j$（权值 $c$）</li>
+<li><strong>可行性判断</strong>：通过SPFA检测负环，存在负环则无解</li>
+<li><strong>超级源点</strong>：确保图的连通性，避免漏检负环</li>
+<li><strong>应用场景</strong>：变量间存在差值约束的问题（如调度问题、距离约束问题等）
+通过将差分约束系统转化为最短路问题，我们可以利用成熟的图论算法高效求解，这是算法思想之间相互转化的典型案例。</li>
+</ol>
+
 </section>
 
 
@@ -521,7 +654,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/tarjan/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/sdc-spfa/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -589,19 +722,6 @@
             
                 
 <article class="">
-    <a href="/p/sdc-spfa/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">差分约束系统&#43;SPFA最短路</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/dsacontesttwotutorial/">
         
         
@@ -621,6 +741,19 @@
 
         <div class="article-details">
             <h2 class="article-title">树链剖分（HLD）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/tarjan/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tarjan算法</h2>
         </div>
     </a>
 </article>
