@@ -409,11 +409,17 @@
 ><br>
 PS:</p>
 <ol>
-<li>这里的等号=叫做赋值运算符。</li>
-<li>所有的编程语言都是用=作为赋值运算符。</li>
-<li>python中，变量的定义和赋值是在一条语句中实现的。</li>
-<li>=的左边叫做左值，=的右边叫做右值。</li>
-</ol>
+<li>
+<p>这里的等号=叫做赋值运算符。</p>
+</li>
+<li>
+<p>所有的编程语言都是用=作为赋值运算符。</p>
+</li>
+<li>
+<p>python中，变量的定义和赋值是在一条语句中实现的。</p>
+</li>
+<li>
+<p>=的左边叫做左值，=的右边叫做右值。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -431,8 +437,9 @@ PS:</p>
 </div><p>一个变量被声明后，在其后的代码中就可以使用了，可以参与运算，可以赋值给其他变量，也可以作为参数传给某个函数。</p>
 <h3 id="变量的命名规则">变量的命名规则
 </h3><p>在编程中，变量的命名规则非常重要，遵守这些规则可以避免语法错误，并提高代码的可读性和可维护性。以下是 Python 变量命名时必须遵守的规则：</p>
-<ol>
-<li>变量名由字母、数字和下划线组成
+</li>
+<li>
+<p>变量名由字母、数字和下划线组成</p>
 <ul>
 <li>变量名只能包含 字母（a-z, A-Z）、数字（0-9） 和 下划线（_）。</li>
 <li>Python 区分大小写，因此 name 和 Name 是两个不同的变量。</li>
@@ -491,9 +498,9 @@ PS:</p>
 </div><h3 id="python中的关键字保留字">Python中的关键字(保留字)
 </h3><p><strong>关键字</strong>（或保留字）是 Python 内部设计时预留的具有特定功能的单词。这些关键字在 Python 代码中具有特殊含义，用来表示特定的操作或语法结构。因此，<strong>关键字不能被用作变量名、函数名或任何其他标识符</strong>，否则会导致语法错误。</p>
 <ol>
-<li>如何查看 Python 的关键字列表
-Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 Python 中的所有关键字。你可以使用以下代码来打印出这些关键字：</li>
-</ol>
+<li>
+<p>如何查看 Python 的关键字列表
+Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 Python 中的所有关键字。你可以使用以下代码来打印出这些关键字：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -515,15 +522,16 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">[&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;async&#39;, &#39;await&#39;, 
-</span></span><span class="line"><span class="cl"> &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, 
-</span></span><span class="line"><span class="cl"> &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, 
-</span></span><span class="line"><span class="cl"> &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, 
-</span></span><span class="line"><span class="cl"> &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
+</span></span><span class="line"><span class="cl">&#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, 
+</span></span><span class="line"><span class="cl">&#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, 
+</span></span><span class="line"><span class="cl">&#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, 
+</span></span><span class="line"><span class="cl">&#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>Python 关键字列表解析
-以下是一些常用关键字及其基本功能：
+</div></li>
+<li>
+<p>Python 关键字列表解析
+以下是一些常用关键字及其基本功能：</p>
 <ul>
 <li>控制流关键字：
 <ul>
@@ -557,13 +565,17 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </li>
 </ul>
 </li>
-<li>注意事项</li>
+<li>
+<p>注意事项</p>
+</li>
 </ol>
 <ul>
-<li>无需死记硬背：Python 的关键字数量有限（大约 35 个），这些关键字会在你编写代码时频繁使用。虽然刚开始可能需要查询关键字的具体功能，但随着编程经验的积累，你会逐渐熟悉这些关键字，并自然记住它们。因此，不需要刻意去死记硬背，反复练习和实际编程会帮助你掌握它们。</li>
-<li>避免使用关键字作为变量名：如果不小心使用了关键字作为变量名，Python 会报语法错误。<br>
-例如：</li>
-</ul>
+<li>
+<p>无需死记硬背：Python 的关键字数量有限（大约 35 个），这些关键字会在你编写代码时频繁使用。虽然刚开始可能需要查询关键字的具体功能，但随着编程经验的积累，你会逐渐熟悉这些关键字，并自然记住它们。因此，不需要刻意去死记硬背，反复练习和实际编程会帮助你掌握它们。</p>
+</li>
+<li>
+<p>避免使用关键字作为变量名：如果不小心使用了关键字作为变量名，Python 会报语法错误。<br>
+例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -576,6 +588,8 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 通过理解并熟悉这些关键字，你将能够更有效地编写 Python 代码。随着编程经验的增长，你会逐渐内化这些关键字的用法。</p>
 <h3 id="变量命名风格的建议规范">变量命名风格的建议（规范）
 </h3><p>在遵守变量命名规则的前提下，变量的命名尽量要见名知意，一般使用英文单词，忌用拼音</p>
+</li>
+</ul>
 <ol>
 <li>见名知意<br>
 变量的命名应尽量清晰明确，能够反映其用途或包含的数据。避免使用与实际用途不符的名字。</li>
@@ -747,8 +761,8 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </h2><h3 id="注释">注释
 </h3><p>代码注释是为了提高代码的可读性和维护性。通过注释，在代码中记录下有关代码逻辑、目的、使用方法等信息，方便自己或其他人在后续的代码维护和修改过程中理解代码的意图</p>
 <ul>
-<li>单行注释：采用 # 开头， 表示这一行的内容是注释，不会被 Python 解释器执行</li>
-</ul>
+<li>
+<p>单行注释：采用 # 开头， 表示这一行的内容是注释，不会被 Python 解释器执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -759,9 +773,9 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>多行注释：使用三个引号（&lsquo;&lsquo;&lsquo;注释&rsquo;&rsquo;&rsquo; 或 &ldquo;&ldquo;&ldquo;注释&rdquo;&quot;&quot;）包裹</li>
-</ul>
+</div></li>
+<li>
+<p>多行注释：使用三个引号（&lsquo;&lsquo;&lsquo;注释&rsquo;&rsquo;&rsquo; 或 &ldquo;&ldquo;&ldquo;注释&rdquo;&quot;&quot;）包裹</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -776,9 +790,9 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>Docstring（文档字符串） ：文档字符串是 Python 特有的一种注释方式，通常用于函数、类或模块的说明。文档字符串也是使用三个引号包裹，但它们是用来生成文档的，而不仅仅是注释</li>
-</ul>
+</div></li>
+<li>
+<p>Docstring（文档字符串） ：文档字符串是 Python 特有的一种注释方式，通常用于函数、类或模块的说明。文档字符串也是使用三个引号包裹，但它们是用来生成文档的，而不仅仅是注释</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -796,30 +810,34 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    这个函数用于两个数字的加法运算。
-</span></span></span><span class="line"><span class="cl"><span class="s2">    
-</span></span></span><span class="line"><span class="cl"><span class="s2">    参数:
-</span></span></span><span class="line"><span class="cl"><span class="s2">    a -- 第一个加数
-</span></span></span><span class="line"><span class="cl"><span class="s2">    b -- 第二个加数
-</span></span></span><span class="line"><span class="cl"><span class="s2">    
-</span></span></span><span class="line"><span class="cl"><span class="s2">    返回值:
-</span></span></span><span class="line"><span class="cl"><span class="s2">    两个加数的和
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  这个函数用于两个数字的加法运算。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">  参数:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  a -- 第一个加数
+</span></span></span><span class="line"><span class="cl"><span class="s2">  b -- 第二个加数
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">  返回值:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  两个加数的和
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Tips：</p>
-<ul>
-<li>注释应尽量简洁明了，描述清楚代码的意图。</li>
-<li>对于复杂的代码逻辑，建议使用详细的注释，以帮助理解代码。</li>
-<li>注释和代码之间保持适当的空白，以提高可读性</li>
-</ul>
+</li>
+<li>
+<p>注释应尽量简洁明了，描述清楚代码的意图。</p>
+</li>
+<li>
+<p>对于复杂的代码逻辑，建议使用详细的注释，以帮助理解代码。</p>
+</li>
+<li>
+<p>注释和代码之间保持适当的空白，以提高可读性</p>
 <h3 id="字符串">字符串
 </h3><p>字符串是 Python 中一种非常重要的数据类型，用于表示和处理文本信息。字符串可以使用单引号、双引号或者三引号来定义，具体的选择取决于你所处理的文本内容。下面详细介绍字符串的各种定义方式及其使用方法。</p>
-<ul>
-<li>单引号、双引号定义单行字符串</li>
-</ul>
+</li>
+<li>
+<p>单引号、双引号定义单行字符串</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -852,10 +870,16 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>PS：</p>
-<ul>
-<li>代码中所有的标点符号都要用英文格式的</li>
-<li>字符串中有单引号时（外面得双引号包裹）</li>
-<li>字符串中有双引号时（外面得单引号包裹）</li>
+</li>
+<li>
+<p>代码中所有的标点符号都要用英文格式的</p>
+</li>
+<li>
+<p>字符串中有单引号时（外面得双引号包裹）</p>
+</li>
+<li>
+<p>字符串中有双引号时（外面得单引号包裹）</p>
+</li>
 </ul>
 
 </section>
@@ -936,6 +960,25 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
             
                 
 <article class="has-image">
+    <a href="/p/pythondev_7/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/Pydev/dev7/img0.png" loading="lazy" data-key="PythonDev_7" data-hash="https://zephyrbd.github.io/images/Pydev/dev7/img0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">字符串的使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/p/pythondev_6/">
         
         
@@ -1005,25 +1048,6 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 
         <div class="article-details">
             <h2 class="article-title">Python的输出和输入</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/pythondev_1/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev1/img0.png" loading="lazy" data-key="PythonDev_1" data-hash="https://zephyrbd.github.io/images/Pydev/dev1/img0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Python开发环境的搭建</h2>
         </div>
     </a>
 </article>
@@ -1099,6 +1123,10 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
         
 		
 		
+		
+			
+			
+			
 		
 			
 			
@@ -1328,8 +1356,10 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 			
 				
 			
-			发表了36篇文章 · 
-			总计54.43k字
+				
+			
+			发表了37篇文章 · 
+			总计55.19k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
