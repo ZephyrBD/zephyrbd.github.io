@@ -1877,7 +1877,7 @@ $&lt;/p&gt;
         <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/tarjan/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/tatjan.png" alt="Featured image of post Tarjan算法" /&gt;&lt;h1 id=&#34;环的寻找tarjan算法&#34;&gt;环的寻找：Tarjan算法
+        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/tarjan.png" alt="Featured image of post Tarjan算法" /&gt;&lt;h1 id=&#34;环的寻找tarjan算法&#34;&gt;环的寻找：Tarjan算法
 &lt;/h1&gt;&lt;p&gt;在图论中，强连通图和强连通分量是针对&lt;strong&gt;有向图&lt;/strong&gt;的重要概念。它们描述了图中节点之间的可达性和结构特性。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;SCC的具体应用见&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/sdc-spfa-scc/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;差分约束系统、SPFA最短路、SCC缩点&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -6867,7 +6867,7 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
         <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/p/hydro-luogu-p6033/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/hydro-luogu-P6033.png" alt="Featured image of post P6033. [NOIP2004 提高组] 合并果子 加强版题解" /&gt;&lt;h2 id=&#34;知识点介绍&#34;&gt;知识点介绍：
+        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/hydro-luogu-p6033.png" alt="Featured image of post P6033. [NOIP2004 提高组] 合并果子 加强版题解" /&gt;&lt;h2 id=&#34;知识点介绍&#34;&gt;知识点介绍：
 &lt;/h2&gt;&lt;h3 id=&#34;桶排序&#34;&gt;桶排序：
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;桶排序的思想是若待排序的值在一个明显有限范围内（整型）时，可设计有限个有序桶，待排序的值装入对应的桶（当然也可以装入若干个值），桶号就是待排序的值，顺序输出各桶的值，将得到有序的序列。&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;例:输入n个0到100之间的整数,由小到大排序输出。&lt;/strong&gt;&lt;br&gt;
