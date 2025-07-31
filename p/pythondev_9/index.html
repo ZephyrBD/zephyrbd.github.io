@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Conditional statement (if and match-case)">
-<title>条件语句（if and match-case）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Usage of dictionaries">
+<title>字典的使用</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/pythondev_5/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/pythondev_9/'>
 
-<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="条件语句（if and match-case）">
-<meta property='og:description' content="Conditional statement (if and match-case)">
-<meta property='og:url' content='https://zephyrbd.github.io/p/pythondev_5/'>
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="字典的使用">
+<meta property='og:description' content="Usage of dictionaries">
+<meta property='og:url' content='https://zephyrbd.github.io/p/pythondev_9/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/Pydev/dev5/img0.png' />
-<meta name="twitter:title" content="条件语句（if and match-case）">
-<meta name="twitter:description" content="Conditional statement (if and match-case)"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/Pydev/dev5/img0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/Pydev/dev9/img0.png' />
+<meta name="twitter:title" content="字典的使用">
+<meta name="twitter:description" content="Usage of dictionaries"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/Pydev/dev9/img0.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
 
@@ -263,34 +263,28 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#条件运算">条件运算</a>
+    <li><a href="#1-字典的定义">1. 字典的定义</a></li>
+    <li><a href="#2-字典的常用操作">2. 字典的常用操作</a>
       <ol>
-        <li><a href="#布尔型">布尔型</a></li>
-        <li><a href="#比较运算符">比较运算符</a></li>
-        <li><a href="#逻辑运算符">逻辑运算符</a></li>
-        <li><a href="#成员运算符">成员运算符</a></li>
-        <li><a href="#身份运算符">身份运算符</a></li>
-        <li><a href="#条件分支">条件分支</a>
-          <ol>
-            <li><a href="#单分支结构">单分支结构</a></li>
-            <li><a href="#二分支结构">二分支结构</a></li>
-            <li><a href="#多分支结构">多分支结构</a></li>
-          </ol>
-        </li>
+        <li><a href="#1-添加数据">1. 添加数据</a></li>
+        <li><a href="#2-修改数据">2. 修改数据</a></li>
+        <li><a href="#3-删除数据">3. 删除数据</a></li>
+        <li><a href="#4-查找数据">4. 查找数据</a></li>
+        <li><a href="#5-字典的其他方法">5. 字典的其他方法</a></li>
       </ol>
     </li>
-    <li><a href="#match-case-语句">Match-Case 语句</a>
+    <li><a href="#3-练习题">3. 练习题</a>
       <ol>
-        <li><a href="#概述">概述</a></li>
-        <li><a href="#基本语法">基本语法</a></li>
-        <li><a href="#使用守卫条件">使用守卫条件</a></li>
-        <li><a href="#高级模式匹配">高级模式匹配</a>
-          <ol>
-            <li><a href="#匹配序列">匹配序列</a></li>
-            <li><a href="#匹配字典">匹配字典</a></li>
-          </ol>
-        </li>
-        <li><a href="#注意事项">注意事项</a></li>
+        <li><a href="#1-创建字典并添加数据">1. 创建字典并添加数据</a></li>
+        <li><a href="#2-修改字典中的数据">2. 修改字典中的数据</a></li>
+        <li><a href="#3-删除字典中的数据">3. 删除字典中的数据</a></li>
+        <li><a href="#4-查找字典中的数据">4. 查找字典中的数据</a></li>
+        <li><a href="#5-使用-get-方法查找数据">5. 使用 <code>get()</code> 方法查找数据</a></li>
+        <li><a href="#6-添加多项数据">6. 添加多项数据</a></li>
+        <li><a href="#7-获取字典的所有键">7. 获取字典的所有键</a></li>
+        <li><a href="#8-获取字典的所有值">8. 获取字典的所有值</a></li>
+        <li><a href="#9-获取字典的所有键值对">9. 获取字典的所有键值对</a></li>
+        <li><a href="#10-字典的清空操作">10. 字典的清空操作</a></li>
       </ol>
     </li>
   </ol>
@@ -307,9 +301,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/pythondev_5/">
+            <a href="/p/pythondev_9/">
                 
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev5/img0.png" loading="lazy" alt="Featured image of post 条件语句（if and match-case）" />
+                    <img src="https://zephyrbd.github.io/images/Pydev/dev9/img0.png" loading="lazy" alt="Featured image of post 字典的使用" />
                 
             </a>
         </div>
@@ -328,12 +322,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/pythondev_5/">条件语句（if and match-case）</a>
+            <a href="/p/pythondev_9/">字典的使用</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Conditional statement (if and match-case)
+            Usage of dictionaries
         </h3>
         
     </div>
@@ -354,12 +348,12 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-02-15</time>
+                <time class="article-time--published">2025-07-31</time>
             </div>
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    2135 字
+                    1061 字
                 </time>
             </div>
         
@@ -375,7 +369,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -390,131 +384,9 @@
     <section class="article-content">
     
     
-    <h2 id="条件运算">条件运算
-</h2><h3 id="布尔型">布尔型
-</h3><p>布尔型（<code>bool</code>）表示条件的真假，只有两个取值：<code>True</code>（真）和 <code>False</code>（假）。</p>
-<ul>
-<li>任何数据都可以通过 <code>bool()</code> 函数转换为布尔型。</li>
-<li>空数据（如 <code>0</code>, <code>0.0</code>, &rsquo;&rsquo; 等）转换为 <code>False</code>，其他值为 <code>True</code>。</li>
-</ul>
-<h3 id="比较运算符">比较运算符
-</h3><p>用于比较相同类型的数据，结果为布尔型。常用比较运算符：</p>
-<ul>
-<li>大于：<code>&gt;</code></li>
-<li>小于：<code>&lt;</code></li>
-<li>大于等于：<code>&gt;=</code></li>
-<li>小于等于：<code>&lt;=</code></li>
-<li>不等于：<code>!=</code></li>
-<li>相等：<code>==</code></li>
-</ul>
-<h3 id="逻辑运算符">逻辑运算符
-</h3><p>用于组合多个条件。常用逻辑运算符：</p>
-<ul>
-<li><code>and</code>（与）：多个条件同时成立，结果为 <code>True</code>。</li>
-<li><code>or</code>（或）：多个条件只需一个成立，结果为 <code>True</code>。</li>
-<li><code>not</code>（非）：取反，将 <code>True</code> 变为 <code>False</code>，反之亦然。</li>
-</ul>
-<h3 id="成员运算符">成员运算符
-</h3><p>用于测试一个值是否存在于序列或集合中。成员运算符：</p>
-<ul>
-<li><code>in</code>：如果找到值在序列中，返回 <code>True</code>。</li>
-<li><code>not in</code>：如果未找到值在序列中，返回 <code>False</code>。</li>
-</ul>
-<h3 id="身份运算符">身份运算符
-</h3><p>用于比较两个对象的内存地址，即判断两个对象是否为同一对象。身份运算符：</p>
-<ul>
-<li><code>is</code>：如果两个变量引用同一个对象，返回 <code>True</code>。</li>
-<li><code>is not</code>：如果两个变量引用不同对象，返回 <code>False</code>。</li>
-</ul>
-<h3 id="条件分支">条件分支
-</h3><p>条件分支语句使程序能够根据条件的真假来决定执行哪一部分代码。主要包括三种结构：</p>
-<ol>
-<li><strong>单分支</strong>：仅在条件成立时执行语句块。</li>
-<li><strong>二分支</strong>：根据条件的真假分别执行不同的语句块。</li>
-<li><strong>多分支</strong>：根据多个条件中的一个成立情况执行相应的语句块。</li>
-</ol>
-<p><img src="/images/Pydev/dev5/img1.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img1"
-	
-	
-></p>
-<h4 id="单分支结构">单分支结构
-</h4><p>语法格式：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">&lt;</span><span class="n">条件</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">语句块</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><code>if</code> 是关键字，后有一个空格。</li>
-<li><code>&lt;条件&gt;</code> 是表达式，其结果为布尔型。</li>
-<li>条件语句结束后必须使用冒号 <code>:</code>。</li>
-<li>语句块是条件成立后执行的一条或多条语句，必须缩进（4个空格）。</li>
-</ul>
-<p><strong>案例解释：</strong><br>
-用户输入考试成绩，判断成绩是否及格（60分及格）。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入您的考试成绩:&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;您的考试成绩及格了，晚上加鸡腿!&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="二分支结构">二分支结构
-</h4><p>语法结构：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">&lt;</span><span class="n">条件</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">语句块1</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">语句块2</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>如果 <code>&lt;条件&gt;</code> 成立，执行 <code>语句块1</code>。</li>
-<li>如果 <code>&lt;条件&gt;</code> 不成立，执行 <code>语句块2</code>。</li>
-</ul>
-<p><strong>案例解释：</strong><br>
-用户输入考试成绩，判断成绩是否及格。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入您的考试成绩:&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;您的考试成绩及格了，晚上加鸡腿!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;考试不及格，晚上通宵学代码！&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="多分支结构">多分支结构
-</h4><p>语法结构：</p>
+    <h1 id="字典的使用">字典的使用
+</h1><h2 id="1-字典的定义">1. 字典的定义
+</h2><p>字典是通过 <code>{}</code> 表示的，包含键值对，格式为 <code>{key: value}</code>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -524,74 +396,278 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">&lt;</span><span class="n">条件1</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">代码块1</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">&lt;</span><span class="n">条件2</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">代码块2</span>
-</span></span><span class="line"><span class="cl"><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">&lt;</span><span class="n">条件n</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">代码块n</span><span class="o">-</span><span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">代码块n</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 示例：定义一个字典</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;小明&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mobile&#34;</span><span class="p">:</span> <span class="s2">&#34;138568985545&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;addr&#34;</span><span class="p">:</span> <span class="s2">&#34;上海市浦东新区XXX路&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>从第一个条件开始，哪个条件成立，就执行对应的代码块。</li>
-<li>如果没有任何条件成立，则执行 <code>else</code> 下的代码块（<code>else</code> 是可选的）。</li>
-</ul>
-<p><strong>案例解释：</strong><br>
-用户输入成绩，程序根据不同的分数区间判断并输出成绩等级（A, B, C, D, E）。</p>
+</div><h2 id="2-字典的常用操作">2. 字典的常用操作
+</h2><h3 id="1-添加数据">1. 添加数据
+</h3><p><strong>方式一：直接添加</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入您的考试成绩:&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;E&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">59</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;D&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;C&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;B&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;A&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s2">&#34;无效成绩&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;您的成绩等级为: </span><span class="si">{</span><span class="n">grade</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;老王&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;addr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;隔壁&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;name&#39;: &#39;老王&#39;, &#39;addr&#39;: &#39;隔壁&#39;}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="match-case-语句">Match-Case 语句
-</h2><h3 id="概述">概述
-</h3><p>match-case 是 Python 3.10 引入的一项新特性，旨在通过模式匹配简化条件判断逻辑。它不仅适用于简单值，还能处理序列、字典和类实例等复杂数据结构。</p>
-<p><strong>关键点：</strong></p>
+</div><p><strong>方式二：使用 <code>update()</code> 方法</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dic</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&#34;a&#34;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;name&#39;: &#39;老王&#39;, &#39;addr&#39;: &#39;隔壁&#39;, &#39;a&#39;: 11, &#39;b&#39;: 22}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-修改数据">2. 修改数据
+</h3><p>通过键修改对应的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;aa&#34;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&#34;bb&#34;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&#34;cc&#34;</span><span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9999</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;aa&#39;: 9999, &#39;bb&#39;: 22, &#39;cc&#39;: 33}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-删除数据">3. 删除数据
+</h3><p><strong>使用 <code>pop()</code> 方法删除指定的键值对：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dic22</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&#34;c&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&#34;d&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">dic22</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic22</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>使用 <code>popitem()</code> 删除字典中的最后一对键值对：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dic22</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic22</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>使用 <code>del</code> 删除指定键值对：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span> <span class="n">dic22</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dic22</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;c&#39;: 3}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-查找数据">4. 查找数据
+</h3><p><strong>使用键索引值：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">dic22</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>使用 <code>get()</code> 方法查找值，不存在时不会报错：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">res2</span> <span class="o">=</span> <span class="n">dic22</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>  <span class="c1"># 输出: 3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5-字典的其他方法">5. 字典的其他方法
+</h3><p><strong>获取所有键：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">keys</span> <span class="o">=</span> <span class="n">dic22</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>  <span class="c1"># 输出: dict_keys([&#39;c&#39;])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>获取所有值：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">values</span> <span class="o">=</span> <span class="n">dic22</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># 输出: dict_values([3])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>获取所有键值对：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">items</span> <span class="o">=</span> <span class="n">dic22</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>  <span class="c1"># 输出: dict_items([(&#39;c&#39;, 3)])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="3-练习题">3. 练习题
+</h2><h3 id="1-创建字典并添加数据">1. 创建字典并添加数据
+</h3><p>创建一个字典 <code>student</code>，并添加以下信息：</p>
 <ul>
-<li>match-case 比传统的 if-elif-else 结构更直观，尤其适合多分支场景。</li>
-<li>它支持多种匹配类型，如常数、列表、字典、对象等。</li>
+<li>姓名（name）: &ldquo;王五&rdquo;</li>
+<li>年龄（age）: 23</li>
+<li>电话号码（phone）: &ldquo;13987654321&rdquo;</li>
 </ul>
-<h3 id="基本语法">基本语法
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;王五&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;phone&#34;</span><span class="p">:</span> <span class="s2">&#34;13987654321&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-修改字典中的数据">2. 修改字典中的数据
+</h3><p>将 <code>student</code> 中的电话号码修改为 <code>&quot;13888888888&quot;</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">student</span><span class="p">[</span><span class="s1">&#39;phone&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;13888888888&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-删除字典中的数据">3. 删除字典中的数据
+</h3><p>从字典 <code>student</code> 中删除键为 <code>&quot;age&quot;</code> 的项。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>  <span class="c1"># 输出: {&#39;name&#39;: &#39;王五&#39;, &#39;phone&#39;: &#39;13888888888&#39;}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-查找字典中的数据">4. 查找字典中的数据
+</h3><p>打印 <code>student</code> 中键为 <code>&quot;name&quot;</code> 的值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># 输出: 王五</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5-使用-get-方法查找数据">5. 使用 <code>get()</code> 方法查找数据
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">phone</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;phone&#39;</span><span class="p">,</span> <span class="s1">&#39;未找到&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">phone</span><span class="p">)</span>  <span class="c1"># 输出: 13888888888</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="6-添加多项数据">6. 添加多项数据
+</h3><p>使用 <code>update()</code> 方法，将以下信息添加到 <code>student</code> 中：</p>
+<ul>
+<li>性别（gender）: &ldquo;男&rdquo;</li>
+<li>地址（address）: &ldquo;北京市海淀区&rdquo;</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">student</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;男&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;北京市海淀区&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="7-获取字典的所有键">7. 获取字典的所有键
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">keys</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>  <span class="c1"># 输出: dict_keys([&#39;name&#39;, &#39;phone&#39;, &#39;gender&#39;, &#39;address&#39;])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="8-获取字典的所有值">8. 获取字典的所有值
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">values</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># 输出: dict_values([&#39;王五&#39;, &#39;13888888888&#39;, &#39;男&#39;, &#39;北京市海淀区&#39;])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="9-获取字典的所有键值对">9. 获取字典的所有键值对
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">items</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出: dict_items([(&#39;name&#39;, &#39;王五&#39;), (&#39;phone&#39;, &#39;13888888888&#39;), (&#39;gender&#39;, &#39;男&#39;), (&#39;address&#39;, &#39;北京市海淀区&#39;)])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="10-字典的清空操作">10. 字典的清空操作
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -600,133 +676,17 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">match</span> <span class="o">&lt;</span><span class="n">表达式</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="o">&lt;</span><span class="n">模式1</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">语句块1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="o">&lt;</span><span class="n">模式2</span><span class="o">&gt;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">语句块2</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="n">_</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">语句块n</span><span class="o">+</span><span class="mi">1</span>  <span class="c1"># 处理所有其他情况</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;北京&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;population&#34;</span><span class="p">:</span> <span class="mi">21500000</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">info</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>  <span class="c1"># 输出: {}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>解释：</strong></p>
-<ul>
-<li><code>match</code> 后跟一个表达式，用于获取匹配值。</li>
-<li>每个 <code>case</code> 后面是要测试的模式。匹配成功时执行相应语句块。</li>
-<li><code>_</code> 用于默认情况，类似于传统的 else 语句。</li>
-</ul>
-<h3 id="使用守卫条件">使用守卫条件
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">match</span> <span class="n">number</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> 大于0&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> 小于0&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="n">_</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> 等于0&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>解释：</strong></p>
-<ul>
-<li>在 <code>case</code> 后添加 <code>if</code> 关键字，可以对匹配结果进行额外判断。</li>
-<li>这有助于精确控制匹配逻辑，适用于需要多层次条件检查的情况。</li>
-</ul>
-<h3 id="高级模式匹配">高级模式匹配
-</h3><h4 id="匹配序列">匹配序列
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">match</span> <span class="n">point</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;点位于坐标原点&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;数据位置在y轴上，y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;数据位置在x轴上，x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;坐标为(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>解释：</strong></p>
-<ul>
-<li>使用元组模式匹配，可以处理多种点的位置情况。</li>
-<li>每个 <code>case</code> 检查点的不同组合，并执行相应的操作。</li>
-</ul>
-<h4 id="匹配字典">匹配字典
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">match</span> <span class="n">user</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Alice&#34;</span><span class="p">}:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;用户是Alice&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="p">{</span><span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;年龄是25岁&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="n">_</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;未匹配到任何条件&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>解释：</strong></p>
-<ul>
-<li>对于字典，可以匹配特定的键值对。</li>
-<li>使用通配符 <code>_</code> 处理未列出的情况，避免遗漏。</li>
-</ul>
-<h3 id="注意事项">注意事项
-</h3><ol>
-<li>
-<p><strong>模式匹配顺序：</strong>
-match-case 会按定义的顺序检查每个 <code>case</code>，一旦找到匹配的情况，就会执行该语句块，不再继续检查后续的条件。</p>
-</li>
-<li>
-<p><strong>不可变对象：</strong>
-match-case 最适合处理不可变对象，如数字、字符串和元组，因为它们在匹配时不会改变状态。要谨慎使用可变对象（如列表），因为可能导致意外行为。</p>
-</li>
-<li>
-<p><strong>默认情况：</strong>
-建议始终包含一个 <code>case _</code>，用于处理所有未被其他 <code>case</code> 处理的情况，这样可以避免遗漏。</p>
-</li>
-</ol>
-
 </section>
 
 
@@ -737,7 +697,7 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/pythondev_5/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/pythondev_9/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {
@@ -824,25 +784,6 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
             
                 
 <article class="has-image">
-    <a href="/p/pythondev_9/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/Pydev/dev9/img0.png" loading="lazy" data-key="PythonDev_9" data-hash="https://zephyrbd.github.io/images/Pydev/dev9/img0.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">字典的使用</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
     <a href="/p/pythondev_7/">
         
         
@@ -893,6 +834,25 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
 
         <div class="article-details">
             <h2 class="article-title">数值和算术运算</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/pythondev_5/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/Pydev/dev5/img0.png" loading="lazy" data-key="PythonDev_5" data-hash="https://zephyrbd.github.io/images/Pydev/dev5/img0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">条件语句（if and match-case）</h2>
         </div>
     </a>
 </article>
