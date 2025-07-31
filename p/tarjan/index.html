@@ -262,19 +262,22 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)</a></li>
-    <li><a href="#强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong></a></li>
-    <li><a href="#强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong></a>
-      <ol>
-        <li><a href="#计算强连通分量的算法"><strong>计算强连通分量的算法</strong></a></li>
-      </ol>
-    </li>
-    <li><a href="#tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）</a>
+    <li><a href="#强连通图-scg">强连通图 (SCG)</a></li>
+    <li><a href="#强连通分量-scc"><strong>强连通分量 (SCC)</strong></a></li>
+    <li><a href="#强连通图-vs-强连通分量"><strong>强连通图 vs 强连通分量</strong></a></li>
+    <li><a href="#tarjan-算法寻找最大-scc">Tarjan 算法（寻找最大 SCC）</a>
       <ol>
         <li><a href="#时间戳的引入">时间戳的引入</a></li>
+        <li><a href="#变量说明">变量说明</a></li>
+        <li><a href="#算法执行步骤">算法执行步骤</a>
+          <ol>
+            <li><a href="#1-dfs-遍历">1. DFS 遍历</a></li>
+          </ol>
+        </li>
+        <li><a href="#2-判断-scc">2. 判断 SCC</a></li>
+        <li><a href="#代码实现">代码实现</a></li>
       </ol>
     </li>
-    <li><a href="#代码实现">代码实现</a></li>
   </ol>
 </nav>
         </div>
@@ -337,7 +340,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    797 字
+                    1254 字
                 </time>
             </div>
         
@@ -353,7 +356,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -370,7 +373,9 @@
     
     <h1 id="环的寻找tarjan算法">环的寻找：Tarjan算法
 </h1><p>在图论中，强连通图和强连通分量是针对<strong>有向图</strong>的重要概念。它们描述了图中节点之间的可达性和结构特性。</p>
-<h2 id="强连通图-strongly-connected-graph">强连通图 (Strongly Connected Graph)
+<p><strong>SCC的具体应用见<a class="link" href="https://zephyrbd.github.io/p/sdc-spfa-scc/"  target="_blank" rel="noopener"
+    >差分约束系统、SPFA最短路、SCC缩点</a></strong></p>
+<h2 id="强连通图-scg">强连通图 (SCG)
 </h2><p><strong>定义</strong>：
 如果有向图中<strong>任意两个节点</strong>之间都存在<strong>双向路径</strong>（即从节点A到节点B和从节点B到节点A都有路径），则称该图为强连通图。
 <strong>关键点</strong>：</p>
@@ -384,7 +389,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="强连通分量-strongly-connected-component-scc"><strong>强连通分量 (Strongly Connected Component, SCC)</strong>
+<h2 id="强连通分量-scc"><strong>强连通分量 (SCC)</strong>
 </h2><p><strong>定义</strong>：
 有向图的<strong>极大强连通子图</strong>称为强连通分量（SCC）。</p>
 <ul>
@@ -422,18 +427,73 @@
       </tr>
   </tbody>
 </table></div>
-<h3 id="计算强连通分量的算法"><strong>计算强连通分量的算法</strong>
-</h3><p>常用算法有：</p>
-<ol>
-<li><strong>Kosaraju算法</strong>：两次DFS，第一次处理原图，第二次处理反向图。</li>
-<li><strong>Tarjan算法</strong>：一次DFS，使用栈和时间戳（如用户代码中使用的算法）。</li>
-<li><strong>Gabow算法</strong>：Tarjan算法的变种，优化了栈操作。</li>
-</ol>
-<h2 id="tarjan算法寻找最大scc">Tarjan算法（寻找最大SCC）
+<h2 id="tarjan-算法寻找最大-scc">Tarjan 算法（寻找最大 SCC）
 </h2><h3 id="时间戳的引入">时间戳的引入
-</h3><p>我们利用一个<code>lowvis[N]</code>和一个<code>dfn[N]</code>数组来记录DFS的过程，一个全局变量timestramp来表示时间，以便知道每个节点的先后访问顺序。</p>
-<h2 id="代码实现">代码实现
-</h2><p><strong>找最大连通分量</strong></p>
+</h3><p>Tarjan 算法的核心是通过深度优先搜索（DFS）过程中的时间戳来识别强连通分量。具体通过两个数组记录关键信息：</p>
+<ul>
+<li>$ \text{dfn}[u] $：记录节点 $ u $ 被首次访问的时间戳（即 DFS 遍历的顺序编号），每个节点仅在首次访问时赋值，且唯一。</li>
+<li>$ \text{low}[u] $：记录节点 $ u $ 能回溯到的最早时间戳（即 $ u $ 所在的连通分支中最小的 $ \text{dfn} $ 值）。</li>
+</ul>
+<p>全局变量 <code>timestamp</code>：用于递增记录访问顺序，初始值为 0，每访问一个新节点则自增 1。</p>
+<h3 id="变量说明">变量说明
+</h3><ul>
+<li><code>inStack[N]</code>：布尔数组，标记节点是否在栈中（用于区分已处理和未处理的节点）。</li>
+<li><code>stack&lt;int&gt; st</code>：存储当前 DFS 路径上的节点，用于在找到 SCC 时提取其中的所有节点。</li>
+<li><code>vector&lt;int&gt; g[N]</code>：邻接表，存储有向图的边。</li>
+<li><code>scc[N]</code>：记录每个节点所属的强连通分量编号。</li>
+<li><code>sz[N]</code>：记录每个强连通分量包含的节点数量。</li>
+<li><code>cnt</code>：强连通分量的计数器，每找到一个新的 SCC 则自增 1。</li>
+</ul>
+<h3 id="算法执行步骤">算法执行步骤
+</h3><h4 id="1-dfs-遍历">1. DFS 遍历
+</h4><p>对每个未访问的节点 $ u $ 执行 <code>dfs(u)</code>：</p>
+<ul>
+<li>
+<p>将 $ u $ 入栈，标记 $ \text{inStack}[u] = \text{true} $，并初始化：</p>
+$$
+  \text{dfn}[u] = \text{low}[u] = ++\text{timestamp}
+  $$</li>
+<li>
+<p>遍历 $ u $ 的所有邻接节点 $ v $：</p>
+<ul>
+<li>
+<p>若 $ v $ 未被访问（即 $ \text{dfn}[v] = 0 $），递归执行 <code>dfs(v)</code>，回溯时更新：</p>
+$$
+    \text{low}[u] = \min(\text{low}[u], \text{low}[v])
+    $$</li>
+<li>
+<p>若 $ v $ 已在栈中（即 $ \text{inStack}[v] = \text{true} $），说明 $ v $ 是当前路径上的节点，更新：</p>
+$$
+    \text{low}[u] = \min(\text{low}[u], \text{dfn}[v])
+    $$</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-判断-scc">2. 判断 SCC
+</h3><p>当满足 $ \text{dfn}[u] = \text{low}[u] $ 时，说明 $ u $ 是一个 SCC 的根节点：</p>
+<ul>
+<li>
+<p>从栈中弹出节点直到 $ u $ 被弹出，这些节点构成一个强连通分量；</p>
+</li>
+<li>
+<p>对每个弹出的节点 $ x $：</p>
+<ul>
+<li>
+<p>标记 $ \text{inStack}[x] = \text{false} $</p>
+</li>
+<li>
+<p>设置：</p>
+$$
+    \text{scc}[x] = \text{cnt}, \quad \text{sz[cnt]}+=1
+    $$</li>
+</ul>
+</li>
+<li>
+<p>最后将 <code>cnt</code> 自增 1，完成一个 SCC 的识别。</p>
+</li>
+</ul>
+<h3 id="代码实现">代码实现
+</h3><p><strong>找最大连通分量</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -471,6 +531,8 @@
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">inStack</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
@@ -499,13 +561,15 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">do</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">inStack</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">scc</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inStack</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">scc</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="n">sz</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">y</span><span class="o">!=</span><span class="n">u</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -589,12 +653,12 @@
             
                 
 <article class="">
-    <a href="/p/sdc-spfa/">
+    <a href="/p/sdc-spfa-scc/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">差分约束系统&#43;SPFA最短路</h2>
+            <h2 class="article-title">差分约束系统、SPFA最短路、SCC缩点</h2>
         </div>
     </a>
 </article>
@@ -952,7 +1016,7 @@
 				
 			
 			发表了36篇文章 · 
-			总计51.35k字
+			总计53.55k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
