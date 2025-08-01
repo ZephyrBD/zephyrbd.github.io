@@ -144,8 +144,9 @@
 &lt;/h3&gt;&lt;h4 id=&#34;时间复杂度&#34;&gt;时间复杂度
 &lt;/h4&gt;&lt;p&gt;同时使用路径压缩和启发式合并之后，并查集的每个操作平均时间仅为 $O(\alpha(n))$，其中 $\alpha$ 为阿克曼函数的反函数，其增长极其缓慢，也就是说其单次操作的平均运行时间可以认为是一个很小的常数。&lt;/p&gt;
 &lt;p&gt;Ackermann函数: $A(m, n)$ 的定义是这样的：&lt;/p&gt;
-&lt;p&gt;$A(m, n) = \begin{cases}n+1&amp;amp;\text{if }m=0\A(m-1,1)&amp;amp;\text{if }m&amp;gt;0\text{ and }n=0\A(m-1,A(m,n-1))&amp;amp;\text{otherwise}\end{cases}$&lt;/p&gt;
-&lt;p&gt;而反 Ackermann 函数 $\alpha(n)$ 的定义是阿克曼函数的反函数，即为最大的整数 $m$ 使得 $A(m, m) \leqslant n$。&lt;/p&gt;
+$$
+A(m, n) = \begin{cases}n+1&amp;\text{if }m=0\\A(m-1,1)&amp;\text{if }m&gt;0\text{ and }n=0\\A(m-1,A(m,n-1))&amp;\text{otherwise}\end{cases}
+$$&lt;p&gt;而反 Ackermann 函数 $\alpha(n)$ 的定义是阿克曼函数的反函数，即为最大的整数 $m$ 使得 $A(m, m) \leqslant n$。&lt;/p&gt;
 &lt;h4 id=&#34;空间复杂度&#34;&gt;空间复杂度
 &lt;/h4&gt;&lt;p&gt;显然为 $O(n)$。&lt;/p&gt;
 &lt;h3 id=&#34;例题&#34;&gt;例题

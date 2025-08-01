@@ -379,7 +379,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1950 字
+                    1953 字
                 </time>
             </div>
         
@@ -541,8 +541,9 @@
 </h3><h4 id="时间复杂度">时间复杂度
 </h4><p>同时使用路径压缩和启发式合并之后，并查集的每个操作平均时间仅为 $O(\alpha(n))$，其中 $\alpha$ 为阿克曼函数的反函数，其增长极其缓慢，也就是说其单次操作的平均运行时间可以认为是一个很小的常数。</p>
 <p>Ackermann函数: $A(m, n)$ 的定义是这样的：</p>
-<p>$A(m, n) = \begin{cases}n+1&amp;\text{if }m=0\A(m-1,1)&amp;\text{if }m&gt;0\text{ and }n=0\A(m-1,A(m,n-1))&amp;\text{otherwise}\end{cases}$</p>
-<p>而反 Ackermann 函数 $\alpha(n)$ 的定义是阿克曼函数的反函数，即为最大的整数 $m$ 使得 $A(m, m) \leqslant n$。</p>
+$$
+A(m, n) = \begin{cases}n+1&\text{if }m=0\\A(m-1,1)&\text{if }m>0\text{ and }n=0\\A(m-1,A(m,n-1))&\text{otherwise}\end{cases}
+$$<p>而反 Ackermann 函数 $\alpha(n)$ 的定义是阿克曼函数的反函数，即为最大的整数 $m$ 使得 $A(m, m) \leqslant n$。</p>
 <h4 id="空间复杂度">空间复杂度
 </h4><p>显然为 $O(n)$。</p>
 <h3 id="例题">例题
