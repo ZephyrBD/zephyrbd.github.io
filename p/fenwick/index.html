@@ -4,16 +4,16 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="树状数组和归并排序求逆序对">
 <title>树状数组（含Rotated Inversions题解）</title>
 
-<link rel='canonical' href='https://zephyrbd.github.io/p/treelikearr/'>
+<link rel='canonical' href='https://zephyrbd.github.io/p/fenwick/'>
 
 <link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="树状数组（含Rotated Inversions题解）">
 <meta property='og:description' content="树状数组和归并排序求逆序对">
-<meta property='og:url' content='https://zephyrbd.github.io/p/treelikearr/'>
+<meta property='og:url' content='https://zephyrbd.github.io/p/fenwick/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/cppdev/Covers/treelikearr.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/cppdev/Covers/Fenwick.png' />
 <meta name="twitter:title" content="树状数组（含Rotated Inversions题解）">
 <meta name="twitter:description" content="树状数组和归并排序求逆序对"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zephyrbd.github.io/images/cppdev/Covers/treelikearr.png' />
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/cppdev/Covers/Fenwick.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
 
@@ -294,9 +294,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/treelikearr/">
+            <a href="/p/fenwick/">
                 
-                    <img src="https://zephyrbd.github.io/images/cppdev/Covers/treelikearr.png" loading="lazy" alt="Featured image of post 树状数组（含Rotated Inversions题解）" />
+                    <img src="https://zephyrbd.github.io/images/cppdev/Covers/Fenwick.png" loading="lazy" alt="Featured image of post 树状数组（含Rotated Inversions题解）" />
                 
             </a>
         </div>
@@ -319,7 +319,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/treelikearr/">树状数组（含Rotated Inversions题解）</a>
+            <a href="/p/fenwick/">树状数组（含Rotated Inversions题解）</a>
         </h2>
     
         
@@ -389,7 +389,7 @@
 </h3><p>树状数组是一种用于高效处理数组前缀和相关问题的数据结构。它能在对数时间内实现单点更新和区间查询操作，相比普通数组遍历求和，大大提高了效率，常用于解决数据统计、动态区间求和等问题。</p>
 <h3 id="构建过程">构建过程
 </h3><p>一. <strong>最粗暴版（即依次两两求和）</strong></p>
-<p><img src="/images/cppdev/TreeLikeArr/img1.png"
+<p><img src="/images/cppdev/Fenwick/img1.png"
 	
 	
 	
@@ -401,7 +401,7 @@
 ></p>
 <p><strong>查询过程</strong></p>
 <p>eg：要计算前15个数字的和，只需要计算4个数字即可</p>
-<p><img src="/images/cppdev/TreeLikeArr/img2.png"
+<p><img src="/images/cppdev/Fenwick/img2.png"
 	
 	
 	
@@ -413,7 +413,7 @@
 ></p>
 <p>二. <strong>离散化版</strong></p>
 <p>我们发现，表中的这些数字对于查询没有任何的帮助，去掉后如下。</p>
-<p><img src="/images/cppdev/TreeLikeArr/img3.png"
+<p><img src="/images/cppdev/Fenwick/img3.png"
 	
 	
 	
@@ -424,7 +424,7 @@
 	
 ></p>
 <p>剩下的数据按照出现顺序写成一排如下：</p>
-<p><img src="/images/cppdev/TreeLikeArr/img4.png"
+<p><img src="/images/cppdev/Fenwick/img4.png"
 	
 	
 	
@@ -436,7 +436,7 @@
 ></p>
 <p>不难发现：这个数组和原始数据正好一样长！</p>
 <p>我们就构建了一个离散化的树状数组，而树状数组中的每一个元素，刚好对应下面每一个区间。</p>
-<p><img src="/images/cppdev/TreeLikeArr/img5.png"
+<p><img src="/images/cppdev/Fenwick/img5.png"
 	
 	
 	
@@ -489,7 +489,7 @@
 <p><strong>1. 其中第k个元素对应的下标的lowbit刚好等于其所对应的原数组中的元素长度</strong></p>
 <p><strong>2. 其中第k个元素对应正上方的序列的元素下标正好就是lowbit(k)+k</strong></p>
 <p>因此，查询时，只需要不断的循环加上b[k]+b[k-lowbit(k)]直到开头为止，进行相加；修改时，只需要不断加上lowbit(k)就可以找到上方的所有序列，进行修改。</p>
-<p><img src="/images/cppdev/TreeLikeArr/img6.png"
+<p><img src="/images/cppdev/Fenwick/img6.png"
 	
 	
 	
@@ -1006,7 +1006,7 @@
 	
 	<section class="article-link-copy">
 		<label>分享</label>
-		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/treelikearr/" readonly>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/fenwick/" readonly>
 		<button onclick="copyLink()">复制</button>
 		<script>
 			function copyLink() {

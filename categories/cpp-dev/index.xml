@@ -5576,11 +5576,11 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
         </item>
         <item>
         <title>树状数组（含Rotated Inversions题解）</title>
-        <link>https://zephyrbd.github.io/p/treelikearr/</link>
+        <link>https://zephyrbd.github.io/p/fenwick/</link>
         <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/treelikearr/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/treelikearr.png" alt="Featured image of post 树状数组（含Rotated Inversions题解）" /&gt;&lt;h1 id=&#34;树状数组含rotated-inversions题解&#34;&gt;树状数组（含Rotated Inversions题解）
+        <guid>https://zephyrbd.github.io/p/fenwick/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/Fenwick.png" alt="Featured image of post 树状数组（含Rotated Inversions题解）" /&gt;&lt;h1 id=&#34;树状数组含rotated-inversions题解&#34;&gt;树状数组（含Rotated Inversions题解）
 &lt;/h1&gt;&lt;h2 id=&#34;本文背景&#34;&gt;本文背景
 &lt;/h2&gt;&lt;p&gt;3.13 在解决 “F - Rotated Inversions”（逆序对问题）时，偶遇TLE强如怪物，拼尽归并排序无法战胜（实际上是我这&lt;strong&gt;蒟蒻&lt;/strong&gt;写错了归并排序的位置导致的）。这道题折磨了我小半周，好在有传奇学长 Yffffff 热心相助。为铭记传奇学长，故写个Blog记录一下。&lt;/p&gt;
 &lt;h2 id=&#34;树状数组的概念及其构建&#34;&gt;树状数组的概念及其构建
@@ -5588,7 +5588,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 &lt;/h3&gt;&lt;p&gt;树状数组是一种用于高效处理数组前缀和相关问题的数据结构。它能在对数时间内实现单点更新和区间查询操作，相比普通数组遍历求和，大大提高了效率，常用于解决数据统计、动态区间求和等问题。&lt;/p&gt;
 &lt;h3 id=&#34;构建过程&#34;&gt;构建过程
 &lt;/h3&gt;&lt;p&gt;一. &lt;strong&gt;最粗暴版（即依次两两求和）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img1.png&#34;
 	
 	
 	
@@ -5600,7 +5600,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;查询过程&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;eg：要计算前15个数字的和，只需要计算4个数字即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img2.png&#34;
 	
 	
 	
@@ -5612,7 +5612,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 &gt;&lt;/p&gt;
 &lt;p&gt;二. &lt;strong&gt;离散化版&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我们发现，表中的这些数字对于查询没有任何的帮助，去掉后如下。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img3.png&#34;
 	
 	
 	
@@ -5623,7 +5623,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;剩下的数据按照出现顺序写成一排如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img4.png&#34;
 	
 	
 	
@@ -5635,7 +5635,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 &gt;&lt;/p&gt;
 &lt;p&gt;不难发现：这个数组和原始数据正好一样长！&lt;/p&gt;
 &lt;p&gt;我们就构建了一个离散化的树状数组，而树状数组中的每一个元素，刚好对应下面每一个区间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img5.png&#34;
 	
 	
 	
@@ -5688,7 +5688,7 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
 &lt;p&gt;&lt;strong&gt;1. 其中第k个元素对应的下标的lowbit刚好等于其所对应的原数组中的元素长度&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 其中第k个元素对应正上方的序列的元素下标正好就是lowbit(k)+k&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;因此，查询时，只需要不断的循环加上b[k]+b[k-lowbit(k)]直到开头为止，进行相加；修改时，只需要不断加上lowbit(k)就可以找到上方的所有序列，进行修改。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/TreeLikeArr/img6.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/cppdev/Fenwick/img6.png&#34;
 	
 	
 	
