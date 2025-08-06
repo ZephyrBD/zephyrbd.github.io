@@ -3933,8 +3933,8 @@ $$
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2-判断-scc&#34;&gt;2. 判断 SCC
-&lt;/h3&gt;&lt;p&gt;当满足 $ \text{dfn}[u] = \text{low}[u] $ 时，说明 $ u $ 是一个 SCC 的根节点：&lt;/p&gt;
+&lt;h4 id=&#34;2-判断-scc&#34;&gt;2. 判断 SCC
+&lt;/h4&gt;&lt;p&gt;当满足 $ \text{dfn}[u] = \text{low}[u] $ 时，说明 $ u $ 是一个 SCC 的根节点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;从栈中弹出节点直到 $ u $ 被弹出，这些节点构成一个强连通分量；&lt;/p&gt;
@@ -3948,7 +3948,7 @@ $$
 &lt;li&gt;
 &lt;p&gt;设置：&lt;/p&gt;
 $$
-    \text{scc}[x] = \text{cnt}, \quad \text{sz[cnt]}+=1
+    scc[x] = cnt, sz[cnt]+=1
     $$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

@@ -273,9 +273,9 @@
         <li><a href="#算法执行步骤">算法执行步骤</a>
           <ol>
             <li><a href="#1-dfs-遍历">1. DFS 遍历</a></li>
+            <li><a href="#2-判断-scc">2. 判断 SCC</a></li>
           </ol>
         </li>
-        <li><a href="#2-判断-scc">2. 判断 SCC</a></li>
         <li><a href="#代码实现">代码实现</a></li>
       </ol>
     </li>
@@ -310,7 +310,7 @@
             </a>
         
             <a href="/categories/cpp-dev/" style="background-color: #639AD2; color: #fff;">
-                CPP Dev
+                C&#43;&#43; Development
             </a>
         
     </header>
@@ -349,7 +349,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    1254 字
+                    1253 字
                 </time>
             </div>
         
@@ -478,8 +478,8 @@ $$
 </ul>
 </li>
 </ul>
-<h3 id="2-判断-scc">2. 判断 SCC
-</h3><p>当满足 $ \text{dfn}[u] = \text{low}[u] $ 时，说明 $ u $ 是一个 SCC 的根节点：</p>
+<h4 id="2-判断-scc">2. 判断 SCC
+</h4><p>当满足 $ \text{dfn}[u] = \text{low}[u] $ 时，说明 $ u $ 是一个 SCC 的根节点：</p>
 <ul>
 <li>
 <p>从栈中弹出节点直到 $ u $ 被弹出，这些节点构成一个强连通分量；</p>
@@ -493,7 +493,7 @@ $$
 <li>
 <p>设置：</p>
 $$
-    \text{scc}[x] = \text{cnt}, \quad \text{sz[cnt]}+=1
+    scc[x] = cnt, sz[cnt]+=1
     $$</li>
 </ul>
 </li>
