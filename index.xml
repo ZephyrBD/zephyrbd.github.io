@@ -10558,6 +10558,16 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，这让MC Mod的社区和未来的Mod开发有了新的希望。&lt;/p&gt;
 &lt;h3 id=&#34;总结&#34;&gt;总结
 &lt;/h3&gt;&lt;p&gt;Forge和Optifine在MC 1.12.2及以前的版本为玩家们带来了众多的Mod，它陪伴MC走过了一段辉煌的岁月，也铸就了一个以Forge为主导的Mod时代（表现为在那个时代几乎一切的东西都能兼容Forge）。但正如历史上那些一直在原地踏步的事物一样，都注定被时代所淘汰，Forge和Optifine在MC 1.13以后不寻求更高效的Mod加载和注入方法，一昧地抹杀不同于己见者，迫使玩家社区写出Fabric这样新的替代品，可以说，Fabric的诞生几乎是Forge推动的，高傲的Lex终会为他自己的行为付出代价。最后，如果你是或者想成为一个Mod开发者，为了MC Mod社区的未来，请使用Fabric或NeoForge来编写代码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img11.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NF&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出管理内存入口如何进入的教程图&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
@@ -10576,17 +10586,27 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 &lt;strong&gt;1024MB=1GB&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;设置内存的一些建议&#34;&gt;设置内存的一些建议
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;游戏的内存至少有1024MB（1GB）（32位Java的只支持最高1024MB（1GB））（如果电脑连2048MB（2GB）物理内存都没有，你还是别玩了）&lt;/li&gt;
-&lt;li&gt;游戏的建议内存最好有4096MB（4GB）（如果自己加了70+的模组，一般建议直接上8192MB（8GB），前提是物理内存比8192MB（8GB）至少大2048MB（2GB））&lt;/li&gt;
-&lt;li&gt;注意你的物理内存大小，分配给Minecraft的内存至少比物理内存少2048MB，如果内存不够就不要玩大型模组整合包了&lt;/li&gt;
-&lt;li&gt;在运行大型模组整合包时，如果需要同时使用OBS或其他录制软件录制视频，物理内存最好为12288 MB (12 GB)或更多，然后为系统保留4096 MB（4GB）的内存&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;游戏的内存至少有1024MB（1GB）（32位Java的只支持最高1024MB（1GB））（如果电脑连2048MB（2GB）物理内存都没有，你还是别玩了）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;游戏的建议内存最好有4096MB（4GB）（如果自己加了70+的模组，一般建议直接上8192MB（8GB），前提是物理内存比8192MB（8GB）至少大2048MB（2GB））&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注意你的物理内存大小，分配给Minecraft的内存至少比物理内存少2048MB，如果内存不够就不要玩大型模组整合包了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在运行大型模组整合包时，如果需要同时使用OBS或其他录制软件录制视频，物理内存最好为12288 MB (12 GB)或更多，然后为系统保留4096 MB（4GB）的内存&lt;/p&gt;
 &lt;h3 id=&#34;其它设置建议&#34;&gt;其它设置建议
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;建议把分辨率设置为 1280*720 （主要因为是16:9的分辨率，方便截图和视频录制）&lt;/li&gt;
-&lt;li&gt;把启动器设置为 保持启动器可见 （这样方便防止低配电脑退出时卡死，也方便大型模组整合包调试）&lt;/li&gt;
-&lt;li&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建议把分辨率设置为 1280*720 （主要因为是16:9的分辨率，方便截图和视频录制）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把启动器设置为 保持启动器可见 （这样方便防止低配电脑退出时卡死，也方便大型模组整合包调试）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/p&gt;
 &lt;h2 id=&#34;附minecraft目录详解图&#34;&gt;附：.minecraft目录详解图
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;（仅供参考）&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img16.png&#34;
@@ -10599,6 +10619,8 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 	
 	
 &gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
