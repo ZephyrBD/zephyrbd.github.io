@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tutorial of building Frp+MCSM Server">
+<title>Frps &#43; MCSM最详细搭建指北</title>
+
+<link rel='canonical' href='https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/'>
+
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="Frps + MCSM最详细搭建指北">
+<meta property='og:description' content="Tutorial of building Frp+MCSM Server">
+<meta property='og:url' content='https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/'>
+<meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-24T00:00:00&#43;00:00'/><meta property='og:image' content='https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp-MCSMServer/cover.png' />
+<meta name="twitter:title" content="Frps + MCSM最详细搭建指北">
+<meta name="twitter:description" content="Tutorial of building Frp+MCSM Server"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp-MCSMServer/cover.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_8d0900c4f4376001.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🫠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZephyrBD&#39;s Blog</a></h1>
+            <h2 class="site-description">WE DO THIS, FOR TECHNOLOGY.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/294413012'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZephyrBD'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#写在开头">写在开头</a></li>
+    <li><a href="#安装ubuntu-server">安装Ubuntu Server</a>
+      <ol>
+        <li><a href="#安装时组建raid1">安装时组建RAID1</a></li>
+      </ol>
+    </li>
+    <li><a href="#启用ufwuncomplicated-firewall">启用ufw（Uncomplicated Firewall）</a></li>
+    <li><a href="#配置raid-1失败邮件告知脚本">配置RAID 1失败邮件告知脚本</a></li>
+    <li><a href="#配置openssh">配置OpenSSH</a></li>
+    <li><a href="#安装实用软件和环境">安装实用软件和环境</a></li>
+    <li><a href="#安装nvidia-gpu驱动">安装NVIDIA GPU驱动</a></li>
+    <li><a href="#安装并配置-frp-服务端frps">安装并配置 Frp 服务端（Frps）</a></li>
+    <li><a href="#安装并配置mcsmmcsmanager面板服务">安装并配置MCSM（MCSMANAGER）面板服务</a></li>
+    <li><a href="#修改时区和设置时间同步">修改时区和设置时间同步</a></li>
+    <li><a href="#设置定时关机">设置定时关机</a></li>
+    <li><a href="#使用nginx进行https代理">使用Nginx进行Https代理</a>
+      <ol>
+        <li><a href="#生成自签名证书适合个人使用">生成自签名证书（适合个人使用）</a></li>
+        <li><a href="#获取zerossl证书通过ca机构认证">获取ZeroSSL证书（通过CA机构认证）</a></li>
+        <li><a href="#安装并配置-nginx-反向代理">安装并配置 Nginx 反向代理</a></li>
+        <li><a href="#修改mcsm-web的config">修改mcsm-web的config</a></li>
+        <li><a href="#修改mcs面板中的节点设置针对本地">修改MCS面板中的节点设置（针对本地）</a></li>
+      </ol>
+    </li>
+    <li><a href="#网络安全进阶fail2ban">网络安全进阶（fail2ban）</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tutorialofbuildfrp-mcsmserver/">
+                
+                    <img src="https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp-MCSMServer/cover.png" loading="lazy" alt="Featured image of post Frps &#43; MCSM最详细搭建指北" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/minecraft/" style="background-color: #27B72C; color: #fff;">
+                Minecraft
+            </a>
+        
+            <a href="/categories/linux/" style="background-color: #E4934C; color: #fff;">
+                GNU/Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/tutorialofbuildfrp-mcsmserver/">Frps &#43; MCSM最详细搭建指北</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Tutorial of building Frp&#43;MCSM Server
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-08-24</time>
+            </div>
+			<div>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
+                <time class="post-word-count">
+                    5882 字
+                </time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="frpsmcsm最详细搭建指北">Frps+MCSM最详细搭建指北
+</h1><h2 id="写在开头">写在开头
+</h2><p>这是我长期折腾计算机以来，首次围绕<strong>数据安全、网络安全、服务需求及稳定性</strong>四大维度，系统性从 0 搭建的 Ubuntu Server（GNU/Linux）服务器。整个过程就是 “边搭建边优化” 的迭代：最初采用 “开放所有必要端口 + HTTP 连接” 的基础方案，意识到安全隐患后，又调整为 “指定个别端口 + Nginx 反向代理 + HTTPS 加密” 的加固架构；存储层面也从单盘转向保障数据冗余的 RAID 1 阵列。</p>
+<p>为确保实体机部署顺利，我先在虚拟机环境中完成了 2 次全流程演练，后续又在实体机上进行了 2 次（第二次是为了组RAID）实际安装调试，才最终达成预期效果。此外，考虑到计算机行业 “文档化运维” 的传统 —— 便于后期排障、迭代与复用，因此整理此篇文档，记录整个搭建过程与关键决策。</p>
+<hr>
+<h2 id="安装ubuntu-server">安装Ubuntu Server
+</h2>
+
+
+
+
+
+    
+
+
+<div class="video-wrapper">
+    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1ZAxqedEJy"
+            scrolling="no"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+    >
+    </iframe>
+</div>
+
+<h3 id="安装时组建raid1">安装时组建RAID1
+</h3><ol>
+<li>
+<p>在存储配置的页面，选择自定义</p>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-0.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>进入到此界面</p>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-1.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>清除已有分区</p>
+<ul>
+<li>
+<p>可以看到，此 VPS 上有两块虚拟硬盘，大小均为 20GB，其中“/dev/vda”已经设置了几个分区，而“/dev/vdb”还未使用。</p>
+</li>
+<li>
+<p>选中“/dev/vda”并按回车，然后进入“Reformat”选项。此时会提示你，此操作会清除所有数据，确认即可。如果你的数据盘也有数据，也按此方式清除掉所有分区。</p>
+</li>
+<li>
+<p>清除完成后，你会看到此界面。</p>
+</li>
+</ul>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>在硬盘上创建分区</p>
+<ul>
+<li>
+<p>再次选中“/dev/vda”，选择“Use As Boot Device”并确认。此操作是为了在系统盘上创建引导分区。</p>
+</li>
+<li>
+<p>创建完成后，剩余空间是没法直接使用的，需要创建分区。选择可用空间，然后进入“Add GPT Partition”创建分区，空间留空（默认使用全部剩余空间），“Format”选择“Leave unformatted”。</p>
+</li>
+<li>
+<p>然后，在数据盘上也创建一个分区，空间留空，“Format”同样选择“Leave unformatted”。</p>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-3.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ul>
+</li>
+<li>
+<p>创建 RAID 并分区</p>
+<ul>
+<li>
+<p>在两个硬盘上创建好分区以后，回到分区界面，选择“Create software RAID (md)”，然后在弹出的界面中选中刚才在两块硬盘上创建的分区，类型选择 RAID 1，名称默认是“md0”，并确认。</p>
+</li>
+<li>
+<p>此时你会在“AVAILABLE DEVICES”中看到刚才创建的 RAID 磁盘。选中并进入“Add GPT Partition”创建分区，“Format”选择“ext4”，“Mount”设置为“/”，即根目录。</p>
+</li>
+</ul>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-4.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>完成后，可以看到如下界面</p>
+<p><img src="/images/Linux/TutorialofbuildFrp-MCSMServer/st-5.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ol>
+<h2 id="启用ufwuncomplicated-firewall">启用ufw（Uncomplicated Firewall）
+</h2><ol>
+<li>
+<p>启动 ufw 防火墙</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw <span class="nb">enable</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看当前 ufw 状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw status
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="配置raid-1失败邮件告知脚本">配置RAID 1失败邮件告知脚本
+</h2><ol>
+<li>
+<p>安装相关软件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install smartmontools msmtp msmtp-mta -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置脚本并设置权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /usr/local/bin/raid1_monitor.sh
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/raid1_monitor.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># /usr/local/bin/raid1_monitor.sh</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># mdadm PROGRAM style: $1 = EVENT, $2 = RAID_DEV, $3 = component (may be empty)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If run with no args -&gt; TEST mode (send a test email)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># configuration (adjust if needed)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">EMAIL</span><span class="o">=</span><span class="s2">&#34;example@examle.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FROM_ADDR</span><span class="o">=</span><span class="s2">&#34;example-sender@example.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ACCOUNT_NAME</span><span class="o">=</span><span class="s2">&#34;qq&#34;</span>   <span class="c1"># msmtp account name (not strictly required if /etc/msmtprc default)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">STATE_DIR</span><span class="o">=</span><span class="s2">&#34;/var/lib/raid_monitor&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LOCKFILE</span><span class="o">=</span><span class="s2">&#34;/var/run/raid_monitor.lock&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEBOUNCE_SEC</span><span class="o">=</span><span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEDUP_SEC</span><span class="o">=</span><span class="k">$((</span><span class="m">15</span><span class="o">*</span><span class="m">60</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PROGRESS_THRESHOLDS</span><span class="o">=(</span><span class="m">25</span> <span class="m">50</span> <span class="m">75</span> 100<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PROGRESS_STATE_SUFFIX</span><span class="o">=</span><span class="s2">&#34;_rebuild_progress&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_PREFIX</span><span class="o">=</span><span class="s2">&#34;RAID 事件&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p <span class="s2">&#34;</span><span class="nv">$STATE_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">touch <span class="s2">&#34;</span><span class="nv">$STATE_DIR</span><span class="s2">/.dummy&#34;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># safe arg handling: if no args -&gt; test mode</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;No arguments provided. Running in TEST mode: will send a test email.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">EVENT</span><span class="o">=</span><span class="s2">&#34;Test&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">RAID_DEV</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">RAID_DEV</span><span class="k">:-</span><span class="p">/dev/md0</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">DRIVE</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DRIVE</span><span class="k">:-</span><span class="p">/dev/sda1</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">EVENT</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">RAID_DEV</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">2</span><span class="k">:-</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">DRIVE</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">3</span><span class="k">:-</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># locking to avoid concurrent runs</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> 9&gt;<span class="s2">&#34;</span><span class="nv">$LOCKFILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> ! flock -n 9<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  logger -p info <span class="s2">&#34;</span><span class="nv">$LOG_PREFIX</span><span class="s2">: another instance is running, exiting&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log<span class="o">()</span> <span class="o">{</span> logger -p info <span class="s2">&#34;</span><span class="nv">$LOG_PREFIX</span><span class="s2">: </span><span class="nv">$*</span><span class="s2">&#34;</span><span class="p">;</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">send_mail<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">subject</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">body</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;From: Zephyr BD &lt;</span><span class="nv">$FROM_ADDR</span><span class="s2">&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;To: </span><span class="nv">$EMAIL</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Subject: </span><span class="nv">$subject</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Content-Type: text/plain; charset=UTF-8&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">&#34;</span><span class="nv">$body</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span> <span class="p">|</span> msmtp --from<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$FROM_ADDR</span><span class="s2">&#34;</span> -t
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># mdadm helpers</span>
+</span></span><span class="line"><span class="cl">get_failed_count<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  sudo mdadm --detail <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="p">|</span> awk -F: <span class="s1">&#39;/Failed Devices/ {gsub(/ /,&#34;&#34;,$2); print $2; exit}&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">is_degraded<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  sudo mdadm --detail <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="p">|</span> grep -qiE <span class="s1">&#39;degraded&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">return</span> <span class="m">0</span> <span class="o">||</span> <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">is_resyncing<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  grep -q <span class="s2">&#34;</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> /proc/mdstat 2&gt;/dev/null <span class="o">&amp;&amp;</span> grep -qE <span class="s1">&#39;resync|recovery|rebuild&#39;</span> /proc/mdstat 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="k">return</span> <span class="m">0</span> <span class="o">||</span> <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># SMART helper</span>
+</span></span><span class="line"><span class="cl">check_smart_one<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">disk</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> -b <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s2">&#34;NOTPRESENT&#34;</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> sudo smartctl -i <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="p">|</span> grep -qi <span class="s1">&#39;SMART support is:.*Unavailable&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;NOSMART&#34;</span><span class="p">;</span> <span class="k">return</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> sudo smartctl -H <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="p">|</span> grep -qi <span class="s1">&#39;PASSED&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;PASSED&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;FAILED&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># dedupe helpers</span>
+</span></span><span class="line"><span class="cl"><span class="nv">state_file</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">STATE_DIR</span><span class="si">}</span><span class="s2">/</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">_state&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">last_event_file</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">STATE_DIR</span><span class="si">}</span><span class="s2">/</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">_last_event&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">progress_state_file</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">STATE_DIR</span><span class="si">}</span><span class="s2">/</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$RAID_DEV</span><span class="s2">&#34;</span><span class="k">)</span><span class="si">${</span><span class="nv">PROGRESS_STATE_SUFFIX</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">now_ts</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">should_send_dedup_ok<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">ev</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$last_event_file</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">read</span> -r last_ev last_ts &lt; &lt;<span class="o">(</span>awk <span class="s1">&#39;{print $1&#34; &#34;$2}&#39;</span> <span class="s2">&#34;</span><span class="nv">$last_event_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$last_ev</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$ev</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$last_ts</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="k">$((</span>now_ts <span class="o">-</span> last_ts<span class="k">))</span> -lt <span class="s2">&#34;</span><span class="nv">$DEDUP_SEC</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">record_last_event<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">ev</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">printf</span> <span class="s2">&#34;%s %s\n&#34;</span> <span class="s2">&#34;</span><span class="nv">$ev</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$now_ts</span><span class="s2">&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$last_event_file</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If Test mode -&gt; send a sample email and exit</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;Test&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">SUBJECT_FINAL</span><span class="o">=</span><span class="s2">&#34;RAID 监控测试邮件&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">BODY</span><span class="o">=</span><span class="s2">&#34;这是一封来自 RAID 监控脚本的测试邮件。\n主机: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">\n时间: </span><span class="k">$(</span>date -u +<span class="s2">&#34;%Y-%m-%d %H:%M:%SZ&#34;</span><span class="k">)</span><span class="s2">\n示例事件: Test\n&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> send_mail <span class="s2">&#34;</span><span class="nv">$SUBJECT_FINAL</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$BODY</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;Test email sent.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;Failed to send test email.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># handle rebuild progress parsing</span>
+</span></span><span class="line"><span class="cl"><span class="nv">rebuild_progress_percent</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2">&#34;</span> <span class="p">|</span> grep -qE <span class="s1">&#39;^Rebuild[0-9]+&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">rebuild_progress_percent</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2">&#34;</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/[^0-9]*([0-9]+).*/\1/&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">norm_event</span><span class="o">=</span><span class="s2">&#34;RebuildProgress&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">norm_event</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">  Fail<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  DegradedArray<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> should_send_dedup_ok <span class="s2">&#34;DegradedArray&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      log <span class="s2">&#34;DegradedArray suppressed by dedupe&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  RebuildStarted<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> should_send_dedup_ok <span class="s2">&#34;RebuildStarted&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;0&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  RebuildFinished<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;100&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  RebuildProgress<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># threshold-based progress notifications</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">last_notified</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">read</span> -r last_notified &lt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nv">last_notified</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">last_notified</span><span class="o">=</span><span class="si">${</span><span class="nv">last_notified</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">curr_p</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">new_notified</span><span class="o">=</span><span class="nv">$last_notified</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> t in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PROGRESS_THRESHOLDS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$curr_p</span><span class="s2">&#34;</span> -ge <span class="s2">&#34;</span><span class="nv">$t</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$t</span><span class="s2">&#34;</span> -gt <span class="s2">&#34;</span><span class="nv">$last_notified</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">new_notified</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$t</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$new_notified</span><span class="s2">&#34;</span> -gt <span class="s2">&#34;</span><span class="nv">$last_notified</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">progress_to_record</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$new_notified</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  SpareActive<span class="p">|</span>DeviceDisappeared<span class="p">|</span>NewArray<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># DeviceDisappeared/NewArray can be transient — debounce</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2"> on </span><span class="nv">$RAID_DEV</span><span class="s2"> detected for </span><span class="nv">$DRIVE</span><span class="s2"> — waiting </span><span class="si">${</span><span class="nv">DEBOUNCE_SEC</span><span class="si">}</span><span class="s2">s to confirm&#34;</span>
+</span></span><span class="line"><span class="cl">    sleep <span class="s2">&#34;</span><span class="nv">$DEBOUNCE_SEC</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> is_degraded <span class="o">||</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>get_failed_count <span class="o">||</span> <span class="nb">echo</span> 0<span class="k">)</span><span class="s2">&#34;</span> -gt <span class="m">0</span> <span class="o">]</span> <span class="o">||</span> is_resyncing<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> should_send_dedup_ok <span class="s2">&#34;DegradedArray&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">norm_event</span><span class="o">=</span><span class="s2">&#34;DegradedArray&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        log <span class="s2">&#34;After debounce, DegradedArray confirmed but dedupe suppressed mail&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">      <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      log <span class="s2">&#34;Transient </span><span class="nv">$EVENT</span><span class="s2"> on </span><span class="nv">$RAID_DEV</span><span class="s2"> resolved; not sending mail&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">SENDMAIL</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># build message body</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MESSAGE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Fail&#34;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;DegradedArray&#34;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;RebuildStarted&#34;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;RebuildFinished&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">MESSAGE</span><span class="o">=</span><span class="s2">&#34;事件: </span><span class="nv">$EVENT</span><span class="s2">\n阵列: </span><span class="nv">$RAID_DEV</span><span class="s2">\n组件: </span><span class="nv">$DRIVE</span><span class="s2">\n时间: </span><span class="k">$(</span>date -u +<span class="s2">&#34;%Y-%m-%d %H:%M:%SZ&#34;</span><span class="k">)</span><span class="s2">\n&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Fail&#34;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;DegradedArray&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;\nSMART 检查结果：\n&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> disk in /dev/sd<span class="o">[</span>a-z<span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">res</span><span class="o">=</span><span class="k">$(</span>check_smart_one <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$res</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">      PASSED<span class="o">)</span> <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;✅ </span><span class="nv">$disk</span><span class="s2">: SMART PASSED\n&#34;</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      FAILED<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;❌ </span><span class="nv">$disk</span><span class="s2">: SMART FAILED (请检查)\n&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> sudo smartctl -l error <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span>1<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;---- 最近 Error Log (前 5 行) ----\n</span><span class="k">$(</span>sudo smartctl -l error <span class="s2">&#34;</span><span class="nv">$disk</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="p">|</span> sed -n <span class="s1">&#39;1,5p&#39;</span><span class="k">)</span><span class="s2">\n&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      NOSMART<span class="o">)</span> <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;ℹ️ </span><span class="nv">$disk</span><span class="s2">: 不支持 SMART，已跳过\n&#34;</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      NOTPRESENT<span class="o">)</span> <span class="nv">MESSAGE</span><span class="o">+=</span><span class="s2">&#34;ℹ️ </span><span class="nv">$disk</span><span class="s2">: 设备不存在\n&#34;</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl">  <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># progress mail handling</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SENDMAIL</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;RebuildProgress&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">SUBJECT_FINAL</span><span class="o">=</span><span class="s2">&#34;RAID 重建进度: </span><span class="si">${</span><span class="nv">RAID_DEV</span><span class="si">}</span><span class="s2"> - </span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="si">}</span><span class="s2">%&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">BODY</span><span class="o">=</span><span class="s2">&#34;🔄 阵列 </span><span class="si">${</span><span class="nv">RAID_DEV</span><span class="si">}</span><span class="s2"> 重建进度: </span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="si">}</span><span class="s2">%\n组件: </span><span class="si">${</span><span class="nv">DRIVE</span><span class="si">}</span><span class="s2">\n时间: </span><span class="k">$(</span>date -u +<span class="s2">&#34;%Y-%m-%d %H:%M:%SZ&#34;</span><span class="k">)</span><span class="s2">\n\n（已触发阈值通知）&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> send_mail <span class="s2">&#34;</span><span class="nv">$SUBJECT_FINAL</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$BODY</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;Rebuild progress </span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="si">}</span><span class="s2">% notification sent for </span><span class="si">${</span><span class="nv">RAID_DEV</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="si">${</span><span class="nv">progress_to_record</span><span class="k">:-</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$progress_to_record</span><span class="s2">&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$rebuild_progress_percent</span><span class="s2">&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    record_last_event <span class="s2">&#34;RebuildProgress_</span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;Failed to send rebuild progress mail for </span><span class="si">${</span><span class="nv">RAID_DEV</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">rebuild_progress_percent</span><span class="si">}</span><span class="s2">%&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># generic send for other events</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SENDMAIL</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">SUBJECT_FINAL</span><span class="o">=</span><span class="s2">&#34;服务器 RAID 事件通知: </span><span class="nv">$RAID_DEV</span><span class="s2"> - </span><span class="nv">$norm_event</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">BODY</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$MESSAGE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> send_mail <span class="s2">&#34;</span><span class="nv">$SUBJECT_FINAL</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$BODY</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;邮件已发送: </span><span class="nv">$SUBJECT_FINAL</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    record_last_event <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;RebuildStarted&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;0&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$norm_event</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;RebuildFinished&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;100&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$progress_state_file</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    log <span class="s2">&#34;邮件发送失败: </span><span class="nv">$SUBJECT_FINAL</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  log <span class="s2">&#34;</span><span class="nv">$EVENT</span><span class="s2"> detected on </span><span class="nv">$RAID_DEV</span><span class="s2"> (</span><span class="nv">$DRIVE</span><span class="s2">). No email (informational or suppressed).&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改msmtp配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/msmtprc
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">600</span> /etc/msmtprc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>内容如下（QQ邮箱）:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># /etc/msmtprc</span>
+</span></span><span class="line"><span class="cl"><span class="n">defaults</span>
+</span></span><span class="line"><span class="cl"><span class="n">auth</span>           <span class="n">on</span>
+</span></span><span class="line"><span class="cl"><span class="n">tls</span>            <span class="n">on</span>
+</span></span><span class="line"><span class="cl"><span class="n">tls_starttls</span> <span class="n">off</span>
+</span></span><span class="line"><span class="cl"><span class="n">tls_trust_file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">ca</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">crt</span>
+</span></span><span class="line"><span class="cl"><span class="n">logfile</span>        <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">msmtp</span><span class="o">.</span><span class="n">log</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span> <span class="n">qq</span>
+</span></span><span class="line"><span class="cl"><span class="n">host</span>     <span class="n">smtp</span><span class="o">.</span><span class="n">qq</span><span class="o">.</span><span class="n">com</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span>     <span class="mi">465</span>
+</span></span><span class="line"><span class="cl"><span class="n">from</span>     <span class="n">example</span><span class="o">-</span><span class="n">sender</span><span class="err">@</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</span></span><span class="line"><span class="cl"><span class="n">user</span>     <span class="n">example</span><span class="o">-</span><span class="n">sender</span><span class="err">@</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</span></span><span class="line"><span class="cl"><span class="n">password</span> <span class="n">example</span><span class="o">-</span><span class="n">password</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span> <span class="n">default</span> <span class="p">:</span> <span class="n">qq</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>测试脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo /usr/local/bin/raid1_monitor.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>编辑 mdadm 配置，添加通知脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/mdadm/mdadm.conf
+</span></span><span class="line"><span class="cl">sudo systemctl restart mdmonitor
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PROGRAM /usr/local/bin/raid1_monitor.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>最后测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 假设 RAID 是 /dev/md127，某块盘是 /dev/sdb1</span>
+</span></span><span class="line"><span class="cl">sudo mdadm --manage /dev/md127 --fail /dev/sdb1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除失败标记</span>
+</span></span><span class="line"><span class="cl">sudo mdadm --manage /dev/md127 --remove /dev/sdb1
+</span></span><span class="line"><span class="cl"><span class="c1"># 再重新加回去，触发 rebuild</span>
+</span></span><span class="line"><span class="cl">sudo mdadm --manage /dev/md127 --add /dev/sdb1
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看重建状态</span>
+</span></span><span class="line"><span class="cl">cat /proc/mdstat
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="配置openssh">配置OpenSSH
+</h2><p><strong>公私钥可通过XSheel生成</strong></p>
+<ol>
+<li>
+<p>上传公钥到服务器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/.ssh/authorized_keys 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>粘贴公钥即可</p>
+</li>
+<li>
+<p>打开配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/ssh/sshd_config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更改设置如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Port 1022
+</span></span><span class="line"><span class="cl">AddressFamily any
+</span></span><span class="line"><span class="cl">ListenAddress 0.0.0.0
+</span></span><span class="line"><span class="cl">PubkeyAuthentication yes
+</span></span><span class="line"><span class="cl">AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
+</span></span><span class="line"><span class="cl">PasswordAuthentication no
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果配置没有生效，修改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>放行1022端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 1022/tcp <span class="o">&amp;&amp;</span> sudo ufw reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启 SSH 服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload   <span class="c1"># 重新加载 systemd 配置</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart ssh.socket  <span class="c1"># 重启 SSH socket 单元（负责监听端口）</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart sshd       <span class="c1"># 重启 SSH 服务</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>验证是否生效</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -o <span class="nv">PreferredAuthentications</span><span class="o">=</span>password -o <span class="nv">PubkeyAuthentication</span><span class="o">=</span>no zephyrbd@192.168.31.159 -p <span class="m">1022</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="安装实用软件和环境">安装实用软件和环境
+</h2><ol>
+<li>
+<p>安装zsh和neofetch</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install zsh neofetch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置zsh为默认Shell</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装SMART信息软件（在上面安装过就跳过）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install smartmontools -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>确认硬盘设备名并查看 SMART 信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsblk
+</span></span><span class="line"><span class="cl">sudo smartctl -a /dev/sda
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装java</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装 OpenJDK 17 和 21</span>
+</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install openjdk-17-jre openjdk-21-jre -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>交互式切换默认版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo update-alternatives --config java
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="安装nvidia-gpu驱动">安装NVIDIA GPU驱动
+</h2><ol>
+<li>
+<p>查看推荐版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ubuntu-drivers devices
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>自动安装推荐版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ubuntu-drivers autoinstall
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启并验证</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo reboot
+</span></span><span class="line"><span class="cl">nvidia-smi
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="安装并配置-frp-服务端frps">安装并配置 Frp 服务端（Frps）
+</h2><ol>
+<li>
+<p>打开 <a class="link" href="https://github.com/fatedier/frp/releases"  target="_blank" rel="noopener"
+    >FRP 官方 Releases 页面</a>，找到最新版本（如 <code>v0.52.3</code>），复制对应架构的下载链接（例如 <code>frp_0.52.3_linux_amd64.tar.gz</code>）。</p>
+<p>在服务器上用 <code>wget</code> 下载（替换链接为实际版本）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://github.com/fatedier/frp/releases/download/v0.52.3/frp_0.52.3_linux_amd64.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>解压压缩包并进入文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zxvf frp_0.52.3_linux_amd64.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> frp_0.52.3_linux_amd64
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看核心文件</p>
+<ul>
+<li><code>frps</code>：服务端程序（我们需要的）</li>
+<li><code>frps.toml</code>：服务端配置文件</li>
+<li><code>frpc</code>/<code>frpc.toml</code>：客户端程序和配置（暂时不用）</li>
+</ul>
+</li>
+<li>
+<p>移动到系统目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mkdir -p /etc/frp
+</span></span><span class="line"><span class="cl">sudo cp frps frps.toml /etc/frp/
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>编辑配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/frp/frps.toml 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>具体如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">bindPort</span> <span class="p">=</span> <span class="mi">7000</span>
+</span></span><span class="line"><span class="cl"><span class="nx">auth</span><span class="p">.</span><span class="nx">method</span> <span class="p">=</span> <span class="s2">&#34;token&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">auth</span><span class="p">.</span><span class="nx">token</span> <span class="p">=</span> <span class="s2">&#34;example-token&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">addr</span> <span class="p">=</span> <span class="s2">&#34;0.0.0.0&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">port</span> <span class="p">=</span> <span class="mi">7001</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">user</span> <span class="p">=</span> <span class="s2">&#34;admin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">password</span> <span class="p">=</span> <span class="s2">&#34;example&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建系统服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/frps.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>服务配置如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">FRP Server Service</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/etc/frp/frps -c /etc/frp/frps.toml</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">root</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重载系统服务、启动 FRP 服务、设置开机自启</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">sudo systemctl start frps
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> frps
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>放行<code>7000</code>端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow <span class="m">7000</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="安装并配置mcsmmcsmanager面板服务">安装并配置MCSM（MCSMANAGER）面板服务
+</h2><ol>
+<li>
+<p>执行自动安装脚本（只支持 Ubuntu/Centos/Debian/Arch 等主流 x86_64/ARM 架构的操作系统）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo su -c <span class="s2">&#34;wget -qO- https://script.mcsmanager.com/setup_cn.sh | bash&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改Web和Daemon的端口（可选）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /opt/mcsmanager/web/data/SystemConfig/config.json
+</span></span><span class="line"><span class="cl">sudo nano /opt/mcsmanager/daemon/data/Config/global.json 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里我的Web改成了<code>22223</code>，Daemon改成了<code>23334</code>。</p>
+</li>
+<li>
+<p>放行<code>25565</code>、<code>19132</code>端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 25565/tcp
+</span></span><span class="line"><span class="cl">sudo ufw allow 19132/udp
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="修改时区和设置时间同步">修改时区和设置时间同步
+</h2><ol>
+<li>
+<p>设置为北京时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo timedatectl set-timezone Asia/Shanghai
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>验证设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">date
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时应显示类似 Wed Aug 20 12:30:00 CST 2025 的时间（CST 即中国标准时间）。</p>
+</li>
+<li>
+<p>使用 <code>chrony</code>同步系统时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install chrony
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>设置开机启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> chrony.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="设置定时关机">设置定时关机
+</h2><ol>
+<li>
+<p>编辑 crontab 配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo crontab -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>添加定时关机任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">30</span> <span class="m">0</span> * * * /sbin/shutdown -h now
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>含义解释：<code>30 0 * * *</code> 表示每天 0 点 30 分</li>
+<li><code>/sbin/shutdown -h now</code> 是立即关机的命令</li>
+</ul>
+</li>
+<li>
+<p>验证任务是否添加成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo crontab -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>列出所有定时任务，确认刚才添加的关机任务是否存在。</p>
+</li>
+</ol>
+<h2 id="使用nginx进行https代理">使用Nginx进行Https代理
+</h2><h3 id="生成自签名证书适合个人使用">生成自签名证书（适合个人使用）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装 openssl（若未安装）</span>
+</span></span><span class="line"><span class="cl">sudo apt install openssl -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成证书和私钥（保存到 /etc/ssl/private/ 目录）</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /etc/ssl/private/myserver
+</span></span><span class="line"><span class="cl">sudo openssl req -x509 -newkey rsa:2048 -nodes <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -keyout /etc/ssl/private/myserver/server.key <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -out /etc/ssl/private/myserver/server.crt <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -days <span class="m">3650</span>  <span class="c1"># 有效期 10 年</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取zerossl证书通过ca机构认证">获取ZeroSSL证书（通过CA机构认证）
+</h3><ol>
+<li>
+<p>创建DuckDNS自动更新ip脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /usr/local/bin/duckdns-update.sh
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/duckdns-update.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>填入以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -euo pipefail
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ====== 必填 ======</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">&#34;example-token&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 支持多个子域，用逗号分隔，如 &#34;foo,bar,baz&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAINS</span><span class="o">=</span><span class="s2">&#34;example&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ====== 可选：配置 ======</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 留空表示“让 DuckDNS 自动检测本机公网 IP”</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 你也可以手动指定：IPV4=&#34;1.2.3.4&#34;  IPV6=&#34;2001:db8::1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IPV4</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IPV6</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 日志与状态缓存</span>
+</span></span><span class="line"><span class="cl"><span class="nv">STATE_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">XDG_STATE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.local/state</span><span class="si">}</span><span class="s2">/duckdns&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">XDG_STATE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.local/state</span><span class="si">}</span><span class="s2">/duckdns&#34;</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="s2">&#34;</span><span class="nv">$STATE_DIR</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$LOG_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LAST_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$STATE_DIR</span><span class="s2">/last.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$LOG_DIR</span><span class="s2">/update.log&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重试设置</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MAX_RETRY</span><span class="o">=</span><span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SLEEP_SECS</span><span class="o">=</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">timestamp<span class="o">()</span> <span class="o">{</span> date +<span class="s2">&#34;%Y-%m-%d %H:%M:%S%z&#34;</span><span class="p">;</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 构造请求 URL（DuckDNS: https://www.duckdns.org/update?domains=...&amp;token=...&amp;ip=...&amp;ipv6=...）</span>
+</span></span><span class="line"><span class="cl">build_url<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">base</span><span class="o">=</span><span class="s2">&#34;https://www.duckdns.org/update?domains=</span><span class="si">${</span><span class="nv">DOMAINS</span><span class="si">}</span><span class="s2">&amp;token=</span><span class="si">${</span><span class="nv">TOKEN</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># 只有当设置了IP时才带上参数；否则让 DuckDNS 自行判断</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[[</span> -n <span class="s2">&#34;</span><span class="si">${</span><span class="nv">IPV4</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">base</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">&amp;ip=</span><span class="si">${</span><span class="nv">IPV4</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[[</span> -n <span class="s2">&#34;</span><span class="si">${</span><span class="nv">IPV6</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nv">base</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">&amp;ipv6=</span><span class="si">${</span><span class="nv">IPV6</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&#34;</span><span class="nv">$base</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 简单状态去重：如果上次请求URL相同，就不重复调用</span>
+</span></span><span class="line"><span class="cl">need_update<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">url</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> -f <span class="s2">&#34;</span><span class="nv">$LAST_FILE</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> last
+</span></span><span class="line"><span class="cl">    <span class="nv">last</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$LAST_FILE</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">true</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$last</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;</span><span class="nv">$url</span><span class="s2">&#34;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">do_update<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">url</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">attempt</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="o">((</span> attempt &lt;<span class="o">=</span> MAX_RETRY <span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># -s 静默，--connect-timeout 防止挂起，-f 失败即非0退出</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nv">resp</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>curl -s      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>timestamp<span class="k">)</span><span class="s2"> domains=</span><span class="si">${</span><span class="nv">DOMAINS</span><span class="si">}</span><span class="s2"> resp=</span><span class="si">${</span><span class="nv">resp</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c1"># DuckDNS 约定返回 &#34;OK&#34; 或 &#34;KO&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$resp</span><span class="s2">&#34;</span> <span class="o">=</span>~ ^OK <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&#34;</span><span class="nv">$url</span><span class="s2">&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$LAST_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">      <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">      <span class="c1"># 其他视为失败，进入重试</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>timestamp<span class="k">)</span><span class="s2"> update failed (attempt </span><span class="si">${</span><span class="nv">attempt</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">MAX_RETRY</span><span class="si">}</span><span class="s2">), retrying in </span><span class="si">${</span><span class="nv">SLEEP_SECS</span><span class="si">}</span><span class="s2">s...&#34;</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    sleep <span class="s2">&#34;</span><span class="nv">$SLEEP_SECS</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">((</span>attempt++<span class="k">)</span><span class="s2">)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  done
+</span></span></span><span class="line"><span class="cl"><span class="s2">  echo &#34;</span><span class="k">$(</span>timestamp<span class="k">)</span> update failed after <span class="si">${</span><span class="nv">MAX_RETRY</span><span class="si">}</span> attempts.<span class="s2">&#34; | tee -a &#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  return 1
+</span></span></span><span class="line"><span class="cl"><span class="s2">}
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">main() {
+</span></span></span><span class="line"><span class="cl"><span class="s2">  # 基于“自动检测公网IP”的默认行为，通常无需自己探测 IP。
+</span></span></span><span class="line"><span class="cl"><span class="s2">  local url
+</span></span></span><span class="line"><span class="cl"><span class="s2">  url=&#34;</span><span class="k">$(</span>build_url<span class="k">)</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">  if need_update &#34;</span><span class="nv">$url</span><span class="s2">&#34;; then
+</span></span></span><span class="line"><span class="cl"><span class="s2">    do_update &#34;</span><span class="nv">$url</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  else
+</span></span></span><span class="line"><span class="cl"><span class="s2">    echo &#34;</span><span class="k">$(</span>timestamp<span class="k">)</span> skip: no change in request <span class="o">(</span>likely IP unchanged<span class="o">)</span><span class="s2">&#34; | tee -a &#34;</span><span class="nv">$LOG_FILE</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  fi
+</span></span></span><span class="line"><span class="cl"><span class="s2">}
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">main &#34;</span><span class="nv">$@</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">Sf --connect-timeout 10 --max-time 20 &#34;</span><span class="nv">$url</span><span class="s2">&#34;)&#34;</span><span class="p">;</span> <span class="k">then</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建ZeroSSL证书更新脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /usr/local/bin/duckdns-cert.sh
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/duckdns-cert.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>填入以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -euo pipefail
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">&#34;example-ddns.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ACME_HOME</span><span class="o">=</span><span class="s2">&#34;/home/zephyrbd/.acme.sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DuckDNS_Token</span><span class="o">=</span><span class="s2">&#34;example-token&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">CERT_DIR</span><span class="o">=</span><span class="s2">&#34;/home/zephyrbd/mycerts/</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="s2">&#34;</span><span class="nv">$CERT_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 申请或更新证书（忽略“Domains not changed”退出码）</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$ACME_HOME</span><span class="s2">&#34;</span>/acme.sh --issue --dns dns_duckdns -d <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$ACME_HOME</span><span class="s2">&#34;</span>/acme.sh --install-cert -d <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --key-file       <span class="s2">&#34;</span><span class="nv">$CERT_DIR</span><span class="s2">/privkey.pem&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --fullchain-file <span class="s2">&#34;</span><span class="nv">$CERT_DIR</span><span class="s2">/fullchain.pem&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --reloadcmd <span class="s2">&#34;systemctl reload nginx&#34;</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制 systemd 返回成功</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置服务和定时器</p>
+<ol>
+<li>
+<p>DuckDNS更新服务和Timer</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/duckdns.service
+</span></span><span class="line"><span class="cl">sudo nano /etc/systemd/system/duckdns.timer 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Service</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>DuckDNS IP updater
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>oneshot
+</span></span><span class="line"><span class="cl"><span class="nv">Environment</span><span class="o">=</span><span class="s2">&#34;HOME=/root&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/duckdns-update.sh
+</span></span><span class="line"><span class="cl"><span class="nv">StandardOutput</span><span class="o">=</span>journal
+</span></span><span class="line"><span class="cl"><span class="nv">StandardError</span><span class="o">=</span>journal
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Timer</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Run DuckDNS updater every <span class="m">5</span> minutes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Timer<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OnBootSec</span><span class="o">=</span>30s
+</span></span><span class="line"><span class="cl"><span class="nv">OnUnitActiveSec</span><span class="o">=</span>5min
+</span></span><span class="line"><span class="cl"><span class="nv">AccuracySec</span><span class="o">=</span>30s
+</span></span><span class="line"><span class="cl"><span class="nv">Unit</span><span class="o">=</span>duckdns.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>timers.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>SLL证书更新服务和Timer</p>
+<ul>
+<li>
+<p>安装 acme.sh</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>注册账户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/.acme.sh/acme.sh --register-account -m example@examle.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建服务和定时器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/duckdns-cert.service
+</span></span><span class="line"><span class="cl">sudo nano /etc/systemd/system/duckdns-cert.timer  
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>Service:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>DuckDNS ZeroSSL Certificate Updater
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>oneshot
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>root
+</span></span><span class="line"><span class="cl"><span class="nv">Environment</span><span class="o">=</span><span class="s2">&#34;HOME=/home/zephyrbd&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/duckdns-cert.sh
+</span></span><span class="line"><span class="cl"><span class="nv">StandardOutput</span><span class="o">=</span>journal
+</span></span><span class="line"><span class="cl"><span class="nv">StandardError</span><span class="o">=</span>journal
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Timer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Run DuckDNS Certificate Updater Daily
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Timer<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OnBootSec</span><span class="o">=</span>2min
+</span></span><span class="line"><span class="cl"><span class="nv">OnUnitActiveSec</span><span class="o">=</span>1d
+</span></span><span class="line"><span class="cl"><span class="nv">AccuracySec</span><span class="o">=</span>1h
+</span></span><span class="line"><span class="cl"><span class="nv">Unit</span><span class="o">=</span>duckdns-cert.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>timers.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>刷新服务</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now duckdns.timer
+</span></span><span class="line"><span class="cl">sudo systemctl start duckdns.service
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now duckdns-cert.timer
+</span></span><span class="line"><span class="cl">sudo systemctl start duckdns-cert.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="安装并配置-nginx-反向代理">安装并配置 Nginx 反向代理
+</h3><ol>
+<li>
+<p>安装 Nginx</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install nginx -y
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now nginx  <span class="c1"># 启动并设置开机自启启</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建 Nginx 配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/nginx/conf.d/https-proxy.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>填入以下配置（根据实际服务端口修改，包括证书）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># WebSocket 协议映射
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">map</span> <span class="nv">$http_upgrade</span> <span class="nv">$connection_upgrade</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">default</span> <span class="s">upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">&#39;&#39;</span> <span class="s">close</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">4444</span> <span class="s">ssl</span><span class="p">;</span>  <span class="c1"># HTTPS端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">server_name</span> <span class="s">_</span><span class="p">;</span>    <span class="c1"># 匹配所有IP访问
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL证书
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># ssl_certificate /etc/ssl/private/myserver/server.crt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># ssl_certificate_key /etc/ssl/private/myserver/server.key;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_certificate</span> <span class="s">/home/zephyrbd/mycerts/mczs.duckdns.org/fullchain.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/home/zephyrbd/mycerts/mczs.duckdns.org/privkey.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">&#34;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_timeout</span> <span class="s">1d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 1. FRP 面板代理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/frp/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:7001/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_redirect</span> <span class="s">http://127.0.0.1:7001/</span> <span class="s">/frp/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_redirect</span> <span class="s">/</span> <span class="s">/frp/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="nv">$connection_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 2. MCS Web面板代理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/mcs/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:22223/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_redirect</span> <span class="s">http://127.0.0.1:22223/</span> <span class="s">/mcs/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Prefix</span> <span class="s">/mcs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-Ip</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">REMOTE-HOST</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&#34;upgrade&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">client_max_body_size</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_request_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_cookie_flags</span> <span class="p">~</span> <span class="sr">secure;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 3. 多服务 API 分流
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="s">location</span> <span class="s">/api/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="nv">$scheme</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 来自 MCS 页面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">if</span> <span class="s">(</span><span class="nv">$http_referer</span> <span class="p">~</span><span class="sr">*</span> <span class="s">/mcs/)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:22223</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="kn">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 来自 Other 服务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">if</span> <span class="s">(</span><span class="nv">$http_referer</span> <span class="p">~</span><span class="sr">*</span> <span class="s">/other/)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:4444</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="kn">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 其它来源返回 404
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 4. MCS 守护进程 WebSocket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/mcs-ws/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:23334/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-Ip</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">REMOTE-HOST</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&#34;upgrade&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">client_max_body_size</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_request_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 5. 根路径静态页面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">root</span> <span class="s">/var/www/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 6. 404 页面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># --------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">error_page</span> <span class="mi">404</span> <span class="s">/404.html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="p">=</span> <span class="s">/404.html</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">root</span> <span class="s">/var/www/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>放行4444端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 4444/tcp
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="修改mcsm-web的config">修改mcsm-web的config
+</h3><ol>
+<li>
+<p>将<code>&quot;reverseProxyMode&quot;</code>改为<code>true</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /opt/mcsmanager/web/data/SystemConfig/config.json 
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启<code>mcsm-web</code>服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart mcsm-web.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="修改mcs面板中的节点设置针对本地">修改MCS面板中的节点设置（针对本地）
+</h3><ol>
+<li>
+<p>远程节点 IP 地址：<code>wss://example-ddns.com</code>（即浏览器现连接服务器需要的地址）。</p>
+</li>
+<li>
+<p>端口填写Nginx监听端口，这里是<code>4444</code>。</p>
+</li>
+<li>
+<p>路径前缀填写为MCS守护进程的反代名称，这里是<code>/mcs-ws/</code>。</p>
+</li>
+</ol>
+<h2 id="网络安全进阶fail2ban">网络安全进阶（fail2ban）
+</h2><ol>
+<li>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install fail2ban -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置<code>sshd</code>封禁</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/fail2ban/jail.local
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[sshd]</span>
+</span></span><span class="line"><span class="cl"><span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
+</span></span><span class="line"><span class="cl"><span class="na">port</span>    <span class="o">=</span> <span class="s">1022  # 改为你的SSH端口</span>
+</span></span><span class="line"><span class="cl"><span class="na">filter</span>  <span class="o">=</span> <span class="s">sshd</span>
+</span></span><span class="line"><span class="cl"><span class="na">logpath</span> <span class="o">=</span> <span class="s">/var/log/auth.log</span>
+</span></span><span class="line"><span class="cl"><span class="na">maxretry</span> <span class="o">=</span> <span class="s">5  # 5次失败尝试后封禁</span>
+</span></span><span class="line"><span class="cl"><span class="na">bantime</span> <span class="o">=</span> <span class="s">68400  # 封禁24小时（单位：秒）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>启动并设置开机自启</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start fail2ban
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> fail2ban
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置Frps+MCSM面板封禁</p>
+<p>1.创建过滤规则（filter）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/fail2ban/filter.d/nginx-frp-mcsm.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2.填入以下内容:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[Definition]</span>
+</span></span><span class="line"><span class="cl"><span class="na">failregex</span> <span class="o">=</span> <span class="s">^&lt;HOST&gt; .* &#34;GET /frp/ HTTP/.*&#34; 401 .*$
+</span></span></span><span class="line"><span class="cl"><span class="s">            ^&lt;HOST&gt; .* &#34;POST /mcs/api/auth/login HTTP/.*&#34; 500 .*$</span>
+</span></span><span class="line"><span class="cl"><span class="na">ignoreregex</span> <span class="o">=</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建 jail 配置（启用监控）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/fail2ban/jail.d/nginx-frp-mcsm.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[nginx-frp-mcsm]</span>
+</span></span><span class="line"><span class="cl"><span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
+</span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="o">=</span> <span class="s">4444</span>
+</span></span><span class="line"><span class="cl"><span class="na">filter</span> <span class="o">=</span> <span class="s">nginx-frp-mcsm</span>
+</span></span><span class="line"><span class="cl"><span class="na">logpath</span> <span class="o">=</span> <span class="s">/var/log/nginx/access.log</span>
+</span></span><span class="line"><span class="cl"><span class="na">maxretry</span> <span class="o">=</span> <span class="s">5</span>
+</span></span><span class="line"><span class="cl"><span class="na">bantime</span> <span class="o">=</span> <span class="s">86400</span>
+</span></span><span class="line"><span class="cl"><span class="na">findtime</span> <span class="o">=</span> <span class="s">600</span>
+</span></span><span class="line"><span class="cl"><span class="na">action</span> <span class="o">=</span> <span class="s">ufw[actiontype=deny]</span>
+</span></span><span class="line"><span class="cl"><span class="na">backend</span> <span class="o">=</span> <span class="s">auto</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启 fail2ban 使配置生效</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart fail2ban
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看规则是否已加载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo fail2ban-client status nginx-frp-mcsm
+</span></span><span class="line"><span class="cl">sudo fail2ban-client status sshd
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>尝试后解封IP的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo fail2ban-client <span class="nb">set</span> nginx-frp-mcsm unbanip 192.168.XX.XXX
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+	
+	<section class="article-link-copy">
+		<label>分享</label>
+		<input type="text" id="article-link" value="https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/" readonly>
+		<button onclick="copyLink()">复制</button>
+		<script>
+			function copyLink() {
+				const linkInput = document.getElementById('article-link');
+				linkInput.select();
+				linkInput.setSelectionRange(0, 99999);
+				document.execCommand('copy');
+				alert('链接已复制');
+			}
+		</script>
+	</section>
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>本作品采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可（CC BY-NC-SA 4.0）</span>
+    </section>
+	<section class="article-viewcount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>
+		<span>文章浏览量：<span id="vercount_value_page_pv">Loading</span></span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/firstfabricmoddevlog_7/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img7.png" loading="lazy" data-key="FirstFabricModDevLog_7" data-hash="https://zephyrbd.github.io/images/MCFDev/img7.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MC 1.21.4 盔甲物品注册及相关类详解</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/firstfabricmoddevlog_6/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img6.png" loading="lazy" data-key="FirstFabricModDevLog_6" data-hash="https://zephyrbd.github.io/images/MCFDev/img6.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MC 1.21.4 中工具物品注册方法及相关类变更详解</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/howtoinstallminecraft/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/htIsMCN/img3.png" loading="lazy" data-key="HowtoinstallMinecraft" data-hash="https://zephyrbd.github.io/images/htIsMCN/img3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何安装我的世界国际版（新）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/firstfabricmoddevlog_5/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img5.png" loading="lazy" data-key="FirstFabricModDevLog_5" data-hash="https://zephyrbd.github.io/images/MCFDev/img5.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">1.21.4将2D物品转换为3D的新方法（无需Mixin）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/firstfabricmoddevlog_4/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/MCFDev/img4.png" loading="lazy" data-key="FirstFabricModDevLog_4" data-hash="https://zephyrbd.github.io/images/MCFDev/img4.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">个人在给探矿器添加配方时遇到的问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="ZephyrBD/zephyrbd.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 ZephyrBD
+    </section>
+    
+    <section class="powerby">
+        
+            Powered By MC ZBD Studio <br/>
+        
+		
+		
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+		
+		<section class="totalcount">
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			发表了42篇文章 · 
+			总计67.61k字
+		</section>
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script language="javascript"> 
+			var now = new Date();
+			function createtime(){
+				now.setTime(now.getTime()+250); 
+				var grt= new Date("2020/9/20 15:00:00"); 
+				days = (now - grt ) / 1000 / 60 / 60 / 24;
+				dnum = Math.floor(days);
+				hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+				hnum = Math.floor(hours);
+				if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+				minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+				mnum = Math.floor(minutes);
+				if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+				seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				snum = Math.round(seconds);
+				if(String(snum).length ==1 ){snum = "0" + snum;}
+
+				document.getElementById("timeDate").innerHTML = "本站已稳定运行"+dnum+" 天 ";
+				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
+			}
+			setInterval("createtime()",250); 
+		</script><a><br>总浏览量<span id="vercount_value_site_pv">Loading</span> | 访客总数<span id="vercount_value_site_uv">Loading</span></a>
+		<br>
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计<a><br>由ZephyrBD修改</a>
+		<br>
+		<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="采用 CC BY-NC-SA 4.0 协议"><img src="https://zephyrbd.github.io/images/ccbyncsa.svg" alt=""></a>
+		<a target="_blank" href="https://gohugo.io/"><img src="https://zephyrbd.github.io/images/hugo.svg" alt=""></a>
+		<a target="_blank" href="https://github.com/" title="网站源码托管于 Github"><img src="https://zephyrbd.github.io/images/github.svg" alt=""></a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script>
+    </body>
+</html>

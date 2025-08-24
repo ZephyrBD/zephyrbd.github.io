@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>GNU/Linux</title>
+        <link>https://zephyrbd.github.io/categories/linux/</link>
+        <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/linux/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/linux/LINUXICON.jpg" alt="Featured image of post GNU/Linux" /&gt;</description>
+        </item>
+        <item>
+        <title>Minecraft</title>
+        <link>https://zephyrbd.github.io/categories/minecraft/</link>
+        <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
+        </item>
+        <item>
         <title>C&#43;&#43; Development</title>
         <link>https://zephyrbd.github.io/categories/cpp-dev/</link>
         <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
@@ -38,14 +54,6 @@
         
         <guid>https://zephyrbd.github.io/categories/mc-mod-dev/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
-        </item>
-        <item>
-        <title>Minecraft</title>
-        <link>https://zephyrbd.github.io/categories/minecraft/</link>
-        <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
         </item>
         <item>
         <title>Hugo</title>
