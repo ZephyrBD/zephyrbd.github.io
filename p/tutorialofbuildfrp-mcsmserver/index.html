@@ -287,7 +287,12 @@
         <li><a href="#修改mcs面板中的节点设置针对本地">修改MCS面板中的节点设置（针对本地）</a></li>
       </ol>
     </li>
-    <li><a href="#网络安全进阶fail2ban">网络安全进阶（fail2ban）</a></li>
+    <li><a href="#网络安全进阶">网络安全进阶</a>
+      <ol>
+        <li><a href="#fail2ban">fail2ban</a></li>
+        <li><a href="#basic-auth">Basic Auth</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -358,7 +363,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    5896 字
+                    6155 字
                 </time>
             </div>
         
@@ -374,7 +379,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 12 分钟
+                    阅读时长: 13 分钟
                 </time>
             </div>
         
@@ -2465,8 +2470,9 @@
 <p>路径前缀填写为MCS守护进程的反代名称，这里是<code>/mcs-ws/</code>。</p>
 </li>
 </ol>
-<h2 id="网络安全进阶fail2ban">网络安全进阶（fail2ban）
-</h2><ol>
+<h2 id="网络安全进阶">网络安全进阶
+</h2><h3 id="fail2ban">fail2ban
+</h3><ol>
 <li>
 <p>安装</p>
 <div class="highlight"><div class="chroma">
@@ -2620,6 +2626,122 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo fail2ban-client <span class="nb">set</span> nginx-frp-mcsm unbanip 192.168.XX.XXX
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="basic-auth">Basic Auth
+</h3><ol>
+<li>
+<p>安装apache2-utils</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install apache2-utils -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>新建密码文件</p>
+<p>首次</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo htpasswd -c -B /etc/nginx/.htpasswd admin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>追加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo htpasswd -B /etc/nginx/.htpasswd user2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行后按提示输入密码（输入时不显示，确认密码后回车）</p>
+</li>
+<li>
+<p>修改Nginx配置</p>
+<p>添加:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">···</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Basic Auth 核心配置（与加密方式无关）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="s">auth_basic</span> <span class="s">&#34;Admin</span> <span class="s">Area</span> <span class="s">-</span> <span class="s">请输入用户名密码&#34;</span><span class="p">;</span>  <span class="c1"># 登录弹窗提示语
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">auth_basic_user_file</span> <span class="s">/etc/nginx/.htpasswd</span><span class="p">;</span>  <span class="c1"># 指向 bcrypt 加密的密码文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 站点其他配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">root</span> <span class="s">/var/www/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">···</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>取消MCS Demon和api的密码认证</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">···</span>
+</span></span><span class="line"><span class="cl">    <span class="s">location</span> <span class="s">/api/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">auth_basic</span> <span class="no">off</span><span class="p">;</span><span class="c1"># 覆盖父级认证配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">···</span>
+</span></span><span class="line"><span class="cl">    <span class="err">}</span>
+</span></span><span class="line"><span class="cl">    <span class="s">location</span> <span class="s">/mcs-ws/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">auth_basic</span> <span class="no">off</span><span class="p">;</span><span class="c1"># 覆盖父级认证配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">···</span>
+</span></span><span class="line"><span class="cl">    <span class="err">}</span>
+</span></span><span class="line"><span class="cl">    <span class="s">···</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>验证并重启Nginx</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nginx -t
+</span></span><span class="line"><span class="cl">sudo systemctl restart nginx
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -3132,7 +3254,7 @@
 				
 			
 			发表了42篇文章 · 
-			总计67.62k字
+			总计67.88k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
