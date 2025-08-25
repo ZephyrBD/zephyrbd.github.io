@@ -418,6 +418,62 @@
 
             
         
+            
+                <section class="widget">
+    <div class="mcserver">
+        <img src="https://motd.puddingkc.com/status.png?ip=mczs.duckdns.org:25565&style=style1&language=zh&text=Players%20World" 
+             alt="Minecraft服务器状态：在线玩家和世界信息">
+    </div>
+</section>
+
+<style>
+
+ 
+.mcserver {
+     
+    width: 100%;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+ 
+.mcserver img {
+     
+    max-width: 100%;
+     
+    height: auto;
+     
+    border-radius: 4px;
+     
+    object-fit: contain;
+     
+    transition: transform 0.3s ease;
+}
+
+ 
+.mcserver img:hover {
+    transform: scale(1.02);
+}
+
+ 
+@media (max-width: 480px) {
+    .widget {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    
+    .mcserver {
+        padding: 0;
+    }
+}
+</style>
+
+            
+        
     </aside>
 
 
