@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Java Development on ZephyrBD&#39;s Blog</title>
+        <link>https://zephyrbd.github.io/categories/java/</link>
+        <description>Recent content in Java Development on ZephyrBD&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>ZephyrBD</copyright>
+        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DDNSAuth</title>
+        <link>https://zephyrbd.github.io/p/ddnsauth/</link>
+        <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/p/ddnsauth/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ZephyrBD/DDNSAuth&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub仓库跳转&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DDNSAuth 是一个基于 Velocity 代理服务器的插件，用于通过 DDNS 域名、内网 CIDR 网段、地区白名单等方式限制服务器访问，增强服务器的访问控制安全性。&lt;/p&gt;
+&lt;h2 id=&#34;功能介绍&#34;&gt;功能介绍
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;域名验证&lt;/strong&gt;：仅允许来自配置中指定的 DDNS 域名的连接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内网限制&lt;/strong&gt;：允许配置特定的内网 CIDR 网段直接访问&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;环回地址控制&lt;/strong&gt;：可配置是否允许 127.0.0.1 或 0.0.0.0 等环回地址访问&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;地区白名单&lt;/strong&gt;：通过 GeoIP2 数据库验证客户端 IP 所属地区，仅允许白名单内地区的访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装步骤&#34;&gt;安装步骤
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;环境要求&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Velocity 代理服务器（3.1.1 及以上版本）&lt;/li&gt;
+&lt;li&gt;Java 17 及以上版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安装插件&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将编译好的 &lt;code&gt;DDNSAuth.jar&lt;/code&gt; 放入 Velocity 服务器的 &lt;code&gt;plugins&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;启动服务器，插件会自动生成默认配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;配置 GeoIP2 数据库&lt;/strong&gt;（可选，用于地区限制功能）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载 &lt;a class=&#34;link&#34; href=&#34;https://support.maxmind.com/hc/en-us/articles/4408216129947-Download-and-Update-Databases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GeoLite2-Country 数据库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;将数据库文件（&lt;code&gt;GeoLite2-Country.mmdb&lt;/code&gt;）放入 &lt;code&gt;plugins/ddnsauth&lt;/code&gt; 目录（或配置文件中指定的路径）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置说明&#34;&gt;配置说明
+&lt;/h2&gt;&lt;p&gt;配置文件位于 &lt;code&gt;plugins/ddnsauth/config.toml&lt;/code&gt;，默认内容如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 允许的 DDNS 域名（客户端连接时使用的域名）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;allowedDomains&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;example.com&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 允许的内网网段（CIDR 格式，如 &amp;#34;192.168.1.0/24&amp;#34;）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;allowedCidrs&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;192.168.1.0/24&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 是否允许 127.0.0.1 和 0.0.0.0 等环回地址访问&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;allowLoopback&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 允许的国家（使用 ISO 国家代码，如 CN 表示中国，US 表示美国）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;allowedCountries&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CN&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# GeoLite2-Country.mmdb 数据库文件路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;geoipDatabase&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;plugins/ddnsauth/GeoLite2-Country.mmdb&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;allowedDomains&lt;/code&gt;：客户端必须通过列表中的域名连接服务器，否则会被拒绝&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;allowedCidrs&lt;/code&gt;：属于这些 CIDR 网段的 IP 会被直接允许访问（跳过域名和国家检查）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;allowLoopback&lt;/code&gt;：开启后允许环回地址（本地测试常用）访问&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;allowedCountries&lt;/code&gt;：仅允许来自这些国家的 IP 访问（需配置 GeoIP2 数据库）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;geoipDatabase&lt;/code&gt;：GeoIP2 数据库文件的路径，若文件不存在则国家限制功能失效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;根据需求修改 &lt;code&gt;config.toml&lt;/code&gt; 配置文件&lt;/li&gt;
+&lt;li&gt;重启 Velocity 服务器使配置生效&lt;/li&gt;
+&lt;li&gt;客户端连接时，插件会自动进行验证：
+&lt;ul&gt;
+&lt;li&gt;若不符合任何允许条件，会收到相应的拒绝提示（如&amp;quot;请使用正确的域名连接！&amp;ldquo;或&amp;quot;你的地区不允许访问服务器&amp;rdquo;）&lt;/li&gt;
+&lt;li&gt;验证通过则正常进入服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;许可证&#34;&gt;许可证
+&lt;/h2&gt;&lt;p&gt;本项目基于 &lt;a class=&#34;link&#34; href=&#34;LICENSE&#34; &gt;GNU General Public License v2&lt;/a&gt; 开源。&lt;/p&gt;
+&lt;h2 id=&#34;致谢&#34;&gt;致谢
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;依赖 &lt;a class=&#34;link&#34; href=&#34;https://velocitypowered.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Velocity API&lt;/a&gt; 实现代理服务器集成&lt;/li&gt;
+&lt;li&gt;依赖 &lt;a class=&#34;link&#34; href=&#34;https://www.maxmind.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MaxMind GeoIP2&lt;/a&gt; 提供 IP 地址的国家定位功能&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

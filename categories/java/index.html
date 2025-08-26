@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is something about Java Development.">
+<title>Category: Java Development - ZephyrBD&#39;s Blog</title>
+
+<link rel='canonical' href='https://zephyrbd.github.io/categories/java/'>
+
+<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="Category: Java Development - ZephyrBD's Blog">
+<meta property='og:description' content="This is something about Java Development.">
+<meta property='og:url' content='https://zephyrbd.github.io/categories/java/'>
+<meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-08-26T00:00:00&#43;00:00 '/><meta property='og:image' content='https://zephyrbd.github.io/categories/java/JAVAICON.jpg' />
+<meta name="twitter:title" content="Category: Java Development - ZephyrBD's Blog">
+<meta name="twitter:description" content="This is something about Java Development."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zephyrbd.github.io/categories/java/JAVAICON.jpg' /><link rel="alternate" type="application/rss&#43;xml" href="https://zephyrbd.github.io/categories/java/index.xml">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"/>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_8d0900c4f4376001.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🫠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZephyrBD&#39;s Blog</a></h1>
+            <h2 class="site-description">WE DO THIS, FOR TECHNOLOGY.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/294413012'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZephyrBD'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <section class="widget">
+    <div class="clock">
+        <div class="number"><span>12</span></div>
+        <div class="number" style="--rotation: 30deg"><span>1</span></div>
+        <div class="number" style="--rotation: 60deg"><span>2</span></div>
+        <div class="number" style="--rotation: 90deg"><span>3</span></div>
+        <div class="number" style="--rotation: 120deg"><span>4</span></div>
+        <div class="number" style="--rotation: 150deg"><span>5</span></div>
+        <div class="number" style="--rotation: 180deg"><span>6</span></div>
+        <div class="number" style="--rotation: 210deg"><span>7</span></div>
+        <div class="number" style="--rotation: 240deg"><span>8</span></div>
+        <div class="number" style="--rotation: 270deg"><span>9</span></div>
+        <div class="number" style="--rotation: 300deg"><span>10</span></div>
+        <div class="number" style="--rotation: 330deg"><span>11</span></div>
+        <div class="hand hour" style="width: 10px; height: 30%; background-color: black;"></div>
+        <div class="hand minute" style="width: 6px; height: 40%; background-color: black;"></div>
+        <div class="hand second" style="width: 3px; height: 45%; background-color: red;"></div>
+    </div>
+    <h2 class="widget-title section-title" id="digitalTime" style="text-align: center; margin: 0 auto; margin-top: 5px"></h2>
+    <script>
+        const hourHand = document.querySelector('.hand.hour');
+        const minuteHand = document.querySelector('.hand.minute');
+        const secondHand = document.querySelector('.hand.second');
+        const digitalTimeElement = document.getElementById('digitalTime');
+
+        function setDate() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours();
+
+            
+            const secondsDegrees = (seconds / 60) * 360;
+            secondHand.style.setProperty('--rotation', secondsDegrees);
+
+            
+            const minutesDegrees = ((minutes + seconds / 60) / 60) * 360;
+            minuteHand.style.setProperty('--rotation', minutesDegrees);
+
+            
+            const hoursDegrees = ((hours % 12 + minutes / 60) / 12) * 360;
+            hourHand.style.setProperty('--rotation', hoursDegrees);
+
+            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            digitalTimeElement.textContent = formattedTime;
+        }
+
+        setInterval(setDate, 1000);
+        setDate();
+    </script>
+</section>
+
+            
+        
+            
+                <form action="/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">归档</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2025">
+                        
+                            <span class="year">2025</span>
+                            <span class="count">39</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">2</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2020">
+                        
+                            <span class="year">2020</span>
+                            <span class="count">2</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">分类</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/categories/cpp-dev/" class="font_size_18">
+                C&#43;&#43; Development
+            </a>
+        
+            <a href="/categories/dsa/" class="font_size_17">
+                Data Structures &amp; Algorithms
+            </a>
+        
+            <a href="/categories/minecraft/" class="font_size_13">
+                Minecraft
+            </a>
+        
+            <a href="/categories/python/" class="font_size_9">
+                Python
+            </a>
+        
+            <a href="/categories/mc-mod-dev/" class="font_size_7">
+                MC Mod Dev
+            </a>
+        
+            <a href="/categories/hugo/" class="font_size_1">
+                Hugo
+            </a>
+        
+            <a href="/categories/java/" class="font_size_1">
+                Java Development
+            </a>
+        
+            <a href="/categories/linux/" class="font_size_1">
+                GNU/Linux
+            </a>
+        
+            <a href="/categories/technology/" class="font_size_1">
+                Technology
+            </a>
+        
+    </div>
+</section>
+
+            
+        
+            
+                <section class="widget">
+    <div class="mcserver">
+        <img src="https://motd.puddingkc.com/status.png?ip=mczs.duckdns.org:25565&style=style1&language=zh&text=Players%20World" 
+             alt="Minecraft服务器状态：在线玩家和世界信息">
+    </div>
+</section>
+
+<style>
+
+ 
+.mcserver {
+     
+    width: 100%;
+     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+ 
+.mcserver img {
+     
+    max-width: 100%;
+     
+    height: auto;
+     
+    border-radius: 4px;
+     
+    object-fit: contain;
+     
+    transition: transform 0.3s ease;
+}
+
+ 
+.mcserver img:hover {
+    transform: scale(1.02);
+}
+
+ 
+@media (max-width: 480px) {
+    .widget {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    
+    .mcserver {
+        padding: 0;
+    }
+}
+</style>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <header>
+        <h3 class="section-title">
+            
+                Categories
+            
+        </h3>
+
+        <div class="section-card">
+            <div class="section-details">
+                <h3 class="section-count">1 个页面</h3>
+                <h1 class="section-term">Java Development</h1>
+                
+                    <h2 class="section-description">This is something about Java Development.</h2>
+                
+            </div>
+                <div class="section-image">
+                    <img src="/categories/java/JAVAICON_hu_bf413a7bfbedce4b.jpg" 
+                            width="120"
+                            height="120" 
+                            loading="lazy">
+                    
+                </div>
+            
+        </div>
+    </header>
+    
+    <section class="article-list--compact">
+        
+            <article>
+    <a href="/p/ddnsauth/">
+        <div class="article-details">
+            <h2 class="article-title">DDNSAuth</h2>
+            <footer class="article-time">
+                <time datetime='2025-08-26T00:00:00Z'>2025-08-26</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" loading="lazy" alt="Featured image of post DDNSAuth" />
+                
+            </div>
+        
+    </a>
+</article>
+        
+    </section>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 ZephyrBD
+    </section>
+    
+    <section class="powerby">
+        
+            Powered By MC ZBD Studio <br/>
+        
+		
+		
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+		
+		<section class="totalcount">
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+			发表了43篇文章 · 
+			总计68.81k字
+		</section>
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script language="javascript"> 
+			var now = new Date();
+			function createtime(){
+				now.setTime(now.getTime()+250); 
+				var grt= new Date("2020/9/20 15:00:00"); 
+				days = (now - grt ) / 1000 / 60 / 60 / 24;
+				dnum = Math.floor(days);
+				hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+				hnum = Math.floor(hours);
+				if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+				minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+				mnum = Math.floor(minutes);
+				if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+				seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				snum = Math.round(seconds);
+				if(String(snum).length ==1 ){snum = "0" + snum;}
+
+				document.getElementById("timeDate").innerHTML = "本站已稳定运行"+dnum+" 天 ";
+				document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"
+			}
+			setInterval("createtime()",250); 
+		</script><a><br>总浏览量<span id="vercount_value_site_pv">Loading</span> | 访客总数<span id="vercount_value_site_uv">Loading</span></a>
+		<br>
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计<a><br>由ZephyrBD修改</a>
+		<br>
+		<a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="采用 CC BY-NC-SA 4.0 协议"><img src="https://zephyrbd.github.io/images/ccbyncsa.svg" alt=""></a>
+		<a target="_blank" href="https://gohugo.io/"><img src="https://zephyrbd.github.io/images/hugo.svg" alt=""></a>
+		<a target="_blank" href="https://github.com/" title="网站源码托管于 Github"><img src="https://zephyrbd.github.io/images/github.svg" alt=""></a>
+    </section>
+</footer>
+
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script>
+    </body>
+</html>

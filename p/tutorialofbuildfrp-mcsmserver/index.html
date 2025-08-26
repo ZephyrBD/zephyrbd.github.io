@@ -363,7 +363,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    6147 字
+                    6195 字
                 </time>
             </div>
         
@@ -2293,6 +2293,11 @@
 </span><span class="lnt">119
 </span><span class="lnt">120
 </span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># WebSocket 协议映射
@@ -2315,6 +2320,11 @@
 </span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">&#34;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_timeout</span> <span class="s">1d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 拒绝直接用 IP 访问
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">if</span> <span class="s">(</span><span class="nv">$host</span> <span class="p">~</span><span class="sr">*</span> <span class="s">&#34;^[0-9\.]+</span><span class="nv">$&#34;</span><span class="s">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">return</span> <span class="mi">403</span> <span class="s">&#34;禁止直接使用</span> <span class="s">IP</span> <span class="s">访问，请使用域名&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># --------------------------
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># 1. FRP 面板代理
@@ -2823,6 +2833,25 @@
             
                 
 <article class="has-image">
+    <a href="/p/ddnsauth/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" loading="lazy" data-key="DDNSAuth" data-hash="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DDNSAuth</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/p/firstfabricmoddevlog_7/">
         
         
@@ -2892,25 +2921,6 @@
 
         <div class="article-details">
             <h2 class="article-title">1.21.4将2D物品转换为3D的新方法（无需Mixin）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/firstfabricmoddevlog_4/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://zephyrbd.github.io/images/MCFDev/img4.png" loading="lazy" data-key="FirstFabricModDevLog_4" data-hash="https://zephyrbd.github.io/images/MCFDev/img4.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">个人在给探矿器添加配方时遇到的问题</h2>
         </div>
     </a>
 </article>
@@ -2986,6 +2996,10 @@
         
 		
 		
+		
+			
+			
+			
 		
 			
 			
@@ -3251,8 +3265,10 @@
 			
 				
 			
-			发表了42篇文章 · 
-			总计67.87k字
+				
+			
+			发表了43篇文章 · 
+			总计68.81k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 

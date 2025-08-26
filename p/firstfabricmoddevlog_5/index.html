@@ -496,11 +496,13 @@
 </div>
 </div><p>使用这个函数进行数据生成会在<code>generated</code>文件夹下生成以下内容</p>
 <ol>
-<li><code>assets\&lt;yourModID&gt;\items\plate.json</code></li>
-<li><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
+<li>
+<p><code>assets\&lt;yourModID&gt;\items\plate.json</code></p>
+</li>
+<li>
+<p><code>assets\&lt;yourModID&gt;\models\item\plate.json</code>
 这看起来和使用<code>register</code>方法没有区别，但实际上在 <code>1</code> 路径下的文件结构和上面原版的“望远镜”一样了。<br>
-为了便于区别，这里给一个普通物品的该JSON：</li>
-</ol>
+为了便于区别，这里给一个普通物品的该JSON：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -512,10 +514,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/apple&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:model&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;minecraft:item/apple&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -532,9 +534,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerWithInHandModel</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Models</span><span class="p">.</span><span class="na">GENERATED</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="p">.</span><span class="na">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;_in_hand&#34;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span><span class="w"> </span><span class="n">unbaked2</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">upload</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Models</span><span class="p">.</span><span class="na">GENERATED</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">ItemModel</span><span class="p">.</span><span class="na">Unbaked</span><span class="w"> </span><span class="n">unbaked2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemModels</span><span class="p">.</span><span class="na">basic</span><span class="p">(</span><span class="n">ModelIds</span><span class="p">.</span><span class="na">getItemSubModelId</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;_in_hand&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">createModelWithInHandVariant</span><span class="p">(</span><span class="n">unbaked</span><span class="p">,</span><span class="w"> </span><span class="n">unbaked2</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -542,6 +544,8 @@
 <code>assets\&lt;yourModID&gt;\models\item</code><br>
 添加物品的3D信息JSON的时候，需要把文件名改为<code>item名+_in_hand</code>的形式。<br>
 如<code>plate_in_hand.json</code></p>
+</li>
+</ol>
 <h3 id="继续深入看createmodelwithinhandvariant方法">继续深入看createModelWithInHandVariant方法
 </h3><p>还是先给出函数实现：</p>
 <div class="highlight"><div class="chroma">
@@ -989,6 +993,10 @@
 			
 			
 		
+			
+			
+			
+		
 		
 		<section class="totalcount">
 			
@@ -1085,8 +1093,10 @@
 			
 				
 			
-			发表了42篇文章 · 
-			总计67.87k字
+				
+			
+			发表了43篇文章 · 
+			总计68.81k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 

@@ -7,21 +7,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java Development</title>
+        <link>https://zephyrbd.github.io/categories/java/</link>
+        <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/java/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/java/JAVAICON.jpg" alt="Featured image of post Java Development" /&gt;</description>
+        </item>
+        <item>
+        <title>Minecraft</title>
+        <link>https://zephyrbd.github.io/categories/minecraft/</link>
+        <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
+        </item>
+        <item>
         <title>GNU/Linux</title>
         <link>https://zephyrbd.github.io/categories/linux/</link>
         <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.github.io/categories/linux/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/categories/linux/LINUXICON.jpg" alt="Featured image of post GNU/Linux" /&gt;</description>
-        </item>
-        <item>
-        <title>Minecraft</title>
-        <link>https://zephyrbd.github.io/categories/minecraft/</link>
-        <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
         </item>
         <item>
         <title>C&#43;&#43; Development</title>
