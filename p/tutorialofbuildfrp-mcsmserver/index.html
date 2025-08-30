@@ -277,7 +277,8 @@
     <li><a href="#安装并配置-frp-服务端frps">安装并配置 Frp 服务端（Frps）</a></li>
     <li><a href="#安装并配置mcsmmcsmanager面板服务">安装并配置MCSM（MCSMANAGER）面板服务</a></li>
     <li><a href="#修改时区和设置时间同步">修改时区和设置时间同步</a></li>
-    <li><a href="#设置定时关机">设置定时关机</a></li>
+    <li><a href="#设置定时关机option-one">设置定时关机（Option One）</a></li>
+    <li><a href="#配置阿里云备份存档option-two">配置阿里云备份存档（Option Two）</a></li>
     <li><a href="#使用nginx进行https代理">使用Nginx进行Https代理</a>
       <ol>
         <li><a href="#生成自签名证书适合个人使用">生成自签名证书（适合个人使用）</a></li>
@@ -363,7 +364,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    6195 字
+                    6583 字
                 </time>
             </div>
         
@@ -379,7 +380,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 13 分钟
+                    阅读时长: 14 分钟
                 </time>
             </div>
         
@@ -1639,7 +1640,7 @@
 </div>
 </div></li>
 </ol>
-<h2 id="设置定时关机">设置定时关机
+<h2 id="设置定时关机option-one">设置定时关机（Option One）
 </h2><ol>
 <li>
 <p>编辑 crontab 配置</p>
@@ -1679,6 +1680,232 @@
 </div>
 </div><p>列出所有定时任务，确认刚才添加的关机任务是否存在。</p>
 </li>
+</ol>
+<h2 id="配置阿里云备份存档option-two">配置阿里云备份存档（Option Two）
+</h2><p><strong>特别感谢<a class="link" href="https://github.com/tickstep/aliyunpan"  target="_blank" rel="noopener"
+    >tickstep/aliyunpan</a>项目</strong></p>
+<ol>
+<li>
+<p>安装</p>
+<p>aliyunpan:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo curl -fsSL http://file.tickstep.com/apt/pgp <span class="p">|</span> gpg --dearmor <span class="p">|</span> sudo tee /etc/apt/trusted.gpg.d/tickstep-packages-archive-keyring.gpg &gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/etc/apt/trusted.gpg.d/tickstep-packages-archive-keyring.gpg arch=amd64,arm64] http://file.tickstep.com/apt aliyunpan main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/tickstep-aliyunpan.list &gt; /dev/null <span class="o">&amp;&amp;</span> sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install -y aliyunpan
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>zip包：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>登录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">aliyunpan login
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/mc_backup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>不带清除多余备份和关机版</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">SOURCE_DIR</span><span class="o">=</span><span class="s2">&#34;/opt/mcsmanager/daemon/data/InstanceData/bd4fab342c5b4d1aaed443c7f7c1a081&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TMP_DIR</span><span class="o">=</span><span class="s2">&#34;/tmp/mc_backup&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PAN_DIR</span><span class="o">=</span><span class="s2">&#34;/Buckups/minecraft_backups&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">aliyunpan mkdir -p <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">TIMESTAMP</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&#34;%Y%m%d_%H%M%S&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ZIP_NAME</span><span class="o">=</span><span class="s2">&#34;mc_worlds_</span><span class="nv">$TIMESTAMP</span><span class="s2">.zip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打包</span>
+</span></span><span class="line"><span class="cl">zip -r <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world_nether&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world_the_end&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 上传</span>
+</span></span><span class="line"><span class="cl">aliyunpan upload <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除临时文件</span>
+</span></span><span class="line"><span class="cl">rm -f <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>带清除多余备份和关机版</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">SOURCE_DIR</span><span class="o">=</span><span class="s2">&#34;/opt/mcsmanager/daemon/data/InstanceData/bd4fab342c5b4d1aaed443c7f7c1a081&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PAN_DIR</span><span class="o">=</span><span class="s2">&#34;/Buckups/minecraft_backups&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">aliyunpan mkdir -p <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">TIMESTAMP</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&#34;%Y%m%d_%H%M%S&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ZIP_NAME</span><span class="o">=</span><span class="s2">&#34;mc_worlds_</span><span class="nv">$TIMESTAMP</span><span class="s2">.zip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打包上传</span>
+</span></span><span class="line"><span class="cl">zip -r <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world_nether&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;</span><span class="nv">$SOURCE_DIR</span><span class="s2">/world_the_end&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">aliyunpan upload <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">rm -f <span class="s2">&#34;</span><span class="nv">$TMP_DIR</span><span class="s2">/</span><span class="nv">$ZIP_NAME</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理云盘1天前的备份</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DATE_THRESHOLD</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&#34;1 day ago&#34;</span> +<span class="s2">&#34;%Y%m%d&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">aliyunpan ls <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">&#34;</span> <span class="p">|</span> tail -n +5 <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> file_info<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$file_info</span><span class="s2">&#34;</span> <span class="o">=</span>~ ^mc_worlds_<span class="o">([</span>0-9<span class="o">]{</span>8<span class="o">})</span>_.*<span class="se">\.</span>zip$ <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">FILE_DATE</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">BASH_REMATCH</span><span class="p">[1]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$FILE_DATE</span><span class="s2">&#34;</span> -lt <span class="s2">&#34;</span><span class="nv">$DATE_THRESHOLD</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            aliyunpan rm <span class="s2">&#34;</span><span class="nv">$PAN_DIR</span><span class="s2">/</span><span class="nv">$file_info</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 关机</span>
+</span></span><span class="line"><span class="cl">/sbin/shutdown -h now
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>赋予执行权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x ~/mc_backup_1505.sh
+</span></span><span class="line"><span class="cl">chmod +x ~/mc_backup_0025.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置定时任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>填入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">5</span> <span class="m">15</span> * * * /home/zephyrbd/mc_backup_1505.sh &gt;&gt; /home/zephyrbd/mc_backup.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="m">25</span> <span class="m">0</span>  * * * /home/zephyrbd/mc_backup_0025.sh &gt;&gt; /home/zephyrbd/mc_backup.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/mc_backup_1505.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="使用nginx进行https代理">使用Nginx进行Https代理
 </h2><h3 id="生成自签名证书适合个人使用">生成自签名证书（适合个人使用）
@@ -3268,7 +3495,7 @@
 				
 			
 			发表了43篇文章 · 
-			总计68.81k字
+			总计69.19k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
