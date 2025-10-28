@@ -795,7 +795,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;join()&lt;/code&gt; 只能拼接字符串类型，非字符串需先转换&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;join()&lt;/code&gt; 只能拼接字符串类型，非字符串需先转换&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;14-字符串格式化&#34;&gt;1.4 字符串格式化
 &lt;/h2&gt;&lt;h3 id=&#34;f-表达式&#34;&gt;f-表达式

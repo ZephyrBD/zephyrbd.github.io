@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zephyrbd.github.io/p/cuitappdesignrace/'>
 
-<link rel="stylesheet" href="/scss/style.min.954567df124f01988b8fbffbfdd1271dc67c0e73615bd01e77d0a4430996bf7d.css"><meta property='og:title' content="智记清单（MCZS To Do）Alpha 1.0 发布">
+<link rel="stylesheet" href="/scss/style.min.2e7652618e9d31d3dc828f5666d635f4f1b5862abc11c585c1cb0a62d2933efa.css"><meta property='og:title' content="智记清单（MCZS To Do）Alpha 1.0 发布">
 <meta property='og:description' content="第三届成都信息工程大学新生计算机设计大赛参赛作品">
 <meta property='og:url' content='https://zephyrbd.github.io/p/cuitappdesignrace/'>
 <meta property='og:site_name' content='ZephyrBD&#39;s Blog'>
@@ -383,38 +383,58 @@
 </h2><p>智记清单是一款专为大学生和打工人设计的待办清单程序。它具备提醒功能，能有效帮助用户合理安排事务，其界面直观简洁，易于操作。在设计上充分考虑了用户的时间管理需求及使用体验，还通过随时间变化的背景为程序增添了趣味性。</p>
 <h2 id="二设计思路">二、设计思路
 </h2><ol>
-<li>背景与痛点：初入大学或职场，事务繁杂易遗忘重要事项，且多数人在事务安排上缺乏经验。</li>
-<li>功能需求分析：
+<li>
+<p>背景与痛点：初入大学或职场，事务繁杂易遗忘重要事项，且多数人在事务安排上缺乏经验。</p>
+</li>
+<li>
+<p>功能需求分析：</p>
 <ul>
 <li>提醒功能：满足学习、社团等活动的提醒需求。</li>
 <li>今日待办：让用户清晰知晓当天任务。</li>
 <li>易上手：方便新建和管理待办事项。</li>
 </ul>
 </li>
-<li>程序规划：
+<li>
+<p>程序规划：</p>
 <ul>
-<li>数据存储模块：运用 json 文件、对象和数组保存用户提醒任务详情，确保数据持久化与高效读写。</li>
-<li>数据交互模块：作为模块间数据桥梁，保障程序流畅运行与协同工作。</li>
-<li>界面模块：呈现可视化界面，方便用户交互操作。</li>
-<li>提醒功能模块：实现提醒逻辑，包括时间设定、触发机制与多种提醒方式。</li>
-</ul>
+<li>
+<p>数据存储模块：运用 json 文件、对象和数组保存用户提醒任务详情，确保数据持久化与高效读写。</p>
 </li>
-</ol>
+<li>
+<p>数据交互模块：作为模块间数据桥梁，保障程序流畅运行与协同工作。</p>
+</li>
+<li>
+<p>界面模块：呈现可视化界面，方便用户交互操作。</p>
+</li>
+<li>
+<p>提醒功能模块：实现提醒逻辑，包括时间设定、触发机制与多种提醒方式。</p>
 <h2 id="三关键技术">三、关键技术
-</h2><ol>
-<li>json 和结构体应用：通过 todoINFO 结构体数组存放待办事项内容，利用 todoToJson 函数在关闭程序时将结构体转化为 json 对象存盘，借助 jsonArray 管理多个 json 对象，程序打开时用 jsonToTodo 函数转回结构体并添加到 Qlist 容器便于操作。</li>
-<li>Qt 框架开发：
-<ul>
-<li>信号与槽机制：实现高效对象间事件通信，如设置待办事项点击确认按钮时新建结构体变量，逻辑清晰且代码耦合度低。</li>
-<li>布局管理：多种布局管理器确保界面在不同电脑上视觉与操作良好。</li>
-<li>类库资源：丰富类库用于创建各类可视化组件，如 QPushButton 类创建按钮。</li>
-<li>用户体验支持：如实现背景切换动画，增强趣味性与体验感。</li>
+</h2></li>
 </ul>
 </li>
-</ol>
+<li>
+<p>json 和结构体应用：通过 todoINFO 结构体数组存放待办事项内容，利用 todoToJson 函数在关闭程序时将结构体转化为 json 对象存盘，借助 jsonArray 管理多个 json 对象，程序打开时用 jsonToTodo 函数转回结构体并添加到 Qlist 容器便于操作。</p>
+</li>
+<li>
+<p>Qt 框架开发：</p>
+<ul>
+<li>
+<p>信号与槽机制：实现高效对象间事件通信，如设置待办事项点击确认按钮时新建结构体变量，逻辑清晰且代码耦合度低。</p>
+</li>
+<li>
+<p>布局管理：多种布局管理器确保界面在不同电脑上视觉与操作良好。</p>
+</li>
+<li>
+<p>类库资源：丰富类库用于创建各类可视化组件，如 QPushButton 类创建按钮。</p>
+</li>
+<li>
+<p>用户体验支持：如实现背景切换动画，增强趣味性与体验感。</p>
 <h2 id="四作品特色">四、作品特色
-</h2><ol>
-<li>提醒功能：借助 Windows 系统通知，在 Qtimer 定时器检测下，以醒目的系统通知弹出提醒事项内容与地点。<br>
+</h2></li>
+</ul>
+</li>
+<li>
+<p>提醒功能：借助 Windows 系统通知，在 Qtimer 定时器检测下，以醒目的系统通知弹出提醒事项内容与地点。<br>
 <img src="/images/cuitDRace/img2.png"
 	
 	
@@ -424,8 +444,10 @@
 		alt="提醒功能"
 	
 	
-></li>
-<li>背景切换：利用 QDateTime 变量、Qtimer 定时器和 Switch-case 结构实现一天内背景随时间切换壁纸，且有多组可选。
+></p>
+</li>
+<li>
+<p>背景切换：利用 QDateTime 变量、Qtimer 定时器和 Switch-case 结构实现一天内背景随时间切换壁纸，且有多组可选。
 <img src="/images/cuitDRace/img3.gif"
 	
 	
@@ -435,8 +457,10 @@
 		alt="背景切换"
 	
 	
-></li>
-<li>图形化界面：基于 Qt 框架打造，布局合理、按钮一目了然，易于上手操作。
+></p>
+</li>
+<li>
+<p>图形化界面：基于 Qt 框架打造，布局合理、按钮一目了然，易于上手操作。
 <img src="/images/cuitDRace/img1.png"
 	
 	
@@ -446,8 +470,7 @@
 		alt="图形化界面"
 	
 	
-></li>
-</ol>
+></p>
 <h2 id="五项目信息">五、项目信息
 </h2><p><img src="/images/cuitDRace/img4.png"
 	
@@ -459,21 +482,27 @@
 	
 	
 ></p>
-<ol>
-<li>团队成员：
+</li>
+<li>
+<p>团队成员：</p>
 <ul>
 <li>项目主导及核心代码：ZephyrBD</li>
 <li>JSON 转换方法：puuuuh</li>
 </ul>
 </li>
-<li>指导老师：CUIT计算机学院老师</li>
-<li>版权与开源：
+<li>
+<p>指导老师：CUIT计算机学院老师</p>
+</li>
+<li>
+<p>版权与开源：</p>
 <ul>
 <li>提交给学校的 Alpha 1.0 版本用于特定比赛，请勿外泄。（Github的Releases中的Alpha 1.0版本为公共版）</li>
 <li>除背景图片组版权属于美国苹果公司外，其余内容遵循大赛共享协议，现在以 GPL - 2.0 协议开源到该 Github 仓库。</li>
 </ul>
 </li>
-<li>项目文件：包含 MCZS_TO_DO.pro、头文件（如 aboutus.h 等）、源文件（如 aboutus.cpp 等）、界面文件（如 aboutus.ui 等）、资源文件 res.qrc 及其他文件 version.rc。</li>
+<li>
+<p>项目文件：包含 MCZS_TO_DO.pro、头文件（如 aboutus.h 等）、源文件（如 aboutus.cpp 等）、界面文件（如 aboutus.ui 等）、资源文件 res.qrc 及其他文件 version.rc。</p>
+</li>
 </ol>
 
 </section>
@@ -890,6 +919,10 @@
 			
 			
 		
+			
+			
+			
+		
 		
 		<section class="totalcount">
 			
@@ -988,8 +1021,10 @@
 			
 				
 			
-			发表了43篇文章 · 
-			总计69.19k字
+				
+			
+			发表了44篇文章 · 
+			总计74.84k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 
