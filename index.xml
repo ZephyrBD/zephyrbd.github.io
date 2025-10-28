@@ -18,7 +18,7 @@
     &gt;第十一届中国大学生程序设计竞赛 女生专场（CCPC 2025 Women&amp;rsquo;s Division）&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;写在开头&#34;&gt;写在开头
 &lt;/h2&gt;&lt;p&gt;本次2025年CCPC国赛的女生专场在我们成都信息工程大学成功举办，我个人很高兴被委任为这次学生这边的技术负责人（当然也感谢另外两位一起工作的学长：某野生逗比，YFffffff，另外感谢vcpf的一直帮着我们弄，另外感谢学校和DSA实验室给了我这样的机会）。比赛前一周我们技术组三人也是花费了很大的精力来配置这次比赛所以需要的各种环境（包括选手机的安装，CDS等相关服务的配置），也算是我第一次在如此重要的场合来尝试我之前看到的一些技术吧。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-16-24-15-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-24-15-image.png&#34;
 	
 	
 	
@@ -70,7 +70,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;具体配置如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-14-47-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-14-47-image.png&#34;
 	
 	
 	
@@ -78,7 +78,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-16-29-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-16-29-image.png&#34;
 	
 	
 	
@@ -86,7 +86,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-17-57-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-17-57-image.png&#34;
 	
 	
 	
@@ -94,7 +94,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-18-52-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-18-52-image.png&#34;
 	
 	
 	
@@ -102,7 +102,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-19-33-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-19-33-image.png&#34;
 	
 	
 	
@@ -127,7 +127,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html#disable-ai-assistant-on-network-level&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Restrict or disable Assistant features | AI Assistant Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-33-15-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-33-15-image.png&#34;
 	
 	
 	
@@ -141,7 +141,7 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/zh-cn/help/idea/full-line-code-completion.html#check-requirements&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Full Line 代码补全 | IntelliJ IDEA 文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;通过文档，该功能依赖于 Full Line Code Completion 插件，该插件默认在 IntelliJ IDEA 2025.2.3、PyCharm 2025.2.3、CLion 2025.2.3中捆绑并启用。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-35-09-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-35-09-image.png&#34;
 	
 	
 	
@@ -164,7 +164,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在删除这些文件后，Full Line 代码补全（内联补全）功能失效，如果需要还原该功能，需要重新安装软件（即需要从网络或者外置设备中重新下载或者加载安装包安装，这种行为会被OMS阻止）。&lt;/p&gt;
 &lt;p&gt;去除后，需要手动去IDE禁用（几个IDE设置是一样的）。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-43-32-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-43-32-image.png&#34;
 	
 	
 	
@@ -180,7 +180,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;传递优化（大内网会导致网络风暴和内存溢出）。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-47-19-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-47-19-image.png&#34;
 	
 	
 	
@@ -191,7 +191,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;内核隔离（开着会增大后续影子系统的崩溃可能）。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-48-40-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-48-40-image.png&#34;
 	
 	
 	
@@ -202,7 +202,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Windows更新（先更新到最新，然后选个暂停5周差不多，我们这里通过注册表暂停了9000多周）。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-50-52-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-50-52-image.png&#34;
 	
 	
 	
@@ -223,7 +223,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;默认启动模式选择正常模式（防止正式赛计算机意外重启后选手选错模式）。
-&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-15-58-30-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-58-30-image.png&#34;
 	
 	
 	
@@ -235,7 +235,7 @@
 &lt;li&gt;
 &lt;p&gt;在密码设置里面给单一（完全）影子模式设置密码（不要给正常模式设置，先询问正常模式密码才能设置的话，正常模式留空然后确定就可以设置影子模式的了）。&lt;/p&gt;
 &lt;p&gt;热身赛时提前开机让志愿者输入密码进入单一（完全）影子模式（如果计算机崩溃见下面说明），这样选手离场后重启计算机就还原了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-16-30-40-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-30-40-image.png&#34;
 	
 	
 	
@@ -253,7 +253,7 @@
 &lt;p&gt;关于Windows的激活&lt;/p&gt;
 &lt;p&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/zbezj/HEU_KMS_Activator/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;HEU_KMS_Activator&lt;/a&gt;，打开软件之前务必去Windows安全中心关闭掉所有的即时防御功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-27-16-14-14-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-14-14-image.png&#34;
 	
 	
 	
@@ -409,7 +409,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;即可启动或停止CDS服务器，启动后在浏览器访问&lt;code&gt;https://127.0.0.1:8443/&lt;/code&gt;会看到如下页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-09-52-13-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-09-52-13-image.png&#34;
 	
 	
 	
@@ -444,7 +444,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里的和账户仅供参考，具体以在上面CDS中配置的为准。&lt;/p&gt;
 &lt;p&gt;完成后应当看到如下页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-10-18-58-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-18-58-image.png&#34;
 	
 	
 	
@@ -510,7 +510,7 @@
 &lt;/ol&gt;
 &lt;p&gt;上述步骤完成后，应当看到：&lt;/p&gt;
 &lt;p&gt;Admin：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-10-55-52-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-55-52-image.png&#34;
 	
 	
 	
@@ -519,7 +519,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Client：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-10-56-44-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-56-44-image.png&#34;
 	
 	
 	
@@ -535,7 +535,7 @@
 &lt;p&gt;但是，我们发现打星队伍无法显示在滚榜中，赛后发现原因是PTA给的数据中给打星队加了个&lt;code&gt;hidden&lt;/code&gt;属性，在&lt;code&gt;event-feed.ndjson&lt;/code&gt;去掉就好了（注：可能一个队有多条记录，搜索一下），修改方法同CDS的&lt;code&gt;team.json&lt;/code&gt;，在此不再赘述。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;这里给地月猫猫队道个歉，当时没解决这个问题导致他们没能显示在滚榜画面上。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;API问题我们已经向PTA提出，他们已经提出了Issue：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-21-34-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-21-34-image.png&#34;
 	
 	
 	
@@ -559,7 +559,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行&lt;code&gt;awards.bat (sh)&lt;/code&gt;看到如下窗口：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-25-25-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-25-25-image.png&#34;
 	
 	
 	
@@ -568,7 +568,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Connet&lt;/code&gt;，看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-26-31-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
 	
 	
 	
@@ -623,7 +623,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;关于奖项配置的说明&#34;&gt;关于奖项配置的说明：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-26-31-image.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
 	
 	
 	
@@ -639,7 +639,7 @@
 &lt;li&gt;
 &lt;p&gt;设置冠、亚、季军：&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Add Awards&lt;/code&gt;区域的&lt;code&gt;Rank...&lt;/code&gt;按钮，弹出的窗口中选择好需要的排名后点&lt;code&gt;Apply&lt;/code&gt;即可。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-47-04-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-47-04-image.png&#34;
 	
 	
 	
@@ -651,7 +651,7 @@
 &lt;li&gt;
 &lt;p&gt;设置金、银、铜奖（以Gold为例）：&lt;/p&gt;
 &lt;p&gt;按住&lt;code&gt;Shift&lt;/code&gt;点击奖项的开头队伍和结尾的队伍，然后点击右侧的&lt;code&gt;Add...&lt;/code&gt;按钮，弹出的窗口参考下面的设置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-48-46-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-48-46-image.png&#34;
 	
 	
 	
@@ -661,7 +661,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;其中&lt;code&gt;Stop to show details&lt;/code&gt;会显示队伍的照片，&lt;/p&gt;
 &lt;p&gt;对于每个奖区，可以把上面的&lt;code&gt;Type&lt;/code&gt;改为&lt;code&gt;Other&lt;/code&gt;，&lt;code&gt;Citaton&lt;/code&gt;设置为&lt;code&gt;Gold List&lt;/code&gt;，下面选择&lt;code&gt;Show as list&lt;/code&gt;，则在滚到这个区域最后的时候，会有一个视觉上的提示（下图高亮部分），然后进入&lt;code&gt;List&lt;/code&gt;展示，后面显示该奖首队伍照片（前提设置了&lt;code&gt;Stop to show details&lt;/code&gt;）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-11-55-11-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-55-11-image.png&#34;
 	
 	
 	
@@ -675,7 +675,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;使用pta的小票代码打印服务&#34;&gt;使用PTA的小票、代码打印服务
 &lt;/h2&gt;&lt;p&gt;这个在我们购买了PTA的服务，在后台可以看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-12-40-28-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-40-28-image.png&#34;
 	
 	
 	
@@ -685,7 +685,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;把打印机配置好了以后直接进入工具，点击开启自动打印，会提示给浏览器加上&lt;code&gt;--kiosk-printing&lt;/code&gt;的参数（我们这里测试过只能用Chrome），我的意见是复制一个图标加参数，因为可能需要改打印设置。&lt;/p&gt;
 &lt;p&gt;另外，打印小票的时候去掉勾选“页眉和页脚”：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-12-43-11-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-43-11-image.png&#34;
 	
 	
 	
@@ -696,7 +696,7 @@
 &lt;p&gt;我们的代码和小票是分到两天电脑上的。&lt;/p&gt;
 &lt;h2 id=&#34;写在最后&#34;&gt;写在最后
 &lt;/h2&gt;&lt;p&gt;这次比赛在我们志愿者和技术组的支持下圆满完成，也收获了参赛选手的一致好评，最后放一张我们三人的照片和最后的大合影。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-12-52-41-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-52-41-image.png&#34;
 	
 	
 	
@@ -705,7 +705,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（技术组三人）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5cLXY29%5cAppData%5cRoaming%5cmarktext%5cimages%5c2025-10-28-12-53-33-f4fea8ca71ccdfc06dcdefafd40de363.jpeg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-53-33-f4fea8ca71ccdfc06dcdefafd40de363.jpeg&#34;
 	
 	
 	
