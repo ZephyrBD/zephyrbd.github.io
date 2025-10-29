@@ -351,7 +351,7 @@
 			<div>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-writing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /><path d="M16 7h4" /><path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /></svg>
                 <time class="post-word-count">
-                    5886 字
+                    6111 字
                 </time>
             </div>
         
@@ -367,7 +367,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 12 分钟
+                    阅读时长: 13 分钟
                 </time>
             </div>
         
@@ -901,9 +901,34 @@
 <h3 id="resolver">Resolver
 </h3><p>注意：Resolver的<code>2.5.1082</code>版本貌似存在bug，SplashPresentation被安排了将近10年的显示时间，表现为开屏就卡住了，这边建议还是用测试版<code>v2.6.1325</code>的来滚榜。</p>
 <p>另外，PTA的API返回的数据没有更新到CDP包最新的标准，目前用<code>v2.5.830</code>才能正确获取数据，所以，我们的方案是用<code>v2.5.830</code>的<code>awards</code>来获取和设置奖项，<code>v2.6.1325</code>的<code>resolver</code>来滚榜（因为这个版本的动画优化了）。</p>
-<p>但是，我们发现打星队伍无法显示在滚榜中，赛后发现原因是PTA给的数据中给打星队加了个<code>hidden: true</code>属性，在<code>event-feed.ndjson</code>去掉就好了（注：awards有神秘bug，可能一个队有多条记录，都要改，另外，我已经向ICPC Tools提出<a class="link" href="https://github.com/icpctools/icpctools/issues/1242"  target="_blank" rel="noopener"
-    >Issue</a>），修改方法同CDS的<code>teams.json</code>，在此不再赘述。</p>
-<p><strong>在此向地月猫猫队致歉，因当时未解决该问题，导致其未能在滚榜画面中显示。</strong></p>
+<p>但是，我们发现打星队伍无法显示在滚榜中，赛后发现原因是PTA给的数据中给打星队加了个<code>hidden: true</code>属性，在<code>event-feed.ndjson</code>去掉就好了，修改方法同CDS的<code>teams.json</code>，在此不再赘述。</p>
+<p>注：awards有缓存，多次获取后，可能一个队有多条记录，都要改。</p>
+<p>我已经向ICPC Tools提出<a class="link" href="https://github.com/icpctools/icpctools/issues/1242"  target="_blank" rel="noopener"
+    >Issue</a>，得到了这个问题的回复，PTA给的API也占一部分锅。</p>
+<p>ICPC Tools的缓存位于:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Windows: C:\Users\&lt;User&gt;\AppData\Local\Temp\
+</span></span><span class="line"><span class="cl">Linux: /tmp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当<code>json</code>信息多余时候，请查看该目录下的各种类似这样<code>org.icpc.tools.cache.httpspintiacnapixcpccompetitions&lt;yourContestID&gt;</code>的文件夹，然后删除。</p>
+<p>推荐：自己去把PTA的<code>event-feed.ndjson</code>下载下来，然后用<code>awards</code>导入。</p>
+<p>可用下面的命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -u <span class="s2">&#34;example@pintia.cn:&lt;yourpassword&gt;&#34;</span> <span class="s2">&#34;https://pintia.cn/api/xcpc/competitions/&lt;yourContestID&gt;/event-feed&#34;</span> -o event-feed.ndjson
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>在此向地月猫猫队致歉，因当时未解决该问题，导致其未能在滚榜画面中显示。</strong></p>
+<p>补录的滚榜视频本节末尾。</p>
 <p>API问题我们已经向PTA提出（但其实也可能是ICPC Tools的问题，PTA的人已经向他们提出<a class="link" href="https://github.com/icpctools/icpctools/issues/1241"  target="_blank" rel="noopener"
     >Issue</a>），他们也在内部仓库提了Issue：</p>
 <p><img src="/images/omsAIcpc/2025-10-28-11-21-34-image.png"
@@ -1670,7 +1695,7 @@
 				
 			
 			发表了44篇文章 · 
-			总计75.08k字
+			总计75.30k字
 		</section>
 		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 		<script language="javascript"> 

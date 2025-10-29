@@ -532,9 +532,34 @@
 &lt;h3 id=&#34;resolver&#34;&gt;Resolver
 &lt;/h3&gt;&lt;p&gt;注意：Resolver的&lt;code&gt;2.5.1082&lt;/code&gt;版本貌似存在bug，SplashPresentation被安排了将近10年的显示时间，表现为开屏就卡住了，这边建议还是用测试版&lt;code&gt;v2.6.1325&lt;/code&gt;的来滚榜。&lt;/p&gt;
 &lt;p&gt;另外，PTA的API返回的数据没有更新到CDP包最新的标准，目前用&lt;code&gt;v2.5.830&lt;/code&gt;才能正确获取数据，所以，我们的方案是用&lt;code&gt;v2.5.830&lt;/code&gt;的&lt;code&gt;awards&lt;/code&gt;来获取和设置奖项，&lt;code&gt;v2.6.1325&lt;/code&gt;的&lt;code&gt;resolver&lt;/code&gt;来滚榜（因为这个版本的动画优化了）。&lt;/p&gt;
-&lt;p&gt;但是，我们发现打星队伍无法显示在滚榜中，赛后发现原因是PTA给的数据中给打星队加了个&lt;code&gt;hidden: true&lt;/code&gt;属性，在&lt;code&gt;event-feed.ndjson&lt;/code&gt;去掉就好了（注：awards有神秘bug，可能一个队有多条记录，都要改，另外，我已经向ICPC Tools提出&lt;a class=&#34;link&#34; href=&#34;https://github.com/icpctools/icpctools/issues/1242&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Issue&lt;/a&gt;），修改方法同CDS的&lt;code&gt;teams.json&lt;/code&gt;，在此不再赘述。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在此向地月猫猫队致歉，因当时未解决该问题，导致其未能在滚榜画面中显示。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;但是，我们发现打星队伍无法显示在滚榜中，赛后发现原因是PTA给的数据中给打星队加了个&lt;code&gt;hidden: true&lt;/code&gt;属性，在&lt;code&gt;event-feed.ndjson&lt;/code&gt;去掉就好了，修改方法同CDS的&lt;code&gt;teams.json&lt;/code&gt;，在此不再赘述。&lt;/p&gt;
+&lt;p&gt;注：awards有缓存，多次获取后，可能一个队有多条记录，都要改。&lt;/p&gt;
+&lt;p&gt;我已经向ICPC Tools提出&lt;a class=&#34;link&#34; href=&#34;https://github.com/icpctools/icpctools/issues/1242&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Issue&lt;/a&gt;，得到了这个问题的回复，PTA给的API也占一部分锅。&lt;/p&gt;
+&lt;p&gt;ICPC Tools的缓存位于:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Windows: C:\Users\&amp;lt;User&amp;gt;\AppData\Local\Temp\
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux: /tmp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当&lt;code&gt;json&lt;/code&gt;信息多余时候，请查看该目录下的各种类似这样&lt;code&gt;org.icpc.tools.cache.httpspintiacnapixcpccompetitions&amp;lt;yourContestID&amp;gt;&lt;/code&gt;的文件夹，然后删除。&lt;/p&gt;
+&lt;p&gt;推荐：自己去把PTA的&lt;code&gt;event-feed.ndjson&lt;/code&gt;下载下来，然后用&lt;code&gt;awards&lt;/code&gt;导入。&lt;/p&gt;
+&lt;p&gt;可用下面的命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -u &lt;span class=&#34;s2&#34;&gt;&amp;#34;example@pintia.cn:&amp;lt;yourpassword&amp;gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://pintia.cn/api/xcpc/competitions/&amp;lt;yourContestID&amp;gt;/event-feed&amp;#34;&lt;/span&gt; -o event-feed.ndjson
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;在此向地月猫猫队致歉，因当时未解决该问题，导致其未能在滚榜画面中显示。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;补录的滚榜视频本节末尾。&lt;/p&gt;
 &lt;p&gt;API问题我们已经向PTA提出（但其实也可能是ICPC Tools的问题，PTA的人已经向他们提出&lt;a class=&#34;link&#34; href=&#34;https://github.com/icpctools/icpctools/issues/1241&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Issue&lt;/a&gt;），他们也在内部仓库提了Issue：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-21-34-image.png&#34;
