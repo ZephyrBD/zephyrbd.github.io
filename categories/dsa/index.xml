@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Data Structures &amp; Algorithms on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/dsa/</link>
+        <link>https://zephyrbd.pages.dev/categories/dsa/</link>
         <description>Recent content in Data Structures &amp; Algorithms on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/dsa/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/dsa/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>2025 CCPC 女生专场技术配置指北</title>
-        <link>https://zephyrbd.github.io/p/omsicpctools/</link>
+        <link>https://zephyrbd.pages.dev/p/omsicpctools/</link>
         <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/omsicpctools/</guid>
+        <guid>https://zephyrbd.pages.dev/p/omsicpctools/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
 &lt;/h1&gt;&lt;p&gt;先给个补题链接：&lt;a class=&#34;link&#34; href=&#34;https://qoj.ac/contest/2564&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第十一届中国大学生程序设计竞赛 女生专场（CCPC 2025 Women&amp;rsquo;s Division）&lt;/a&gt;&lt;/p&gt;
@@ -809,21 +809,11 @@
 </description>
         </item>
         <item>
-        <title>2025 CCPC 女生专场技术配置指北</title>
-        <link>https://zephyrbd.github.io/p/omsicpctoolstest/</link>
-        <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/p/omsicpctoolstest/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
-&lt;/h1&gt;&lt;p&gt;这是一个测试&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>割点、割边、点双连通分量、边双连通分量</title>
-        <link>https://zephyrbd.github.io/p/cv-ce-vdcc-edcc/</link>
+        <link>https://zephyrbd.pages.dev/p/cv-ce-vdcc-edcc/</link>
         <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/cv-ce-vdcc-edcc/</guid>
+        <guid>https://zephyrbd.pages.dev/p/cv-ce-vdcc-edcc/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/cv-ce-vdcc-edcc.png" alt="Featured image of post 割点、割边、点双连通分量、边双连通分量" /&gt;&lt;h1 id=&#34;割点割边点双连通分量边双连通分量&#34;&gt;割点、割边、点双连通分量、边双连通分量
 &lt;/h1&gt;&lt;h2 id=&#34;前置知识&#34;&gt;前置知识：
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/tarjan/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1448,10 +1438,10 @@
         </item>
         <item>
         <title>并查集及其进阶</title>
-        <link>https://zephyrbd.github.io/p/dsuandextra/</link>
+        <link>https://zephyrbd.pages.dev/p/dsuandextra/</link>
         <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/dsuandextra/</guid>
+        <guid>https://zephyrbd.pages.dev/p/dsuandextra/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/DSUandExtra.png" alt="Featured image of post 并查集及其进阶" /&gt;&lt;h1 id=&#34;并查集及其进阶&#34;&gt;并查集及其进阶
 &lt;/h1&gt;&lt;h2 id=&#34;普通并查集&#34;&gt;普通并查集
 &lt;/h2&gt;&lt;p&gt;并查集是一种用于管理元素所属集合的数据结构，实现为一个森林，其中每棵树表示一个集合，树中的节点表示对应集合中的元素。&lt;/p&gt;
@@ -1995,10 +1985,10 @@ $$&lt;p&gt;而反 Ackermann 函数 $\alpha(n)$ 的定义是阿克曼函数的反
         </item>
         <item>
         <title>差分约束系统、SPFA最短路、SCC缩点</title>
-        <link>https://zephyrbd.github.io/p/sdc-spfa-scc/</link>
+        <link>https://zephyrbd.pages.dev/p/sdc-spfa-scc/</link>
         <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/sdc-spfa-scc/</guid>
+        <guid>https://zephyrbd.pages.dev/p/sdc-spfa-scc/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/sdc-spfa-scc.png" alt="Featured image of post 差分约束系统、SPFA最短路、SCC缩点" /&gt;&lt;h1 id=&#34;差分约束系统spfa最短路scc缩点&#34;&gt;差分约束系统、SPFA最短路、SCC缩点
 &lt;/h1&gt;&lt;h2 id=&#34;差分约束系统&#34;&gt;差分约束系统
 &lt;/h2&gt;&lt;p&gt;差分约束系统（System of Difference Constraints）是一种特殊的线性规划问题，主要处理一系列变量间的&lt;strong&gt;差值约束&lt;/strong&gt;。它通过将约束条件转化为图论中的边关系，借助最短路径或最长路径算法求解，是解决带约束优化问题的重要工具。&lt;/p&gt;
@@ -2688,10 +2678,10 @@ f. 若 $v$ 未在队列中，则将其加入队列&lt;/li&gt;
         </item>
         <item>
         <title>DSA训练赛二题解（AI汇总）</title>
-        <link>https://zephyrbd.github.io/p/dsacontesttwotutorial/</link>
+        <link>https://zephyrbd.pages.dev/p/dsacontesttwotutorial/</link>
         <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/dsacontesttwotutorial/</guid>
+        <guid>https://zephyrbd.pages.dev/p/dsacontesttwotutorial/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/dsacontesttwotutorial.png" alt="Featured image of post DSA训练赛二题解（AI汇总）" /&gt;&lt;h2 id=&#34;比赛链接&#34;&gt;比赛链接
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/gym/624051&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://codeforces.com/gym/624051&lt;/a&gt;&lt;/p&gt;
@@ -3263,10 +3253,10 @@ $&lt;/p&gt;
         </item>
         <item>
         <title>树链剖分（HLD）</title>
-        <link>https://zephyrbd.github.io/p/hld/</link>
+        <link>https://zephyrbd.pages.dev/p/hld/</link>
         <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/hld/</guid>
+        <guid>https://zephyrbd.pages.dev/p/hld/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/hld.png" alt="Featured image of post 树链剖分（HLD）" /&gt;&lt;h1 id=&#34;树链剖分hld&#34;&gt;树链剖分（HLD）
 &lt;/h1&gt;&lt;h2 id=&#34;基本概念&#34;&gt;基本概念
 &lt;/h2&gt;&lt;p&gt;树链剖分（Heavy - Light Decomposition，HLD）是一种将树分解为若干条链的数据结构和算法，其目的是便于在树上进行路径查询和更新操作。通过这种分解方式，能将树上的复杂路径问题转化为对链的操作，从而可以利用线段树、平衡树等数据结构高效地处理。&lt;/p&gt;
@@ -4223,10 +4213,10 @@ $&lt;/p&gt;
         </item>
         <item>
         <title>Tarjan算法</title>
-        <link>https://zephyrbd.github.io/p/tarjan/</link>
+        <link>https://zephyrbd.pages.dev/p/tarjan/</link>
         <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/tarjan/</guid>
+        <guid>https://zephyrbd.pages.dev/p/tarjan/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/tarjan.png" alt="Featured image of post Tarjan算法" /&gt;&lt;h1 id=&#34;环的寻找tarjan算法&#34;&gt;环的寻找：Tarjan算法
 &lt;/h1&gt;&lt;p&gt;在图论中，强连通图和强连通分量是针对&lt;strong&gt;有向图&lt;/strong&gt;的重要概念。它们描述了图中节点之间的可达性和结构特性。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;SCC的具体应用见&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/sdc-spfa-scc/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4434,10 +4424,10 @@ $$
         </item>
         <item>
         <title>算法板子的扩大化思路（长期更新）</title>
-        <link>https://zephyrbd.github.io/p/oeat/</link>
+        <link>https://zephyrbd.pages.dev/p/oeat/</link>
         <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/oeat/</guid>
+        <guid>https://zephyrbd.pages.dev/p/oeat/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/oeat.png" alt="Featured image of post 算法板子的扩大化思路（长期更新）" /&gt;&lt;h1 id=&#34;算法板子的扩大化思路长期更新&#34;&gt;算法板子的扩大化思路（长期更新）
 &lt;/h1&gt;&lt;h2 id=&#34;数字量偏移的01背包&#34;&gt;数字量偏移的01背包
 &lt;/h2&gt;&lt;h3 id=&#34;例题p2340-cow-exhibition-g&#34;&gt;例题：&lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P2340&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4702,10 +4692,10 @@ $$&lt;p&gt;于是考虑最大最小值动态维护的办法：单调队列+滑�
         </item>
         <item>
         <title>二分图问题（含P1330 封锁阳光大学 题解）</title>
-        <link>https://zephyrbd.github.io/p/bipartitegraph/</link>
+        <link>https://zephyrbd.pages.dev/p/bipartitegraph/</link>
         <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/bipartitegraph/</guid>
+        <guid>https://zephyrbd.pages.dev/p/bipartitegraph/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/bipartitegraph.png" alt="Featured image of post 二分图问题（含P1330 封锁阳光大学 题解）" /&gt;&lt;h1 id=&#34;二分图问题&#34;&gt;二分图问题
 &lt;/h1&gt;&lt;h2 id=&#34;什么是二分图&#34;&gt;什么是二分图:
 &lt;/h2&gt;&lt;ul&gt;
@@ -4971,10 +4961,10 @@ $$&lt;p&gt;于是考虑最大最小值动态维护的办法：单调队列+滑�
         </item>
         <item>
         <title>分层图（含P4568 飞行路线题解）</title>
-        <link>https://zephyrbd.github.io/p/layeredgraph/</link>
+        <link>https://zephyrbd.pages.dev/p/layeredgraph/</link>
         <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/layeredgraph/</guid>
+        <guid>https://zephyrbd.pages.dev/p/layeredgraph/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/layeredgraph.png" alt="Featured image of post 分层图（含P4568 飞行路线题解）" /&gt;&lt;h1 id=&#34;分层图dijkstra实现&#34;&gt;分层图（Dijkstra实现）
 &lt;/h1&gt;&lt;h2 id=&#34;什么是分层图layered-graph&#34;&gt;什么是分层图（Layered Graph）？
 &lt;/h2&gt;&lt;p&gt;分层图是一种通过构建多层图结构来处理 “状态转移” 的建模方式。具体来说，将原图复制为若干层（如 k 层），每层代表不同的状态（如允许 k 次边权修改、k 次路径变换等），层与层之间通过特定规则连边，从而将带约束的最短路问题转化为普通图的最短路问题。&lt;/p&gt;
@@ -5585,10 +5575,10 @@ $$&lt;p&gt;请问小帅最后能否到达 $t$ 地，并计算需要的最少车�
         </item>
         <item>
         <title>树的中心点问题（含P1364 医院设置 题解）</title>
-        <link>https://zephyrbd.github.io/p/thecenterofatree/</link>
+        <link>https://zephyrbd.pages.dev/p/thecenterofatree/</link>
         <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/thecenterofatree/</guid>
+        <guid>https://zephyrbd.pages.dev/p/thecenterofatree/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/thecenterofatree.png" alt="Featured image of post 树的中心点问题（含P1364 医院设置 题解）" /&gt;&lt;h1 id=&#34;树的中心点问题&#34;&gt;树的中心点问题
 &lt;/h1&gt;&lt;h2 id=&#34;常见套路&#34;&gt;常见套路:
 &lt;/h2&gt;&lt;p&gt;N-1条公路连接着N个城市，从每个城市出发都可以通过公路到达其它任意的城市。每个城市里面都有一定数量的居民，但是数量并不一定相等，每条公路的长度也不一定相等。X公司（或者是政府）决定在某一个城市建立一个医院/酒厂/游乐场……，问：将它建在哪里，可以使得所有的居民移动到那里的总耗费最小？这种题目都是本题的“变型”，一般称为“树的中心点问题”。&lt;/p&gt;
@@ -5765,10 +5755,10 @@ $$&lt;p&gt;请问小帅最后能否到达 $t$ 地，并计算需要的最少车�
         </item>
         <item>
         <title>抽屉原理（含Wonderful Gloves题解）</title>
-        <link>https://zephyrbd.github.io/p/thepigeonholeprinciple/</link>
+        <link>https://zephyrbd.pages.dev/p/thepigeonholeprinciple/</link>
         <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/thepigeonholeprinciple/</guid>
+        <guid>https://zephyrbd.pages.dev/p/thepigeonholeprinciple/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/thepigeonholeprinciple.png" alt="Featured image of post 抽屉原理（含Wonderful Gloves题解）" /&gt;&lt;h1 id=&#34;抽屉原理&#34;&gt;抽屉原理
 &lt;/h1&gt;&lt;h2 id=&#34;定义&#34;&gt;定义
 &lt;/h2&gt;&lt;p&gt;抽屉原理，亦称鸽巢原理（The Pigeonhole Principle）。&lt;/p&gt;
@@ -5860,10 +5850,10 @@ $$&lt;p&gt;请问小帅最后能否到达 $t$ 地，并计算需要的最少车�
         </item>
         <item>
         <title>线段树</title>
-        <link>https://zephyrbd.github.io/p/segmenttree/</link>
+        <link>https://zephyrbd.pages.dev/p/segmenttree/</link>
         <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/segmenttree/</guid>
+        <guid>https://zephyrbd.pages.dev/p/segmenttree/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/segmenttree.png" alt="Featured image of post 线段树" /&gt;&lt;h2 id=&#34;线段树&#34;&gt;线段树
 &lt;/h2&gt;&lt;p&gt;线段树：线段树是一种二叉树数据结构。其每个节点代表一个区间，根节点代表整个区间，叶子节点代表最小子区间，是平衡二叉树，高度为$(O(log n))$。它能高效进行区间查询、单点修改和区间修改等操作，操作时间复杂度一般为$ (O(log n))$，常用于数组统计、区间更新与查询等场景，可提高相关算法的时间和空间复杂度。&lt;/p&gt;
 &lt;h2 id=&#34;建树分治思想&#34;&gt;建树（分治思想）
@@ -6280,10 +6270,10 @@ $$&lt;p&gt;每个节点存储下各自对应区间的最大值，于是我们得
         </item>
         <item>
         <title>比赛常用软件测试流程</title>
-        <link>https://zephyrbd.github.io/p/idetesting/</link>
+        <link>https://zephyrbd.pages.dev/p/idetesting/</link>
         <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/idetesting/</guid>
+        <guid>https://zephyrbd.pages.dev/p/idetesting/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/idetesting.png" alt="Featured image of post 比赛常用软件测试流程" /&gt;&lt;h1 id=&#34;比赛常用软件测试流程&#34;&gt;比赛常用软件测试流程
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;适用于蓝桥杯，天梯赛，睿抗。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;dev-c&#34;&gt;Dev C++
@@ -6724,10 +6714,10 @@ $$&lt;p&gt;每个节点存储下各自对应区间的最大值，于是我们得
         </item>
         <item>
         <title>倍增算法（含L3-1 银白之森题解）</title>
-        <link>https://zephyrbd.github.io/p/multiply/</link>
+        <link>https://zephyrbd.pages.dev/p/multiply/</link>
         <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/multiply/</guid>
+        <guid>https://zephyrbd.pages.dev/p/multiply/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/multiply.png" alt="Featured image of post 倍增算法（含L3-1 银白之森题解）" /&gt;&lt;h1 id=&#34;倍增算法含l3-1-银白之森题解&#34;&gt;倍增算法（含L3-1 银白之森题解）
 &lt;/h1&gt;&lt;h2 id=&#34;本文背景&#34;&gt;本文背景
 &lt;/h2&gt;&lt;p&gt;天梯赛后被建议来吃吃“银白之森”这坨，吃完了认为确实是一坨，故写本文来介绍一下这个题所涉及到的倍增算法。&lt;/p&gt;
@@ -6913,10 +6903,10 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
         </item>
         <item>
         <title>图的存储：链式前向星</title>
-        <link>https://zephyrbd.github.io/p/linkedforwardstar/</link>
+        <link>https://zephyrbd.pages.dev/p/linkedforwardstar/</link>
         <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/linkedforwardstar/</guid>
+        <guid>https://zephyrbd.pages.dev/p/linkedforwardstar/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/linkedforwardstar.png" alt="Featured image of post 图的存储：链式前向星" /&gt;&lt;h1 id=&#34;图的存储链式前向星&#34;&gt;图的存储：链式前向星
 &lt;/h1&gt;&lt;h2 id=&#34;本文背景&#34;&gt;本文背景
 &lt;/h2&gt;&lt;p&gt;在解决倍增算法时发现该算法主要用于解决LCA（最近公共祖先）问题，于是转来看了看，看到了一种新的图存储方式（布什戈门，你还有啊！！），于是来写写这个B新存储方式：链式前向星。&lt;/p&gt;
@@ -7274,10 +7264,10 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
         </item>
         <item>
         <title>树状数组（含Rotated Inversions题解）</title>
-        <link>https://zephyrbd.github.io/p/fenwick/</link>
+        <link>https://zephyrbd.pages.dev/p/fenwick/</link>
         <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/fenwick/</guid>
+        <guid>https://zephyrbd.pages.dev/p/fenwick/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/Fenwick.png" alt="Featured image of post 树状数组（含Rotated Inversions题解）" /&gt;&lt;h1 id=&#34;树状数组含rotated-inversions题解&#34;&gt;树状数组（含Rotated Inversions题解）
 &lt;/h1&gt;&lt;h2 id=&#34;本文背景&#34;&gt;本文背景
 &lt;/h2&gt;&lt;p&gt;3.13 在解决 “F - Rotated Inversions”（逆序对问题）时，偶遇TLE强如怪物，拼尽归并排序无法战胜（实际上是我这&lt;strong&gt;蒟蒻&lt;/strong&gt;写错了归并排序的位置导致的）。这道题折磨了我小半周，好在有传奇学长 Yffffff 热心相助。为铭记传奇学长，故写个Blog记录一下。&lt;/p&gt;
@@ -7896,10 +7886,10 @@ $$ f[i][j] = f[f[i][j-1]][j-1] $$&lt;p&gt;所以，如果我们预先处理好�
         </item>
         <item>
         <title>P6033. [NOIP2004 提高组] 合并果子 加强版题解</title>
-        <link>https://zephyrbd.github.io/p/hydro-luogu-p6033/</link>
+        <link>https://zephyrbd.pages.dev/p/hydro-luogu-p6033/</link>
         <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/hydro-luogu-p6033/</guid>
+        <guid>https://zephyrbd.pages.dev/p/hydro-luogu-p6033/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/cppdev/Covers/hydro-luogu-p6033.png" alt="Featured image of post P6033. [NOIP2004 提高组] 合并果子 加强版题解" /&gt;&lt;h2 id=&#34;知识点介绍&#34;&gt;知识点介绍：
 &lt;/h2&gt;&lt;h3 id=&#34;桶排序&#34;&gt;桶排序：
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;桶排序的思想是若待排序的值在一个明显有限范围内（整型）时，可设计有限个有序桶，待排序的值装入对应的桶（当然也可以装入若干个值），桶号就是待排序的值，顺序输出各桶的值，将得到有序的序列。&lt;/em&gt;&lt;br&gt;

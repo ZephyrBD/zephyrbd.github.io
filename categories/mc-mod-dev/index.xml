@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MC Mod Dev on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
+        <link>https://zephyrbd.pages.dev/categories/mc-mod-dev/</link>
         <description>Recent content in MC Mod Dev on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/mc-mod-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/mc-mod-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MC 1.21.4 盔甲物品注册及相关类详解</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_7/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</link>
         <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_7/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -190,10 +190,10 @@
         </item>
         <item>
         <title>MC 1.21.4 中工具物品注册方法及相关类变更详解</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_6/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</link>
         <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_6/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -407,10 +407,10 @@
         </item>
         <item>
         <title>1.21.4将2D物品转换为3D的新方法（无需Mixin）</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_5/</link>
         <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_5/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img5.png" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -625,10 +625,10 @@
         </item>
         <item>
         <title>个人在给探矿器添加配方时遇到的问题</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_4/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</link>
         <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_4/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
 &lt;/h2&gt;&lt;p&gt;看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，
 我的心情也是极度的难过，
@@ -759,10 +759,10 @@ JSON文件内容如下：&lt;/p&gt;
         </item>
         <item>
         <title>在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -904,10 +904,10 @@ JSON文件内容如下：&lt;/p&gt;
         </item>
         <item>
         <title>在MC1.21.4中创建Item时候遇到的问题</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;&lt;p&gt;
 
@@ -970,10 +970,10 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         </item>
         <item>
         <title>在MC1.21.4中创建食物的相同与区别</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 

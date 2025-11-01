@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/tags/</link>
+        <link>https://zephyrbd.pages.dev/tags/</link>
         <description>Recent content in Tags on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>ZephyrBD</copyright><atom:link href="https://zephyrbd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>ZephyrBD</copyright><atom:link href="https://zephyrbd.pages.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

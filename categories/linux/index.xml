@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>GNU/Linux on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/linux/</link>
+        <link>https://zephyrbd.pages.dev/categories/linux/</link>
         <description>Recent content in GNU/Linux on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Frps &#43; MCSM最详细搭建指北</title>
-        <link>https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/</link>
+        <link>https://zephyrbd.pages.dev/p/tutorialofbuildfrp-mcsmserver/</link>
         <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/</guid>
+        <guid>https://zephyrbd.pages.dev/p/tutorialofbuildfrp-mcsmserver/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&#43;MCSMServer/cover.png" alt="Featured image of post Frps &#43; MCSM最详细搭建指北" /&gt;&lt;h1 id=&#34;frpsmcsm最详细搭建指北&#34;&gt;Frps+MCSM最详细搭建指北
 &lt;/h1&gt;&lt;h2 id=&#34;写在开头&#34;&gt;写在开头
 &lt;/h2&gt;&lt;p&gt;这是我长期折腾计算机以来，首次围绕&lt;strong&gt;数据安全、网络安全、服务需求及稳定性&lt;/strong&gt;四大维度，系统性从 0 搭建的 Ubuntu Server（GNU/Linux）服务器。整个过程就是 “边搭建边优化” 的迭代：最初采用 “开放所有必要端口 + HTTP 连接” 的基础方案，意识到安全隐患后，又调整为 “指定个别端口 + Nginx 反向代理 + HTTPS 加密” 的加固架构；存储层面也从单盘转向保障数据冗余的 RAID 1 阵列。&lt;/p&gt;

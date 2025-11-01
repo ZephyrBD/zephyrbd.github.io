@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Python on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/python/</link>
+        <link>https://zephyrbd.pages.dev/categories/python/</link>
         <description>Recent content in Python on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>列表的使用</title>
-        <link>https://zephyrbd.github.io/p/pythondev_8/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_8/</link>
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_8/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_8/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev8/img0.png" alt="Featured image of post 列表的使用" /&gt;&lt;h1 id=&#34;列表的使用&#34;&gt;列表的使用
 &lt;/h1&gt;&lt;h2 id=&#34;1-列表的定义&#34;&gt;1、 列表的定义
 &lt;/h2&gt;&lt;p&gt;● 列表是一种内置的数据结构，用于存储多个数据项。它使用中括号 &lt;code&gt;[]&lt;/code&gt; 表示，且可以包含不同类型的数据。&lt;/p&gt;
@@ -351,10 +351,10 @@
         </item>
         <item>
         <title>字典的使用</title>
-        <link>https://zephyrbd.github.io/p/pythondev_9/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_9/</link>
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_9/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_9/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev9/img0.png" alt="Featured image of post 字典的使用" /&gt;&lt;h1 id=&#34;字典的使用&#34;&gt;字典的使用
 &lt;/h1&gt;&lt;h2 id=&#34;1-字典的定义&#34;&gt;1. 字典的定义
 &lt;/h2&gt;&lt;p&gt;字典是通过 &lt;code&gt;{}&lt;/code&gt; 表示的，包含键值对，格式为 &lt;code&gt;{key: value}&lt;/code&gt;。&lt;/p&gt;
@@ -661,10 +661,10 @@
         </item>
         <item>
         <title>字符串的使用</title>
-        <link>https://zephyrbd.github.io/p/pythondev_7/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_7/</link>
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_7/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_7/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev7/img0.png" alt="Featured image of post 字符串的使用" /&gt;&lt;h1 id=&#34;1-字符串的使用&#34;&gt;1. 字符串的使用
 &lt;/h1&gt;&lt;h2 id=&#34;11-字符串的定义&#34;&gt;1.1 字符串的定义
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;方式一&lt;/strong&gt;: 单引号&lt;/p&gt;
@@ -1057,10 +1057,10 @@
         </item>
         <item>
         <title>循环结构（while and for）</title>
-        <link>https://zephyrbd.github.io/p/pythondev_6/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_6/</link>
         <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_6/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_6/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev6/img0.png" alt="Featured image of post 循环结构（while and for）" /&gt;&lt;h2 id=&#34;写在前面&#34;&gt;写在前面
 &lt;/h2&gt;&lt;p&gt;循环结构是一种允许程序反复执行某些代码块的控制结构。常见的循环结构包括：&lt;/p&gt;
 &lt;ul&gt;
@@ -1513,10 +1513,10 @@ for 循环可以嵌套使用。
         </item>
         <item>
         <title>数值和算术运算</title>
-        <link>https://zephyrbd.github.io/p/pythondev_4/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_4/</link>
         <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_4/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_4/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev4/img0.png" alt="Featured image of post 数值和算术运算" /&gt;&lt;h2 id=&#34;1-数值类型&#34;&gt;1. 数值类型
 &lt;/h2&gt;&lt;p&gt;Python 提供了几种主要的数值类型，用于表示和操作不同种类的数值。&lt;/p&gt;
 &lt;h3 id=&#34;整数-int&#34;&gt;整数 (int)
@@ -1778,10 +1778,10 @@ for 循环可以嵌套使用。
         </item>
         <item>
         <title>条件语句（if and match-case）</title>
-        <link>https://zephyrbd.github.io/p/pythondev_5/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_5/</link>
         <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_5/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_5/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev5/img0.png" alt="Featured image of post 条件语句（if and match-case）" /&gt;&lt;h2 id=&#34;条件运算&#34;&gt;条件运算
 &lt;/h2&gt;&lt;h3 id=&#34;布尔型&#34;&gt;布尔型
 &lt;/h3&gt;&lt;p&gt;布尔型（&lt;code&gt;bool&lt;/code&gt;）表示条件的真假，只有两个取值：&lt;code&gt;True&lt;/code&gt;（真）和 &lt;code&gt;False&lt;/code&gt;（假）。&lt;/p&gt;
@@ -2122,10 +2122,10 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
         </item>
         <item>
         <title>Python的输出和输入</title>
-        <link>https://zephyrbd.github.io/p/pythondev_3/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_3/</link>
         <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_3/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_3/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev3/img0.png" alt="Featured image of post Python的输出和输入" /&gt;&lt;h2 id=&#34;输入函数input&#34;&gt;输入函数：&lt;code&gt;input&lt;/code&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;input()&lt;/code&gt;函数用于从标准输入（通常是键盘输入）读取一行字符串，并在用户按下回车键后返回该字符串。这个函数常用于获取用户的输入信息。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基本用法&lt;/strong&gt;&lt;/p&gt;
@@ -2189,10 +2189,10 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
         </item>
         <item>
         <title>变量的定义、注释和字符详解</title>
-        <link>https://zephyrbd.github.io/p/pythondev_2/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_2/</link>
         <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_2/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_2/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev2/img0.png" alt="Featured image of post 变量的定义、注释和字符详解" /&gt;&lt;h2 id=&#34;变量定义和赋值&#34;&gt;变量定义和赋值
 &lt;/h2&gt;&lt;h3 id=&#34;变量的概念&#34;&gt;变量的概念
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是变量：&lt;/strong&gt; 变量是编程中的基本概念，用于存储数据和在程序中进行各种操作。它们是程序中用于保存和处理信息的“容器”。&lt;br&gt;
@@ -2703,10 +2703,10 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
         </item>
         <item>
         <title>Python开发环境的搭建</title>
-        <link>https://zephyrbd.github.io/p/pythondev_1/</link>
+        <link>https://zephyrbd.pages.dev/p/pythondev_1/</link>
         <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/pythondev_1/</guid>
+        <guid>https://zephyrbd.pages.dev/p/pythondev_1/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev1/img0.png" alt="Featured image of post Python开发环境的搭建" /&gt;&lt;h2 id=&#34;python下载和安装&#34;&gt;Python下载和安装
 &lt;/h2&gt;&lt;h3 id=&#34;下载-python&#34;&gt;下载 Python
 &lt;/h3&gt;&lt;p&gt;打开&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Minecraft on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/minecraft/</link>
+        <link>https://zephyrbd.pages.dev/categories/minecraft/</link>
         <description>Recent content in Minecraft on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/minecraft/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/minecraft/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DDNSAuth</title>
-        <link>https://zephyrbd.github.io/p/ddnsauth/</link>
+        <link>https://zephyrbd.pages.dev/p/ddnsauth/</link>
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/ddnsauth/</guid>
+        <guid>https://zephyrbd.pages.dev/p/ddnsauth/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ZephyrBD/DDNSAuth&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub仓库跳转&lt;/a&gt;&lt;/p&gt;
@@ -116,10 +116,10 @@
         </item>
         <item>
         <title>Frps &#43; MCSM最详细搭建指北</title>
-        <link>https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/</link>
+        <link>https://zephyrbd.pages.dev/p/tutorialofbuildfrp-mcsmserver/</link>
         <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/tutorialofbuildfrp-mcsmserver/</guid>
+        <guid>https://zephyrbd.pages.dev/p/tutorialofbuildfrp-mcsmserver/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&#43;MCSMServer/cover.png" alt="Featured image of post Frps &#43; MCSM最详细搭建指北" /&gt;&lt;h1 id=&#34;frpsmcsm最详细搭建指北&#34;&gt;Frps+MCSM最详细搭建指北
 &lt;/h1&gt;&lt;h2 id=&#34;写在开头&#34;&gt;写在开头
 &lt;/h2&gt;&lt;p&gt;这是我长期折腾计算机以来，首次围绕&lt;strong&gt;数据安全、网络安全、服务需求及稳定性&lt;/strong&gt;四大维度，系统性从 0 搭建的 Ubuntu Server（GNU/Linux）服务器。整个过程就是 “边搭建边优化” 的迭代：最初采用 “开放所有必要端口 + HTTP 连接” 的基础方案，意识到安全隐患后，又调整为 “指定个别端口 + Nginx 反向代理 + HTTPS 加密” 的加固架构；存储层面也从单盘转向保障数据冗余的 RAID 1 阵列。&lt;/p&gt;
@@ -2710,10 +2710,10 @@
         </item>
         <item>
         <title>MC 1.21.4 盔甲物品注册及相关类详解</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_7/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</link>
         <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_7/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -2891,10 +2891,10 @@
         </item>
         <item>
         <title>MC 1.21.4 中工具物品注册方法及相关类变更详解</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_6/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</link>
         <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_6/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -3108,10 +3108,10 @@
         </item>
         <item>
         <title>如何安装我的世界国际版（新）</title>
-        <link>https://zephyrbd.github.io/p/howtoinstallminecraft/</link>
+        <link>https://zephyrbd.pages.dev/p/howtoinstallminecraft/</link>
         <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/howtoinstallminecraft/</guid>
+        <guid>https://zephyrbd.pages.dev/p/howtoinstallminecraft/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/htIsMCN/img3.png" alt="Featured image of post 如何安装我的世界国际版（新）" /&gt;&lt;h2 id=&#34;使用plain-craft-launcher-2启动器&#34;&gt;使用Plain Craft Launcher 2启动器
 &lt;/h2&gt;&lt;h3 id=&#34;下载和解压plain-craft-launcher-2&#34;&gt;下载和解压Plain Craft Launcher 2
 &lt;/h3&gt;&lt;p&gt;首先，打开&lt;a class=&#34;link&#34; href=&#34;https://www.gy328.com/app/pcl2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3331,10 +3331,10 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
         </item>
         <item>
         <title>1.21.4将2D物品转换为3D的新方法（无需Mixin）</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_5/</link>
         <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_5/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_5/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img5.png" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -3549,10 +3549,10 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
         </item>
         <item>
         <title>个人在给探矿器添加配方时遇到的问题</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_4/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</link>
         <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_4/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
 &lt;/h2&gt;&lt;p&gt;看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，
 我的心情也是极度的难过，
@@ -3683,10 +3683,10 @@ JSON文件内容如下：&lt;/p&gt;
         </item>
         <item>
         <title>在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_2/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -3828,10 +3828,10 @@ JSON文件内容如下：&lt;/p&gt;
         </item>
         <item>
         <title>在MC1.21.4中创建Item时候遇到的问题</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_1/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;&lt;p&gt;
 
@@ -3894,10 +3894,10 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         </item>
         <item>
         <title>在MC1.21.4中创建食物的相同与区别</title>
-        <link>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</link>
+        <link>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</link>
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/firstfabricmoddevlog_3/</guid>
+        <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
@@ -4019,10 +4019,10 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         </item>
         <item>
         <title>如何更新到Java-16</title>
-        <link>https://zephyrbd.github.io/p/howtoupdatejava/</link>
+        <link>https://zephyrbd.pages.dev/p/howtoupdatejava/</link>
         <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/howtoupdatejava/</guid>
+        <guid>https://zephyrbd.pages.dev/p/howtoupdatejava/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/htjava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
 &lt;/h1&gt;&lt;p&gt;MC自从1.8就开始使用Java 8，到现在已经用了8个大版本了。mojang也决定从MC 1.17开始使用最近才发布的Java 16（官方给出的解释是有更好的优化，但我觉得应该是mojang用了Java 16的新语法），总的来说，这一举动是好的。&lt;/p&gt;
 &lt;h1 id=&#34;对玩家有什么影响&#34;&gt;对玩家有什么影响
@@ -4248,10 +4248,10 @@ Optifine选择成功后如图所示，然后点击安装
         </item>
         <item>
         <title>如何使用国际版我的世界进行联机</title>
-        <link>https://zephyrbd.github.io/p/howtousetheinternationalversionofminecrafttogoonline/</link>
+        <link>https://zephyrbd.pages.dev/p/howtousetheinternationalversionofminecrafttogoonline/</link>
         <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/howtousetheinternationalversionofminecrafttogoonline/</guid>
+        <guid>https://zephyrbd.pages.dev/p/howtousetheinternationalversionofminecrafttogoonline/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/htgoon/img1.png" alt="Featured image of post 如何使用国际版我的世界进行联机" /&gt;&lt;h2 id=&#34;为什么要端口映射&#34;&gt;为什么要端口映射？
 &lt;/h2&gt;&lt;p&gt;现在大部分人的宽带IP地址都是运营商分配给我们的，但一般情况下只会给我们内网IP地址，举个例子：10个人要上网，但10个公网IP太多了，那么就让10个人共用一个“网关”，再由“网关”联网，这样10个人就只用掉一个IP，但我的世界联机的时候，别人和你不在一个“网关”之下，那他就只可以找到你的“网关”，而不知道10个人中那个是你，这个时候就需要一个“中间人”来告诉他你到底是谁，然后你们就可以一起愉快玩耍了，这个“中间人”就是第三方服务器映射的IP&lt;/p&gt;
 &lt;h2 id=&#34;如何进行端口映射&#34;&gt;如何进行端口映射
@@ -4364,10 +4364,10 @@ Optifine选择成功后如图所示，然后点击安装
         </item>
         <item>
         <title>如何安装我的世界国际版</title>
-        <link>https://zephyrbd.github.io/p/howtoinstallminecraft_old/</link>
+        <link>https://zephyrbd.pages.dev/p/howtoinstallminecraft_old/</link>
         <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/howtoinstallminecraft_old/</guid>
+        <guid>https://zephyrbd.pages.dev/p/howtoinstallminecraft_old/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/htIsMC/img1.png" alt="Featured image of post 如何安装我的世界国际版" /&gt;&lt;h1 id=&#34;安装java必须游戏依赖&#34;&gt;安装Java（必须，游戏依赖）
 &lt;/h1&gt;&lt;h2 id=&#34;1查看电脑系统位数&#34;&gt;1.查看电脑系统位数
 &lt;/h2&gt;&lt;p&gt;右键此电脑（或者叫计算机或这台电脑），选择属性，如图所示（图片仅供参考）

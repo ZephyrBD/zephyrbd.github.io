@@ -2,82 +2,82 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/</link>
+        <link>https://zephyrbd.pages.dev/categories/</link>
         <description>Recent content in Categories on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Data Structures &amp; Algorithms</title>
-        <link>https://zephyrbd.github.io/categories/dsa/</link>
+        <link>https://zephyrbd.pages.dev/categories/dsa/</link>
         <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/dsa/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/dsa/DSAICON.jpg" alt="Featured image of post Data Structures &amp; Algorithms" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/dsa/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/dsa/DSAICON.jpg" alt="Featured image of post Data Structures &amp; Algorithms" /&gt;</description>
         </item>
         <item>
         <title>Technology</title>
-        <link>https://zephyrbd.github.io/categories/technology/</link>
+        <link>https://zephyrbd.pages.dev/categories/technology/</link>
         <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/technology/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/technology/TechnologyICON.jpg" alt="Featured image of post Technology" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/technology/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/technology/TechnologyICON.jpg" alt="Featured image of post Technology" /&gt;</description>
         </item>
         <item>
         <title>Java Development</title>
-        <link>https://zephyrbd.github.io/categories/java/</link>
+        <link>https://zephyrbd.pages.dev/categories/java/</link>
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/java/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/java/JAVAICON.jpg" alt="Featured image of post Java Development" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/java/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/java/JAVAICON.jpg" alt="Featured image of post Java Development" /&gt;</description>
         </item>
         <item>
         <title>Minecraft</title>
-        <link>https://zephyrbd.github.io/categories/minecraft/</link>
+        <link>https://zephyrbd.pages.dev/categories/minecraft/</link>
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/minecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/minecraft/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/minecraft/MinecraftICON.jpg" alt="Featured image of post Minecraft" /&gt;</description>
         </item>
         <item>
         <title>GNU/Linux</title>
-        <link>https://zephyrbd.github.io/categories/linux/</link>
+        <link>https://zephyrbd.pages.dev/categories/linux/</link>
         <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/linux/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/linux/LINUXICON.jpg" alt="Featured image of post GNU/Linux" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/linux/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/linux/LINUXICON.jpg" alt="Featured image of post GNU/Linux" /&gt;</description>
         </item>
         <item>
         <title>C&#43;&#43; Development</title>
-        <link>https://zephyrbd.github.io/categories/cpp-dev/</link>
+        <link>https://zephyrbd.pages.dev/categories/cpp-dev/</link>
         <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/cpp-dev/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/cpp-dev/CPPICON.jpg" alt="Featured image of post C&#43;&#43; Development" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/cpp-dev/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/cpp-dev/CPPICON.jpg" alt="Featured image of post C&#43;&#43; Development" /&gt;</description>
         </item>
         <item>
         <title>Python</title>
-        <link>https://zephyrbd.github.io/categories/python/</link>
+        <link>https://zephyrbd.pages.dev/categories/python/</link>
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/python/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/python/PYICON.jpg" alt="Featured image of post Python" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/python/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/python/PYICON.jpg" alt="Featured image of post Python" /&gt;</description>
         </item>
         <item>
         <title>MC Mod Dev</title>
-        <link>https://zephyrbd.github.io/categories/mc-mod-dev/</link>
+        <link>https://zephyrbd.pages.dev/categories/mc-mod-dev/</link>
         <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/mc-mod-dev/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/mc-mod-dev/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/mc-mod-dev/FabricICON.jpg" alt="Featured image of post MC Mod Dev" /&gt;</description>
         </item>
         <item>
         <title>Hugo</title>
-        <link>https://zephyrbd.github.io/categories/hugo/</link>
+        <link>https://zephyrbd.pages.dev/categories/hugo/</link>
         <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/categories/hugo/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/categories/hugo/HugoICON.jpg" alt="Featured image of post Hugo" /&gt;</description>
+        <guid>https://zephyrbd.pages.dev/categories/hugo/</guid>
+        <description>&lt;img src="https://zephyrbd.pages.dev/categories/hugo/HugoICON.jpg" alt="Featured image of post Hugo" /&gt;</description>
         </item>
         
     </channel>

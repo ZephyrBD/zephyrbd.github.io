@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Technology on ZephyrBD&#39;s Blog</title>
-        <link>https://zephyrbd.github.io/categories/technology/</link>
+        <link>https://zephyrbd.pages.dev/categories/technology/</link>
         <description>Recent content in Technology on ZephyrBD&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZephyrBD</copyright>
-        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zephyrbd.pages.dev/categories/technology/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>2025 CCPC 女生专场技术配置指北</title>
-        <link>https://zephyrbd.github.io/p/omsicpctools/</link>
+        <link>https://zephyrbd.pages.dev/p/omsicpctools/</link>
         <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/omsicpctools/</guid>
+        <guid>https://zephyrbd.pages.dev/p/omsicpctools/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
 &lt;/h1&gt;&lt;p&gt;先给个补题链接：&lt;a class=&#34;link&#34; href=&#34;https://qoj.ac/contest/2564&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第十一届中国大学生程序设计竞赛 女生专场（CCPC 2025 Women&amp;rsquo;s Division）&lt;/a&gt;&lt;/p&gt;
@@ -809,21 +809,11 @@
 </description>
         </item>
         <item>
-        <title>2025 CCPC 女生专场技术配置指北</title>
-        <link>https://zephyrbd.github.io/p/omsicpctoolstest/</link>
-        <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zephyrbd.github.io/p/omsicpctoolstest/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
-&lt;/h1&gt;&lt;p&gt;这是一个测试&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>我对未来书本的一个设想</title>
-        <link>https://zephyrbd.github.io/p/thefuturebooks/</link>
+        <link>https://zephyrbd.pages.dev/p/thefuturebooks/</link>
         <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://zephyrbd.github.io/p/thefuturebooks/</guid>
+        <guid>https://zephyrbd.pages.dev/p/thefuturebooks/</guid>
         <description>&lt;img src="https://zephyrbd.github.io/images/fubook/img1.png" alt="Featured image of post 我对未来书本的一个设想" /&gt;&lt;h1 id=&#34;为什么突然写这个&#34;&gt;&lt;strong&gt;为什么突然写这个&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;当下OLED屏幕弯折角度越来越大，再者之前看到了一个回形针做的一个关于曲面屏的视频，我不由得产生了一个想法——那就是用柔性屏做一个符合但又不局限于传统书本概念的书，所以接下来我就好好的说一下这个想法（本文仅仅阐述我这个概念性的想法，喷子勿看）&lt;/p&gt;
 &lt;h1 id=&#34;怎样做才像一本书&#34;&gt;&lt;strong&gt;怎样做才像一本书&lt;/strong&gt;
