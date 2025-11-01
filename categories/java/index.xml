@@ -13,7 +13,7 @@
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/ddnsauth/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ZephyrBD/DDNSAuth&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub仓库跳转&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;DDNSAuth 是一个基于 Velocity 代理服务器的插件，用于通过 DDNS 域名、内网 CIDR 网段、地区白名单等方式限制服务器访问，增强服务器的访问控制安全性。&lt;/p&gt;
@@ -120,7 +120,7 @@
         <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -141,7 +141,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;盔甲注册的新方法&#34;&gt;盔甲注册的新方法
-&lt;/h2&gt;&lt;p&gt;同&amp;quot;&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;p&gt;同&amp;quot;&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;《MC 1.21.4 中工具物品注册方法及相关类变更详解》&lt;/a&gt;&amp;ldquo;这篇博客中所写的&lt;code&gt;register&lt;/code&gt;方法大致一样，这里给个例子：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -301,7 +301,7 @@
         <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -322,7 +322,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;工具物品注册时的新写法&#34;&gt;工具物品注册时的新写法
-&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;在MC1.21.4中创建Item时候遇到的问题&lt;/a&gt;》这篇博客中提到了Mojang在
 1.21.4版本中要求一个新的Register方法的写法，而工具的注册在原版代码的写法及其&lt;code&gt;register&lt;/code&gt;方法如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -518,7 +518,7 @@
         <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
 &lt;/h2&gt;&lt;p&gt;看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，
 我的心情也是极度的难过，
 不知道重生想干什么，也不知道玩家多了对游戏能有什么坏处，
@@ -526,7 +526,7 @@
 我不得不告别Apex，这里给上&lt;code&gt;@Leamonheadtv&lt;/code&gt;的一段话。&lt;br&gt;
 &lt;code&gt;English: Respawn figures out that they don&#39;t deserve to have Apex Legends under their development team.lt&#39;s embarrassing and a middle finger to actual gamers.&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;Chinese: 重生对我们的热爱，和对身法的极致追求，竖了一个中指，并叫我们滚蛋&lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img4.2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/img4.2.png&#34;
 	
 	
 	
@@ -629,7 +629,7 @@ JSON文件内容如下：&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;BlockTags.IMPERMEABLE&lt;/code&gt;貌似是一个特殊的&lt;code&gt;BlockTag&lt;/code&gt;标签，即使被&lt;code&gt;copy&lt;/code&gt;到&lt;code&gt;ItemTag&lt;/code&gt;中也无法正确被游戏使用（至少我们在&lt;a class=&#34;link&#34; href=&#34;https://discord.com/invite/v6v4pMv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Discord Fabric&lt;/a&gt;的频道中讨论结果是这样的），最后直接使用&lt;code&gt;FabricAPI&lt;/code&gt;提供的Tags就好。&lt;/p&gt;
 &lt;h2 id=&#34;特别感谢以下两位fabric频道中的高手给予的帮助&#34;&gt;特别感谢以下两位Fabric频道中的高手给予的帮助
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img4.1.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/img4.1.png&#34;
 	
 	
 	
@@ -652,7 +652,7 @@ JSON文件内容如下：&lt;/p&gt;
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -797,7 +797,7 @@ JSON文件内容如下：&lt;/p&gt;
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;&lt;p&gt;
 
 
@@ -846,7 +846,7 @@ JSON文件内容如下：&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;PS：进阶写法参见《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;p&gt;PS：进阶写法参见《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;MC 1.21.4 中工具物品注册方法及相关类变更详解&lt;/a&gt;》&lt;br&gt;
 并且除了添加lang、models.item和textures.item文件夹及其对应json以外，要使得材质正常显示还需添加这样一个文件夹和对应的json。&lt;br&gt;
 &lt;code&gt;assets/&amp;lt;namespace&amp;gt;/items&lt;/code&gt;&lt;/p&gt;
@@ -863,7 +863,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -894,7 +894,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 &lt;li&gt;在register该食物Item时可以用&lt;code&gt;useRemainder(BOWL)&lt;/code&gt;来实现归还碗的效果&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;文件结构如图：&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/FilesTree.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/FilesTree.png&#34;
 	
 	
 	

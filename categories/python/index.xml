@@ -13,7 +13,7 @@
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_8/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev8/img0.png" alt="Featured image of post 列表的使用" /&gt;&lt;h1 id=&#34;列表的使用&#34;&gt;列表的使用
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev8/img0.png" alt="Featured image of post 列表的使用" /&gt;&lt;h1 id=&#34;列表的使用&#34;&gt;列表的使用
 &lt;/h1&gt;&lt;h2 id=&#34;1-列表的定义&#34;&gt;1、 列表的定义
 &lt;/h2&gt;&lt;p&gt;● 列表是一种内置的数据结构，用于存储多个数据项。它使用中括号 &lt;code&gt;[]&lt;/code&gt; 表示，且可以包含不同类型的数据。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -355,7 +355,7 @@
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_9/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev9/img0.png" alt="Featured image of post 字典的使用" /&gt;&lt;h1 id=&#34;字典的使用&#34;&gt;字典的使用
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev9/img0.png" alt="Featured image of post 字典的使用" /&gt;&lt;h1 id=&#34;字典的使用&#34;&gt;字典的使用
 &lt;/h1&gt;&lt;h2 id=&#34;1-字典的定义&#34;&gt;1. 字典的定义
 &lt;/h2&gt;&lt;p&gt;字典是通过 &lt;code&gt;{}&lt;/code&gt; 表示的，包含键值对，格式为 &lt;code&gt;{key: value}&lt;/code&gt;。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -665,7 +665,7 @@
         <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_7/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev7/img0.png" alt="Featured image of post 字符串的使用" /&gt;&lt;h1 id=&#34;1-字符串的使用&#34;&gt;1. 字符串的使用
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev7/img0.png" alt="Featured image of post 字符串的使用" /&gt;&lt;h1 id=&#34;1-字符串的使用&#34;&gt;1. 字符串的使用
 &lt;/h1&gt;&lt;h2 id=&#34;11-字符串的定义&#34;&gt;1.1 字符串的定义
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;方式一&lt;/strong&gt;: 单引号&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1061,7 +1061,7 @@
         <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_6/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev6/img0.png" alt="Featured image of post 循环结构（while and for）" /&gt;&lt;h2 id=&#34;写在前面&#34;&gt;写在前面
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev6/img0.png" alt="Featured image of post 循环结构（while and for）" /&gt;&lt;h2 id=&#34;写在前面&#34;&gt;写在前面
 &lt;/h2&gt;&lt;p&gt;循环结构是一种允许程序反复执行某些代码块的控制结构。常见的循环结构包括：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;while 循环&lt;/strong&gt;：当条件为 True 时，重复执行代码块。&lt;/li&gt;
@@ -1517,7 +1517,7 @@ for 循环可以嵌套使用。
         <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_4/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev4/img0.png" alt="Featured image of post 数值和算术运算" /&gt;&lt;h2 id=&#34;1-数值类型&#34;&gt;1. 数值类型
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev4/img0.png" alt="Featured image of post 数值和算术运算" /&gt;&lt;h2 id=&#34;1-数值类型&#34;&gt;1. 数值类型
 &lt;/h2&gt;&lt;p&gt;Python 提供了几种主要的数值类型，用于表示和操作不同种类的数值。&lt;/p&gt;
 &lt;h3 id=&#34;整数-int&#34;&gt;整数 (int)
 &lt;/h3&gt;&lt;p&gt;整数类型表示没有小数部分的数值，可以是正数、负数或零。&lt;/p&gt;
@@ -1782,7 +1782,7 @@ for 循环可以嵌套使用。
         <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_5/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev5/img0.png" alt="Featured image of post 条件语句（if and match-case）" /&gt;&lt;h2 id=&#34;条件运算&#34;&gt;条件运算
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev5/img0.png" alt="Featured image of post 条件语句（if and match-case）" /&gt;&lt;h2 id=&#34;条件运算&#34;&gt;条件运算
 &lt;/h2&gt;&lt;h3 id=&#34;布尔型&#34;&gt;布尔型
 &lt;/h3&gt;&lt;p&gt;布尔型（&lt;code&gt;bool&lt;/code&gt;）表示条件的真假，只有两个取值：&lt;code&gt;True&lt;/code&gt;（真）和 &lt;code&gt;False&lt;/code&gt;（假）。&lt;/p&gt;
 &lt;ul&gt;
@@ -1825,7 +1825,7 @@ for 循环可以嵌套使用。
 &lt;li&gt;&lt;strong&gt;二分支&lt;/strong&gt;：根据条件的真假分别执行不同的语句块。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;多分支&lt;/strong&gt;：根据多个条件中的一个成立情况执行相应的语句块。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev5/img1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev5/img1.png&#34;
 	
 	
 	
@@ -2126,7 +2126,7 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
         <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_3/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev3/img0.png" alt="Featured image of post Python的输出和输入" /&gt;&lt;h2 id=&#34;输入函数input&#34;&gt;输入函数：&lt;code&gt;input&lt;/code&gt;
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev3/img0.png" alt="Featured image of post Python的输出和输入" /&gt;&lt;h2 id=&#34;输入函数input&#34;&gt;输入函数：&lt;code&gt;input&lt;/code&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;input()&lt;/code&gt;函数用于从标准输入（通常是键盘输入）读取一行字符串，并在用户按下回车键后返回该字符串。这个函数常用于获取用户的输入信息。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基本用法&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2193,10 +2193,10 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
         <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_2/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev2/img0.png" alt="Featured image of post 变量的定义、注释和字符详解" /&gt;&lt;h2 id=&#34;变量定义和赋值&#34;&gt;变量定义和赋值
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev2/img0.png" alt="Featured image of post 变量的定义、注释和字符详解" /&gt;&lt;h2 id=&#34;变量定义和赋值&#34;&gt;变量定义和赋值
 &lt;/h2&gt;&lt;h3 id=&#34;变量的概念&#34;&gt;变量的概念
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是变量：&lt;/strong&gt; 变量是编程中的基本概念，用于存储数据和在程序中进行各种操作。它们是程序中用于保存和处理信息的“容器”。&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev2/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev2/img1.png&#34;
 	
 	
 	
@@ -2215,7 +2215,7 @@ match-case 最适合处理不可变对象，如数字、字符串和元组，因
 &lt;p&gt;PS：在Python中，定义变量基本变量一般不给出变量类型的定义，Python会自动根据变量被赋的值进行判断。&lt;/p&gt;
 &lt;h3 id=&#34;变量赋值&#34;&gt;变量赋值
 &lt;/h3&gt;&lt;p&gt;将&lt;strong&gt;数据&lt;/strong&gt;放入&lt;strong&gt;变量&lt;/strong&gt;保存的过程叫做赋值&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev2/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev2/img2.png&#34;
 	
 	
 	
@@ -2707,11 +2707,11 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
         <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/pythondev_1/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Pydev/dev1/img0.png" alt="Featured image of post Python开发环境的搭建" /&gt;&lt;h2 id=&#34;python下载和安装&#34;&gt;Python下载和安装
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Pydev/dev1/img0.png" alt="Featured image of post Python开发环境的搭建" /&gt;&lt;h2 id=&#34;python下载和安装&#34;&gt;Python下载和安装
 &lt;/h2&gt;&lt;h3 id=&#34;下载-python&#34;&gt;下载 Python
 &lt;/h3&gt;&lt;p&gt;打开&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官网&lt;/a&gt;，点击下载(选择自己的电脑系统)&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img1.png&#34;
 	
 	
 	
@@ -2722,7 +2722,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;
 选择安装版本，点击下载（左侧为长期稳定的版本）&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img2.png&#34;
 	
 	
 	
@@ -2732,7 +2732,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 	
 &gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img3.png&#34;
 	
 	
 	
@@ -2745,7 +2745,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;h3 id=&#34;安装python&#34;&gt;安装Python
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;运行安装程序&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img4.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img4.png&#34;
 	
 	
 	
@@ -2756,7 +2756,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;选择指定路径安装&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img5.png&#34;
 	
 	
 	
@@ -2767,7 +2767,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;点击下一步，指定安装路径&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img6.png&#34;
 	
 	
 	
@@ -2778,7 +2778,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;点击安装，等待安装成功&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img7.png&#34;
 	
 	
 	
@@ -2789,7 +2789,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;安装成功的提示页面&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img8.png&#34;
 	
 	
 	
@@ -2803,7 +2803,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;h3 id=&#34;python-的交互环境&#34;&gt;Python 的交互环境
 &lt;/h3&gt;&lt;p&gt;python 安装好之后如何使用呢？&lt;br&gt;
 打开 cmd 命令行，输入：&lt;code&gt;python&lt;/code&gt;，即可运行python解释器(程序)，进入到 python 的交互环境中&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img9.png&#34;
 	
 	
 	
@@ -2826,7 +2826,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
     &gt;PyCharm下载地址&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;点击下载专业版&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img10.png&#34;
 	
 	
 	
@@ -2837,7 +2837,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;点击下载社区版&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img11.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img11.png&#34;
 	
 	
 	
@@ -2848,7 +2848,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;下载的安装包&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img12.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img12.png&#34;
 	
 	
 	
@@ -2862,7 +2862,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 &lt;h3 id=&#34;安装-pycharm&#34;&gt;安装 PyCharm
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;双击运行安装程序&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img13.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img13.png&#34;
 	
 	
 	
@@ -2873,7 +2873,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;指定安装路径&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img14.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img14.png&#34;
 	
 	
 	
@@ -2884,7 +2884,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;勾选下面的选项，点击下一步&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img15.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img15.png&#34;
 	
 	
 	
@@ -2895,7 +2895,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;点击安装&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img16.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img16.png&#34;
 	
 	
 	
@@ -2906,7 +2906,7 @@ Python 提供了一个内置的 keyword 模块，可以用来查看当前版本 
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;安装过程中，等待安装完成即可&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/Pydev/dev1/img17.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/Pydev/dev1/img17.png&#34;
 	
 	
 	

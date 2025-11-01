@@ -13,12 +13,12 @@
         <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/omsicpctools/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/omsAIcpc/BlogCovers.png" alt="Featured image of post 2025 CCPC 女生专场技术配置指北" /&gt;&lt;h1 id=&#34;ptaoms--icpc-tools-ccpc-2025-womens-division&#34;&gt;（PTA）OMS + ICPC Tools (CCPC 2025 Women&amp;rsquo;s Division)
 &lt;/h1&gt;&lt;p&gt;先给个补题链接：&lt;a class=&#34;link&#34; href=&#34;https://qoj.ac/contest/2564&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;第十一届中国大学生程序设计竞赛 女生专场（CCPC 2025 Women&amp;rsquo;s Division）&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;写在开头&#34;&gt;写在开头
 &lt;/h2&gt;&lt;p&gt;本次2025年CCPC国赛的女生专场在我们成都信息工程大学成功举办，我个人很高兴被委任为这次学生这边的技术负责人（当然也感谢另外两位一起工作的学长：某野生逗比、YFffffff；同时感谢 vcpf 全程协助调试，另外感谢学校和DSA实验室的老师给了我这样的机会）。比赛前一周我们技术核心三人组也是花费了很大的精力来配置这次比赛所以需要的各种环境（包括选手用机的安装，CDS等相关服务的配置），也算是我第一次在如此重要的场合来尝试我之前看到的一些技术吧。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-24-15-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-16-24-15-image.png&#34;
 	
 	
 	
@@ -70,7 +70,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;具体配置如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-14-47-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-14-47-image.png&#34;
 	
 	
 	
@@ -78,7 +78,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-16-29-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-16-29-image.png&#34;
 	
 	
 	
@@ -86,7 +86,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-17-57-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-17-57-image.png&#34;
 	
 	
 	
@@ -94,7 +94,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-18-52-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-18-52-image.png&#34;
 	
 	
 	
@@ -102,7 +102,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-19-33-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-19-33-image.png&#34;
 	
 	
 	
@@ -127,7 +127,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/help/ai-assistant/disable-ai-assistant.html#disable-ai-assistant-on-network-level&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Restrict or disable Assistant features | AI Assistant Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-33-15-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-33-15-image.png&#34;
 	
 	
 	
@@ -141,7 +141,7 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetbrains.com/zh-cn/help/idea/full-line-code-completion.html#check-requirements&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Full Line 代码补全 | IntelliJ IDEA 文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;通过文档，该功能依赖于 Full Line Code Completion 插件，该插件默认在 IntelliJ IDEA 2025.2.3、PyCharm 2025.2.3、CLion 2025.2.3中捆绑并启用。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-35-09-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-35-09-image.png&#34;
 	
 	
 	
@@ -164,7 +164,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在删除这些文件后，Full Line 代码补全（内联补全）功能失效，如果需要还原该功能，需要重新安装软件（即需要从网络或者外置设备中重新下载或者加载安装包安装，这种行为会被OMS阻止）。&lt;/p&gt;
 &lt;p&gt;去除后，需要手动去IDE禁用（几个IDE设置是一样的）。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-43-32-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-43-32-image.png&#34;
 	
 	
 	
@@ -180,7 +180,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;传递优化（开启后在大内网环境下可能引发网络风暴和内存溢出）。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-47-19-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-47-19-image.png&#34;
 	
 	
 	
@@ -191,7 +191,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;内核隔离（开着会增大后续影子系统的崩溃可能）。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-48-40-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-48-40-image.png&#34;
 	
 	
 	
@@ -202,7 +202,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Windows更新（Windows 更新（先更新至最新版本，再选择暂停更新约 5 周，我们这里通过注册表暂停了 9000 多周）。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-50-52-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-50-52-image.png&#34;
 	
 	
 	
@@ -223,7 +223,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;默认启动模式选择正常模式（防止正式赛计算机意外重启后选手选错模式）。
-&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-15-58-30-image.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-15-58-30-image.png&#34;
 	
 	
 	
@@ -235,7 +235,7 @@
 &lt;li&gt;
 &lt;p&gt;在密码设置里面给单一（完全）影子模式设置密码（不要给正常模式设置，先询问正常模式密码才能设置的话，正常模式留空然后确定就可以设置影子模式的了）。&lt;/p&gt;
 &lt;p&gt;热身赛时提前开机让志愿者输入密码进入单一（完全）影子模式（如果计算机崩溃见下面说明），这样选手离场后重启计算机就还原了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-30-40-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-16-30-40-image.png&#34;
 	
 	
 	
@@ -253,7 +253,7 @@
 &lt;p&gt;关于Windows的激活&lt;/p&gt;
 &lt;p&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/zbezj/HEU_KMS_Activator/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;HEU_KMS_Activator&lt;/a&gt;，打开软件前，需在 Windows 安全中心关闭所有实时防护功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-27-16-14-14-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-27-16-14-14-image.png&#34;
 	
 	
 	
@@ -409,7 +409,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;即可启动或停止CDS服务器，启动后在浏览器访问&lt;code&gt;https://127.0.0.1:8443/&lt;/code&gt;会看到如下页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-09-52-13-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-09-52-13-image.png&#34;
 	
 	
 	
@@ -444,7 +444,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里的和账户仅供参考，具体以在上面CDS中配置的为准。&lt;/p&gt;
 &lt;p&gt;完成后应当看到如下页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-18-58-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-10-18-58-image.png&#34;
 	
 	
 	
@@ -510,7 +510,7 @@
 &lt;/ol&gt;
 &lt;p&gt;上述步骤完成后，应当看到：&lt;/p&gt;
 &lt;p&gt;Admin：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-55-52-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-10-55-52-image.png&#34;
 	
 	
 	
@@ -519,7 +519,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Client：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-10-56-44-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-10-56-44-image.png&#34;
 	
 	
 	
@@ -562,7 +562,7 @@
 &lt;p&gt;补录的滚榜视频本节末尾。&lt;/p&gt;
 &lt;p&gt;API问题我们已经向PTA提出（但其实也可能是ICPC Tools的问题，PTA的人已经向他们提出&lt;a class=&#34;link&#34; href=&#34;https://github.com/icpctools/icpctools/issues/1241&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Issue&lt;/a&gt;），他们也在内部仓库提了Issue：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-21-34-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-21-34-image.png&#34;
 	
 	
 	
@@ -586,7 +586,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行&lt;code&gt;awards.bat (sh)&lt;/code&gt;看到如下窗口：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-25-25-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-25-25-image.png&#34;
 	
 	
 	
@@ -595,7 +595,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Connect&lt;/code&gt;，看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
 	
 	
 	
@@ -715,7 +715,7 @@
 &lt;/div&gt;
 
 &lt;h4 id=&#34;关于奖项配置的说明&#34;&gt;关于奖项配置的说明
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-26-31-image.png&#34;
 	
 	
 	
@@ -731,7 +731,7 @@
 &lt;li&gt;
 &lt;p&gt;设置冠、亚、季军：&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Add Awards&lt;/code&gt;区域的&lt;code&gt;Rank...&lt;/code&gt;按钮，弹出的窗口中选择好需要的排名后点&lt;code&gt;Apply&lt;/code&gt;即可。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-47-04-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-47-04-image.png&#34;
 	
 	
 	
@@ -743,7 +743,7 @@
 &lt;li&gt;
 &lt;p&gt;设置金、银、铜奖（以Gold为例）：&lt;/p&gt;
 &lt;p&gt;按住&lt;code&gt;Shift&lt;/code&gt;键选中该奖项对应的起始队伍与结束队伍，然后点击右侧的&lt;code&gt;Add...&lt;/code&gt;按钮，弹出的窗口参考下面的设置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-48-46-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-48-46-image.png&#34;
 	
 	
 	
@@ -753,7 +753,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;其中&lt;code&gt;Stop to show details&lt;/code&gt;会显示队伍的照片，&lt;/p&gt;
 &lt;p&gt;对于每个奖区，可以把上面的&lt;code&gt;Type&lt;/code&gt;改为&lt;code&gt;Other&lt;/code&gt;，&lt;code&gt;Citation&lt;/code&gt;设置为&lt;code&gt;Gold List&lt;/code&gt;，下面选择&lt;code&gt;Show as list&lt;/code&gt;，则在滚到这个区域最后的时候，会有一个视觉上的提示（下图高亮部分），然后进入&lt;code&gt;List&lt;/code&gt;展示，后面显示该奖首队伍照片（前提设置了&lt;code&gt;Stop to show details&lt;/code&gt;）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-11-55-11-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-11-55-11-image.png&#34;
 	
 	
 	
@@ -767,7 +767,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;使用pta的小票代码打印服务&#34;&gt;使用PTA的小票、代码打印服务
 &lt;/h2&gt;&lt;p&gt;购买 PTA 相关服务后，可在 PTA 后台查看该功能入口：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-40-28-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-12-40-28-image.png&#34;
 	
 	
 	
@@ -777,7 +777,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;把打印机配置好了以后直接进入工具，点击开启自动打印，会提示给浏览器加上&lt;code&gt;--kiosk-printing&lt;/code&gt;的参数（我们这里测试过只能用Chrome），我的意见是复制浏览器图标并添加该参数，因后续可能需调整打印设置。&lt;/p&gt;
 &lt;p&gt;另外，打印小票的时候去掉勾选“页眉和页脚”：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-43-11-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-12-43-11-image.png&#34;
 	
 	
 	
@@ -788,7 +788,7 @@
 &lt;p&gt;我们的代码和小票是分到两台电脑上的。&lt;/p&gt;
 &lt;h2 id=&#34;写在最后&#34;&gt;写在最后
 &lt;/h2&gt;&lt;p&gt;本次比赛在志愿者团队与技术组的共同保障下圆满落幕，也收获了参赛选手的一致好评，最后附上技术核心三人组合影及全体志愿者大合影。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-52-41-image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-12-52-41-image.png&#34;
 	
 	
 	
@@ -797,7 +797,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;（技术核心三人组）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/omsAIcpc/2025-10-28-12-53-33-f4fea8ca71ccdfc06dcdefafd40de363.jpeg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/omsAIcpc/2025-10-28-12-53-33-f4fea8ca71ccdfc06dcdefafd40de363.jpeg&#34;
 	
 	
 	
@@ -814,13 +814,13 @@
         <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/thefuturebooks/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/fubook/img1.png" alt="Featured image of post 我对未来书本的一个设想" /&gt;&lt;h1 id=&#34;为什么突然写这个&#34;&gt;&lt;strong&gt;为什么突然写这个&lt;/strong&gt;
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/fubook/img1.png" alt="Featured image of post 我对未来书本的一个设想" /&gt;&lt;h1 id=&#34;为什么突然写这个&#34;&gt;&lt;strong&gt;为什么突然写这个&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;当下OLED屏幕弯折角度越来越大，再者之前看到了一个回形针做的一个关于曲面屏的视频，我不由得产生了一个想法——那就是用柔性屏做一个符合但又不局限于传统书本概念的书，所以接下来我就好好的说一下这个想法（本文仅仅阐述我这个概念性的想法，喷子勿看）&lt;/p&gt;
 &lt;h1 id=&#34;怎样做才像一本书&#34;&gt;&lt;strong&gt;怎样做才像一本书&lt;/strong&gt;
 &lt;/h1&gt;&lt;h2 id=&#34;书写&#34;&gt;&lt;strong&gt;①书写&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;一本传统概念的书，首先要做的就是书写，这大多数电子产品都可以，但书写的体验我敢说绝对不如在真正的纸上书写，所以，我要探索的不仅仅是普通的书本书写，更要舒适的书写，现在能做到在OLED屏幕上写字就像在真纸上的，我只知道两个口碑不错的产品：&lt;/p&gt;
 &lt;h3 id=&#34;苹果的apple-pencil&#34;&gt;&lt;strong&gt;苹果的Apple Pencil&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img1.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img1.png&#34;
 	
 	
 	
@@ -831,7 +831,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;华为的m-pencil&#34;&gt;&lt;strong&gt;华为的M-Pencil&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img2.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img2.png&#34;
 	
 	
 	
@@ -863,7 +863,7 @@
 &lt;/p&gt;
 &lt;h2 id=&#34;弯折&#34;&gt;&lt;strong&gt;②弯折&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;一本传统的概念书籍来说，能做的第二件事就是正常的弯折，所以上面我提到了这样的OLED屏幕。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img3.png&#34;
 	
 	
 	
@@ -874,7 +874,7 @@
 	
 &gt;
 虽然这样可以弯折了，但仅仅只能翻折一次，所以要使用Galaxy Fold制作的方法来制造，但这也会使它像Galaxy Fold那样留下无法抹去的折痕，以及这个巨大的弯折半径。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img4.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img4.png&#34;
 	
 	
 	
@@ -884,7 +884,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img5.png&#34;
 	
 	
 	
@@ -895,7 +895,7 @@
 	
 &gt;
 看到这些照片后，相信你也会意识到这些问题都是无法忍受的，但是有一项新技术——ULP-NSSP，可以很好地解决这个问题，就像柔宇科技这个屏幕。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img6.png&#34;
 	
 	
 	
@@ -910,7 +910,7 @@
 &lt;/h1&gt;&lt;p&gt;目前已实现了传统图书的功能，现在谈谈未来图书的功能。&lt;/p&gt;
 &lt;h2 id=&#34;增强现实ar和激光雷达扫描仪&#34;&gt;①增强现实（AR）和激光雷达扫描仪
 &lt;/h2&gt;&lt;p&gt;借助于性能强劲的 CPU，比如高通骁龙处理器，再加上4800万像素以上的摄像头，实现了如下图所示的增强现实。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img7.png&#34;
 	
 	
 	
@@ -921,7 +921,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;甚至像下面这样通过局域网连接来实现多台设备同时使用一个增强现实场景，这对教育方面将会有巨大的影响，试想老师通过AR技术讲解生物，物理，化学等科目所需演示的实验和模型，那是一件多么不可思议的事情啊！
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img8.png&#34;
 	
 	
 	
@@ -935,7 +935,7 @@
 激光雷达 (LiDAR 光探测和测距) 这项先进技术，是通过测量光触及物体并反射回来所需的时间，来确定距离。特制的激光雷达扫描仪利用直接飞行时间 (dToF)，测量室内或室外环境中从最远五米处反射回来的光。
 它可从光子层面进行探测，并能以纳秒速度运行，为增强现实及更广泛的领域开启无尽可能。&lt;/p&gt;
 &lt;h2 id=&#34;文档的转换和在电子文档上书写&#34;&gt;②文档的转换和在电子文档上书写
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img9.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img9.png&#34;
 	
 	
 	
@@ -946,7 +946,7 @@
 	
 &gt;
 未来的书，当然不能仅仅是一本书，它应该是像上面那样，可以从网上购买各种书籍的版权，而不必支付印刷费用，这将对地球的环境保护做出巨大贡献，而且借助前文提到的强大的书写系统，就可以像阅读真书一般。&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img10.png&#34;
 	
 	
 	
@@ -960,7 +960,7 @@
 也可以把第二个工作区设置为练习册和参考书等辅助资料，从此学生的桌面上不再有成堆书本，取而代之的是一本这样的书。&lt;/p&gt;
 &lt;h2 id=&#34;多个可拆卸的屏幕和防盗技术&#34;&gt;③多个可拆卸的屏幕和防盗技术
 &lt;/h2&gt;&lt;p&gt;这本书应该有两个屏幕，其中一块是和处理器之类固定在书上的屏幕，另一块则可随意拆卸，为了方便解释，我用纸质笔记本来简单描述一下。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img11.jpg&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img11.jpg&#34;
 	
 	
 	
@@ -971,7 +971,7 @@
 	
 &gt;
 与此同时它还具有下图中的防盗功能，就像现在的手机一般，对丢失的设备进行远程定位、锁定、备份和删除，在保证个人资料安全的同时，也一定程度上解决了书本找不到的问题。
-&lt;img src=&#34;https://zephyrbd.github.io/images/fubook/img12.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/fubook/img12.png&#34;
 	
 	
 	

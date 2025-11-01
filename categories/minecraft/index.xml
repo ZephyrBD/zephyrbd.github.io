@@ -13,7 +13,7 @@
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/ddnsauth/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Java/DDNSAuth/Cover.png" alt="Featured image of post DDNSAuth" /&gt;&lt;h1 id=&#34;ddnsauth&#34;&gt;DDNSAuth
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ZephyrBD/DDNSAuth&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub仓库跳转&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;DDNSAuth 是一个基于 Velocity 代理服务器的插件，用于通过 DDNS 域名、内网 CIDR 网段、地区白名单等方式限制服务器访问，增强服务器的访问控制安全性。&lt;/p&gt;
@@ -120,7 +120,7 @@
         <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/tutorialofbuildfrp-mcsmserver/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&#43;MCSMServer/cover.png" alt="Featured image of post Frps &#43; MCSM最详细搭建指北" /&gt;&lt;h1 id=&#34;frpsmcsm最详细搭建指北&#34;&gt;Frps+MCSM最详细搭建指北
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&#43;MCSMServer/cover.png" alt="Featured image of post Frps &#43; MCSM最详细搭建指北" /&gt;&lt;h1 id=&#34;frpsmcsm最详细搭建指北&#34;&gt;Frps+MCSM最详细搭建指北
 &lt;/h1&gt;&lt;h2 id=&#34;写在开头&#34;&gt;写在开头
 &lt;/h2&gt;&lt;p&gt;这是我长期折腾计算机以来，首次围绕&lt;strong&gt;数据安全、网络安全、服务需求及稳定性&lt;/strong&gt;四大维度，系统性从 0 搭建的 Ubuntu Server（GNU/Linux）服务器。整个过程就是 “边搭建边优化” 的迭代：最初采用 “开放所有必要端口 + HTTP 连接” 的基础方案，意识到安全隐患后，又调整为 “指定个别端口 + Nginx 反向代理 + HTTPS 加密” 的加固架构；存储层面也从单盘转向保障数据冗余的 RAID 1 阵列。&lt;/p&gt;
 &lt;p&gt;为确保实体机部署顺利，我先在虚拟机环境中完成了 2 次全流程演练，后续又在实体机上进行了 2 次（第二次是为了组RAID）实际安装调试，才最终达成预期效果。此外，考虑到计算机行业 “文档化运维” 的传统 —— 便于后期排障、迭代与复用，因此整理此篇文档，记录整个搭建过程与关键决策。&lt;/p&gt;
@@ -149,7 +149,7 @@
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;在存储配置的页面，选择自定义&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-0.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-0.png&#34;
 	
 	
 	
@@ -160,7 +160,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;进入到此界面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-1.png&#34;
 	
 	
 	
@@ -182,7 +182,7 @@
 &lt;p&gt;清除完成后，你会看到此界面。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-2.png&#34;
 	
 	
 	
@@ -202,7 +202,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;然后，在数据盘上也创建一个分区，空间留空，“Format”同样选择“Leave unformatted”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-3.png&#34;
 	
 	
 	
@@ -223,7 +223,7 @@
 &lt;p&gt;此时你会在“AVAILABLE DEVICES”中看到刚才创建的 RAID 磁盘。选中并进入“Add GPT Partition”创建分区，“Format”选择“ext4”，“Mount”设置为“/”，即根目录。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-4.png&#34;
 	
 	
 	
@@ -234,7 +234,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;完成后，可以看到如下界面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/Linux/TutorialofbuildFrp&amp;#43;MCSMServer/st-5.png&#34;
 	
 	
 	
@@ -2714,7 +2714,7 @@
         <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_7/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img7.png" alt="Featured image of post MC 1.21.4 盔甲物品注册及相关类详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -2735,7 +2735,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;盔甲注册的新方法&#34;&gt;盔甲注册的新方法
-&lt;/h2&gt;&lt;p&gt;同&amp;quot;&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;p&gt;同&amp;quot;&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;《MC 1.21.4 中工具物品注册方法及相关类变更详解》&lt;/a&gt;&amp;ldquo;这篇博客中所写的&lt;code&gt;register&lt;/code&gt;方法大致一样，这里给个例子：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2895,7 +2895,7 @@
         <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img6.png" alt="Featured image of post MC 1.21.4 中工具物品注册方法及相关类变更详解" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -2916,7 +2916,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;工具物品注册时的新写法&#34;&gt;工具物品注册时的新写法
-&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;在MC1.21.4中创建Item时候遇到的问题&lt;/a&gt;》这篇博客中提到了Mojang在
 1.21.4版本中要求一个新的Register方法的写法，而工具的注册在原版代码的写法及其&lt;code&gt;register&lt;/code&gt;方法如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3112,7 +3112,7 @@
         <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/howtoinstallminecraft/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/htIsMCN/img3.png" alt="Featured image of post 如何安装我的世界国际版（新）" /&gt;&lt;h2 id=&#34;使用plain-craft-launcher-2启动器&#34;&gt;使用Plain Craft Launcher 2启动器
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/htIsMCN/img3.png" alt="Featured image of post 如何安装我的世界国际版（新）" /&gt;&lt;h2 id=&#34;使用plain-craft-launcher-2启动器&#34;&gt;使用Plain Craft Launcher 2启动器
 &lt;/h2&gt;&lt;h3 id=&#34;下载和解压plain-craft-launcher-2&#34;&gt;下载和解压Plain Craft Launcher 2
 &lt;/h3&gt;&lt;p&gt;首先，打开&lt;a class=&#34;link&#34; href=&#34;https://www.gy328.com/app/pcl2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PCL2&lt;/a&gt;（注：Plain Craft Launcher 2以下均简称PCL2或PCL）的官方指定下载网站&lt;br&gt;
@@ -3120,7 +3120,7 @@
     &gt;主页&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;有一定实力的朋友可以去给爱发电看看投喂规则以解锁更多PCL2的功能&lt;/strong&gt;&lt;br&gt;
 然后按如图所示的点击，进入网盘下载PCL2&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img1.png&#34;
 	
 	
 	
@@ -3131,7 +3131,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;选择pcl-正式版-xxxx&#34;&gt;选择&lt;em&gt;PCL 正式版 x.x.xx&lt;/em&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img2.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img2.png&#34;
 	
 	
 	
@@ -3143,7 +3143,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;按图所示解压&#34;&gt;按图所示解压
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;（过程不一定一样，取决于你的解压软件）&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img8.png&#34;
 	
 	
 	
@@ -3158,7 +3158,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;将pcl2启动器复制到自己喜欢的路径然后双击打开&#34;&gt;将PCL2启动器复制到自己喜欢的路径，然后双击打开
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;（必做，MC的安装位置默认取决于这步）&lt;/strong&gt;&lt;br&gt;
 如果没有正版账号就输入个名字（英文）&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img3.png&#34;
 	
 	
 	
@@ -3170,7 +3170,7 @@
 &gt;&lt;br&gt;
 有正版账号就选择正版登录，然后根据启动器的提示进行（有可能需要你在浏览器打开然后粘贴启动器的程序码）&lt;/p&gt;
 &lt;h3 id=&#34;点击下载游戏&#34;&gt;点击下载游戏
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img4.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img4.png&#34;
 	
 	
 	
@@ -3182,7 +3182,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;选择自己需要的版本&#34;&gt;选择自己需要的版本
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;（这里以1.21.4做演示）&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img5.png&#34;
 	
 	
 	
@@ -3194,7 +3194,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;然后选择需要的插件和插件版本&#34;&gt;然后选择需要的插件和插件版本
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;（不建议在高版本安装OptiFine，这会和大部分Mod冲突，可以去了解一下&lt;code&gt;钠及其附属Mod&lt;/code&gt;的优化）&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img6.png&#34;
 	
 	
 	
@@ -3207,7 +3207,7 @@
 （关于MOD加载器可以去看文末的描述）&lt;/p&gt;
 &lt;h3 id=&#34;点击安装&#34;&gt;点击安装
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;（这里选装Fabric）&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img7.png&#34;
 	
 	
 	
@@ -3218,7 +3218,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;版本隔离说明&#34;&gt;版本隔离说明
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img8.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img8.png&#34;
 	
 	
 	
@@ -3230,7 +3230,7 @@
 &gt;
 这里不建议开启版本隔离（除非你清楚开启后MC目录结构的变化），如果你有玩多个整合包（MC版本）的需要，建议每个版本都按如上流程开一个新文件夹。&lt;br&gt;
 安装完成提示如下：
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img9.png&#34;
 	
 	
 	
@@ -3264,7 +3264,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 而与原来傲慢的Lex决裂后的NeoForge团队也开始筹划与Fabric的兼容，这让MC Mod的社区和未来的Mod开发有了新的希望。&lt;/p&gt;
 &lt;h3 id=&#34;总结&#34;&gt;总结
 &lt;/h3&gt;&lt;p&gt;Forge和Optifine在MC 1.12.2及以前的版本为玩家们带来了众多的Mod，它陪伴MC走过了一段辉煌的岁月，也铸就了一个以Forge为主导的Mod时代（表现为在那个时代几乎一切的东西都能兼容Forge）。但正如历史上那些一直在原地踏步的事物一样，都注定被时代所淘汰，Forge和Optifine在MC 1.13以后不寻求更高效的Mod加载和注入方法，一昧地抹杀不同于己见者，迫使玩家社区写出Fabric这样新的替代品，可以说，Fabric的诞生几乎是Forge推动的，高傲的Lex终会为他自己的行为付出代价。最后，如果你是或者想成为一个Mod开发者，为了MC Mod社区的未来，请使用Fabric或NeoForge来编写代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img11.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img11.png&#34;
 	
 	
 	
@@ -3276,7 +3276,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;补充2关于游戏的配置详解&#34;&gt;补充2：关于游戏的配置详解
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注：PCL启动器几乎不需要手动管理游戏内存，但这里还是给出管理内存入口如何进入的教程图&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMCN/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMCN/img10.png&#34;
 	
 	
 	
@@ -3315,7 +3315,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 &lt;p&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/p&gt;
 &lt;h2 id=&#34;附minecraft目录详解图&#34;&gt;附：.minecraft目录详解图
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;（仅供参考）&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img16.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img16.png&#34;
 	
 	
 	
@@ -3335,7 +3335,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
         <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_5/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img5.png" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img5.png" alt="Featured image of post 1.21.4将2D物品转换为3D的新方法（无需Mixin）" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -3356,7 +3356,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 &lt;/div&gt;
 
 &lt;h2 id=&#34;mojang为item重写了model加载方法&#34;&gt;Mojang为item重写了Model加载方法
-&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;p&gt;我的《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;在MC1.21.4中创建Item时候遇到的问题&lt;/a&gt;》这篇博客中提到了Mojang在
 1.21.4版本中要求新建一个这个路径的文件夹，而这就是可以采用新写法的原因。&lt;br&gt;
 &lt;code&gt;assets/&amp;lt;namespace&amp;gt;/items&lt;/code&gt;&lt;br&gt;
@@ -3535,7 +3535,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 不过还有个简单的形式是你直接去修改生成的JSON文件中的&lt;code&gt;when&lt;/code&gt;的值&lt;br&gt;
 （Tip：数据生成在下次运行的时候不会修改你手动改过的文件）&lt;br&gt;
 这样你在1.21.4中就实现了如下效果&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img5.1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/img5.1.png&#34;
 	
 	
 	
@@ -3553,7 +3553,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
         <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_4/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img4.png" alt="Featured image of post 个人在给探矿器添加配方时遇到的问题" /&gt;&lt;h2 id=&#34;先说说今天的心情&#34;&gt;先说说今天的心情
 &lt;/h2&gt;&lt;p&gt;看到Respwan在Apex的今天的更新上继续作死（逆天的给探路者的勾爪改到固定30s的CD，然后改废了TS），这些没母的改动使得陪伴了我3年的游戏就这样彻底的进入了坟墓，
 我的心情也是极度的难过，
 不知道重生想干什么，也不知道玩家多了对游戏能有什么坏处，
@@ -3561,7 +3561,7 @@ NeoForge 的开发团队认为，通过分支和品牌重塑能够更好地推�
 我不得不告别Apex，这里给上&lt;code&gt;@Leamonheadtv&lt;/code&gt;的一段话。&lt;br&gt;
 &lt;code&gt;English: Respawn figures out that they don&#39;t deserve to have Apex Legends under their development team.lt&#39;s embarrassing and a middle finger to actual gamers.&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;Chinese: 重生对我们的热爱，和对身法的极致追求，竖了一个中指，并叫我们滚蛋&lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img4.2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/img4.2.png&#34;
 	
 	
 	
@@ -3664,7 +3664,7 @@ JSON文件内容如下：&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;BlockTags.IMPERMEABLE&lt;/code&gt;貌似是一个特殊的&lt;code&gt;BlockTag&lt;/code&gt;标签，即使被&lt;code&gt;copy&lt;/code&gt;到&lt;code&gt;ItemTag&lt;/code&gt;中也无法正确被游戏使用（至少我们在&lt;a class=&#34;link&#34; href=&#34;https://discord.com/invite/v6v4pMv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Discord Fabric&lt;/a&gt;的频道中讨论结果是这样的），最后直接使用&lt;code&gt;FabricAPI&lt;/code&gt;提供的Tags就好。&lt;/p&gt;
 &lt;h2 id=&#34;特别感谢以下两位fabric频道中的高手给予的帮助&#34;&gt;特别感谢以下两位Fabric频道中的高手给予的帮助
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/img4.1.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/img4.1.png&#34;
 	
 	
 	
@@ -3687,7 +3687,7 @@ JSON文件内容如下：&lt;/p&gt;
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_2/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img2.png" alt="Featured image of post 在1.21.4中创建ModRecipesProvider类的相同与区别 V2.0" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -3832,7 +3832,7 @@ JSON文件内容如下：&lt;/p&gt;
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_1/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img1.png" alt="Featured image of post 在MC1.21.4中创建Item时候遇到的问题" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;&lt;p&gt;
 
 
@@ -3881,7 +3881,7 @@ JSON文件内容如下：&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;PS：进阶写法参见《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.github.io/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;p&gt;PS：进阶写法参见《&lt;a class=&#34;link&#34; href=&#34;https://zephyrbd.pages.dev/p/firstfabricmoddevlog_6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;MC 1.21.4 中工具物品注册方法及相关类变更详解&lt;/a&gt;》&lt;br&gt;
 并且除了添加lang、models.item和textures.item文件夹及其对应json以外，要使得材质正常显示还需添加这样一个文件夹和对应的json。&lt;br&gt;
 &lt;code&gt;assets/&amp;lt;namespace&amp;gt;/items&lt;/code&gt;&lt;/p&gt;
@@ -3898,7 +3898,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/firstfabricmoddevlog_3/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/MCFDev/img3.png" alt="Featured image of post 在MC1.21.4中创建食物的相同与区别" /&gt;&lt;h2 id=&#34;参考视频&#34;&gt;参考视频：
 &lt;/h2&gt;
 
 
@@ -3929,7 +3929,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 &lt;li&gt;在register该食物Item时可以用&lt;code&gt;useRemainder(BOWL)&lt;/code&gt;来实现归还碗的效果&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;文件结构如图：&lt;br&gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/MCFDev/FilesTree.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/MCFDev/FilesTree.png&#34;
 	
 	
 	
@@ -4023,14 +4023,14 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
         <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/howtoupdatejava/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/htjava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/htjava/img1.png" alt="Featured image of post 如何更新到Java-16" /&gt;&lt;h1 id=&#34;为什么mc-117-需要使用-java-16&#34;&gt;为什么MC 1.17 需要使用 Java 16
 &lt;/h1&gt;&lt;p&gt;MC自从1.8就开始使用Java 8，到现在已经用了8个大版本了。mojang也决定从MC 1.17开始使用最近才发布的Java 16（官方给出的解释是有更好的优化，但我觉得应该是mojang用了Java 16的新语法），总的来说，这一举动是好的。&lt;/p&gt;
 &lt;h1 id=&#34;对玩家有什么影响&#34;&gt;对玩家有什么影响
 &lt;/h1&gt;&lt;p&gt;显然，过去我们使用Java 8来打开MC，现在Java 8是不可能打开1.17了，那是不是把旧的Java删除就可以了？当然不行，旧版的Java可以帮助我们打开旧的MC版本，删除后就只可以玩1.17了，下面就讲述如何使Java 8和16共存。&lt;/p&gt;
 &lt;h2 id=&#34;更新步骤一更新启动器&#34;&gt;更新步骤一：更新启动器
 &lt;/h2&gt;&lt;p&gt;在我的教程《如何安装Minecraft国际版》已经介绍了HMCL启动器的安装，现在就以HMCL启动器为例，讲述启动器的更新。
 &lt;strong&gt;1&lt;/strong&gt;.打开启动器，注意右上角的提示
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img1.png&#34;
 	
 	
 	
@@ -4041,7 +4041,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 &lt;strong&gt;2&lt;/strong&gt;.点击它，看到下图所示界面
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img2.png&#34;
 	
 	
 	
@@ -4052,7 +4052,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 可以看到自从HMCL 3.3.184开始就支持Java 16了，不过考虑到兼容性，还是推荐更新到最新版（会有更新提示），现在点击右下角的更新出现下图所示界面。
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img3.png&#34;
 	
 	
 	
@@ -4063,7 +4063,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 表明开始更新，更新完成后会自动重启，然后就可以看到HMCL版本和刚才更新日志的版本一致了。
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img4.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img4.png&#34;
 	
 	
 	
@@ -4103,7 +4103,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 &lt;a class=&#34;link&#34; href=&#34;https://download.bell-sw.com/java/16.0.1&amp;#43;9/bellsoft-jdk16.0.1&amp;#43;9-windows-i586.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;32位点我&lt;/a&gt;
 &lt;strong&gt;3&lt;/strong&gt;.解压下载的文件并且拷贝到MC文件夹
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img5.png&#34;
 	
 	
 	
@@ -4113,7 +4113,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 	
 &gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img6.png&#34;
 	
 	
 	
@@ -4124,7 +4124,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 &lt;strong&gt;4&lt;/strong&gt;.选择版本列表，然后点安装新游戏版本
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img7.png&#34;
 	
 	
 	
@@ -4135,7 +4135,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择1.17
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img8.png&#34;
 	
 	
 	
@@ -4146,7 +4146,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择Optifine
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img9.png&#34;
 	
 	
 	
@@ -4157,7 +4157,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 选择最新版本
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img10.png&#34;
 	
 	
 	
@@ -4168,7 +4168,7 @@ Fabric中文wiki（关于在1.21.2后创建一个item的方法参见）：&lt;a 
 	
 &gt;
 Optifine选择成功后如图所示，然后点击安装
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img11.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img11.png&#34;
 	
 	
 	
@@ -4180,7 +4180,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;更新步骤三mc-117启动前设置&#34;&gt;更新步骤三：MC 1.17启动前设置
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt;.安装成功后如图所示，点击设置
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img12.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img12.png&#34;
 	
 	
 	
@@ -4191,7 +4191,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 &lt;strong&gt;2&lt;/strong&gt;.勾选启用游戏特定设置
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img13.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img13.png&#34;
 	
 	
 	
@@ -4202,7 +4202,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 &lt;strong&gt;3&lt;/strong&gt;.选择Java 16的路径（按照图示界面点击）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img14.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img14.png&#34;
 	
 	
 	
@@ -4214,7 +4214,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;
 有关其它的设置可以参考《如何安装Minecraft国际版》里面的讲解。
 &lt;strong&gt;4&lt;/strong&gt;.返回并启动游戏
-&lt;img src=&#34;https://zephyrbd.github.io/images/htjava/img15.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htjava/img15.png&#34;
 	
 	
 	
@@ -4252,13 +4252,13 @@ Optifine选择成功后如图所示，然后点击安装
         <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/howtousetheinternationalversionofminecrafttogoonline/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/htgoon/img1.png" alt="Featured image of post 如何使用国际版我的世界进行联机" /&gt;&lt;h2 id=&#34;为什么要端口映射&#34;&gt;为什么要端口映射？
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/htgoon/img1.png" alt="Featured image of post 如何使用国际版我的世界进行联机" /&gt;&lt;h2 id=&#34;为什么要端口映射&#34;&gt;为什么要端口映射？
 &lt;/h2&gt;&lt;p&gt;现在大部分人的宽带IP地址都是运营商分配给我们的，但一般情况下只会给我们内网IP地址，举个例子：10个人要上网，但10个公网IP太多了，那么就让10个人共用一个“网关”，再由“网关”联网，这样10个人就只用掉一个IP，但我的世界联机的时候，别人和你不在一个“网关”之下，那他就只可以找到你的“网关”，而不知道10个人中那个是你，这个时候就需要一个“中间人”来告诉他你到底是谁，然后你们就可以一起愉快玩耍了，这个“中间人”就是第三方服务器映射的IP&lt;/p&gt;
 &lt;h2 id=&#34;如何进行端口映射&#34;&gt;如何进行端口映射
 &lt;/h2&gt;&lt;h2 id=&#34;1注册sakura-frp账号&#34;&gt;1.注册SAKURA FRP账号
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.natfrp.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;SAKURA FRP&lt;/a&gt;是一个免费的端口映射网站，可以帮我们进行映射，打开网站后界面如图所示。
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img1.png&#34;
 	
 	
 	
@@ -4269,7 +4269,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 点击注册账号进行注册（注意：使用 中国大陆节点 必须完成实名认证）进入后如图所示。
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img2.png&#34;
 	
 	
 	
@@ -4282,7 +4282,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;h2 id=&#34;2下载sakura-frp客户端&#34;&gt;2.下载SAKURA FRP客户端
 &lt;/h2&gt;&lt;p&gt;点击上图所示的左侧边栏上的软件下载，打开后按图示点击，或者&lt;a class=&#34;link&#34; href=&#34;https://getfrp.sh/l/SakuraLauncher.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点我&lt;/a&gt;下载客户端
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img3.png&#34;
 	
 	
 	
@@ -4293,7 +4293,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;3安装sakura-frp启动器并打开&#34;&gt;3.安装SAKURA FRP启动器并打开
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img4.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img4.png&#34;
 	
 	
 	
@@ -4304,7 +4304,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 回到官网，在管理面板上复制访问密钥
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img5.png&#34;
 	
 	
 	
@@ -4315,7 +4315,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 回到启动器粘贴并登陆
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img6.png&#34;
 	
 	
 	
@@ -4327,7 +4327,7 @@ Optifine选择成功后如图所示，然后点击安装
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;4转发端口&#34;&gt;4.转发端口
 &lt;/h2&gt;&lt;p&gt;打开需要联机的世界，选择对局域网开放
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img7.png&#34;
 	
 	
 	
@@ -4338,7 +4338,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 添加一个隧道（找到java那个，没有的话刷新一下，然后选择一个合适的转发服务器，点击创建）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img8.png&#34;
 	
 	
 	
@@ -4349,7 +4349,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 打开隧道就可以了（弹出的提示框中的IP就是你朋友用的）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htgoon/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htgoon/img9.png&#34;
 	
 	
 	
@@ -4368,10 +4368,10 @@ Optifine选择成功后如图所示，然后点击安装
         <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
         
         <guid>https://zephyrbd.pages.dev/p/howtoinstallminecraft_old/</guid>
-        <description>&lt;img src="https://zephyrbd.github.io/images/htIsMC/img1.png" alt="Featured image of post 如何安装我的世界国际版" /&gt;&lt;h1 id=&#34;安装java必须游戏依赖&#34;&gt;安装Java（必须，游戏依赖）
+        <description>&lt;img src="https://zephyrbd.pages.dev/images/htIsMC/img1.png" alt="Featured image of post 如何安装我的世界国际版" /&gt;&lt;h1 id=&#34;安装java必须游戏依赖&#34;&gt;安装Java（必须，游戏依赖）
 &lt;/h1&gt;&lt;h2 id=&#34;1查看电脑系统位数&#34;&gt;1.查看电脑系统位数
 &lt;/h2&gt;&lt;p&gt;右键此电脑（或者叫计算机或这台电脑），选择属性，如图所示（图片仅供参考）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img1.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img1.png&#34;
 	
 	
 	
@@ -4381,7 +4381,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 	
 &gt;
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img2.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img2.png&#34;
 	
 	
 	
@@ -4398,7 +4398,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;a class=&#34;link&#34; href=&#34;https://dl.softmgr.qq.com/original/Development/jre-8u261-windows_x64.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;64位系统版本点我&lt;/a&gt;&lt;br&gt;
 下载完成后打开，一直下一步安装完成就可以了（安装成功截图如下）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img3.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img3.png&#34;
 	
 	
 	
@@ -4412,7 +4412,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;/h1&gt;&lt;h2 id=&#34;1下载和解压hello-minecraft-launcher&#34;&gt;1.下载和解压Hello Minecraft Launcher
 &lt;/h2&gt;&lt;p&gt;首先，打开&lt;a class=&#34;link&#34; href=&#34;https://www.mcbbs.net/thread-142335-1-1.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;HMCL&lt;/a&gt;（注：Hello Minecraft Launcher以下均简称HMCL）在mcbbs的帖子，点击如图所示的链接（HMCL官网链接好像挂了，演示时先暂时用百度网盘分享）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img4.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img4.png&#34;
 	
 	
 	
@@ -4430,7 +4430,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;选择HMCL版本
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img5.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img5.png&#34;
 	
 	
 	
@@ -4445,7 +4445,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;选择自己的系统（看不懂就选Windows）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img6.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img6.png&#34;
 	
 	
 	
@@ -4460,7 +4460,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;打钩后下载
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img7.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img7.png&#34;
 	
 	
 	
@@ -4475,7 +4475,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;按图所示解压（过程不一定一样，取决于你的解压软件）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img8.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img8.png&#34;
 	
 	
 	
@@ -4494,7 +4494,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;ol&gt;
 &lt;li&gt;将HMCL启动器复制到自己喜欢的路径，然后双击打开
 如果没有正版账号就输入个名字（最好英文）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img9.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img9.png&#34;
 	
 	
 	
@@ -4505,7 +4505,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 有正版账号就选择正版登录
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img10.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img10.png&#34;
 	
 	
 	
@@ -4520,7 +4520,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;选择版本列表，然后点安装新游戏版本
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img122.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img122.png&#34;
 	
 	
 	
@@ -4530,7 +4530,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 	
 &gt;选择自己需要的版本（这里以1.16.3做演示）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img11.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img11.png&#34;
 	
 	
 	
@@ -4541,7 +4541,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 然后选择需要的插件和插件版本（强烈建议安装OptiFine，可以减轻渲染的负担，也可以不安装任何插件）（演示时安装OptiFine）
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img12.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img12.png&#34;
 	
 	
 	
@@ -4552,7 +4552,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 点击安装
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img13.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img13.png&#34;
 	
 	
 	
@@ -4563,7 +4563,7 @@ Optifine选择成功后如图所示，然后点击安装
 	
 &gt;
 安装完成后如图所示
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img14.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img14.png&#34;
 	
 	
 	
@@ -4580,7 +4580,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;h1 id=&#34;补充关于游戏的配置详解&#34;&gt;补充：关于游戏的配置详解
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;按图示进入配置页面
-&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img15.png&#34;
+&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img15.png&#34;
 	
 	
 	
@@ -4609,7 +4609,7 @@ Optifine选择成功后如图所示，然后点击安装
 &lt;li&gt;如果大型模组整合包启动游戏出问题，可以把查看日志打开（前提你有一定的Java基础）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;附minecraft目录详解图仅供参考&#34;&gt;附：.minecraft目录详解图（仅供参考）
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.github.io/images/htIsMC/img16.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zephyrbd.pages.dev/images/htIsMC/img16.png&#34;
 	
 	
 	
